@@ -1,0 +1,16 @@
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\CheckApprovalSalesEffort.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\CheckApprovalSalesEffort.exe
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\CheckApprovalSalesEffort.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\obj\Debug\CheckApprovalSalesEffort.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\obj\Debug\CheckApprovalSalesEffort.exe
+D:\Project\Traknus\Sparepart\Solution - Code\CheckApprovalSalesEffort\obj\Debug\CheckApprovalSalesEffort.pdb

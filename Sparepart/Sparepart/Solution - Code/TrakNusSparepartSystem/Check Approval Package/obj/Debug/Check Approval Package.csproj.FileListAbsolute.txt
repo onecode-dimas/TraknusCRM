@@ -1,0 +1,15 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Check Approval Package.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Check Approval Package.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Check Approval Package.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\obj\Debug\Check Approval Package.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\obj\Debug\Check Approval Package.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Package\obj\Debug\Check Approval Package.pdb

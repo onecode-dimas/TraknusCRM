@@ -1,0 +1,15 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Check Approval Credit Limit.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Check Approval Credit Limit.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Check Approval Credit Limit.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\obj\Debug\Check Approval Credit Limit.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\obj\Debug\Check Approval Credit Limit.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Credit Limit\obj\Debug\Check Approval Credit Limit.pdb

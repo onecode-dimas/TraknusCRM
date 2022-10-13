@@ -1,0 +1,678 @@
+<html><head><script src="../WebResources/ClientGlobalContext.js.aspx" type="text/javascript"></script>
+<script src="../WebResources/trs_/scripts/xrmservicetoolkit/XrmServiceToolkit.js" type="text/javascript"></script>
+<script src="../WebResources/tss_shim.js" type="text/javascript"></script>
+<script src="../WebResources/tss_jszip.js" type="text/javascript"></script>
+<script src="../WebResources/tss_xlsx.full.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+var entityid;
+var recordname;
+var entity;
+
+function SetItemNumber() {
+    var defaultItemNumber = 10;
+    var Name;
+    var setIN;
+	XrmServiceToolkit.Rest.RetrieveMultiple(
+		"tss_sopartlinesSet",
+		"$select=*&$filter=tss_SOPartHeaderId/Id eq (guid'" + entityid + "')",
+		function (result) {
+			if (result.length > 0) {
+				var max = 10;
+				for(i = 0; i < result.length; i++)
+				{
+					if(result[i].tss_itemnumber > max) max = result[i].tss_itemnumber;
+				}
+				setIN = max + defaultItemNumber;
+				entity.tss_itemnumber = setIN;
+				Name = recordname + "-" + setIN;
+			} else {
+				entity.tss_itemnumber = defaultItemNumber;
+				Name = recordname + "-" + defaultItemNumber;
+			}
+		}, function error(error) {
+			alert("Failed to retrieve SO Part Lines record.");
+		}, function onComplete() {
+			//return;
+		}, false
+	);
+
+	entity.tss_name = Name;
+}
+
+function SetSourceType() {
+    XrmServiceToolkit.Rest.Retrieve(entityid, "tss_sopartheaderSet", "tss_SourceType", null, function (result) {
+		if (result.tss_SourceType != null) {
+			var tss_SourceType = result.tss_SourceType;
+			if (tss_SourceType.Value == 865920000) {
+				entity.tss_SourceType = {Value: 865920003};
+			}
+			else if (tss_SourceType.Value == 865920001) {
+				entity.tss_SourceType = {Value: 865920000};
+			}
+			else if (tss_SourceType.Value == 865920002) {
+				entity.tss_SourceType = {Value: 865920005};
+			}
+			else if (tss_SourceType.Value == 865920003) {
+				entity.tss_SourceType = {Value: 865920004};
+			}
+			else if (tss_SourceType.Value == 865920004) {
+				entity.tss_SourceType = {Value: 865920006};
+			}
+		}
+	}, function (error) {
+		Xrm.Utility.alertDialog(error.message);
+	}, false);
+}
+
+function SetSalesMan(){
+    XrmServiceToolkit.Rest.Retrieve(entityid, "tss_sopartheaderSet", "tss_PSS,tss_RequestDeliveryDate", null, function (result) {
+		var tss_PSS = result.tss_PSS;
+		var tss_RequestDeliveryDate = result.tss_RequestDeliveryDate;
+		if(tss_PSS != null){
+			entity.tss_Salesman = {
+				Id: tss_PSS.Id,
+				LogicalName: tss_PSS.LogicalName
+			};
+		}
+		if (tss_RequestDeliveryDate != null) {
+			entity.tss_Requestdeliverydate = tss_RequestDeliveryDate;
+		}
+	}, function(error) {
+		Xrm.Utility.alertDialog(error.message);
+	}, false);
+}
+
+//20180904 - di comment karena ditambahkan column DiscountBy, DiscountAmount, dan DiscountPercent
+//function GetPartInfo(partNumber, qty) {
+//    if (partNumber != null) {
+//        XrmServiceToolkit.Rest.Retrieve(partNumber, "trs_masterpartSet", "trs_PartDescription,trs_unitmeasurement,tss_unitgroup", null, function (result) {
+//            var trs_PartDescription = result.trs_PartDescription;
+//            var trs_unitmeasurement = result.trs_unitmeasurement;
+//            var tss_unitgroup = result.tss_unitgroup;
+//            if (trs_PartDescription != null) {
+//				entity.tss_PartDescription = trs_PartDescription;
+//            }
+//            if (trs_unitmeasurement != null) {
+//				entity.tss_Unit = {
+//					Id: trs_unitmeasurement.Id,
+//					LogicalName: trs_unitmeasurement.LogicalName
+//				};
+//            }
+//            if (tss_unitgroup != null) {
+//				entity.tss_UnitGroup = {
+//					Id: tss_unitgroup.Id,
+//					LogicalName: tss_unitgroup.LogicalName
+//				};
+//            }
+//        }, function (error) {
+//            Xrm.Utility.alertDialog(error.message);
+//        }, false);
+//    }
+    //}
+
+function GetPartInfo(partNumber, qty, discountby, discountamount, discountpercent) {
+    var quotation = false;
+
+    entity.tss_DiscountBy = discountby;
+    //entity.tss_DiscountAmount = { Value: discountamount.Value };
+    //entity.tss_DiscountPercent = discountpercent;
+
+    if (entityid != null) {
+        XrmServiceToolkit.Rest.Retrieve(entityid, "tss_sopartheaderSet", "tss_QuotationLink", null, function (result) {
+            if (result.tss_QuotationLink.Id != null) {
+                quotation = true;
+            }
+        }, function (error) {
+            Xrm.Utility.alertDialog(error.message);
+        }, false);
+    }
+
+    if (partNumber != null) {
+        XrmServiceToolkit.Rest.Retrieve(partNumber, "trs_masterpartSet", "trs_PartDescription,trs_unitmeasurement,tss_unitgroup", null, function (result) {
+            var trs_PartDescription = result.trs_PartDescription;
+            var trs_unitmeasurement = result.trs_unitmeasurement;
+            var tss_unitgroup = result.tss_unitgroup;
+            if (trs_PartDescription != null) {
+                entity.tss_PartDescription = trs_PartDescription;
+            }
+            if (trs_unitmeasurement != null) {
+                entity.tss_Unit = {
+                    Id: trs_unitmeasurement.Id,
+                    LogicalName: trs_unitmeasurement.LogicalName
+                };
+            }
+            if (tss_unitgroup != null) {
+                entity.tss_UnitGroup = {
+                	Id: tss_unitgroup.Id,
+                	LogicalName: tss_unitgroup.LogicalName
+                };
+            }
+        }, function (error) {
+            Xrm.Utility.alertDialog(error.message);
+        }, false);
+
+        //check price list
+        var pricelistpartid;
+        XrmServiceToolkit.Rest.RetrieveMultiple("tss_pricelistpartSet", "?$select=tss_pricelistpartId&$filter=tss_name eq 'Direct%20Sales%20Price%20List'", function (results) {
+            if (results.length > 0) {
+                pricelistpartid = results[0].tss_pricelistpartId;
+            }
+        }, function (error) {
+            Xrm.Utility.alertDialog(error.message);
+        }, function () {
+        }, false);
+
+        if (pricelistpartid != null) {
+            XrmServiceToolkit.Rest.RetrieveMultiple("tss_sparepartpricemasterSet", "?$select=tss_Price&$filter=tss_PartMaster/Id eq (guid'" + partNumber + "') and tss_PriceListPart/Id eq (guid'" + pricelistpartid + "')", function (results) {
+                if (results.length > 0) {
+                    var tss_Price = results[0].tss_Price;
+                    if (tss_Price != null && quotation == false) {
+                        var finalPrice = 0;
+
+                        if (discountby == true && discountamount != null) { //AMOUNT 
+                            finalPrice = tss_Price.Value - discountamount;
+
+                            if (finalPrice < 0) finalPrice = 0;
+
+                            discountpercent = (discountamount / tss_Price.Value) * 100;
+                            discountamount = discountamount.toString();
+                            var totalprice = finalPrice * qty;
+
+                            finalPrice = finalPrice.toString();
+                            totalprice = totalprice.toString();
+
+                            entity.tss_DiscountAmount = { Value: discountamount };
+                            entity.tss_DiscountPercent = discountpercent.toFixed(2);
+                            entity.tss_PriceAfterDiscount = { Value: finalPrice };
+                            entity.tss_TotalPrice = { Value: totalprice };
+                        }
+                        else if (discountby == false && discountpercent != null) { //PERCENTAGE
+                            finalPrice = (100 - discountpercent) / 100 * tss_Price.Value;
+
+                            if (finalPrice < 0) finalPrice = 0;
+
+                            discountamount = Math.round(tss_Price.Value * (discountpercent / 100))
+                            discountamount = discountamount.toString();
+                            var totalprice = finalPrice * qty;
+
+                            finalPrice = finalPrice.toString();
+                            totalprice = totalprice.toString();
+
+                            entity.tss_DiscountAmount = { Value: discountamount };
+                            entity.tss_DiscountPercent = discountpercent.toFixed(2);
+                            entity.tss_PriceAfterDiscount = { Value: finalPrice };
+                            entity.tss_TotalPrice = { Value: totalprice };
+                        }
+                        else {
+                            finalPrice = tss_Price.Value;
+                        }
+
+                        entity.tss_Finalprice = { Value: finalPrice.Value };
+                    }
+                }
+                else {
+                    if (quotation == false) {
+                        finalPrice = 0;
+
+                        entity.tss_Finalprice = { Value: finalPrice.Value };
+                    }
+                }
+            }, function (error) {
+                Xrm.Utility.alertDialog(error.message);
+            }, function () {
+            }, false);
+        }
+        else {
+            alert("Price list past not found!");
+        }
+    }
+}
+
+function discAmount_Calculate(quantity, discount, price) {
+    var formulaPercent = (discount / price) * 100;
+    
+    if (discount < price)
+    {
+        var formulaAmount = Math.Round(price * (formulaPercent / 100));
+
+        if (quantity > 0)
+        {
+            var priceafterdiscount = (price - formulaAmount);
+
+            if (formulaAmount != 0)
+            {
+                entity.tss_PriceAfterDiscount = { Value: priceafterdiscount.Value };
+            }
+            else
+            {
+                priceafterdiscount = 0;
+
+                entity.tss_PriceAfterDiscount = { Value: priceafterdiscount.Value };
+            }
+
+            entity.tss_DiscountPercent = { Value: discountpercent.Value };
+
+            var totalprice = priceafterdiscount * quantity;
+            entity.tss_TotalPrice = { Value: totalprice.Value };
+        }
+    }
+}
+
+function GetPartInterchangeInfo(partNumberInterchange, qty) {
+    var partNumber;
+    if (partNumberInterchange != null) {
+        XrmServiceToolkit.Rest.Retrieve(partNumberInterchange, "tss_partmasterlinesinterchangeSet", "tss_PartNumberInterchange", null, function (result) {
+            var tss_PartNumberInterchange = result.tss_PartNumberInterchange;
+            if (tss_PartNumberInterchange != null) {
+                partNumber = tss_PartNumberInterchange.Id;
+            }
+        }, function (error) {
+            Xrm.Utility.alertDialog(error.message);
+        }, false);
+    }
+
+    if (partNumber != null) {
+        XrmServiceToolkit.Rest.Retrieve(partNumber, "trs_masterpartSet", "trs_PartDescription,trs_unitmeasurement,tss_unitgroup", null, function (result) {
+            var trs_PartDescription = result.trs_PartDescription;
+            var trs_unitmeasurement = result.trs_unitmeasurement;
+            var tss_unitgroup = result.tss_unitgroup;
+            if (trs_PartDescription != null) {
+				entity.tss_PartDescription = trs_PartDescription;
+            }
+			else {
+				alert("Part Interchange not found!");
+			}
+            if (trs_unitmeasurement != null) {
+				entity.tss_Unit = {
+					Id: trs_unitmeasurement.Id,
+					LogicalName: trs_unitmeasurement.LogicalName
+				};
+            }
+            if (tss_unitgroup != null) {
+				entity.tss_UnitGroup = {
+					Id: tss_unitgroup.Id,
+					LogicalName: tss_unitgroup.LogicalName
+				};
+            }
+        }, function (error) {
+            Xrm.Utility.alertDialog(error.message);
+        }, false);
+    }
+}
+
+//20180904 - dicomment karena mau ditambahkan column discountby, discountamount, discountpercent
+//function createLines(partNumber, isInterchange, partNumberInterchange, qty){
+//	entity = {};
+	
+//	SetItemNumber()
+//	SetSourceType();
+//	SetSalesMan();
+	
+//	entity.tss_SOPartHeaderId = {
+//		Id: entityid,
+//		LogicalName: "tss_sopartheader"
+//	};
+	
+//	entity.tss_ItemCategory = {
+//		Value: 865920000
+//	};
+	
+//	if(partNumber != null){
+//		var trs_masterpartId;
+//		XrmServiceToolkit.Rest.RetrieveMultiple("trs_masterpartSet", "?$select=trs_masterpartId&$filter=trs_name eq '" + partNumber	+ "'", function(results) {
+//			for (var i = 0; i < results.length; i++) {
+//				trs_masterpartId = results[i].trs_masterpartId;
+//				if(trs_masterpartId != null){
+//					entity.tss_Partnumber = {
+//						Id: trs_masterpartId,
+//						LogicalName: "trs_masterpart"
+//					};
+					
+//					GetPartInfo(trs_masterpartId, qty);
+//				}
+//			}
+//		}, function(error) {
+//			Xrm.Utility.alertDialog(error.message);
+//		}, function() {
+//			//On Complete - Do Something
+//		}, false);
+		
+//		if(isInterchange != null) {
+//			entity.tss_IsInterchange = isInterchange;
+			
+//			if(isInterchange == 1 && partNumberInterchange != null) {
+//				XrmServiceToolkit.Rest.RetrieveMultiple("tss_partmasterlinesinterchangeSet", "?$select=tss_partmasterlinesinterchangeId&$filter=tss_partnumber eq '" + partNumberInterchange + "' and tss_PartMasterId/Id eq (guid'" + trs_masterpartId + "')", function(results) {
+//					for (var i = 0; i < results.length; i++) {
+//						var tss_partmasterlinesinterchangeId = results[i].tss_partmasterlinesinterchangeId;
+//						if(tss_partmasterlinesinterchangeId != null){
+//							entity.tss_PartNumberInterchange = {
+//								Id: tss_partmasterlinesinterchangeId,
+//								LogicalName: "tss_partmasterlinesinterchange"
+//							};
+//							GetPartInterchangeInfo(tss_partmasterlinesinterchangeId, qty)
+//						}
+//					}
+//				}, function(error) {
+//					Xrm.Utility.alertDialog(error.message);
+//				}, function() {
+//					//On Complete - Do Something
+//				}, false);
+//			}
+//		}
+//	}
+	
+//	if(qty != null && !isNaN(qty)) entity.tss_QtyRequest = qty;
+//	else alert("Quantity is not a number");
+	
+//	entity.tss_QtyPartialNotSupply = 0;
+//	entity.tss_QtySupply = 0;
+//	entity.tss_ReservationQty = 0;
+
+//	var flagCreate = false;
+	
+//	XrmServiceToolkit.Rest.Create(entity, "tss_sopartlinesSet", function(result) {
+//		var newEntityId = result.tss_sopartlinesId;
+//		flagCreate = true;
+//	}, function(error) {
+//		flagCreate = false;
+//		Xrm.Utility.alertDialog(error.message);
+//	}, false);
+	
+//	return flagCreate;
+//}
+
+function createLines(partNumber, isInterchange, partNumberInterchange, qty, discountby, discountamount, discountpercent) {
+    entity = {};
+
+    SetItemNumber()
+    SetSourceType();
+    SetSalesMan();
+
+    entity.tss_SOPartHeaderId = {
+        Id: entityid,
+        LogicalName: "tss_sopartheader"
+    };
+
+    entity.tss_ItemCategory = {
+        Value: 865920000
+    };
+
+    if (partNumber != null) {
+        var trs_masterpartId;
+        XrmServiceToolkit.Rest.RetrieveMultiple("trs_masterpartSet", "?$select=trs_masterpartId&$filter=trs_name eq '" + partNumber + "'", function (results) {
+            for (var i = 0; i < results.length; i++) {
+                trs_masterpartId = results[i].trs_masterpartId;
+
+                if (trs_masterpartId != null) {
+                    entity.tss_Partnumber = {
+                        Id: trs_masterpartId,
+                        LogicalName: "trs_masterpart"
+                    };
+
+                    GetPartInfo(trs_masterpartId, qty, discountby, discountamount, discountpercent);
+                }
+            }
+        }, function (error) {
+            Xrm.Utility.alertDialog(error.message);
+        }, function () {
+            //On Complete - Do Something
+        }, false);
+
+        if (isInterchange != null) {
+            entity.tss_IsInterchange = isInterchange;
+
+            if (isInterchange == 1 && partNumberInterchange != null) {
+                XrmServiceToolkit.Rest.RetrieveMultiple("tss_partmasterlinesinterchangeSet", "?$select=tss_partmasterlinesinterchangeId&$filter=tss_partnumber eq '" + partNumberInterchange + "' and tss_PartMasterId/Id eq (guid'" + trs_masterpartId + "')", function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        var tss_partmasterlinesinterchangeId = results[i].tss_partmasterlinesinterchangeId;
+                        if (tss_partmasterlinesinterchangeId != null) {
+                            entity.tss_PartNumberInterchange = {
+                                Id: tss_partmasterlinesinterchangeId,
+                                LogicalName: "tss_partmasterlinesinterchange"
+                            };
+                            GetPartInterchangeInfo(tss_partmasterlinesinterchangeId, qty)
+                        }
+                    }
+                }, function (error) {
+                    Xrm.Utility.alertDialog(error.message);
+                }, function () {
+                    //On Complete - Do Something
+                }, false);
+            }
+        }
+    }
+    else
+    {
+        return false;
+    }
+
+    if (qty != null && !isNaN(qty)) entity.tss_QtyRequest = qty;
+    else alert("Quantity is not a number");
+
+    entity.tss_QtyPartialNotSupply = 0;
+    entity.tss_QtySupply = 0;
+    entity.tss_ReservationQty = 0;
+
+    var flagCreate = false;
+
+    XrmServiceToolkit.Rest.Create(entity, "tss_sopartlinesSet", function (result) {
+        var newEntityId = result.tss_sopartlinesId;
+
+        updateTotalPriceLines(newEntityId);
+        flagCreate = true;
+    }, function (error) {
+        flagCreate = false;
+        Xrm.Utility.alertDialog(error.message);
+    }, false);
+
+    return flagCreate;
+}
+
+function updateTotalPriceLines(sopartlinesId) {
+    XrmServiceToolkit.Rest.Retrieve(sopartlinesId, "tss_sopartlinesSet", "tss_TotalPrice,tss_PriceAfterDiscount,tss_QtyRequest", null, function (result) {
+        var tss_TotalPrice = result.tss_TotalPrice;
+        var tss_PriceAfterDiscount = result.tss_PriceAfterDiscount;
+        var tss_QtyRequest = result.tss_QtyRequest;
+
+        if (tss_PriceAfterDiscount.Value != null && tss_PriceAfterDiscount.Value != 0) {
+            var totalprice = tss_PriceAfterDiscount.Value * tss_QtyRequest;
+
+            var entity = {};
+            entity.tss_TotalPrice = {
+                Value: parseFloat(totalprice).toFixed(2)
+            };
+
+            XrmServiceToolkit.Rest.Update(sopartlinesId, entity, "tss_sopartlinesSet", function () {
+                //Success - No Return Data - Do Something
+            }, function (error) {
+                Xrm.Utility.alertDialog(error.message);
+            }, false);
+        }
+    }, function (error) {
+        Xrm.Utility.alertDialog(error.message);
+    }, false);
+}
+
+function checkBeforeInsert(partNumber) {
+    var trs_masterpartId;
+    var oresult = false;
+
+    XrmServiceToolkit.Rest.RetrieveMultiple("trs_masterpartSet", "?$select=trs_masterpartId&$filter=trs_name eq '" + partNumber + "'", function (results) {
+        for (var i = 0; i < results.length; i++) {
+            trs_masterpartId = results[i].trs_masterpartId;
+
+            if (trs_masterpartId != null) {
+                XrmServiceToolkit.Rest.RetrieveMultiple("tss_sopartlinesSet", "?$select=tss_sopartlinesId&$filter=tss_Partnumber/Id eq (guid'" + trs_masterpartId.replace("{", "").replace("}", "") + "') and tss_SOPartHeaderId/Id eq (guid'" + entityid.replace("{", "").replace("}", "") + "')", function (results) {
+                    if (results.length > 0) {
+                        oresult = false;
+                    }
+                    else {
+                        oresult = true; 
+                    }
+
+                    //for (var i = 0; i < results.length; i++) {
+                    //    var tss_sopartlinesId = results[i].tss_sopartlinesId;
+                    //}
+                }, function (error) {
+                    Xrm.Utility.alertDialog(error.message);
+                }, function () {
+                    //On Complete - Do Something
+                }, false);
+            }
+            else
+            {
+                oresult = false;
+            }
+        }
+    }, function (error) {
+        Xrm.Utility.alertDialog(error.message);
+    }, function () {
+        //On Complete - Do Something
+    }, false);
+
+    return oresult;
+}
+
+function getDataParam() {
+	var vals = new Array();
+	if (location.search != "") {
+		vals = location.search.substr(1).split("&");
+		for (var i in vals) {
+			vals[i] = vals[i].replace(/\+/g, " ").split("=");
+		}
+		//look for the parameter named 'data'
+		var found = false;
+		if (vals[0][0].toLowerCase() == "data") {
+			res = parseDataValue(vals[0][1]);
+			entityid = res[0][1];
+			recordname = res[1][1];
+		}
+	}
+}
+
+function parseDataValue(datavalue) {
+	if (datavalue != "") {
+		var vals = new Array();
+
+		vals = decodeURIComponent(datavalue).split("&");
+		for (var i in vals) {
+			vals[i] = vals[i].replace(/\+/g, " ").split("=");
+		}
+		return vals;
+	}
+}
+
+function _arrayBufferToBase64(buffer) {
+	var binary = '';
+	var bytes = new Uint8Array(buffer);
+	var len = bytes.byteLength;
+	for (var i = 0; i < len; i++) {
+		binary += String.fromCharCode(bytes[i]);
+	}
+	return window.btoa(binary);
+}
+
+var ctSuccess = 0;
+var ctFail = 0;
+var errorRow = "Error on row(s) : ";
+
+function save() {
+	getDataParam();
+	if(typeof require !== 'undefined') XLSX = require('xlsx');
+	var file = document.getElementById("file").files[0];
+	var fileReader = new FileReader();
+	  fileReader.onload = function (e) {
+		var filename = file.name;
+		// pre-process data
+		var binary = "";
+		var bytes = new Uint8Array(e.target.result);
+		var length = bytes.byteLength;
+		for (var i = 0; i < length; i++) {
+		  binary += String.fromCharCode(bytes[i]);
+		}
+		
+		var oFile = XLSX.read(binary, {type: 'binary', cellDates:true, cellStyles:true});
+		var col = oFile.Sheets.Sheet1;
+	    //var rows = col["!ref"].split(":")[1].replace("D", ""); //20180904 - di comment karena penambahan column sehingga column berubah dari D menjadi G
+		var rows = col["!ref"].split(":")[1].replace("G", "");
+		
+        //20180804 - di comment karena mau ditambahkan column Discount By, Discount Amount, Discount Percent
+	    //if(col["A1"].v == "Part Number" && col["B1"].v == "Is Interchange" && col["C1"].v == "Part Number Interchange" && col["D1"].v == "Qty Request" )
+		//{
+		//	for(i = 2; i <= rows ; i++) {
+		//		var partNumber, isInterchange, partNumberInterchange, qty;
+		//		if(col["A" + i] != null) partNumber = col["A" + i].v;
+		//		if(col["B" + i] != null){
+		//			if(col["B" + i].v == "yes") isInterchange = true;
+		//			else isInterchange = false;
+		//		}
+		//		if(col["C" + i] != null) partNumberInterchange = col["C" + i].v;
+		//		if(col["D" + i] != null) qty = col["D" + i].v
+		//		var resRow = createLines(partNumber, isInterchange, partNumberInterchange, qty);
+				
+		//		if(resRow == true) {
+		//			ctSuccess++;
+		//		}
+		//		else {
+		//			errorRow += i + ", ";
+		//			ctFail++;
+		//		}
+		//	}
+		//	alert("Success!");
+		//}
+		//else {
+		//	alert("Wrong template!");
+		//}
+
+		if (col["A1"].v == "Part Number" && col["B1"].v == "Is Interchange" && col["C1"].v == "Part Number Interchange" && col["D1"].v == "Qty Request" && col["E1"].v == "Discount By" && col["F1"].v == "Discount Amount" && col["G1"].v == "Discount Percent") {
+		    for (i = 2; i <= rows ; i++) {
+		        var partNumber, isInterchange, partNumberInterchange, qty, discountby, discountamount, discountpercent;
+
+		        if (col["A" + i] != null) partNumber = col["A" + i].v;
+		        if (col["B" + i] != null) {
+		            if (col["B" + i].v == "yes") isInterchange = true;
+		            else isInterchange = false;
+		        }
+		        if (col["C" + i] != null) partNumberInterchange = col["C" + i].v;
+		        if (col["D" + i] != null) qty = col["D" + i].v; else qty = 0;
+		        if (col["E" + i] != null) {
+		            if (col["E" + i].v == "Amount") discountby = true;
+		            else discountby = false;
+		        }
+		        if (col["F" + i] != null) discountamount = col["F" + i].v; else discountamount = 0;
+		        if (col["G" + i] != null) discountpercent = col["G" + i].v; else discountpercent = 0;
+
+		        var resRow = false;
+		        var canInsert = checkBeforeInsert(partNumber);
+
+		        if (canInsert == true && qty > 0) {
+		            resRow = createLines(partNumber, isInterchange, partNumberInterchange, qty, discountby, discountamount, discountpercent);
+		        }
+
+		        if (resRow == true) {
+		            ctSuccess++;
+		        }
+		        else {
+		            errorRow += i + ", ";
+		            ctFail++;
+		        }
+		    }
+		    alert("Success!");
+		}
+		else {
+		    alert("Wrong template!");
+		}
+	};
+	fileReader.readAsArrayBuffer(file);
+	window.close();
+}
+
+</script>
+<title>Upload Sales Order Lines</title></head>
+<body>
+	<form action="javascript:save()">
+		<input name="file" id="file" type="file" accept=".xls,.xlsx">
+		<input type="submit" value="Save">
+	</form>
+
+</body></html>

@@ -1,0 +1,15 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Check Approval Discount.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Check Approval Discount.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Check Approval Discount.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\obj\Debug\Check Approval Discount.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\obj\Debug\Check Approval Discount.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval Discount\obj\Debug\Check Approval Discount.pdb

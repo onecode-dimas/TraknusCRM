@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E174C5B-04F6-4EE8-A5FC-CA62A294EE41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusSparepartSystem.DataLayer</RootNamespace>
+    <AssemblyName>TrakNusSparepartSystem.DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TrakNus Sparepart System.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataLayer\Referenced Dll\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataLayer\Referenced Dll\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DL_tss_salesactualbranch.cs" />
+    <Compile Include="DL_tss_salesactualnational.cs" />
+    <Compile Include="DL_tss_salesactualpss.cs" />
+    <Compile Include="DL_tss_salestargetbranch.cs" />
+    <Compile Include="DL_tss_salestargetnational.cs" />
+    <Compile Include="DL_account.cs" />
+    <Compile Include="DL_activityparty.cs" />
+    <Compile Include="DL_businessunit.cs" />
+    <Compile Include="DL_contact.cs" />
+    <Compile Include="DL_currency.cs" />
+    <Compile Include="DL_email.cs" />
+    <Compile Include="DL_partMaster.cs" />
+    <Compile Include="DL_tss_approvallistmarketsize.cs" />
+    <Compile Include="DL_tss_marketsizepartconsump.cs" />
+    <Compile Include="DL_tss_marketsizeresultbranch.cs" />
+    <Compile Include="DL_tss_marketsizeresultmapping.cs" />
+    <Compile Include="DL_tss_marketsizeresultnational.cs" />
+    <Compile Include="DL_tss_marketsizesummarybyparttype.cs" />
+    <Compile Include="DL_tss_marketsizesummarybyunit.cs" />
+    <Compile Include="DL_tss_mastermarketsizesublines.cs" />
+    <Compile Include="DL_trs_masterpart.cs" />
+    <Compile Include="DL_tss_groupuiocommodity.cs" />
+    <Compile Include="DL_paymentterm.cs" />
+    <Compile Include="DL_population.cs" />
+    <Compile Include="DL_product.cs" />
+    <Compile Include="DL_trs_functionallocation.cs" />
+    <Compile Include="DL_tss_approverlist.cs" />
+    <Compile Include="DL_tss_groupuiocommodityaccount.cs" />
+    <Compile Include="DL_tss_kagroupuiocommodity.cs" />
+    <Compile Include="DL_tss_kauio.cs" />
+    <Compile Include="DL_tss_keyaccount.cs" />
+    <Compile Include="DL_tss_marketsizeresultpss.cs" />
+    <Compile Include="DL_tss_mastermarketsize.cs" />
+    <Compile Include="DL_tss_mastermarketsizelines.cs" />
+    <Compile Include="DL_tss_matrixapprovalmarketsize.cs" />
+    <Compile Include="DL_tss_matrixtyreconsump.cs" />
+    <Compile Include="DL_tss_partmasterlinesbattery.cs" />
+    <Compile Include="DL_tss_partmasterlinesbatterytypeconsump.cs" />
+    <Compile Include="DL_tss_partmasterlinesmodel.cs" />
+    <Compile Include="DL_tss_potentialprospectpart.cs" />
+    <Compile Include="DL_tss_potentialprospectpartlines.cs" />
+    <Compile Include="DL_tss_potentialprospectpartsublines.cs" />
+    <Compile Include="DL_tss_pricelistpart.cs" />
+    <Compile Include="DL_tss_prospectpartlines.cs" />
+    <Compile Include="DL_tss_salesindicator.cs" />
+    <Compile Include="DL_tss_quotationparthistorypackage.cs" />
+    <Compile Include="DL_tss_quotationparthistorypackagelines.cs" />
+    <Compile Include="DL_tss_quotationpartlines.cs" />
+    <Compile Include="DL_trs_discountapproval.cs" />
+    <Compile Include="DL_team.cs" />
+    <Compile Include="DL_trs_quotation.cs" />
+    <Compile Include="DL_tss_categorycode.cs" />
+    <Compile Include="DL_tss_partactivityheader.cs" />
+    <Compile Include="DL_tss_prospectpartheader.cs" />
+    <Compile Include="DL_systemuser.cs" />
+    <Compile Include="DL_tss_quotationpartheader.cs" />
+    <Compile Include="DL_tss_rating.cs" />
+    <Compile Include="DL_tss_runningnumber.cs" />
+    <Compile Include="DL_tss_runningnumberid.cs" />
+    <Compile Include="DL_tss_runningnumberlastnumber.cs" />
+    <Compile Include="DL_tss_salesorderpartheader.cs" />
+    <Compile Include="DL_tss_salesorderpartlines.cs" />
+    <Compile Include="DL_tss_salesorderpartlinesservice.cs" />
+    <Compile Include="DL_tss_salestargetpss.cs" />
+    <Compile Include="DL_tss_sparepartpricemaster.cs" />
+    <Compile Include="DL_tss_sparepartsetup.cs" />
+    <Compile Include="DL_tss_totalpartconsumpmarketsize.cs" />
+    <Compile Include="DL_UOM.cs" />
+    <Compile Include="DL_user.cs" />
+    <Compile Include="Interface\ICRMOperation.cs" />
+    <Compile Include="Interface\IDataLayer.cs" />
+    <Compile Include="Interface\IRetrieve.cs" />
+    <Compile Include="Interface\IShareRecords.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TrakNus Sparepart System.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Referenced Dll\Microsoft.Crm.Sdk.Proxy.dll" />
+    <Content Include="Referenced Dll\Microsoft.Xrm.Sdk.dll" />
+    <Content Include="Referenced Dll\microsoft.xrm.sdk.workflow.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

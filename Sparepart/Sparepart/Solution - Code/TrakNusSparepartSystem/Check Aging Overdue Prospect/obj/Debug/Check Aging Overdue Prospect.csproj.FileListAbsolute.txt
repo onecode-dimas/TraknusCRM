@@ -1,0 +1,12 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Check Aging Overdue Prospect.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Check Aging Overdue Prospect.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Check Aging Overdue Prospect.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\obj\Debug\Check Aging Overdue Prospect.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\obj\Debug\Check Aging Overdue Prospect.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Aging Overdue Prospect\obj\Debug\Check Aging Overdue Prospect.pdb

@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{459842F3-712C-4EE0-A7B8-21B9B550630A}</ProjectGuid>
+    <!-- <ProjectTypeGuids>{4C25E9B5-9FA6-436c-8E19-B395D2A65FAF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids> -->
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusSparepartSystem.Plugins</RootNamespace>
+    <AssemblyName>TrakNusSparepartSystem.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TrakNus Sparepart System.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataLayer\Referenced Dll\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataLayer\Referenced Dll\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\BL_annotation.cs" />
+    <Compile Include="BusinessLayer\BL_tss_approvallistmarketsize.cs" />
+    <Compile Include="BusinessLayer\BL_tss_groupuiocommodityaccount.cs" />
+    <Compile Include="BusinessLayer\BL_tss_kagroupuiocommodity.cs" />
+    <Compile Include="BusinessLayer\BL_tss_kauio.cs" />
+    <Compile Include="BusinessLayer\BL_tss_marketsizeconsump.cs" />
+    <Compile Include="BusinessLayer\BL_tss_marketsizeconsumpAging.cs" />
+    <Compile Include="BusinessLayer\BL_tss_marketsizesummarybypart.cs" />
+    <Compile Include="BusinessLayer\BL_tss_marketsizesummarybyunit.cs" />
+    <Compile Include="BusinessLayer\BL_trs_runningnumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessLayer\BL_tss_dealerheader.cs" />
+    <Compile Include="BusinessLayer\BL_tss_keyaccount.cs" />
+    <Compile Include="BusinessLayer\BL_tss_marketsizeresultpss.cs" />
+    <Compile Include="BusinessLayer\BL_tss_mastermarketsize.cs" />
+    <Compile Include="BusinessLayer\BL_tss_mastermarketsizelines.cs" />
+    <Compile Include="BusinessLayer\BL_tss_matrixapprovalmarketsize.cs" />
+    <Compile Include="BusinessLayer\BL_tss_matrixmarketsizeperiod.cs" />
+    <Compile Include="BusinessLayer\BL_tss_matrixtyreconsump.cs" />
+    <Compile Include="BusinessLayer\BL_tss_partactivityheader.cs" />
+    <Compile Include="BusinessLayer\BL_tss_population.cs" />
+    <Compile Include="BusinessLayer\BL_tss_potentialprospectpart.cs" />
+    <Compile Include="BusinessLayer\BL_tss_prospectpartheader.cs" />
+    <Compile Include="BusinessLayer\BL_tss_prospectpartlines.cs" />
+    <Compile Include="BusinessLayer\BL_tss_quotationpartheader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessLayer\BL_tss_quotationparthistorypackage.cs" />
+    <Compile Include="BusinessLayer\BL_tss_quotationpartindicator.cs" />
+    <Compile Include="BusinessLayer\BL_tss_quotationpartlines.cs" />
+    <Compile Include="BusinessLayer\BL_tss_quotationpartreasondiscountpackage.cs" />
+    <Compile Include="BusinessLayer\BL_tss_rating.cs" />
+    <Compile Include="BusinessLayer\BL_tss_salesindicator.cs" />
+    <Compile Include="BusinessLayer\BL_tss_salesorderpartheader.cs" />
+    <Compile Include="BusinessLayer\BL_tss_salesorderpartlines.cs" />
+    <Compile Include="BusinessLayer\BL_tss_salesorderpartsaleseffort.cs" />
+    <Compile Include="BusinessLayer\BL_tss_salesorderpartsublines.cs" />
+    <Compile Include="BusinessLayer\BL_tss_salestargetpss.cs" />
+    <Compile Include="BusinessLayer\BL_tss_sendnotifoverdueprospect.cs" />
+    <Compile Include="BusinessLayer\BL_tss_sparepartsetup.cs" />
+    <Compile Include="Helper\EmailAgent.cs" />
+    <Compile Include="Helper\EmailFactory.cs" />
+    <Compile Include="Helper\EntityHelper.cs" />
+    <Compile Include="Helper\HttpHelper.cs" />
+    <Compile Include="Helper\ParserAgent.cs" />
+    <Compile Include="PluginBase.cs" />
+    <Compile Include="PostDealerCreate.cs" />
+    <Compile Include="PostDealerUpdate.cs" />
+    <Compile Include="PostKAUIOCreate.cs" />
+    <Compile Include="PostKAUIOUpdate.cs" />
+    <Compile Include="PostMatrixApprovalMarketSizeUpdate.cs" />
+    <Compile Include="PostNoteCreate.cs" />
+    <Compile Include="PostOperationtss_sopartheaderUpdate.cs" />
+    <Compile Include="PostPartActivityCreate.cs" />
+    <Compile Include="PostPartActivityUpdate.cs" />
+    <Compile Include="PostPopulationCreate.cs" />
+    <Compile Include="PostPopulationUpdate.cs" />
+    <Compile Include="PostPopulationUpdateNonPopulation.cs" />
+    <Compile Include="PostProspectPartCreate.cs" />
+    <Compile Include="PostProspectPartLinesCreate.cs" />
+    <Compile Include="PostProspectPartLinesUpdate.cs" />
+    <Compile Include="PostProspectPartUpdate.cs" />
+    <Compile Include="PostQuotationPartHeaderCreate.cs" />
+    <Compile Include="PostQuotationPartIndicatorUpdate.cs" />
+    <Compile Include="PostQuotationPartLinesCreate.cs" />
+    <Compile Include="PostQuotationPartLinesUpdate.cs" />
+    <Compile Include="PostQuotationPartReasonDiscountPackageUpdate.cs" />
+    <Compile Include="PostQuotationPartUpdate.cs" />
+    <Compile Include="PostSalesIndicatorCreate.cs" />
+    <Compile Include="PostSalesIndicatorUpdate.cs" />
+    <Compile Include="PostSalesOrderPartCreate.cs" />
+    <Compile Include="PostSalesOrderPartLinesCreate.cs" />
+    <Compile Include="PostSalesOrderPartLinesDelete.cs" />
+    <Compile Include="PostSalesOrderPartLinesStatusUpdate.cs" />
+    <Compile Include="PostSalesOrderPartLinesUpdate.cs" />
+    <Compile Include="PostSalesOrderPartSalesEffortUpdate.cs" />
+    <Compile Include="PostSalesOrderPartSubLinesCreate.cs" />
+    <Compile Include="PostSalesOrderPartSubLinesUpdate.cs" />
+    <Compile Include="PostSalesOrderPartUpdate.cs" />
+    <Compile Include="PreApprovalListMarketSizeCreate.cs" />
+    <Compile Include="PreGroupUIOCommodityAccountCreate.cs" />
+    <Compile Include="PreGroupUIOCommodityAccountUpdate.cs" />
+    <Compile Include="PreKAGroupUIOCommodityCreate.cs" />
+    <Compile Include="PreKAGroupUIOCommodityDelete.cs" />
+    <Compile Include="PreKAGroupUIOCommodityUpdate.cs" />
+    <Compile Include="PreKAUIOCreate.cs" />
+    <Compile Include="PreKAUIODelete.cs" />
+    <Compile Include="PreKAUIOUpdate.cs" />
+    <Compile Include="PreKeyAccountDelete.cs" />
+    <Compile Include="PreKeyAccountUpdate.cs" />
+    <Compile Include="PreKeyAcountCreate.cs" />
+    <Compile Include="PreMarketsizepartConsumpAgingCreate.cs" />
+    <Compile Include="PreMarketsizepartConsumpAgingUpdate.cs" />
+    <Compile Include="PreMarketSizePartConsumpCreate.cs" />
+    <Compile Include="PreMarketSizePartConsumpUpdate.cs" />
+    <Compile Include="PreMarketSizeResultPSSCreate.cs" />
+    <Compile Include="PreMarketSizeSummarybyPartCreate.cs" />
+    <Compile Include="PreMarketSizeSummarybyUnitCreate.cs" />
+    <Compile Include="PreMasterMarketSizeCreate.cs" />
+    <Compile Include="PreMasterMarketSizeLinesCreate.cs" />
+    <Compile Include="PreMatrixApprovalMarketSizeCreate.cs" />
+    <Compile Include="PreMatrixMarketSizePeriodCreate.cs" />
+    <Compile Include="PreMatrixMarketSizePeriodUpdate.cs" />
+    <Compile Include="PreMatrixPeriodMaintenanceTypeCreate.cs" />
+    <Compile Include="PreMatrixTyreConsumpCreate.cs" />
+    <Compile Include="PreMatrixTyreConsumpUpdate.cs" />
+    <Compile Include="PrePopulationCreate.cs" />
+    <Compile Include="PrePopulationUpdate.cs" />
+    <Compile Include="PrePotentialProspectPartCreate.cs" />
+    <Compile Include="PreProspectPartLinesDelete.cs" />
+    <Compile Include="PreProspectPartLinesQtyUpdate.cs" />
+    <Compile Include="PreQuotationPartHeaderCreate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PreQuotationPartHistoryPackageCreate.cs" />
+    <Compile Include="PreQuotationPartLinesCreate.cs" />
+    <Compile Include="PreQuotationPartLinesDelete.cs" />
+    <Compile Include="PreQuotationPartReasonDiscountPackageCreate.cs" />
+    <Compile Include="PreRatingCreate.cs" />
+    <Compile Include="PreRatingUpdate.cs" />
+    <Compile Include="PreSalesOrderPartHeaderCreate.cs" />
+    <Compile Include="PreSalesOrderPartLinesCreate.cs" />
+    <Compile Include="PreSalesTargetPSSDelete.cs" />
+    <Compile Include="PreSendNotificationOverdueProspectCreate.cs" />
+    <Compile Include="PreSendNotificationOverdueProspectUpdate.cs" />
+    <Compile Include="PreSparePartSetupUpdate.cs" />
+    <Compile Include="PreValidateSalesOrderPartLinesDelete.cs" />
+    <Compile Include="PreValidateSalesOrderPartUpdate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Plugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="TrakNus Sparepart System.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helper\Helper.csproj">
+      <Project>{a4753a3a-26e0-4500-88ca-c9e68fb17478}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{6e174c5b-04f6-4ee8-a5fc-ca62a294ee41}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

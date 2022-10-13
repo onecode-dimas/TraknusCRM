@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="TrakNusSparepartSystem.Plugins.dll" Id="e1f8cb31-79e0-e711-940c-0050569355f1" IsolationMode="None" SourceType="Database">
+      <PluginTypes>
+        <clear />
+        <Plugin Description="Plug-in to PreQuotationPartHeaderCreate" FriendlyName="PreQuotationPartHeaderCreate" Name="TrakNusSparepartSystem.Plugins.PreQuotationPartHeaderCreate" Id="c45d81c2-ba65-483b-a171-4c790f20d573" TypeName="TrakNusSparepartSystem.Plugins.PreQuotationPartHeaderCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreQuotationPartHeaderCreate" Description="Pre-Operation of Quotation Part Header Create" Id="eba6f43c-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_quotationpartheader" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreSalesOrderPartHeaderCreate" FriendlyName="PreSalesOrderPartHeaderCreate" Name="TrakNusSparepartSystem.Plugins.PreSalesOrderPartHeaderCreate" Id="c48e716e-fe02-4ab0-9c1d-11dd434efabc" TypeName="TrakNusSparepartSystem.Plugins.PreSalesOrderPartHeaderCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreSalesOrderPartHeaderCreate" Description="Pre-Operation of Sales Order Part Header Create" Id="6519ef6a-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_sopartheader" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationPartHeaderCreate" FriendlyName="PostQuotationPartHeaderCreate" Name="TrakNusSparepartSystem.Plugins.PostQuotationPartHeaderCreate" Id="eb61d63a-0fcd-4b22-b0ce-269a0c1f304c" TypeName="TrakNusSparepartSystem.Plugins.PostQuotationPartHeaderCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationPartCreate" Description="Post-Operation of Quotation Part Create" Id="015521df-0ca1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_quotationpartheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_pss" EntityAlias="PostImage" Id="5dca58e8-eaf5-e711-940d-0050569355f1" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProspectPartLinesCreate" FriendlyName="PostProspectPartLinesCreate" Name="TrakNusSparepartSystem.Plugins.PostProspectPartLinesCreate" Id="62fb2108-b85c-452f-8119-e5dad6d9cfda" TypeName="TrakNusSparepartSystem.Plugins.PostProspectPartLinesCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProspectPartLinesCreate" Description="Post-Operation of Prospect Part Lines Create" Id="c24e8ed5-0ca1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_prospectpartlines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_priceamount,tss_prospectpartheader" EntityAlias="PostImage" Id="1732c6dd-84f0-e711-940d-0050569355f1" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProspectPartLinesUpdate" FriendlyName="PostProspectPartLinesUpdate" Name="TrakNusSparepartSystem.Plugins.PostProspectPartLinesUpdate" Id="2f09ca58-9092-47eb-bf21-b4014f474512" TypeName="TrakNusSparepartSystem.Plugins.PostProspectPartLinesUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProspectPartLinesUpdate" Description="Post-Operation of Prospect Part Lines Update" Id="c54e8ed5-0ca1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_prospectpartlines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_priceamount,tss_prospectpartheader,tss_underminimumprice" EntityAlias="PostImage" Id="324f39bc-f5f1-e711-940d-0050569355f1" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreProspectPartLinesDelete" FriendlyName="PreProspectPartLinesDelete" Name="TrakNusSparepartSystem.Plugins.PreProspectPartLinesDelete" Id="7392e2e5-f01e-4f9e-82f7-3783abbc011c" TypeName="TrakNusSparepartSystem.Plugins.PreProspectPartLinesDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreProspectPartLinesDelete" Description="Pre-Operation of Prospect Part Lines Delete" Id="e8a6f43c-0da1-e811-943c-005056937630" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_prospectpartlines" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_priceamount,tss_prospectpartheader,tss_underminimumprice" EntityAlias="PreImage" Id="a117b9f3-06f2-e711-940d-0050569355f1" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProspectPartCreate" FriendlyName="PostProspectPartCreate" Name="TrakNusSparepartSystem.Plugins.PostProspectPartCreate" Id="9967acb4-a5a1-4d26-bd00-63e740189c88" TypeName="TrakNusSparepartSystem.Plugins.PostProspectPartCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProspectPartCreate" Description="Post-Operation of Prospect Part Create" Id="d96fdecb-0ca1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_prospectpartheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProspectPartUpdate" FriendlyName="PostProspectPartUpdate" Name="TrakNusSparepartSystem.Plugins.PostProspectPartUpdate" Id="2159d17e-5323-4786-aa70-ff552c7c1f99" TypeName="TrakNusSparepartSystem.Plugins.PostProspectPartUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProspectPartUpdate" Description="Post-Operation of Prospect Part Update" FilteringAttributes="tss_estimationclosedate" Id="fe5421df-0ca1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_prospectpartheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationPartIndicatorUpdate" FriendlyName="PostQuotationPartIndicatorUpdate" Name="TrakNusSparepartSystem.Plugins.PostQuotationPartIndicatorUpdate" Id="9a83b841-2a60-42ca-b8a7-a6ec2b0e4bf4" TypeName="TrakNusSparepartSystem.Plugins.PostQuotationPartIndicatorUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationPartIndicatorUpdate" Description="Post-Operation of Quotation Part - Indicator Update" Id="783ac4e8-0ca1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_quotationpartindicator" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationPartLinesCreate" FriendlyName="PostQuotationPartLinesCreate" Name="TrakNusSparepartSystem.Plugins.PostQuotationPartLinesCreate" Id="cc402bec-bcfa-465e-a866-4c13372823e9" TypeName="TrakNusSparepartSystem.Plugins.PostQuotationPartLinesCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationPartLinesCreate" Description="Post-Operation of Quotation Part Lines Create" Id="7b3ac4e8-0ca1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_quotationpartlines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_totalprice,tss_underminimumprice" EntityAlias="PostImage" Id="470b650b-fef9-e711-940d-0050569355f1" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationPartLinesUpdate" FriendlyName="PostQuotationPartLinesUpdate" Name="TrakNusSparepartSystem.Plugins.PostQuotationPartLinesUpdate" Id="3c647595-9025-4cc5-9124-adda06c2aea5" TypeName="TrakNusSparepartSystem.Plugins.PostQuotationPartLinesUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationPartLinesUpdate" Description="Post-Operation of Quotation Part Lines Update" FilteringAttributes="tss_totalfinalprice,tss_totalprice,tss_underminimumprice" Id="bf26c2f5-0ca1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_quotationpartlines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_totalfinalprice,tss_totalprice,tss_underminimumprice" EntityAlias="PostImage" Id="3c679ec7-fff9-e711-940d-0050569355f1" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreQuotationPartLinesDelete" FriendlyName="PreQuotationPartLinesDelete" Name="TrakNusSparepartSystem.Plugins.PreQuotationPartLinesDelete" Id="97a1944b-2abe-4fc8-87ea-2d81ef006265" TypeName="TrakNusSparepartSystem.Plugins.PreQuotationPartLinesDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreQuotationPartLinesDelete" Description="Pre-Operation of Quotation Part Lines Delete" Id="d1f7c051-0da1-e811-943c-005056937630" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_quotationpartlines" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_totalfinalprice,tss_totalprice,tss_underminimumprice" EntityAlias="PreImage" Id="41679ec7-fff9-e711-940d-0050569355f1" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationPartUpdate" FriendlyName="PostQuotationPartUpdate" Name="TrakNusSparepartSystem.Plugins.PostQuotationPartUpdate" Id="bc10debb-25ad-4ed8-a1aa-339339433d61" TypeName="TrakNusSparepartSystem.Plugins.PostQuotationPartUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationPartUpdate" Description="Post-Operation of Quotation Part Update" FilteringAttributes="tss_pss,tss_requestdeliverydate,tss_sourcetype,tss_underminimumprice,tss_salesorderno,tss_statusreason" Id="766ff3fd-0ca1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_quotationpartheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_revision,tss_sourcetype,tss_pss,tss_requestdeliverydate,tss_underminimumprice,tss_quotationserviceno,tss_salesorderno,tss_statusreason" EntityAlias="PostImage" Id="1fa298c0-18fc-e711-940d-0050569355f1" MessagePropertyName="Target" ImageType="PostImage" />
+                <Image Attributes="tss_statusreason" EntityAlias="PreImage" Id="64ed540b-8d1b-e811-9410-005056931cc2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesIndicatorCreate" FriendlyName="PostSalesIndicatorCreate" Name="TrakNusSparepartSystem.Plugins.PostSalesIndicatorCreate" Id="2ed9dc72-7df5-4826-bdaa-13719ed382ab" TypeName="TrakNusSparepartSystem.Plugins.PostSalesIndicatorCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesIndicatorCreate" Description="Post-Operation of Sales Indicator Create" Id="65671b08-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_indicator" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_indicator,tss_value" EntityAlias="PostImage" Id="6988318e-30ff-e711-940d-0050569355f1" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesIndicatorUpdate" FriendlyName="PostSalesIndicatorUpdate" Name="TrakNusSparepartSystem.Plugins.PostSalesIndicatorUpdate" Id="47728520-a434-473c-9676-9a5d33b6e6e7" TypeName="TrakNusSparepartSystem.Plugins.PostSalesIndicatorUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesIndicatorUpdate" Description="Post-Operation of Sales Indicator Update" Id="68671b08-0da1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_indicator" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_indicator,tss_value" EntityAlias="PostImage" Id="6e88318e-30ff-e711-940d-0050569355f1" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartCreate" FriendlyName="PostSalesOrderPartCreate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartCreate" Id="610285f2-d864-4da9-9f22-f6e4618f4a3a" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartCreate" Description="Post-Operation of Sales Order Part Create" Id="3710e511-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_sopartheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_sonumber" EntityAlias="PostImage" Id="1c2c0443-4aff-e711-940d-0050569355f1" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartLinesCreate" FriendlyName="PostSalesOrderPartLinesCreate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesCreate" Id="6e12e7bd-6950-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartLinesCreate" Description="Post-Operation of Sales Order Part Lines Create" Id="b6597ccc-1fc6-e811-9406-0050569336b0" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_sopartlines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartLinesUpdate" FriendlyName="PostSalesOrderPartLinesUpdate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesUpdate" Id="d53dd523-88f4-40f4-9f3e-4d4871394923" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartLinesUpdate" Description="Post-Operation of Sales Order Part Lines Update" FilteringAttributes="tss_totalprice" Id="ed3488ce-ee30-e911-9459-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sopartlines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartLinesDelete" FriendlyName="PostSalesOrderPartLinesDelete" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesDelete" Id="844c628c-5b08-431a-b000-d6ec5d2d9a90" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartLinesDelete" Description="Post-Operation of Sales Order Part Lines Delete" Id="f474081c-0da1-e811-943c-005056937630" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_sopartlines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_sopartheaderid" EntityAlias="PreImage" Id="52fb1b72-7cff-e711-940d-0050569355f1" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartUpdate" FriendlyName="PostSalesOrderPartUpdate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartUpdate" Id="5c6d4dc5-2513-4c47-939e-8b0e1c136cd3" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartUpdate" Description="Post-Operation of Sales Order Part Update" FilteringAttributes="tss_sendemailsaleseffort,tss_approveallsaleseffort,tss_ponumber,tss_approvecreditlimitby" Id="bf090932-0da1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sopartheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_sendemailsaleseffort,tss_approveallsaleseffort,tss_ponumber,tss_approvecreditlimitby" EntityAlias="PostImage" Id="ac58d635-ba00-e811-940d-0050569355f1" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationPartReasonDiscountPackageUpdate" FriendlyName="PostQuotationPartReasonDiscountPackageUpdate" Name="TrakNusSparepartSystem.Plugins.PostQuotationPartReasonDiscountPackageUpdate" Id="76aa60e9-122b-4835-a4e1-6867c347db25" TypeName="TrakNusSparepartSystem.Plugins.PostQuotationPartReasonDiscountPackageUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationPartReasonDiscountPackageUpdate" Description="Post-Operation of Quotation Part - Reason Discount / Package Update" FilteringAttributes="tss_quotationpartheader,tss_result" Id="06f02fe1-e4eb-e811-9455-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_quotationpartreasondiscountpackage" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_quotationpartheader,tss_result" EntityAlias="PostImage" Id="b158d635-ba00-e811-940d-0050569355f1" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostNoteCreate" FriendlyName="PostNoteCreate" Name="TrakNusSparepartSystem.Plugins.PostNoteCreate" Id="3905c877-86d4-4dc9-85b5-92ec3159aa26" TypeName="TrakNusSparepartSystem.Plugins.PostNoteCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostNoteCreate" Description="Post-Operation of Note Create" Id="4ab2efc1-0ca1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="annotation" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image EntityAlias="PostImage" Id="2b74b580-bf04-e811-940d-0050569355f1" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartSalesEffortUpdate" FriendlyName="PostSalesOrderPartSalesEffortUpdate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartSalesEffortUpdate" Id="0154a205-dc81-430a-993d-804024af8db8" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartSalesEffortUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartSalesEffortUpdate" Description="Post-Operation of Sales Order Part - Sales Effort Update" FilteringAttributes="tss_approvalstatus" Id="cce7d826-0da1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sopartsaleseffort" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_approvalstatus" EntityAlias="PostImage" Id="41e65a4d-c404-e811-940d-0050569355f1" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateSalesOrderPartUpdate" FriendlyName="PreValidateSalesOrderPartUpdate" Name="TrakNusSparepartSystem.Plugins.PreValidateSalesOrderPartUpdate" Id="0c4a136f-11ff-438f-a053-f7a5e0e757e1" TypeName="TrakNusSparepartSystem.Plugins.PreValidateSalesOrderPartUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateSalesOrderPartUpdate" Description="Pre-Validation of Sales Order Part Update" FilteringAttributes="tss_ponumber" Id="33900786-0da1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sopartheader" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_ponumber" EntityAlias="PreImage" Id="d0544708-9805-e811-940d-0050569355f1" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreRatingCreate" FriendlyName="PreRatingCreate" Name="TrakNusSparepartSystem.Plugins.PreRatingCreate" Id="b14e0020-1d6b-4fdd-bbf7-2fd8e11525e4" TypeName="TrakNusSparepartSystem.Plugins.PreRatingCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreRatingCreate" Description="Pre-Operation of Rating Create" Id="2462fd5d-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_rating" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreRatingUpdate" FriendlyName="PreRatingUpdate" Name="TrakNusSparepartSystem.Plugins.PreRatingUpdate" Id="08568f2d-23de-45c9-8039-79fdff9d693c" TypeName="TrakNusSparepartSystem.Plugins.PreRatingUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreRatingUpdate" Description="Pre-Operation of Rating Update" Id="6d508064-0da1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_rating" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreSendNotificationOverdueProspectCreate" FriendlyName="PreSendNotificationOverdueProspectCreate" Name="TrakNusSparepartSystem.Plugins.PreSendNotificationOverdueProspectCreate" Id="caf3e2da-0921-4061-9e2e-089fdceda43c" TypeName="TrakNusSparepartSystem.Plugins.PreSendNotificationOverdueProspectCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreSendNotificationOverdueProspectCreate" Description="Pre-Operation of Send Notification Overdue Prospect Create" Id="14ed7d75-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_sendnotifoverdueprospect" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPartActivityCreate" FriendlyName="PostPartActivityCreate" Name="TrakNusSparepartSystem.Plugins.PostPartActivityCreate" Id="14cf347d-301b-40bc-8d63-9abf9572813e" TypeName="TrakNusSparepartSystem.Plugins.PostPartActivityCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPartActivityCreate" Description="Post-Operation of Part Activity Create" Id="4db2efc1-0ca1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_partactivityheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_actualdate,tss_pss,tss_status,tss_appointment" EntityAlias="PostImage" Id="a79621c7-5f07-e811-940e-005056931cc2" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPartActivityUpdate" FriendlyName="PostPartActivityUpdate" Name="TrakNusSparepartSystem.Plugins.PostPartActivityUpdate" Id="c9632d8e-9e5f-49c2-af48-c09143ded354" TypeName="TrakNusSparepartSystem.Plugins.PostPartActivityUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPartActivityUpdate" Description="Post-Operation of Part Activity Update" FilteringAttributes="tss_actualdate,tss_pss,tss_status,tss_appointment" Id="d66fdecb-0ca1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_partactivityheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_actualdate,tss_pss,tss_status,tss_appointment" EntityAlias="PostImage" Id="ac9621c7-5f07-e811-940e-005056931cc2" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreSendNotificationOverdueProspectUpdate" FriendlyName="PreSendNotificationOverdueProspectUpdate" Name="TrakNusSparepartSystem.Plugins.PreSendNotificationOverdueProspectUpdate" Id="4d8c1f41-dd47-4fdb-bcae-460b4496d505" TypeName="TrakNusSparepartSystem.Plugins.PreSendNotificationOverdueProspectUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreSendNotificationOverdueProspectUpdate" Description="Pre-Operation of Send Notification Overdue Prospect Update" Id="18ed7d75-0da1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sendnotifoverdueprospect" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateSalesOrderPartLinesDelete" FriendlyName="PreValidateSalesOrderPartLinesDelete" Name="TrakNusSparepartSystem.Plugins.PreValidateSalesOrderPartLinesDelete" Id="804f1bce-4b1c-419b-b09c-15c557912868" TypeName="TrakNusSparepartSystem.Plugins.PreValidateSalesOrderPartLinesDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateSalesOrderPartLinesDelete" Description="Pre-Validation of Sales Order Part Lines Delete" Id="74baea7f-0da1-e811-943c-005056937630" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_sopartlines" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_sopartheaderid" EntityAlias="PreImage" Id="0449b53d-e30f-e811-940f-005056931cc2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartSubLinesCreate" FriendlyName="PostSalesOrderPartSubLinesCreate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartSubLinesCreate" Id="f8044da8-6b31-4f91-850b-b475169b2229" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartSubLinesCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartSubLinesCreate" Description="Post-Operation of Sales Order Part Sub Lines Create" Id="cfe7d826-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_salesorderpartsublines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartSubLinesUpdate" FriendlyName="PostSalesOrderPartSubLinesUpdate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartSubLinesUpdate" Id="6538937a-72db-4e73-97c7-158c85f703b6" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartSubLinesUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSalesOrderPartSubLinesUpdate" Description="Post-Operation of Sales Order Part Sub Lines Update" FilteringAttributes="tss_qtyavailable,tss_reservationqty" Id="bc090932-0da1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_salesorderpartsublines" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostDealerCreate" FriendlyName="PostDealerCreate" Name="TrakNusSparepartSystem.Plugins.PostDealerCreate" Id="abd6e47f-64f8-47e6-aa50-ca4e7d2d72c8" TypeName="TrakNusSparepartSystem.Plugins.PostDealerCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostDealerCreate" Description="Post-Operation of Dealer Create" Id="5cda29b8-0ca1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_dealerheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_dealername" EntityAlias="PostImage" Id="2681dd42-cf1d-e811-9411-005056931cc2" MessagePropertyName="Id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostDealerUpdate" FriendlyName="PostDealerUpdate" Name="TrakNusSparepartSystem.Plugins.PostDealerUpdate" Id="73418611-4bd4-4c62-ba86-502a5ad6e6d1" TypeName="TrakNusSparepartSystem.Plugins.PostDealerUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostDealerUpdate" Description="Post-Operation of Dealer Update" FilteringAttributes="tss_dealername" Id="5fda29b8-0ca1-e811-943c-005056937630" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_dealerheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_dealername" EntityAlias="PostImage" Id="fbefd361-d11d-e811-9411-005056931cc2" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreQuotationPartHistoryPackageCreate" FriendlyName="PreQuotationPartHistoryPackageCreate" Name="TrakNusSparepartSystem.Plugins.PreQuotationPartHistoryPackageCreate" Id="57b7ae21-d2aa-4394-a5bc-1a17387a5d7f" TypeName="TrakNusSparepartSystem.Plugins.PreQuotationPartHistoryPackageCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreQuotationPartHistoryPackageCreate" Description="Pre-Operation of Quotation Part - History Package Create" Id="3f6c9d47-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_quotationparthistorypackage" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreQuotationPartReasonDiscountPackageCreate" FriendlyName="PreQuotationPartReasonDiscountPackageCreate" Name="TrakNusSparepartSystem.Plugins.PreQuotationPartReasonDiscountPackageCreate" Id="6080850e-377b-4574-a413-3d2dd4bfdf9f" TypeName="TrakNusSparepartSystem.Plugins.PreQuotationPartReasonDiscountPackageCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreQuotationPartReasonDiscountPackageCreate" Description="Pre-Operation of Quotation Part - Reason Discount / Package Create" Id="c5f3d457-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_quotationpartreasondiscountpackage" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreQuotationPartLinesCreate" FriendlyName="PreQuotationPartLinesCreate" Name="TrakNusSparepartSystem.Plugins.PreQuotationPartLinesCreate" Id="5846e150-be22-42ed-bee3-4de7a26c31e0" TypeName="TrakNusSparepartSystem.Plugins.PreQuotationPartLinesCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreQuotationPartLinesCreate" Description="Pre-Operation of Quotation Part Lines Create" Id="426c9d47-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_quotationpartlines" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreSalesOrderPartLinesCreate" FriendlyName="PreSalesOrderPartLinesCreate" Name="TrakNusSparepartSystem.Plugins.PreSalesOrderPartLinesCreate" Id="ff4910aa-e168-466d-ab6c-cefa84c567f7" TypeName="TrakNusSparepartSystem.Plugins.PreSalesOrderPartLinesCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreSalesOrderPartLinesCreate" Description="Pre-Operation of Sales Order Part Lines Create" Id="6819ef6a-0da1-e811-943c-005056937630" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_sopartlines" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Create of tss_matrixtyreconsump" FriendlyName="Create of tss_matrixtyreconsump" Name="TrakNusSparepartSystem.Plugins.PreMatrixTyreConsumpCreate" Id="416039c6-f507-4a83-b47f-738f468ba7ef" TypeName="TrakNusSparepartSystem.Plugins.PreMatrixTyreConsumpCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Create of tss_matrixtyreconsump" Description="Create of tss_matrixtyreconsump" Id="c4caf0f8-27a1-e811-943c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_matrixtyreconsump" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Update of tss_matrixtyreconsump" FriendlyName="Update of tss_matrixtyreconsump" Name="TrakNusSparepartSystem.Plugins.PreMatrixTyreConsumpUpdate" Id="1c235a1a-4428-475d-9fab-052ad88fca95" TypeName="TrakNusSparepartSystem.Plugins.PreMatrixTyreConsumpUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Update of tss_matrixtyreconsump" Description="Update of tss_matrixtyreconsump" FilteringAttributes="tss_code" Id="6b118f9c-28a1-e811-943c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_matrixtyreconsump" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPopulationUpdate" FriendlyName="PostPopulationUpdate" Name="TrakNusSparepartSystem.Plugins.PostPopulationUpdate" Id="c1fa7922-e420-4cb3-b7d3-c15883f60d21" TypeName="TrakNusSparepartSystem.Plugins.PostPopulationUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostPopulationUpdate" Description="Not Specified of new_population" FilteringAttributes="trs_npchasisnumber,trs_npenginenumber,trs_npequipmentnumber,trs_npmodel,trs_npproductname,trs_npserialnumber" Id="a39c511c-76b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="new_population" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPopulationCreate" FriendlyName="PostPopulationCreate" Name="TrakNusSparepartSystem.Plugins.PostPopulationCreate" Id="8c3b897b-0c2e-409d-bb7e-af9fe52b0580" TypeName="TrakNusSparepartSystem.Plugins.PostPopulationCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostPopulationCreate" Description="Create of new_population" Id="6c5d2313-76b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="new_population" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKeyAcountCreate" FriendlyName="PreKeyAcountCreate" Name="TrakNusSparepartSystem.Plugins.PreKeyAcountCreate" Id="ec192df7-23bb-485f-8fb4-a048d616e807" TypeName="TrakNusSparepartSystem.Plugins.PreKeyAcountCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKeyAcountCreate" Description="Create of tss_keyaccount" Id="3b488f71-75b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_keyaccount" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMarketSizeResultPSSCreate" FriendlyName="PreMarketSizeResultPSSCreate" Name="TrakNusSparepartSystem.Plugins.PreMarketSizeResultPSSCreate" Id="077086ef-75f7-4157-95a2-cbd6702e84ab" TypeName="TrakNusSparepartSystem.Plugins.PreMarketSizeResultPSSCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMarketSizeResultPSSCreate" Description="Create of tss_marketsizeresultpss" Id="fd1bf9fa-1aa5-e811-943c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_marketsizeresultpss" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMarketSizeSummarybyUnitCreate" FriendlyName="PreMarketSizeSummarybyUnitCreate" Name="TrakNusSparepartSystem.Plugins.PreMarketSizeSummarybyUnitCreate" Id="1c7a45ae-694e-481c-b84e-d79735f71ea4" TypeName="TrakNusSparepartSystem.Plugins.PreMarketSizeSummarybyUnitCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMarketSizeSummarybyUnitCreate" Description="Create of tss_marketsizesummarybyunit" Id="9acfb112-1ba5-e811-943c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_marketsizesummarybyunit" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMarketSizeSummarybyPartCreate" FriendlyName="PreMarketSizeSummarybyPartCreate" Name="TrakNusSparepartSystem.Plugins.PreMarketSizeSummarybyPartCreate" Id="4b7be561-2466-4cf8-afa1-b61d5c6a1977" TypeName="TrakNusSparepartSystem.Plugins.PreMarketSizeSummarybyPartCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMarketSizeSummarybyPartCreate" Description="Create of tss_marketsizesummarybyparttype" Id="c989de08-1ba5-e811-943c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_marketsizesummarybyparttype" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PrePotentialProspectPartCreate" FriendlyName="PrePotentialProspectPartCreate" Name="TrakNusSparepartSystem.Plugins.PrePotentialProspectPartCreate" Id="d1f5666c-d078-4c4c-9754-6cb72ae79256" TypeName="TrakNusSparepartSystem.Plugins.PrePotentialProspectPartCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PrePotentialProspectPartCreate" Description="Create of tss_potentialprospectpart" Id="9dcfb112-1ba5-e811-943c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_potentialprospectpart" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Update of tss_sopartheader Quotation Link" FriendlyName="Update of tss_sopartheader Quotation Link" Name="TrakNusSparepartSystem.Plugins.PostOperationtss_sopartheaderUpdate" Id="238a348c-c2e3-4429-851c-7b85341b81c6" TypeName="TrakNusSparepartSystem.Plugins.PostOperationtss_sopartheaderUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Update of tss_sopartheader Quotation Link" Description="Update of tss_sopartheader Quotation Link" FilteringAttributes="tss_quotationlink" Id="48564c82-a5ad-e811-9440-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sopartheader" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreGroupUIOCommodityAccountCreate" FriendlyName="PreGroupUIOCommodityAccountCreate" Name="TrakNusSparepartSystem.Plugins.PreGroupUIOCommodityAccountCreate" Id="f217b0ac-9bb5-4201-8b73-5a6cc8078c4d" TypeName="TrakNusSparepartSystem.Plugins.PreGroupUIOCommodityAccountCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreGroupUIOCommodityAccountCreate" Description="Create of Pre Group UIO Commodity Account" Id="b96e5b5c-7ab6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_groupuiocommodityaccount" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMatrixApprovalMarketSizeCreate" FriendlyName="PreMatrixApprovalMarketSizeCreate" Name="TrakNusSparepartSystem.Plugins.PreMatrixApprovalMarketSizeCreate" Id="92713e83-eb91-4668-873c-27ea2769a708" TypeName="TrakNusSparepartSystem.Plugins.PreMatrixApprovalMarketSizeCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMatrixApprovalMarketSizeCreate" Description="PreMatrixApprovalMarketSizeCreate" Id="4679c0bf-8dbc-e811-944a-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_matrixapprovalmarketsize" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreApprovalListMarketSizeCreate" FriendlyName="PreApprovalListMarketSizeCreate" Name="TrakNusSparepartSystem.Plugins.PreApprovalListMarketSizeCreate" Id="1476e2fd-1262-46cb-961d-60c87e177ccf" TypeName="TrakNusSparepartSystem.Plugins.PreApprovalListMarketSizeCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreApprovalListMarketSizeCreate" Description="PreApprovalListMarketSizeCreate" Id="6af00108-91bc-e811-944a-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_approvallistmarketsize" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMatrixApprovalMarketSizeUpdate" FriendlyName="PostMatrixApprovalMarketSizeUpdate" Name="TrakNusSparepartSystem.Plugins.PostMatrixApprovalMarketSizeUpdate" Id="40c811f6-1199-4600-965c-5c2a3ecc29ea" TypeName="TrakNusSparepartSystem.Plugins.PostMatrixApprovalMarketSizeUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostMatrixApprovalMarketSizeUpdate" Description="PostMatrixApprovalMarketSizeUpdate" FilteringAttributes="tss_approvalfor,tss_approvaltype,tss_branch,tss_priorityno" Id="dd02a4e4-7ab6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_matrixapprovalmarketsize" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMasterMarketSizeCreate" FriendlyName="PreMasterMarketSizeCreate" Name="TrakNusSparepartSystem.Plugins.PreMasterMarketSizeCreate" Id="e3f4bdcd-1ae7-4d5c-b722-96ae85394e1b" TypeName="TrakNusSparepartSystem.Plugins.PreMasterMarketSizeCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMasterMarketSizeCreate" Description="PreMasterMarketSizeCreate" Id="a092d7a8-33c2-e811-944a-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_mastermarketsize" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMasterMarketSizeLinesCreate" FriendlyName="PreMasterMarketSizeLinesCreate" Name="TrakNusSparepartSystem.Plugins.PreMasterMarketSizeLinesCreate" Id="7a82e3b3-a1fd-400b-82ec-9c89cd037b47" TypeName="TrakNusSparepartSystem.Plugins.PreMasterMarketSizeLinesCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMasterMarketSizeLinesCreate" Description="PreMasterMarketSizeLinesCreate" Id="1476e5dc-aec7-e811-944a-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_mastermarketsizelines" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMarketSizePartConsumpCreate" FriendlyName="PreMarketSizePartConsumpCreate" Name="TrakNusSparepartSystem.Plugins.PreMarketSizePartConsumpCreate" Id="40d1636d-96c6-4eb0-b46b-666138261fcb" TypeName="TrakNusSparepartSystem.Plugins.PreMarketSizePartConsumpCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMarketSizePartConsumpCreate" Description="PreMarketSizePartConsumpCreate" Id="f502e14b-cac7-e811-944a-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_marketsizepartconsump" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMarketSizePartConsumpUpdate" FriendlyName="PreMarketSizePartConsumpUpdate" Name="TrakNusSparepartSystem.Plugins.PreMarketSizePartConsumpUpdate" Id="33509d02-0131-4a81-a1c7-7108452ea5ff" TypeName="TrakNusSparepartSystem.Plugins.PreMarketSizePartConsumpUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMarketSizePartConsumpUpdate" Description="PreMarketSizePartConsumpUpdate" FilteringAttributes="tss_partnumber,tss_typepm,tss_model" Id="a627d2c4-d0c7-e811-944a-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_marketsizepartconsump" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMarketsizepartConsumpAgingCreate" FriendlyName="PreMarketsizepartConsumpAgingCreate" Name="TrakNusSparepartSystem.Plugins.PreMarketsizepartConsumpAgingCreate" Id="4768638a-ab80-4ae1-8576-6e88d6f49d82" TypeName="TrakNusSparepartSystem.Plugins.PreMarketsizepartConsumpAgingCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMarketsizepartConsumpAgingCreate" Description="PreMarketsizepartConsumpAgingCreate" Id="37f20e82-a5cb-e811-944b-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_marketsizepartconsumpaging" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMarketsizepartConsumpAgingUpdate" FriendlyName="PreMarketsizepartConsumpAgingUpdate" Name="TrakNusSparepartSystem.Plugins.PreMarketsizepartConsumpAgingUpdate" Id="17ccb251-1d4d-4a46-9acf-e41289fbaa75" TypeName="TrakNusSparepartSystem.Plugins.PreMarketsizepartConsumpAgingUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMarketsizepartConsumpAgingUpdate" Description="PreMarketsizepartConsumpAgingUpdate" FilteringAttributes="tss_aging,tss_model,tss_partnumber" Id="c63d708a-a5cb-e811-944b-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_marketsizepartconsumpaging" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKeyAccountUpdate" FriendlyName="PreKeyAccountUpdate" Name="TrakNusSparepartSystem.Plugins.PreKeyAccountUpdate" Id="176f510e-f924-4e9b-ad7c-0c216ecd1bbb" TypeName="TrakNusSparepartSystem.Plugins.PreKeyAccountUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKeyAccountUpdate" Description="PreKeyAccountUpdate" FilteringAttributes="tss_customer,tss_pss" Id="3248e4b4-76b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_keyaccount" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKAUIOCreate" FriendlyName="PreKAUIOCreate" Name="TrakNusSparepartSystem.Plugins.PreKAUIOCreate" Id="5912fb51-7335-4f34-9d6a-49d3401725d5" TypeName="TrakNusSparepartSystem.Plugins.PreKAUIOCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKAUIOCreate" Description="PreKAUIOCreate" Id="be3c5f36-bec8-e911-942c-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_kauio" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostKAUIOUpdate" FriendlyName="PostKAUIOUpdate" Name="TrakNusSparepartSystem.Plugins.PostKAUIOUpdate" Id="672fd295-9162-43ee-a7b7-7f1d46e290e2" TypeName="TrakNusSparepartSystem.Plugins.PostKAUIOUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostKAUIOUpdate" Description="PostKAUIOUpdate" FilteringAttributes="tss_currenthourmeter,tss_currenthourmeterdate,tss_lasthourmeter,tss_lasthourmeterdate,tss_serialnumber,tss_estworkinghour" Id="2dbe6c47-bec8-e911-942c-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_kauio" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKAUIODelete" FriendlyName="PreKAUIODelete" Name="TrakNusSparepartSystem.Plugins.PreKAUIODelete" Id="0c7a49b7-69d2-4152-aec8-e3c4feb0f925" TypeName="TrakNusSparepartSystem.Plugins.PreKAUIODelete">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKAUIODelete" Description="PreKAUIODelete" Id="63ac442f-bec8-e911-942c-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_kauio" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKAGroupUIOCommodityDelete" FriendlyName="PreKAGroupUIOCommodityDelete" Name="TrakNusSparepartSystem.Plugins.PreKAGroupUIOCommodityDelete" Id="468c4e16-4a66-4210-825a-195795a30608" TypeName="TrakNusSparepartSystem.Plugins.PreKAGroupUIOCommodityDelete">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKAGroupUIOCommodityDelete" Description="PreKAGroupUIOCommodityDelete" Id="dccbf878-76b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_kagroupuiocommodity" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKeyAccountDelete" FriendlyName="PreKeyAccountDelete" Name="TrakNusSparepartSystem.Plugins.PreKeyAccountDelete" Id="faf2a178-2392-485a-8057-5423054d6d93" TypeName="TrakNusSparepartSystem.Plugins.PreKeyAccountDelete">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKeyAccountDelete" Description="PreKeyAccountDelete" Id="50b2f6bc-76b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_keyaccount" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreGroupUIOCommodityAccountUpdate" FriendlyName="PreGroupUIOCommodityAccountUpdate" Name="TrakNusSparepartSystem.Plugins.PreGroupUIOCommodityAccountUpdate" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.Plugins.PreGroupUIOCommodityAccountUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreGroupUIOCommodityAccountUpdate" Description="PreGroupUIOCommodityAccountUpdate" FilteringAttributes="tss_customer,tss_groupuiocommodityheader" Id="00000000-0000-0000-0000-000000000000" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_groupuiocommodityaccount" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostKAUIOCreate" FriendlyName="PostKAUIOCreate" Name="TrakNusSparepartSystem.Plugins.PostKAUIOCreate" Id="b25c3a22-a31b-488a-8251-5ac275eca298" TypeName="TrakNusSparepartSystem.Plugins.PostKAUIOCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostKAUIOCreate" Description="PostKAUIOCreate" Id="cf4bbd40-bec8-e911-942c-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_kauio" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreSalesTargetPSSDelete" FriendlyName="PreSalesTargetPSSDelete" Name="TrakNusSparepartSystem.Plugins.PreSalesTargetPSSDelete" Id="7f1a6646-6627-498f-a022-2e750509ac1e" TypeName="TrakNusSparepartSystem.Plugins.PreSalesTargetPSSDelete">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreSalesTargetPSSDelete" Description="PreSalesTargetPSSDelete" Id="d10c1947-8d2b-e911-9459-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="tss_salestargetpss" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKAUIOUpdate" FriendlyName="PreKAUIOUpdate" Name="TrakNusSparepartSystem.Plugins.PreKAUIOUpdate" Id="5a102d23-6ffe-4c1a-b747-5451e68bd81b" TypeName="TrakNusSparepartSystem.Plugins.PreKAUIOUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKAUIOUpdate" Description="PreKAUIOUpdate" FilteringAttributes="tss_currenthourmeter,tss_currenthourmeterdate,tss_deliverydate,tss_estworkinghour,tss_lasthourmeter,tss_lasthourmeterdate,tss_estworkinghour" Id="145f4529-bec8-e911-942c-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_kauio" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKAGroupUIOCommodityCreate" FriendlyName="PreKAGroupUIOCommodityCreate" Name="TrakNusSparepartSystem.Plugins.PreKAGroupUIOCommodityCreate" Id="c596c3e0-16f0-4748-a96f-02e5369e6149" TypeName="TrakNusSparepartSystem.Plugins.PreKAGroupUIOCommodityCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKAGroupUIOCommodityCreate" Description="PreKAGroupUIOCommodityCreate" Id="2d6ebd70-76b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_kagroupuiocommodity" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreKAGroupUIOCommodityUpdate" FriendlyName="PreKAGroupUIOCommodityUpdate" Name="TrakNusSparepartSystem.Plugins.PreKAGroupUIOCommodityUpdate" Id="75dd8471-587e-4cab-81cc-e5ab9a837a20" TypeName="TrakNusSparepartSystem.Plugins.PreKAGroupUIOCommodityUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreKAGroupUIOCommodityUpdate" Description="PreKAGroupUIOCommodityUpdate" FilteringAttributes="tss_groupuiocommodity" Id="ca5b4e81-76b6-e911-9427-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_kagroupuiocommodity" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSalesOrderPartLinesStatusUpdate" FriendlyName="PostSalesOrderPartLinesStatusUpdate" Name="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesStatusUpdate" Id="4a3382a3-c20e-4f12-93e0-3f5be1ddfcfb" TypeName="TrakNusSparepartSystem.Plugins.PostSalesOrderPartLinesStatusUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostSalesOrderPartLinesStatusUpdate" Description="PostSalesOrderPartLinesStatusUpdate" FilteringAttributes="tss_status" Id="f5a4a253-f330-e911-9459-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sopartlines" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreProspectPartLinesQtyUpdate" FriendlyName="PreProspectPartLinesQtyUpdate" Name="TrakNusSparepartSystem.Plugins.PreProspectPartLinesQtyUpdate" Id="df43deb6-6bdb-4051-b53f-d7fb62698f24" TypeName="TrakNusSparepartSystem.Plugins.PreProspectPartLinesQtyUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreProspectPartLinesQtyUpdate" Description="PreProspectPartLinesQtyUpdate" FilteringAttributes="tss_quantity" Id="fe110091-0431-e911-9459-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_prospectpartlines" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images>
+                <Image Attributes="tss_quantity,tss_quantityconvert,tss_sourcetype,tss_prospectpartheader,tss_partnumber" EntityAlias="PreImage" Name="PreImage" Id="06359187-1831-e911-9459-005056937630" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreSparePartSetupUpdate" FriendlyName="PreSparePartSetupUpdate" Name="TrakNusSparepartSystem.Plugins.PreSparePartSetupUpdate" Id="47d88466-f22e-41f1-b1a5-b810b7cdfb3b" TypeName="TrakNusSparepartSystem.Plugins.PreSparePartSetupUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreSparePartSetupUpdate" Description="PreSparePartSetupUpdate" FilteringAttributes="tss_evaluationdurationms" Id="510c1dec-c9c8-e911-942c-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_sparepartsetup" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMatrixMarketSizePeriodCreate" FriendlyName="PreMatrixMarketSizePeriodCreate" Name="TrakNusSparepartSystem.Plugins.PreMatrixMarketSizePeriodCreate" Id="584cd7f7-629e-44d4-8322-45bcdf86ca93" TypeName="TrakNusSparepartSystem.Plugins.PreMatrixMarketSizePeriodCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMatrixMarketSizePeriodCreate" Description="PreMatrixMarketSizePeriodCreate" Id="0902487f-2c3f-e911-945c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_matrixmarketsizeperiod" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMatrixMarketSizePeriodUpdate" FriendlyName="PreMatrixMarketSizePeriodUpdate" Name="TrakNusSparepartSystem.Plugins.PreMatrixMarketSizePeriodUpdate" Id="3feddd82-52dd-40ae-a283-cc33853c95cd" TypeName="TrakNusSparepartSystem.Plugins.PreMatrixMarketSizePeriodUpdate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMatrixMarketSizePeriodUpdate" Description="PreMatrixMarketSizePeriodUpdate" FilteringAttributes="tss_isactive" Id="0c02487f-2c3f-e911-945c-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="tss_matrixmarketsizeperiod" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMatrixPeriodMaintenanceTypeCreate" FriendlyName="PreMatrixPeriodMaintenanceTypeCreate" Name="TrakNusSparepartSystem.Plugins.PreMatrixPeriodMaintenanceTypeCreate" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.Plugins.PreMatrixPeriodMaintenanceTypeCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreMatrixPeriodMaintenanceTypeCreate" Description="PreMatrixPeriodMaintenanceTypeCreate" Id="00000000-0000-0000-0000-000000000000" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="tss_matrixperiodmaintenancetype" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+      </PluginTypes>
+    </Solution>
+    <Solution Assembly="TrakNusSparepartSystem.Workflow.dll" Id="264b1394-b4d4-4551-abd1-fa3c809e32e2" IsolationMode="None" SourceType="Database">
+      <WorkflowTypes>
+        <WorkflowType FriendlyName="Final Quotation" Name="Final Quotaton" Description="Enable when status quot is active" WorkflowActivityGroupName="Quotation" Id="d8b77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.Quo_FinalQuotation" />
+        <WorkflowType FriendlyName="ReviseQuotation" Name="ReviseQuotation" Description="update field Status Reason on Quotation Part Header to Revised" WorkflowActivityGroupName="Quotation" Id="ddb77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.UpdateQuotationRevise" />
+        <WorkflowType FriendlyName="CreateSO" Name="CreateSO" Description="Create Sales Order from QuotationPartHeader" WorkflowActivityGroupName="Sales Order" Id="d7b77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.CreateSO" />
+        <WorkflowType FriendlyName="ReviseProspect" Name="ReviseProspect" Description="Update Status on Quotation Part Header" WorkflowActivityGroupName="Quotation" Id="d9b77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.ReviseProspect" />
+        <WorkflowType FriendlyName="CreateQuotation" Name="CreateQuotation" Description="Create Quotation from Prospect Part" WorkflowActivityGroupName="ProspectPart" Id="d5b77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.CreateQuotation" />
+        <WorkflowType FriendlyName="Approve Top" Name="Approve Top" Description="Approve Top on ribbon " WorkflowActivityGroupName="Quotation" Id="fe5e6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.ApproveTop" />
+        <WorkflowType FriendlyName="ApprovePackage" Name="ApprovePackage" Description="Approve package quotation part lines" WorkflowActivityGroupName="Quotation" Id="fd5e6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.ApprovePackage" />
+        <WorkflowType FriendlyName="Approve Discount Quotation" Name="Approve Discount Quotation" Description="Approve Discount ribbon " WorkflowActivityGroupName="Quotation" Id="fc5e6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.ApproveDiscountQuotation" />
+        <WorkflowType FriendlyName="Assign to PSS" Name="Assign to PSS" Description="Assign to PSS" WorkflowActivityGroupName="Quotation" Id="005f6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.AssigntoPSS" />
+        <WorkflowType FriendlyName="Assign to PDH" Name="Assign to PDH" Description="Assign to PDH" WorkflowActivityGroupName="Quotation" Id="ff5e6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.AssignToPdh" />
+        <WorkflowType FriendlyName="Submit SO to SAP" Name="SubmitSOtoSAP" Description="Trigger SAP Webservice and get the response." WorkflowActivityGroupName="Trigger SAP Webservice" Id="dcb77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.SubmitSOtoSAP" />
+        <WorkflowType FriendlyName="CancelSO" Name="CancelSO" Description="Update status SO" WorkflowActivityGroupName="SalesOrder" Id="015f6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.CancelSO" />
+        <WorkflowType FriendlyName="Add New Activities" Name="Add New Activities" Description="Add New Activities" WorkflowActivityGroupName="Part Activity" Id="fb5e6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.AddNewActivities" />
+        <WorkflowType FriendlyName="Create Quotation" Name="Create Quotation" Description="Create Quotation from Prospect Part" WorkflowActivityGroupName="Prospect Part" Id="d6b77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.CreateQuotationFromProspect" />
+        <WorkflowType FriendlyName="Active Qutotation Part Header" Name="Active Qutotation Part Header" Description="Active Qutotation Part Header" WorkflowActivityGroupName="Quotation" Id="fa5e6f7d-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.ActiveQuotationPartHeader" />
+        <WorkflowType FriendlyName="CheckStock" Name="CheckStock" Description="Check stock" WorkflowActivityGroupName="Trigger SAP Webservice" Id="d4b77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.CheckStock" />
+        <WorkflowType FriendlyName="Send Email to Package Approval" Name="Send Email to Package Approval" Description="Send Email to Package Approval" WorkflowActivityGroupName="Quotation Part" Id="dab77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.SendEmailtoPackageApproval" />
+        <WorkflowType FriendlyName="Send Email to TOP Approval" Name="Send Email to TOP Approval" Description="Send Email to TOP Approval" WorkflowActivityGroupName="Quotation Part" Id="dbb77a83-6b50-e811-9415-005056931cc2" TypeName="TrakNusSparepartSystem.Workflow.SendEmailtoTOPApproval" />
+      </WorkflowTypes>
+    </Solution>
+    <Solution Assembly="TrakNusSparepartSystem.WorkflowActivity.dll" Id="285b092f-d79c-400a-a59a-abfded01d348" IsolationMode="None" SourceType="Database">
+      <WorkflowTypes>
+        <clear />
+        <WorkflowType FriendlyName="GenerateMasterMarketSize" Name="GenerateMasterMarketSize" Description="GenerateMasterMarketSize" WorkflowActivityGroupName="GenerateMaster" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.GenerateMasterMarketSize" />
+        <WorkflowType FriendlyName="GenerateMasterMarketSizeFromKeyAccount" Name="GenerateMasterMarketSizeFromKeyAccount" Description="GenerateMasterMarketSizeFromKeyAccount" WorkflowActivityGroupName="GenerateMaster" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.GenerateMasterMarketSizeFromKeyAccount" />
+        <WorkflowType FriendlyName="GenerateMarketSizeSummaryByPartNumberFromKeyAccount" Name="GenerateMarketSizeSummaryByPartNumberFromKeyAccount" Description="GenerateMarketSizeSummaryByPartNumberFromKeyAccount" WorkflowActivityGroupName="GenerateMaster" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.GenerateMarketSizeSummaryByPartNumberFromKeyAccount" />
+        <WorkflowType FriendlyName="GenerateMarketSizeResultPSS" Name="GenerateMarketSizeResultPSS" Description="GenerateMarketSizeResultPSS" WorkflowActivityGroupName="GenerateMaster" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.GenerateMarketSizeResultPSS" />
+        <WorkflowType FriendlyName="Convert to Prospect Part" Name="ConvertToProspectPart" Description="Convert to Prospect Part" WorkflowActivityGroupName="Convert" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ConvertToProspectPart" />
+        <WorkflowType FriendlyName="Confirm Market Size Result PSS " Name="ConfirmMarketSizeResultPss" Description="Confirm Market Size Result PSS " WorkflowActivityGroupName="Confirm Market Size Result PSS " WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ConfirmMarketSizeResultPss" />
+        <WorkflowType FriendlyName="ApproveMarketSizeResultPss" Name="ApproveMarketSizeResultPss" Description="Approve Market Size Result Pss" WorkflowActivityGroupName="Approve Market Size Result Pss" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ApproveMarketSizeResultPss" />
+        <WorkflowType FriendlyName="Approve Market Size Result Branch" Name="ApproveMarketSizeResultBranch" Description="Approve Market Size Result Branch" WorkflowActivityGroupName="Approve Market Size Result Branch" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ApproveMarketSizeResultBranch" />
+        <WorkflowType FriendlyName="Approve Market Size Result Nasional" Name="ApproveMarketSizeResultNational" Description="Approve Market Size Result Nasional" WorkflowActivityGroupName="Approve Market Size Result Nasional" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ApproveMarketSizeResultNational" />
+        <WorkflowType FriendlyName="Confirm Sales Target PSS" Name="ConfirmSalesTargetPSS" Description="Confirm Sales Target PSS" WorkflowActivityGroupName="Confirm Sales Target PSS" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ConfirmSalesTargetPSS" />
+        <WorkflowType FriendlyName="Approve Sales Target PSS" Name="ApproveSalesTargetPSS" Description="Approve Sales Target PSS" WorkflowActivityGroupName="Approve Sales Target PSS" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ApproveSalesTargetPSS" />
+        <WorkflowType FriendlyName="Approve Sales Target Branch" Name="ApproveSalesTargetBranch" Description="Approve Sales Target Branch" WorkflowActivityGroupName="Approve Sales Target Branch" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ApproveSalesTargetBranch" />
+        <WorkflowType FriendlyName="Approve Sales Target National" Name="ApproveSalesTargetNational" Description=" Approve Sales Target National" WorkflowActivityGroupName="Approve Sales Target National" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ApproveSalesTargetNational" />
+        <WorkflowType FriendlyName="Sales Order Part Invoice" Name="SalesOrderPartInvoice" Description="Sales Order Part Invoice" WorkflowActivityGroupName="Sales Order Part Invoice" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.SalesOrderPartInvoice" />
+        <WorkflowType FriendlyName="Revise Market Size Result PSS" Name="ReviseMarketSizeResultPss" Description="Revise Market Size Result PSS" WorkflowActivityGroupName="Revise Market Size Result PSS" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ReviseMarketSizeResultPss" />
+        <WorkflowType FriendlyName="Revise Sales Target National" Name="ReviseSalesTargetNational" Description="Revise Sales Target National" WorkflowActivityGroupName="Revise Sales Target National" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ReviseSalesTargetNational" />
+        <WorkflowType FriendlyName="Revise Key Account" Name="ReviseKeyAccount" Description="Revise Key Account" WorkflowActivityGroupName="Revise Key Account" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ReviseKeyAccount" />
+        <WorkflowType FriendlyName="Revise Sales Target PSS" Name="ReviseSalesTargetPSS" Description="Revise Sales Target PSS" WorkflowActivityGroupName="Revise Sales Target PSS" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ReviseSalesTargetPSS" />
+        <WorkflowType FriendlyName="Revise Sales Target Branch" Name="ReviseSalesTargetBranch" Description="Revise Sales Target Branch" WorkflowActivityGroupName="Revise Sales Target Branch" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ReviseSalesTargetBranch" />
+        <WorkflowType FriendlyName="Convert to Prospect Part From Potential Prospect Part Line" Name="ConvertToProspectPartFromPotentialProspectPartLine" Description="Convert to Prospect Part From Potential Prospect Part Line" WorkflowActivityGroupName="Convert to Prospect Part From Potential Prospect Part Line" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ConvertToProspectPartFromPotentialProspectPartLine" />
+        <WorkflowType FriendlyName="Convert To Prospect Part From Potential Prospect Part Sub Line" Name="ConvertToProspectPartFromPotentialProspectPartSubLine" Description="Convert To Prospect Part From Potential Prospect Part Sub Line" WorkflowActivityGroupName="Convert To Prospect Part From Potential Prospect Part Sub Line" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ConvertToProspectPartFromPotentialProspectPartSubLine" />
+        <WorkflowType FriendlyName="Revise Market Size Result Branch" Name="ReviseMarketSizeResultBranch" Description="Revise Market Size Result Branch" WorkflowActivityGroupName="Revise Market Size Result Branch" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ReviseMarketSizeResultBranch" />
+        <WorkflowType FriendlyName="Revise Market Size Result National" Name="ReviseMarketSizeResultNational" Description="Revise Market Size Result National" WorkflowActivityGroupName="Revise Market Size Result National" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.ReviseMarketSizeResultNational" />
+        <WorkflowType FriendlyName="GenerateSummaryMarketSizeByPartType" Name="GenerateSummaryMarketSizeByPartType" Description="GenerateSummaryMarketSizeByPartType" WorkflowActivityGroupName="GenerateSummary" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.GenerateSummaryMarketSizeByPartType" />
+        <WorkflowType FriendlyName="GenerateSummaryMarketSizeByUnit" Name="GenerateSummaryMarketSizeByUnit" Description="GenerateSummaryMarketSizeByUnit" WorkflowActivityGroupName="GenerateSummary" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.GenerateSummaryMarketSizeByUnit" />
+        <WorkflowType FriendlyName="Generate SO Incentive" Name="Generatesoincentive" Description="Generate SO Incentive" WorkflowActivityGroupName="Incentive" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.Generatesoincentive" />
+        <WorkflowType FriendlyName="Generate Document Payment f5" Name="Generatedocumentpayment" Description="Generate Document Payment f5" WorkflowActivityGroupName="Incentive" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="TrakNusSparepartSystem.WorkflowActivity.Generatedocumentpayment" />
+      </WorkflowTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows />
+</Register>

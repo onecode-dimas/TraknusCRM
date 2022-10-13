@@ -1,0 +1,12 @@
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Check Notification Expired Setup Dealer.exe.config
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Check Notification Expired Setup Dealer.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Check Notification Expired Setup Dealer.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\obj\Debug\Check Notification Expired Setup Dealer.csprojResolveAssemblyReference.cache
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\obj\Debug\Check Notification Expired Setup Dealer.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\Check Notification Expired Setup Dealer\obj\Debug\Check Notification Expired Setup Dealer.pdb

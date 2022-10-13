@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F156692-532A-470A-83B1-31D1F1C5583D}</ProjectGuid>
+   <!-- <ProjectTypeGuids>{089D5B2A-9C2F-4B6D-9F7B-CFD25BB0B7F4};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids> -->
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusSparepartSystem.Workflow</RootNamespace>
+    <AssemblyName>TrakNusSparepartSystem.Workflow</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TrakNus Sparepart System.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataLayer\Referenced Dll\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataLayer\Referenced Dll\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.xrm.sdk.workflow, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataLayer\Referenced Dll\microsoft.xrm.sdk.workflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveQuotationPartHeader.cs" />
+    <Compile Include="AddNewActivities.cs" />
+    <Compile Include="ApproveDiscountQuotation.cs" />
+    <Compile Include="ApproveTop.cs" />
+    <Compile Include="ApprovePackage.cs" />
+    <Compile Include="AssignToPdh.cs" />
+    <Compile Include="AssigntoPSS.cs" />
+    <Compile Include="BusinessLayer\BL_tss_partactivityheader.cs" />
+    <Compile Include="BusinessLayer\BL_tss_prospectpartheader.cs" />
+    <Compile Include="BusinessLayer\BL_tss_quotation.cs" />
+    <Compile Include="BusinessLayer\BL_tss_quotationpartheader.cs" />
+    <Compile Include="BusinessLayer\BL_tss_quotationpartlines.cs" />
+    <Compile Include="BusinessLayer\BL_tss_salesorderpartheader.cs" />
+    <Compile Include="CancelSO.cs" />
+    <Compile Include="CheckStock.cs" />
+    <Compile Include="CreateQuotation.cs" />
+    <Compile Include="CreateQuotationFromProspect.cs" />
+    <Compile Include="CreateSO.cs" />
+    <Compile Include="Helper\EmailAgent.cs" />
+    <Compile Include="Helper\EmailFactory.cs" />
+    <Compile Include="Helper\HelperFunction.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Helper\HttpHelper.cs" />
+    <Compile Include="Helper\MWSLog.cs" />
+    <Compile Include="Helper\ParserAgent.cs" />
+    <Compile Include="Helper\Service.cs" />
+    <Compile Include="Helper\ShareRecords.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quo_FinalQuotation.cs" />
+    <Compile Include="ReviseProspect.cs" />
+    <Compile Include="SendEmailtoPackageApproval.cs" />
+    <Compile Include="SendEmailtoTOPApproval.cs" />
+    <Compile Include="Service References\WebserviceSAP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitSOtoSAP.cs" />
+    <Compile Include="UpdateQuotationRevise.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helper\Helper.csproj">
+      <Project>{a4753a3a-26e0-4500-88ca-c9e68fb17478}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{6e174c5b-04f6-4ee8-a5fc-ca62a294ee41}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebserviceSAP\TrakNusSparepartSystem.Workflow.WebserviceSAP.ZcrmCancelSoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebserviceSAP\TrakNusSparepartSystem.Workflow.WebserviceSAP.ZcrmCancelSoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebserviceSAP\TrakNusSparepartSystem.Workflow.WebserviceSAP.ZcrmCreateSoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebserviceSAP\TrakNusSparepartSystem.Workflow.WebserviceSAP.ZcrmCreateSoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebserviceSAP\TrakNusSparepartSystem.Workflow.WebserviceSAP.ZcrmStatusStockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebserviceSAP\TrakNusSparepartSystem.Workflow.WebserviceSAP.ZcrmStatusStockResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebserviceSAP\zweb_service_crm.wsdl" />
+    <None Include="TrakNus Sparepart System.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WebserviceSAP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebserviceSAP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebserviceSAP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebserviceSAP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

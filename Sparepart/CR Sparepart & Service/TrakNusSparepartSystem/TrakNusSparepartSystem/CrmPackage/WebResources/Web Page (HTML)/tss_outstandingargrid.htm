@@ -1,0 +1,259 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="../WebResources/tss_/fonts/roboto/roboto_latin.css">
+            <link rel="stylesheet" href="../WebResources/tss_/fonts/fontawesome/css/font_awesome.css">
+            <link rel="stylesheet" href="../WebResources/tss_/library/buefy/buefy.min.css">
+            <link rel="stylesheet" href="../WebResources/tss_gridsetting.css">
+            <script type="text/javascript" src="../WebResources/ClientGlobalContext.js.aspx"></script>
+            <script type="text/javascript" src="../WebResources/tss_/polyfill/babel_polyfill/polyfill.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/bluebird/bluebird.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/vue/vue.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/lodash/lodash.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/buefy/buefy.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/mscrmsdk/SDK.MetaData.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/xrmservicetoolkit/xrmservicetoolkit.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <template>
+                <section>
+                    <b-tabs>
+                            <b-input v-model="searchFilter" placeholder="Search SO Number..." icon="search"></b-input>
+                            <b-table
+                                :data="filteredTableData"
+                                :checked-rows.sync="checkedRows"
+                                :loading="isLoading"
+                                
+                                :paginated="true"
+                                :per-page="5"
+                                @dblclick="openEntity"
+                                checkable
+                                style="height:100%">
+            
+                                <template slot-scope="props">
+                                    <b-table-column field="tss_sonumber" label="SO Number" sortable>
+                                        {{ props.row.tss_sonumber }}
+                                    </b-table-column>
+            
+                                    <b-table-column field="tss_StateCode.Value" label="Status Reason" sortable>
+                                        {{ props.row.tss_StateCode.Value | statusReasonFilter}}
+                                    </b-table-column>
+            
+                                    <b-table-column field="tss_TotalAmount.Value" label="Total Amount" numeric sortable>
+                                        {{ props.row.tss_TotalAmount.Value | currency }}
+                                    </b-table-column>
+            
+                                </template>
+                                <template slot="empty">
+                                    <section class="section">
+                                        <div class="content has-text-grey has-text-centered" v-if="!isLoading">
+                                            <p><b>No data obtained. Click <a @click="Start()">here</a> to retry.</b></p>
+                                        </div>
+                                    </section>
+                                </template>
+                            </b-table>
+            
+                    </b-tabs>
+                </section>
+            </template>
+          </div>
+          <script>
+              Vue.use(Buefy.default, {
+                  defaultIconPack: 'fa',
+                  defaultContainerElement: 'app'
+              });
+              var App = new Vue({
+                  el: '#app',
+                  data: {
+                      tableData: [
+                      ],
+                      checkedRows: [],
+                      optionSetMappingStatusReason: [],
+                      isLoading: false,
+                      searchFilter: ""
+                  },
+                  computed: {
+                      filteredTableData: function () {
+                          if (this.tableData.length === 0) return [];
+                          return _.filter(this.tableData,
+                              function (data) {
+                                  if (data.tss_sonumber)
+                                      return data.tss_sonumber.indexOf(App.searchFilter) !== -1;
+                                  return false;
+                              });
+                      }
+                  },
+                  methods: {
+                      openEntity: function (entity) {
+                          Xrm.Utility.openEntityForm("tss_sopartheader", entity.id, null,
+                              {
+                                  openInNewWindow: true
+                              });
+                      }
+                  },
+                  filters: {
+                      currency: function (value, param, decimalPoint) {
+                          if (value == "") return "";
+                          if (Intl) {
+                              var newValue = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(value);
+                              return newValue;
+                          }
+                          else {
+                              var numberValue = parseFloat(value);
+                              if (!decimalPoint)
+                                  decimalPoint = 2;
+                              if (!param)
+                                  param = "Rp. ";
+                              if (isNaN(numberValue))
+                                  return "-";
+                              else
+                                  return param + " " + numberValue.toFixed(decimalPoint);
+                          }
+                      },
+                      statusReasonFilter: function (value) {
+                          for (var i = 0 ; i < App.optionSetMappingStatusReason.length; i++) {
+                              if (App.optionSetMappingStatusReason[i].Key == value) {
+                                  return App.optionSetMappingStatusReason[i].Value;
+                              }
+                          }
+                          return "-";
+                      }
+                  }
+
+              });
+
+              var retrieveMetadataFunction = function () {
+                  return new Promise(function (resolve, reject) {
+                      SDK.Metadata.RetrieveAttribute("tss_sopartheader", "tss_StateCode", null, true, function (result) {
+                          var metadata = [];
+                          for (var i = 0; i < result.OptionSet.Options.length; i++) {
+                              metadata.push({ Key: result.OptionSet.Options[i].Value, Value: result.OptionSet.Options[i].Label.LocalizedLabels[0].Label });
+                          }
+                          console.log(metadata);
+                          resolve(metadata);
+                      },
+                      function (error) {
+                          console.log(error);
+                          reject(error);
+                      }, null);
+                  });
+              }
+
+              function ResetGrid() {
+                  App.tableData = [];
+                  App.checkedRows = [];
+              }
+              //Debug version for now.
+              var filterName = "3M INDONESIA, PT";
+              var retrieveAccountIdResult = function () {
+                  return new Promise(function (resolve, reject) {
+                      if (window.parent && window.parent.Xrm && window.parent.Xrm.Page.getAttribute("tss_customer") != null) {
+                          if (window.parent.Xrm.Page.getAttribute("tss_customer").getValue() == null) {
+                              ResetGrid();
+                          }
+                          resolve(window.parent.Xrm.Page.getAttribute("tss_customer").getValue()[0].id);
+                      } else {
+                          XrmServiceToolkit.Rest.RetrieveMultiple("AccountSet", "?$select=AccountId&$filter=Name eq '" + filterName + "'", function (results) {
+                              var lastAccountId;
+                              for (var i = 0; i < results.length; i++) {
+                                  var accountId = results[i].AccountId;
+                                  lastAccountId = accountId;
+                              }
+                              console.log(lastAccountId);
+                              resolve(lastAccountId);
+                          }, function (error) {
+                              console.log(error);
+                              reject(error);
+                          }, function () {
+                              //On Complete - Do Something
+                          }, true);
+                      }
+                  });
+              }
+
+              var retrieveRelatedData = function (accountId) {
+                  return new Promise(function (resolve, reject) {
+                      App.tableData = [];
+                      App.checkedRows = [];
+                      XrmServiceToolkit.Rest.RetrieveMultiple("tss_sopartheaderSet", "?$select=tss_sonumber,tss_sopartheaderId,tss_StateCode,tss_TotalAmount&$filter=tss_Customer/Id eq (guid'" + accountId + "') and tss_StateCode/Value eq 865920004", function (results) {
+                          for (var i = 0; i < results.length; i++) {
+                              var tss_sonumber = results[i].tss_sonumber;
+                              var tss_sopartheaderId = results[i].tss_sopartheaderId;
+                              var tss_StateCode = results[i].tss_StateCode;
+                              var tss_TotalAmount = results[i].tss_TotalAmount;
+                              App.tableData.push({
+                                  id: tss_sopartheaderId,
+                                  tss_sonumber: tss_sonumber,
+                                  tss_StateCode: tss_StateCode,
+                                  tss_TotalAmount: tss_TotalAmount
+                              });
+                          }
+                          resolve(results);
+                      }, function (error) {
+                          reject(error);
+                      }, function () {
+                          //On Complete - Do Something
+                      }, true);
+
+                  });
+              }
+              var isStarted = false;
+
+              function InitializeMapping() {
+                  return new Promise(function (resolve, reject) {
+                      App.tableData = [
+                          {
+                              id: "",
+                              tss_sonumber: "",
+                              tss_TotalAmount: { Value: 0 },
+                              tss_StateCode: { Value: 0 }
+                          }
+                      ];
+                      App.$forceUpdate();
+                      setTimeout(function () { resolve() }, 1000);
+                  });
+              }
+
+              function Start(count) {
+                  try {
+                      if (count > 3) return;
+                      if (count === "undefined" || count == null) count = 0;
+                      App.isLoading = true;
+                      InitializeMapping().then(retrieveMetadataFunction)
+                      .then(function (result) {
+                          App.optionSetMappingStatusReason = result;
+                      })
+                      .then(retrieveAccountIdResult)
+                      .then(retrieveRelatedData)
+                      .catch(function (error) {
+                          console.log(error);
+                      })
+                      .finally(function () {
+                          App.isLoading = false;
+                          if (App.tableData.length === 0) {
+                              setTimeout(function () { Start(count + 1); }, 1500);//retry, maybe network issues.
+                          }
+                      });
+                      isStarted = true;
+                  } catch (e) {
+
+                      setTimeout(function () { Start(count + 1); }, 1500);//retry, maybe network issues.
+                      console.log(e.message);
+                  }
+              }
+
+              if (window.parent && window.parent.Xrm && window.parent.Xrm.Page.getAttribute("tss_customer")) {
+                  var parentXrm = window.parent.Xrm;
+                  if (parentXrm && parentXrm.Page.getAttribute("tss_customer")) {
+                      parentXrm.Page.getAttribute("tss_customer").addOnChange(function (reference) {
+                          if (isStarted) {
+                              Start();
+                          }
+                      });
+                  }
+              } else {
+                  Start();
+              }
+          </script>
+    </body>
+</html> 

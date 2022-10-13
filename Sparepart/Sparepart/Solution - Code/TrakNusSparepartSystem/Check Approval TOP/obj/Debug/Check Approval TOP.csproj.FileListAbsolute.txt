@@ -1,0 +1,15 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Check Approval TOP.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Check Approval TOP.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Check Approval TOP.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\obj\Debug\Check Approval TOP.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\obj\Debug\Check Approval TOP.exe
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Check Approval TOP\obj\Debug\Check Approval TOP.pdb

@@ -1,0 +1,255 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{88A30576-7583-4F75-8136-5EFD2C14ADFF}") = "CrmPackage", "TrakNusSparepartSystem\CrmPackage\CrmPackage.csproj", "{B5CCB554-0338-417B-8DCD-E0745339A5AF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45BAD138-3731-4A68-A3DB-F8D5A812826F} = {45BAD138-3731-4A68-A3DB-F8D5A812826F}
+		{3F156692-532A-470A-83B1-31D1F1C5583D} = {3F156692-532A-470A-83B1-31D1F1C5583D}
+		{7C9E2FB8-81C6-4704-97B0-87E27310B331} = {7C9E2FB8-81C6-4704-97B0-87E27310B331}
+		{459842F3-712C-4EE0-A7B8-21B9B550630A} = {459842F3-712C-4EE0-A7B8-21B9B550630A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "TrakNusSparepartSystem\Plugins\Plugins.csproj", "{459842F3-712C-4EE0-A7B8-21B9B550630A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow", "TrakNusSparepartSystem\Workflow\Workflow.csproj", "{3F156692-532A-470A-83B1-31D1F1C5583D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "TrakNusSparepartSystem\WcfService\WcfService\WcfService.csproj", "{7C9E2FB8-81C6-4704-97B0-87E27310B331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "TrakNusSparepartSystem\DataLayer\DataLayer.csproj", "{6E174C5B-04F6-4EE8-A5FC-CA62A294EE41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{A0438ED2-9C57-41D9-BED4-0261169190AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Update Rating Prospect", "TrakNusSparepartSystem\Update Rating Prospect\Update Rating Prospect.csproj", "{6B165BDF-16BF-4C36-B495-5B5243041B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Aging Overdue Prospect", "TrakNusSparepartSystem\Check Aging Overdue Prospect\Check Aging Overdue Prospect.csproj", "{AD67EE5D-5FDE-48BE-8EEC-41989E8C7BB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "Helper\Helper.csproj", "{A4753A3A-26E0-4500-88CA-C9E68FB17478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Approval TOP", "TrakNusSparepartSystem\Check Approval TOP\Check Approval TOP.csproj", "{4D3ABE84-7060-4FBF-BE14-DD128403E325}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Approval Package", "TrakNusSparepartSystem\Check Approval Package\Check Approval Package.csproj", "{3B016881-AA2D-4D38-BAE0-20B90AF8E365}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Approval Discount", "TrakNusSparepartSystem\Check Approval Discount\Check Approval Discount.csproj", "{22622379-C3A5-4500-81C1-E9D9AD95ABE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckApprovalSalesEffort", "CheckApprovalSalesEffort\CheckApprovalSalesEffort.csproj", "{07244BE7-CBBB-4588-AC1D-B346F3B15910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Approval Credit Limit", "TrakNusSparepartSystem\Check Approval Credit Limit\Check Approval Credit Limit.csproj", "{E039DFD7-EBB8-4A90-A0BD-31BE122FDC9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Notification Expired Setup Dealer", "Check Notification Expired Setup Dealer\Check Notification Expired Setup Dealer.csproj", "{E2D167A3-5C81-48E1-9F89-B9F6C4CD9F98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowActivity", "WorkflowActivity\WorkflowActivity.csproj", "{45BAD138-3731-4A68-A3DB-F8D5A812826F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Approval Market Size Result Branch", "Check Approval Market Size Result Branch\Check Approval Market Size Result Branch.csproj", "{B7698C87-4DBF-4539-A304-18FED2E7720E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Escalation Approval for Market Size Result", "TrakNusSparepartSystem\Check Escalation Approval for Market Size Result\Check Escalation Approval for Market Size Result.csproj", "{96E7E98B-BC8E-4EB4-AFDB-3727BCA5F533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrakNusSparepartSystemScheduler", "TrakNusSparepartSystemScheduler\TrakNusSparepartSystemScheduler.csproj", "{974B6D1E-2739-4C8A-86C2-7D08D59F17CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckBatchContract", "CheckBatchContract\CheckBatchContract.csproj", "{244A2F64-D0E4-48C1-AFB3-2C80B989F0C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5CCB554-0338-417B-8DCD-E0745339A5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CCB554-0338-417B-8DCD-E0745339A5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CCB554-0338-417B-8DCD-E0745339A5AF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B5CCB554-0338-417B-8DCD-E0745339A5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CCB554-0338-417B-8DCD-E0745339A5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CCB554-0338-417B-8DCD-E0745339A5AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{459842F3-712C-4EE0-A7B8-21B9B550630A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459842F3-712C-4EE0-A7B8-21B9B550630A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459842F3-712C-4EE0-A7B8-21B9B550630A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459842F3-712C-4EE0-A7B8-21B9B550630A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F156692-532A-470A-83B1-31D1F1C5583D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F156692-532A-470A-83B1-31D1F1C5583D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F156692-532A-470A-83B1-31D1F1C5583D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F156692-532A-470A-83B1-31D1F1C5583D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C9E2FB8-81C6-4704-97B0-87E27310B331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9E2FB8-81C6-4704-97B0-87E27310B331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9E2FB8-81C6-4704-97B0-87E27310B331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9E2FB8-81C6-4704-97B0-87E27310B331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E174C5B-04F6-4EE8-A5FC-CA62A294EE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E174C5B-04F6-4EE8-A5FC-CA62A294EE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E174C5B-04F6-4EE8-A5FC-CA62A294EE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E174C5B-04F6-4EE8-A5FC-CA62A294EE41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B165BDF-16BF-4C36-B495-5B5243041B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B165BDF-16BF-4C36-B495-5B5243041B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B165BDF-16BF-4C36-B495-5B5243041B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B165BDF-16BF-4C36-B495-5B5243041B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD67EE5D-5FDE-48BE-8EEC-41989E8C7BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD67EE5D-5FDE-48BE-8EEC-41989E8C7BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD67EE5D-5FDE-48BE-8EEC-41989E8C7BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD67EE5D-5FDE-48BE-8EEC-41989E8C7BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4753A3A-26E0-4500-88CA-C9E68FB17478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4753A3A-26E0-4500-88CA-C9E68FB17478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4753A3A-26E0-4500-88CA-C9E68FB17478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4753A3A-26E0-4500-88CA-C9E68FB17478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D3ABE84-7060-4FBF-BE14-DD128403E325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D3ABE84-7060-4FBF-BE14-DD128403E325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D3ABE84-7060-4FBF-BE14-DD128403E325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D3ABE84-7060-4FBF-BE14-DD128403E325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B016881-AA2D-4D38-BAE0-20B90AF8E365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B016881-AA2D-4D38-BAE0-20B90AF8E365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B016881-AA2D-4D38-BAE0-20B90AF8E365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B016881-AA2D-4D38-BAE0-20B90AF8E365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22622379-C3A5-4500-81C1-E9D9AD95ABE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22622379-C3A5-4500-81C1-E9D9AD95ABE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22622379-C3A5-4500-81C1-E9D9AD95ABE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22622379-C3A5-4500-81C1-E9D9AD95ABE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07244BE7-CBBB-4588-AC1D-B346F3B15910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07244BE7-CBBB-4588-AC1D-B346F3B15910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07244BE7-CBBB-4588-AC1D-B346F3B15910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07244BE7-CBBB-4588-AC1D-B346F3B15910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E039DFD7-EBB8-4A90-A0BD-31BE122FDC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E039DFD7-EBB8-4A90-A0BD-31BE122FDC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E039DFD7-EBB8-4A90-A0BD-31BE122FDC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E039DFD7-EBB8-4A90-A0BD-31BE122FDC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D167A3-5C81-48E1-9F89-B9F6C4CD9F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D167A3-5C81-48E1-9F89-B9F6C4CD9F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D167A3-5C81-48E1-9F89-B9F6C4CD9F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D167A3-5C81-48E1-9F89-B9F6C4CD9F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45BAD138-3731-4A68-A3DB-F8D5A812826F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BAD138-3731-4A68-A3DB-F8D5A812826F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BAD138-3731-4A68-A3DB-F8D5A812826F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BAD138-3731-4A68-A3DB-F8D5A812826F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7698C87-4DBF-4539-A304-18FED2E7720E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7698C87-4DBF-4539-A304-18FED2E7720E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7698C87-4DBF-4539-A304-18FED2E7720E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7698C87-4DBF-4539-A304-18FED2E7720E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E7E98B-BC8E-4EB4-AFDB-3727BCA5F533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E7E98B-BC8E-4EB4-AFDB-3727BCA5F533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E7E98B-BC8E-4EB4-AFDB-3727BCA5F533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E7E98B-BC8E-4EB4-AFDB-3727BCA5F533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{974B6D1E-2739-4C8A-86C2-7D08D59F17CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974B6D1E-2739-4C8A-86C2-7D08D59F17CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974B6D1E-2739-4C8A-86C2-7D08D59F17CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974B6D1E-2739-4C8A-86C2-7D08D59F17CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{244A2F64-D0E4-48C1-AFB3-2C80B989F0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{244A2F64-D0E4-48C1-AFB3-2C80B989F0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{244A2F64-D0E4-48C1-AFB3-2C80B989F0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{244A2F64-D0E4-48C1-AFB3-2C80B989F0C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B165BDF-16BF-4C36-B495-5B5243041B86} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{AD67EE5D-5FDE-48BE-8EEC-41989E8C7BB8} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{4D3ABE84-7060-4FBF-BE14-DD128403E325} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{3B016881-AA2D-4D38-BAE0-20B90AF8E365} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{22622379-C3A5-4500-81C1-E9D9AD95ABE3} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{07244BE7-CBBB-4588-AC1D-B346F3B15910} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{E039DFD7-EBB8-4A90-A0BD-31BE122FDC9E} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{E2D167A3-5C81-48E1-9F89-B9F6C4CD9F98} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{B7698C87-4DBF-4539-A304-18FED2E7720E} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{96E7E98B-BC8E-4EB4-AFDB-3727BCA5F533} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+		{244A2F64-D0E4-48C1-AFB3-2C80B989F0C3} = {A0438ED2-9C57-41D9-BED4-0261169190AA}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 17
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.0.10.43:8080/tfs/tss
+		SccProjectUniqueName0 = TrakNusSparepartSystem\\CrmPackage\\CrmPackage.csproj
+		SccProjectName0 = TrakNusSparepartSystem/CrmPackage
+		SccAuxPath0 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath0 = TrakNusSparepartSystem\\CrmPackage
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = TrakNusSparepartSystem\\WcfService\\WcfService\\WcfService.csproj
+		SccProjectName1 = TrakNusSparepartSystem/WcfService/WcfService
+		SccAuxPath1 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath1 = TrakNusSparepartSystem\\WcfService\\WcfService
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = TrakNusSparepartSystem\\DataLayer\\DataLayer.csproj
+		SccProjectName2 = TrakNusSparepartSystem/DataLayer
+		SccAuxPath2 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath2 = TrakNusSparepartSystem\\DataLayer
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = Helper\\Helper.csproj
+		SccProjectName3 = Helper
+		SccAuxPath3 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath3 = Helper
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = TrakNusSparepartSystem\\Workflow\\Workflow.csproj
+		SccProjectName4 = TrakNusSparepartSystem/Workflow
+		SccAuxPath4 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath4 = TrakNusSparepartSystem\\Workflow
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = TrakNusSparepartSystem\\Plugins\\Plugins.csproj
+		SccProjectName5 = TrakNusSparepartSystem/Plugins
+		SccAuxPath5 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath5 = TrakNusSparepartSystem\\Plugins
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = TrakNusSparepartSystem\\Update\u0020Rating\u0020Prospect\\Update\u0020Rating\u0020Prospect.csproj
+		SccProjectTopLevelParentUniqueName6 = TrakNusSparepartSystem.sln
+		SccProjectName6 = TrakNusSparepartSystem/Update\u0020Rating\u0020Prospect
+		SccAuxPath6 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath6 = TrakNusSparepartSystem\\Update\u0020Rating\u0020Prospect
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName7 = TrakNusSparepartSystem\\Check\u0020Aging\u0020Overdue\u0020Prospect\\Check\u0020Aging\u0020Overdue\u0020Prospect.csproj
+		SccProjectTopLevelParentUniqueName7 = TrakNusSparepartSystem.sln
+		SccProjectName7 = TrakNusSparepartSystem/Check\u0020Aging\u0020Overdue\u0020Prospect
+		SccAuxPath7 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath7 = TrakNusSparepartSystem\\Check\u0020Aging\u0020Overdue\u0020Prospect
+		SccProvider7 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName8 = TrakNusSparepartSystem\\Check\u0020Approval\u0020TOP\\Check\u0020Approval\u0020TOP.csproj
+		SccProjectTopLevelParentUniqueName8 = TrakNusSparepartSystem.sln
+		SccProjectName8 = TrakNusSparepartSystem/Check\u0020Approval\u0020TOP
+		SccAuxPath8 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath8 = TrakNusSparepartSystem\\Check\u0020Approval\u0020TOP
+		SccProvider8 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName9 = TrakNusSparepartSystem\\Check\u0020Approval\u0020Package\\Check\u0020Approval\u0020Package.csproj
+		SccProjectTopLevelParentUniqueName9 = TrakNusSparepartSystem.sln
+		SccProjectName9 = TrakNusSparepartSystem/Check\u0020Approval\u0020Package
+		SccAuxPath9 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath9 = TrakNusSparepartSystem\\Check\u0020Approval\u0020Package
+		SccProvider9 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName10 = TrakNusSparepartSystem\\Check\u0020Approval\u0020Discount\\Check\u0020Approval\u0020Discount.csproj
+		SccProjectTopLevelParentUniqueName10 = TrakNusSparepartSystem.sln
+		SccProjectName10 = TrakNusSparepartSystem/Check\u0020Approval\u0020Discount
+		SccAuxPath10 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath10 = TrakNusSparepartSystem\\Check\u0020Approval\u0020Discount
+		SccProvider10 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName11 = CheckApprovalSalesEffort\\CheckApprovalSalesEffort.csproj
+		SccProjectTopLevelParentUniqueName11 = TrakNusSparepartSystem.sln
+		SccProjectName11 = CheckApprovalSalesEffort
+		SccAuxPath11 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath11 = CheckApprovalSalesEffort
+		SccProvider11 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName12 = TrakNusSparepartSystem\\Check\u0020Approval\u0020Credit\u0020Limit\\Check\u0020Approval\u0020Credit\u0020Limit.csproj
+		SccProjectTopLevelParentUniqueName12 = TrakNusSparepartSystem.sln
+		SccProjectName12 = TrakNusSparepartSystem/Check\u0020Approval\u0020Credit\u0020Limit
+		SccAuxPath12 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath12 = TrakNusSparepartSystem\\Check\u0020Approval\u0020Credit\u0020Limit
+		SccProvider12 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName13 = Check\u0020Notification\u0020Expired\u0020Setup\u0020Dealer\\Check\u0020Notification\u0020Expired\u0020Setup\u0020Dealer.csproj
+		SccProjectTopLevelParentUniqueName13 = TrakNusSparepartSystem.sln
+		SccProjectName13 = Check\u0020Notification\u0020Expired\u0020Setup\u0020Dealer
+		SccAuxPath13 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath13 = Check\u0020Notification\u0020Expired\u0020Setup\u0020Dealer
+		SccProvider13 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName14 = WorkflowActivity\\WorkflowActivity.csproj
+		SccProjectName14 = WorkflowActivity
+		SccAuxPath14 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath14 = WorkflowActivity
+		SccProvider14 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName15 = TrakNusSparepartSystem\\Check\u0020Escalation\u0020Approval\u0020for\u0020Market\u0020Size\u0020Result\\Check\u0020Escalation\u0020Approval\u0020for\u0020Market\u0020Size\u0020Result.csproj
+		SccProjectTopLevelParentUniqueName15 = TrakNusSparepartSystem.sln
+		SccProjectName15 = TrakNusSparepartSystem/Check\u0020Escalation\u0020Approval\u0020for\u0020Market\u0020Size\u0020Result
+		SccAuxPath15 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath15 = TrakNusSparepartSystem\\Check\u0020Escalation\u0020Approval\u0020for\u0020Market\u0020Size\u0020Result
+		SccProvider15 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName16 = TrakNusSparepartSystemScheduler\\TrakNusSparepartSystemScheduler.csproj
+		SccProjectName16 = TrakNusSparepartSystemScheduler
+		SccAuxPath16 = http://10.0.10.43:8080/tfs/tss
+		SccLocalPath16 = TrakNusSparepartSystemScheduler
+		SccProvider16 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(CRMSolutionProperties) = preSolution
+		SolutionIsBoundToCRM = True
+	EndGlobalSection
+EndGlobal

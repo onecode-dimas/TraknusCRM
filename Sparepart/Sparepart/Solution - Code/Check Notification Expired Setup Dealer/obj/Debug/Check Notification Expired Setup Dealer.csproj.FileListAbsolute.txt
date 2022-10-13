@@ -1,0 +1,12 @@
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Check Notification Expired Setup Dealer.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Check Notification Expired Setup Dealer.exe
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Check Notification Expired Setup Dealer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\obj\Debug\Check Notification Expired Setup Dealer.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\obj\Debug\Check Notification Expired Setup Dealer.exe
+D:\Project\Traknus\Sparepart\Solution - Code\Check Notification Expired Setup Dealer\obj\Debug\Check Notification Expired Setup Dealer.pdb

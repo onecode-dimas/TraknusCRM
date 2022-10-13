@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>b5ccb554-0338-417b-8dcd-e0745339a5af</ProjectGuid>
+  <!--  <ProjectTypeGuids>{88A30576-7583-4F75-8136-5EFD2C14ADFF}</ProjectTypeGuids> -->
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusSparepartSystem.CrmPackage</RootNamespace>
+    <AssemblyName>TrakNusSparepartSystem.CrmPackage</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OutputFile>CrmPackage.zip</OutputFile>
+    <Name>CrmPackage</Name>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <MainFile>WebResources\Script (JScript)\tss_prospectheader.js</MainFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="WebResources\CSS" />
+    <Folder Include="WebResources\Style Sheet %28CSS%29\" />
+    <Folder Include="WebResources\Web Page %28HTML%29" />
+    <Folder Include="WebResources\Script %28JScript%29" />
+    <Folder Include="WebResources\PNG Format" />
+    <Folder Include="WebResources" />
+  </ItemGroup>
+  <ItemGroup>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\bluebird.js">
+      <DisplayName>/library/bluebird/bluebird.js</DisplayName>
+      <UniqueName>tss_/library/bluebird/bluebird.js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>/library/bluebird/bluebird.js</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_appointment.js">
+      <DisplayName>TSS - Appointment</DisplayName>
+      <UniqueName>tss_appointment</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_contract.js">
+      <DisplayName>tss_contract</DisplayName>
+      <UniqueName>tss_tss_contract</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_contractdetail.js">
+      <DisplayName>tss_contractdetail</DisplayName>
+      <UniqueName>tss_tss_contractdetail</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_dealerline.js">
+      <DisplayName>tss_dealerline</DisplayName>
+      <UniqueName>tss_tss_dealerline</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_groupuiocommodity.js">
+      <DisplayName>tss_groupuiocommodity</DisplayName>
+      <UniqueName>tss_tss_groupuiocommodity</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_groupuiocommodityaccount.js">
+      <DisplayName>tss_groupuiocommodityaccount</DisplayName>
+      <UniqueName>new_tss_groupuiocommodityaccount</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_kagroupuiocommodity.js">
+      <DisplayName>tss_kagroupuiocommodity</DisplayName>
+      <UniqueName>new_tss_kagroupuiocommodity</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_kauio.js">
+      <DisplayName>tss_kauio</DisplayName>
+      <UniqueName>tss_tss_kauio</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_keyaccount.js">
+      <DisplayName>tss_keyaccount</DisplayName>
+      <UniqueName>tss_tss_keyaccount</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_marketsizepartconsump.js">
+      <DisplayName>tss_marketsizepartconsump</DisplayName>
+      <UniqueName>tss_tss_marketsizepartconsump</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_marketsizepartconsumpaging.js">
+      <DisplayName>tss_marketsizepartconsumpaging</DisplayName>
+      <UniqueName>tss_tss_marketsizepartconsumpaging</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_marketsizeresultbranch.js">
+      <DisplayName>tss_marketsizeresultbranch</DisplayName>
+      <UniqueName>new_tss_marketsizeresultbranch</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_marketsizeresultnational.js">
+      <DisplayName>tss_marketsizeresultnational</DisplayName>
+      <UniqueName>tss_tss_marketsizeresultnational</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_marketsizeresultpss.js">
+      <DisplayName>tss_marketsizeresultpss</DisplayName>
+      <UniqueName>new_tss_marketsizeresultpss</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_marketsizesummarybyparttype.js">
+      <DisplayName>tss_marketsizesummarybyparttype</DisplayName>
+      <UniqueName>tss_tss_marketsizesummarybyparttype</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_marketsizesummarybyunit.js">
+      <DisplayName>tss_marketsizesummarybyunit</DisplayName>
+      <UniqueName>tss_tss_marketsizesummarybyunit</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_mastermarketsize.js">
+      <DisplayName>tss_mastermarketsize</DisplayName>
+      <UniqueName>tss_tss_mastermarketsize</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_matrixapprovalmarketsize.js">
+      <DisplayName>tss_matrixapprovalmarketsize</DisplayName>
+      <UniqueName>tss_tss_matrixapprovalmarketsize</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_matrixtyreconsump.js">
+      <DisplayName>tss_matrixtyreconsump</DisplayName>
+      <UniqueName>tss_tss_matrixtyreconsump</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_partactivitylines.js">
+      <DisplayName>TSS - Part Activity Lines</DisplayName>
+      <UniqueName>tss_partactivitylines</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_potentialprospectpart.js">
+      <DisplayName>tss_potentialprospectpart</DisplayName>
+      <UniqueName>tss_tss_potentialprospectpart</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_potentialprospectpartline.js">
+      <DisplayName>tss_potentialprospectpartline</DisplayName>
+      <UniqueName>tss_tss_potentialprospectpartline</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_potentialprospectpartsubline.js">
+      <DisplayName>tss_potentialprospectpartsubline</DisplayName>
+      <UniqueName>tss_tss_potentialprospectpartsubline</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_salesorderpartsaleseffort.js">
+      <DisplayName>tss_salesorderpartsaleseffort</DisplayName>
+      <UniqueName>tss_tss_salesorderpartsaleseffort</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_salestargetbranch.js">
+      <DisplayName>tss_salestargetbranch</DisplayName>
+      <UniqueName>tss_tss_salestargetbranch</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_salestargetnational.js">
+      <DisplayName>tss_salestargetnational</DisplayName>
+      <UniqueName>tss_tss_salestargetnational</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_salestargetpss.js">
+      <DisplayName>tss_salestargetpss</DisplayName>
+      <UniqueName>new_tss_salestargetpss</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_unitgroupmarketsize.js">
+      <DisplayName>tss_unitgroupmarketsize</DisplayName>
+      <UniqueName>tss_tss_unitgroupmarketsize</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script (JScript)\tss_quotationpartreasondiscountpackage.js">
+      <DisplayName>JScript1</DisplayName>
+      <UniqueName>tss_JScript1</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\lodash.js">
+      <DisplayName>/library/lodash/lodash.js</DisplayName>
+      <UniqueName>tss_/library/lodash/lodash.js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>/library/lodash/lodash.js</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\MSXRMTOOLS.Xrm.Page.2016.js">
+      <DisplayName>MSXRMTOOLS.Xrm.Page.2016</DisplayName>
+      <UniqueName>tss_MSXRMTOOLS.Xrm.Page.2016</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\SDK.MetaData.js">
+      <DisplayName>/library/mscrmsdk/SDK.MetaData.js</DisplayName>
+      <UniqueName>tss_/library/mscrmsdk/SDK.MetaData.js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>/library/mscrmsdk/SDK.MetaData.js</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_account.js">
+      <DisplayName>tss_account</DisplayName>
+      <UniqueName>tss_account</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_activityvisit_ribbon.js">
+      <DisplayName>tss_activityvisit_ribbon.js</DisplayName>
+      <UniqueName>tss_activityvisit_ribbon.js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>tss_activityvisit_ribbon.js</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quoationpartheader_form_information.js">
+      <DisplayName>tss_quoationpartheader_form_information</DisplayName>
+      <UniqueName>tss_tss_quoationpartheader_form_information</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quoationpartheader_form_manager.js">
+      <DisplayName>tss_quoationpartheader_form_manager</DisplayName>
+      <UniqueName>tss_tss_quoationpartheader_form_manager</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\vue.js">
+      <DisplayName>/library/vue/vue.js</DisplayName>
+      <UniqueName>tss_/library/vue/vue.js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\xrmservicetoolkit.js">
+      <DisplayName>/library/xrmservicetoolkit/xrmservicetoolkit.js</DisplayName>
+      <UniqueName>tss_/library/xrmservicetoolkit/xrmservicetoolkit.js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>/library/xrmservicetoolkit/xrmservicetoolkit.js</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script (JScript)\tss_masterpart.js">
+      <DisplayName>trs_masterpart</DisplayName>
+      <UniqueName>tss_trs_masterpart</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_partactivityheader.js">
+      <DisplayName>tss_partactivityheader</DisplayName>
+      <UniqueName>tss_tss_partactivityheader</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_partmasterlineinterchange.js">
+      <DisplayName>tss_partmasterlineinterchange</DisplayName>
+      <UniqueName>tss_tss_partmasterlineinterchange</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_prospectheader.js">
+      <DisplayName>tss_prospectheader</DisplayName>
+      <UniqueName>tss_tss_prospectheader</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_prospectpartlines.js">
+      <DisplayName>tss_prospectpartlines</DisplayName>
+      <UniqueName>tss_tss_prospectpartlines</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quotation.js">
+      <DisplayName>tss_quotation</DisplayName>
+      <UniqueName>new_tss_quotation</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quotationpartheader.js">
+      <DisplayName>tss_quotationpartheader</DisplayName>
+      <UniqueName>tss_tss_quotationpartheader</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quotationpartheader_ribbon.js">
+      <DisplayName>tss_quotationpartheader_ribbon</DisplayName>
+      <UniqueName>tss_tss_quotationpartheader_ribbon</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quotationpartline.js">
+      <DisplayName>tss_quotationpartline</DisplayName>
+      <UniqueName>tss_tss_quotationpartline</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quotationpartlinesservice.js">
+      <DisplayName>tss_quotationpartlinesservice</DisplayName>
+      <UniqueName>tss_tss_quotationpartlinesservice</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_quotationpartlinessupportmaterial.js">
+      <DisplayName>tss_quotationpartlinessupportmaterial</DisplayName>
+      <UniqueName>tss_tss_quotationpartlinessupportmaterial</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_salesorderpart.js">
+      <DisplayName>tss_salesorderpart</DisplayName>
+      <UniqueName>tss_tss_salesorderpart</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_salesorderpartlines.js">
+      <DisplayName>tss_salesorderpartlines</DisplayName>
+      <UniqueName>tss_tss_salesorderpartlines</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_salesorderpartsublines.js">
+      <DisplayName>tss_salesorderpartsublines</DisplayName>
+      <UniqueName>tss_tss_salesorderpartsublines</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\tss_sparepartpricemaster.js">
+      <DisplayName>tss_sparepartpricemaster</DisplayName>
+      <UniqueName>tss_tss_sparepartpricemaster</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Style Sheet %28CSS%29\tss_gridsetting.css">
+      <DisplayName>gridsetting.css</DisplayName>
+      <UniqueName>tss_gridsetting.css</UniqueName>
+      <WebResourceType>CascadingStylesheet</WebResourceType>
+      <Description>gridsetting.css</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_deliverygrid.htm">
+      <DisplayName>tss_deliverygrid.htm</DisplayName>
+      <UniqueName>tss_deliverygrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_deliverygrid.htm</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_importsalesorderpartlines.html">
+      <DisplayName>tss_importsalesorderpartlines</DisplayName>
+      <UniqueName>tss_tss_importsalesorderpartlines</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_invoicegrid.htm">
+      <DisplayName>tss_invoicegrid.htm</DisplayName>
+      <UniqueName>tss_invoicegrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_invoicegrid.htm</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_outstandingargrid.htm">
+      <DisplayName>tss_outstandingargrid.htm</DisplayName>
+      <UniqueName>tss_outstandingargrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_outstandingargrid.htm</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_populationgrid.htm">
+      <DisplayName>tss_populationgrid.htm</DisplayName>
+      <UniqueName>tss_populationgrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_populationgrid.htm</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_potentialprospectpartgrid.htm">
+      <DisplayName>tss_potentialprospectpartgrid.htm</DisplayName>
+      <UniqueName>tss_potentialprospectpartgrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_potentialprospectpartgrid.htm</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_presalesactivitygrid.html.htm">
+      <DisplayName>presalesactivitygrid.html</DisplayName>
+      <UniqueName>tss_presalesactivitygrid.html</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>presalesactivitygrid.html</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_quotationpartheader.html.htm">
+      <DisplayName>tss_quotationpartheader.html</DisplayName>
+      <UniqueName>tss_quotationpartheader.html</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_quotationpartheader.html</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_salesorderpartgrid.htm">
+      <DisplayName>tss_salesorderpartgrid.htm</DisplayName>
+      <UniqueName>tss_salesorderpartgrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_salesorderpartgrid.htm</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_vocgrid.htm">
+      <DisplayName>tss_vocgrid.htm</DisplayName>
+      <UniqueName>tss_vocgrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_vocgrid.htm</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\tss_workordergrid.htm">
+      <DisplayName>tss_workordergrid.htm</DisplayName>
+      <UniqueName>tss_workordergrid.htm</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <Description>tss_workordergrid.htm</Description>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+  </ItemGroup>
+  <ItemGroup>
+    <RegisterPlugin Include="RegisterFile.crmregister">
+      <DisplayName>RegisterFile</DisplayName>
+      <UniqueName>tss_RegisterFile</UniqueName>
+      <WebResourceType>NotSupported</WebResourceType>
+    </RegisterPlugin>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WorkflowActivity\WorkflowActivity.csproj">
+      <Name>WorkflowActivity</Name>
+      <Project>{45bad138-3731-4a68-a3db-f8d5a812826f}</Project>
+      <Private>True</Private>
+      <SilverlightApplication>False</SilverlightApplication>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Plugins.csproj">
+      <Name>Plugins</Name>
+      <Project>{459842f3-712c-4ee0-a7b8-21b9b550630a}</Project>
+      <Private>True</Private>
+      <SilverlightApplication>False</SilverlightApplication>
+    </ProjectReference>
+    <ProjectReference Include="..\Workflow\Workflow.csproj">
+      <Name>Workflow</Name>
+      <Project>{3f156692-532a-470a-83b1-31d1f1c5583d}</Project>
+      <Private>True</Private>
+      <SilverlightApplication>False</SilverlightApplication>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\CRM\Microsoft.CrmDeveloperTools.12.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

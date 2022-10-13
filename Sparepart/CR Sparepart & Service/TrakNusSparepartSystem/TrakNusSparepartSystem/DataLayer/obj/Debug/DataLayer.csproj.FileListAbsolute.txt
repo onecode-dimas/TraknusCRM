@@ -1,0 +1,7 @@
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\DataLayer\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\DataLayer\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\DataLayer\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\DataLayer\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\DataLayer\obj\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\DataLayer\obj\Debug\TrakNusSparepartSystem.DataLayer.pdb

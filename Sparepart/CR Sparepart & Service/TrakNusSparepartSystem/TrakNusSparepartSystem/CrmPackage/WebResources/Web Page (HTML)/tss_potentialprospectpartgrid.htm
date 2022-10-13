@@ -1,0 +1,256 @@
+﻿<html>
+<head>
+    <title>Potential Prospect Part Grid</title>
+    <link rel="stylesheet" href="../WebResources/tss_/fonts/roboto/roboto_latin.css">
+    <link rel="stylesheet" href="../WebResources/tss_/fonts/fontawesome/css/font_awesome.css">
+    <link rel="stylesheet" href="../WebResources/tss_/library/buefy/buefy.min.css">
+    <link rel="stylesheet" href="../WebResources/tss_gridsetting.css">
+
+    <script type="text/javascript" src="../WebResources/ClientGlobalContext.js.aspx"></script>
+    <script type="text/javascript" src="../WebResources/tss_/polyfill/babel_polyfill/polyfill.min.js"></script>
+    <script type="text/javascript" src="../WebResources/tss_/library/bluebird/bluebird.min.js"></script>
+    <script type="text/javascript" src="../WebResources/tss_/library/momentjs/moment.min.js"></script>
+    <script type="text/javascript" src="../WebResources/tss_/library/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="../WebResources/tss_/library/vue/vue.min.js"></script>
+    <script type="text/javascript" src="../WebResources/tss_/library/buefy/buefy.min.js"></script>
+    <script type="text/javascript" src="../WebResources/tss_/library/mscrmsdk/SDK.MetaData.js"></script>
+    <script type="text/javascript" src="../WebResources/tss_/library/xrmservicetoolkit/xrmservicetoolkit.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <template>
+            <section>
+                <b-tabs>
+                    <b-input v-model="searchFilter" placeholder="Search Potential Prospect Part Number..." icon="search"></b-input>
+                    <b-table
+                        :data="filteredTableData"
+                        :checked-rows.sync="checkedRows"
+                        :loading="isLoading"
+                        :paginated="true"
+                        :per-page="5"
+                        @dblclick="openEntity"
+                        checkable
+                        style="height:100%">
+
+                        <template slot-scope="props">
+                            <b-table-column field="tss_PotentialProspectId" label="Potential Prospect ID" sortable>
+                                {{ props.row.tss_PotentialProspectId }}
+                            </b-table-column>
+                            <b-table-column field="tss_TotalAmount.Value" label="Total Amount" sortable>
+                                {{ props.row.tss_TotalAmount.Value | currency }}
+                            </b-table-column>
+                        </template>
+                        <template slot="empty">
+                            <section class="section">
+                                <div class="content has-text-grey has-text-centered" v-if="!isLoading">
+                                    <p><b>No data obtained. Click <a @click="Start()">here</a> to retry.</b></p>
+                                </div>
+                            </section>
+                        </template>
+                    </b-table>
+
+                </b-tabs>
+            </section>
+        </template>
+    </div>
+
+    <script>
+              Vue.use(Buefy.default, {
+                  defaultIconPack: 'fa',
+                  defaultContainerElement: 'app'
+              });
+
+              var App = new Vue({
+                  el: '#app',
+                  data: {
+                      tableData: [
+                      ],
+                      checkedRows: [],
+                      isLoading: false,
+                      searchFilter: ""
+                  },
+                  computed: {
+                      filteredTableData: function () {
+                          if (this.tableData.length === 0) return [];
+                          return _.filter(this.tableData,
+                              function (data) {
+                                  if (data.tss_PotentialProspectId)
+                                      return data.tss_PotentialProspectId.indexOf(App.searchFilter) !== -1;
+                                  return false;
+                              });
+                      }
+                  },
+                  methods: {
+                      openEntity: function (entity) {
+                          Xrm.Utility.openEntityForm("tss_potentialprospectpart", entity.id, null,
+                              {
+                                  openInNewWindow: true
+                              });
+                      }
+                  },
+                  filters: {
+                      currency: function (value, param, decimalPoint) {
+                          if (value == "") return "";
+                          if (Intl) {
+                              var newValue = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(value);
+                              return newValue;
+                          }
+                          else {
+                              var numberValue = parseFloat(value);
+                              if (!decimalPoint)
+                                  decimalPoint = 2;
+                              if (!param)
+                                  param = "Rp. ";
+                              if (isNaN(numberValue))
+                                  return "-";
+                              else
+                                  return param + " " + numberValue.toFixed(decimalPoint);
+                          }
+                      }
+                  }
+
+              });
+
+
+              function ResetGrid() {
+                  App.tableData = [];
+                  App.checkedRows = [];
+              }
+              //Debug version for now.
+              var filterName = "*C MAJU SELALU";
+              var retrieveAccountIdResult = function () {
+                  return new Promise(function (resolve, reject) {
+                      if (window.parent && window.parent.Xrm && window.parent.Xrm.Page.getAttribute("tss_customer") != null) {
+                          console.log("Hello World !" + window.parent.Xrm.Page.getAttribute("tss_customer").getValue()[0].id);
+                          if (window.parent.Xrm.Page.getAttribute("tss_customer").getValue() == null) {
+                              ResetGrid();
+                          }
+                          resolve(window.parent.Xrm.Page.getAttribute("tss_customer").getValue()[0].id);
+                      } else {
+                          XrmServiceToolkit.Rest.RetrieveMultiple("AccountSet", "?$select=AccountId&$filter=Name eq '" + filterName + "'", function (results) {
+                              var lastAccountId = "";
+                              for (var i = 0; i < results.length; i++) {
+                                  var accountId = results[i].AccountId;
+                                  lastAccountId = accountId;
+                              }
+                              console.log(lastAccountId);
+                              resolve(lastAccountId);
+                          }, function (error) {
+                              console.log(error);
+                              reject(error);
+                          }, function () {
+                              //On Complete - Do Something
+                          }, true);
+                      }
+                  });
+              }
+
+              var retrieveRelatedData = function (accountIdx) {
+                  return new Promise(function (resolve, reject) {
+                      App.tableData = [];
+                      App.checkedRows = [];
+
+                      var oSearchCondition;
+                      var oOwnerId = window.parent.Xrm.Page.getAttribute("ownerid");
+                      console.log("Owner Id : " + oOwnerId);
+
+                      //if (window.parent && window.parent.Xrm && oOwnerId != null) {
+                      //    oSearchCondition = "?$select=tss_MSPeriodStart,tss_PotentialProspectPartId,tss_PotentialProspectId,tss_TotalAmount&$filter=tss_Customer/Id eq (guid'" + accountIdx + "') and tss_PSS/Id eq (guid'" + oOwnerId.getValue()[0].id + "')&$orderby=tss_PotentialProspectId asc";
+                      //}
+                      //else
+                      //{
+                      //    oSearchCondition = "?$select=tss_MSPeriodStart,tss_PotentialProspectPartId,tss_PotentialProspectId,tss_TotalAmount&$filter=tss_Customer/Id eq (guid'" + accountIdx + "')&$orderby=tss_PotentialProspectId asc";
+                      //}
+
+                      XrmServiceToolkit.Rest.RetrieveMultiple("tss_PotentialProspectPartSet", "?$select=tss_MSPeriodStart,tss_PotentialProspectId,tss_PotentialProspectPartId,tss_TotalAmount&$filter=tss_Customer/Id eq (guid'" + accountIdx + "') and tss_PSS/Id eq (guid'" + oOwnerId.getValue()[0].id + "') and (tss_FollowUp eq null or tss_FollowUp eq false)", function (results) {
+                          for (var i = 0; i < results.length; i++) {
+                              //var tss_MSPeriodStart = results[i].tss_MSPeriodStart;
+                              //var tss_PotentialProspectId = results[i].tss_PotentialProspectId;
+                              //var tss_PotentialProspectPartId = results[i].tss_PotentialProspectPartId;
+                              //var tss_TotalAmount = results[i].tss_TotalAmount;
+
+                              App.tableData.push({
+                                  id: results[i].tss_PotentialProspectPartId,
+                                  tss_PotentialProspectId: results[i].tss_PotentialProspectId,
+                                  tss_TotalAmount: results[i].tss_TotalAmount
+                              });
+                          }
+
+                          resolve(results);
+                      }, function (error) {
+                          console.log(error.message);
+                          reject(error);
+                      }, function () {
+                          //On Complete - Do Something
+                      }, false);
+
+                      //XrmServiceToolkit.Rest.RetrieveMultiple("tss_PotentialProspectPartSet", oSearchCondition, function (results) {
+                      //    for (var i = 0; i < results.length; i++) {
+                      //        var tss_MSPeriodStart = results[i].tss_MSPeriodStart;
+                      //        var tss_PotentialProspectPartId = results[i].tss_PotentialProspectPartId;
+                      //        var tss_PotentialProspectIdx = results[i].tss_PotentialProspectId;
+                      //        var tss_TotalAmountx = results[i].tss_TotalAmount;
+
+                      //        App.tableData.push({
+                      //            id: tss_PotentialProspectPartId,
+                      //            tss_PotentialProspectId: tss_PotentialProspectIdx,
+                      //            tss_TotalAmount: tss_TotalAmountx
+                      //        });
+                      //    }
+                      //    resolve(results);
+                      //}, function (error) {
+                      //    console.log(error.message);
+                      //    reject(error);
+                      //}, function () {
+                      //    //On Complete - Do Something
+                      //}, true);
+                  });
+              }
+              function InitializeMapping() {
+                  return new Promise(function (resolve, reject) {
+                      App.tableData = [
+                          {
+                              id: "",
+                              tss_PotentialProspectId: "",
+                              tss_TotalAmount: { Value: 0 }
+                          }
+                      ];
+                      App.$forceUpdate();
+                      setTimeout(function () { resolve() }, 1000);
+                  });
+              }
+
+              var isStarted = false;
+              function Start(count) {
+                  if (count > 3) return;
+                  if (count === "undefined" || count == null) count = 0;
+                  App.isLoading = true;
+                  isStarted = true;
+                  InitializeMapping()
+                  .then(retrieveAccountIdResult)
+                  .then(retrieveRelatedData)
+                  .catch(function (error) {
+                      console.log(error);
+                  })
+                  .finally(function() {
+                      App.isLoading = false;
+                      if (App.tableData.length === 0) {
+                          setTimeout(function () { Start(count + 1); }, 1500);//retry, maybe network issues.
+                        }
+                    });
+              }
+              if (window.parent && window.parent.Xrm && window.parent.Xrm.Page.getAttribute("tss_customer")) {
+                  var parentXrm = window.parent.Xrm;
+                  if (parentXrm && parentXrm.Page.getAttribute("tss_customer")) {
+                      parentXrm.Page.getAttribute("tss_customer").addOnChange(function (reference) {
+                          if (isStarted) {
+                              Start();
+                          }
+                      });
+                  }
+              } else {
+                  Start();
+              }
+    </script>
+</body>
+</html> 

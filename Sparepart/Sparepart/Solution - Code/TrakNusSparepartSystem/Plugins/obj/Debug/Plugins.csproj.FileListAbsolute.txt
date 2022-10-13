@@ -1,0 +1,12 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\obj\Debug\Plugins.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\obj\Debug\Plugins.csproj.ResolveComReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\TrakNusSparepartSystem.Plugins.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\TrakNusSparepartSystem.Plugins.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\obj\Debug\TrakNusSparepartSystem.Plugins.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\Plugins\obj\Debug\TrakNusSparepartSystem.Plugins.pdb

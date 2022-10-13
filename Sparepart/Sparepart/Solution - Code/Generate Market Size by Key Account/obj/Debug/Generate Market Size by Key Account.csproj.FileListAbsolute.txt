@@ -1,0 +1,19 @@
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Generate Market Size by Key Account.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\obj\Debug\Generate Market Size by Key Account.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Generate Market Size by Key Account.exe
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Generate Market Size by Key Account.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\obj\Debug\Generate Market Size by Key Account.exe
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\obj\Debug\Generate Market Size by Key Account.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\obj\Debug\Generate Market Size by Key Account.csproj.Generate Market Size by Key Account.exe.config
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\TrakNusSparepartSystem.WorkflowActivity.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\TrakNusSparepartSystem.WorkflowActivity.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\Generate Market Size by Key Account\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb

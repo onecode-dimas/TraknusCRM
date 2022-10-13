@@ -1,0 +1,15 @@
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Check Approval Credit Limit.exe.config
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Check Approval Credit Limit.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Check Approval Credit Limit.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\obj\Debug\Check Approval Credit Limit.csprojResolveAssemblyReference.cache
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\obj\Debug\Check Approval Credit Limit.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Credit Limit\obj\Debug\Check Approval Credit Limit.pdb

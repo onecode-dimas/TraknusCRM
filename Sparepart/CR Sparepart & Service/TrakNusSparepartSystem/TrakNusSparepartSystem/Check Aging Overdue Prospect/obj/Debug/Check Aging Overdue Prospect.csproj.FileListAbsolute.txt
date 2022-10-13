@@ -1,0 +1,12 @@
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Check Aging Overdue Prospect.exe.config
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Check Aging Overdue Prospect.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Check Aging Overdue Prospect.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\obj\Debug\Check Aging Overdue Prospect.csprojResolveAssemblyReference.cache
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\obj\Debug\Check Aging Overdue Prospect.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Aging Overdue Prospect\obj\Debug\Check Aging Overdue Prospect.pdb

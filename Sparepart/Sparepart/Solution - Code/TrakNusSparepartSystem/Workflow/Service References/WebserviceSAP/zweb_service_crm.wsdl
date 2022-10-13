@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__ZWEB_SERVICE_CRM">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+      </wsp:All>
+      <wsp:All>
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__ZWEB_SERVICE_CRM_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+      </wsp:All>
+      <wsp:All>
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZWEB_SERVICES_CRM">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+          <sapcentraladmin:BusinessApplicationID>0017A47700321ED88DC1EBA045010D07</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZcrmStatusStock">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZcrmCancelSo">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZcrmCreateSo">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char100">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char256">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="256" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char35">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="35" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="cuky5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal28.9">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="28" />
+          <xsd:fractionDigits value="9" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:time">
+          <xsd:pattern value="[0-9]{2}:[0-9]{2}:[0-9]{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:complexType name="ZstrStatusCek">
+        <xsd:sequence>
+          <xsd:element name="PartNumber" type="n0:char18" />
+          <xsd:element name="Branch" type="n0:char4" />
+          <xsd:element name="Uom" type="n0:unit3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZstrStatusStock">
+        <xsd:sequence>
+          <xsd:element name="PartNumber" type="n0:char50" />
+          <xsd:element name="Branch" type="n0:char50" />
+          <xsd:element name="Uom" type="n0:char50" />
+          <xsd:element name="Stock" type="n0:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZstrDetailSo">
+        <xsd:sequence>
+          <xsd:element name="ItmNumber" type="n0:numeric6" />
+          <xsd:element name="Material" type="n0:char18" />
+          <xsd:element name="TargetQty" type="n0:quantum13.3" />
+          <xsd:element name="SalesUnit" type="n0:unit3" />
+          <xsd:element name="ItemCateg" type="n0:char4" />
+          <xsd:element name="CondValue" type="n0:decimal28.9" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZstrResultDo">
+        <xsd:sequence>
+          <xsd:element name="Delno" type="n0:char10" />
+          <xsd:element name="Delqt" type="n0:quantum13.3" />
+          <xsd:element name="Brnch" type="n0:char4" />
+          <xsd:element name="Matrl" type="n0:char18" />
+          <xsd:element name="Sonum" type="n0:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZtwStatusCek">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZstrStatusCek" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZtwStatusStock">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZstrStatusStock" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZtwDetailSo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZstrDetailSo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZtwResultDo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZstrResultDo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZcrmStatusStock">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CsrfToken" type="n0:char256" />
+            <xsd:element name="StatusCek" type="tns:ZtwStatusCek" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZcrmStatusStockResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Description" type="n0:char100" />
+            <xsd:element name="Result" type="n0:char20" />
+            <xsd:element name="StatusReturn" type="tns:ZtwStatusStock" />
+            <xsd:element name="SyncDate" type="n0:date10" />
+            <xsd:element name="SyncTime" type="n0:time" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZcrmCancelSo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CsrfToken" type="n0:char256" />
+            <xsd:element name="Salesdocument" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZcrmCancelSoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Description" type="n0:char100" />
+            <xsd:element name="Result" type="n0:char20" />
+            <xsd:element name="SyncDate" type="n0:date10" />
+            <xsd:element name="SyncTime" type="n0:time" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZcrmCreateSo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BillTo" type="n0:char10" />
+            <xsd:element name="ContactBill" type="n0:char50" />
+            <xsd:element name="ContactShip" type="n0:char50" />
+            <xsd:element name="ContactSls" type="n0:char50" />
+            <xsd:element name="ContactSold" type="n0:char50" />
+            <xsd:element name="CsrfToken" type="n0:char256" />
+            <xsd:element name="Currency" type="n0:cuky5" />
+            <xsd:element name="DetailSo" type="tns:ZtwDetailSo" />
+            <xsd:element name="DistrChan" type="n0:char2" />
+            <xsd:element name="Division" type="n0:char2" />
+            <xsd:element name="DocType" type="n0:char4" />
+            <xsd:element name="PackName" type="n0:char50" />
+            <xsd:element name="PackPrice" type="n0:char50" />
+            <xsd:element name="PackQty" type="n0:char50" />
+            <xsd:element name="PackSlsunit" type="n0:char50" />
+            <xsd:element name="PackType" type="n0:char50" />
+            <xsd:element name="PartnNumb" type="n0:char10" />
+            <xsd:element name="Plant" type="n0:char4" />
+            <xsd:element name="Pmnttrms" type="n0:char4" />
+            <xsd:element name="PriceGrp" type="n0:char2" />
+            <xsd:element name="PriceList" type="n0:char2" />
+            <xsd:element name="PurchDate" type="n0:date10" />
+            <xsd:element name="PurchNoC" type="n0:char35" />
+            <xsd:element name="ReqDateH" type="n0:date10" />
+            <xsd:element name="SalesOff" type="n0:char4" />
+            <xsd:element name="SalesOrg" type="n0:char4" />
+            <xsd:element name="Salesman" type="n0:char10" />
+            <xsd:element name="ShipTo" type="n0:char10" />
+            <xsd:element name="SoCrmNo" type="n0:char30" />
+            <xsd:element name="SoldTo" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZcrmCreateSoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Description" type="n0:char100" />
+            <xsd:element name="Result" type="n0:char20" />
+            <xsd:element name="ResultDo" type="tns:ZtwResultDo" />
+            <xsd:element name="SyncDate" type="n0:date10" />
+            <xsd:element name="SyncTime" type="n0:time" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZcrmStatusStock">
+    <wsdl:part name="parameters" element="tns:ZcrmStatusStock" />
+  </wsdl:message>
+  <wsdl:message name="ZcrmStatusStockResponse">
+    <wsdl:part name="parameter" element="tns:ZcrmStatusStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZcrmCancelSo">
+    <wsdl:part name="parameters" element="tns:ZcrmCancelSo" />
+  </wsdl:message>
+  <wsdl:message name="ZcrmCancelSoResponse">
+    <wsdl:part name="parameter" element="tns:ZcrmCancelSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZcrmCreateSo">
+    <wsdl:part name="parameters" element="tns:ZcrmCreateSo" />
+  </wsdl:message>
+  <wsdl:message name="ZcrmCreateSoResponse">
+    <wsdl:part name="parameter" element="tns:ZcrmCreateSoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWEB_SERVICES_CRM">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://tnsapdb:8000/sap/bc/esdt/docu/sd_text?sap-client=310&amp;sd_name=ZWEB_SERVICES_CRM" />
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZWEB_SERVICES_CRM" />
+    </wsp:Policy>
+    <wsdl:operation name="ZcrmStatusStock">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZcrmStatusStock" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZcrmStatusStock" />
+      <wsdl:output message="tns:ZcrmStatusStockResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZcrmCancelSo">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZcrmCancelSo" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZcrmCancelSo" />
+      <wsdl:output message="tns:ZcrmCancelSoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZcrmCreateSo">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZcrmCreateSo" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZcrmCreateSo" />
+      <wsdl:output message="tns:ZcrmCreateSoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWEB_SERVICE_CRM" type="tns:ZWEB_SERVICES_CRM">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWEB_SERVICE_CRM" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZcrmStatusStock">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_CRM:ZcrmStatusStockRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZcrmCancelSo">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_CRM:ZcrmCancelSoRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZcrmCreateSo">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_CRM:ZcrmCreateSoRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZWEB_SERVICE_CRM_soap12" type="tns:ZWEB_SERVICES_CRM">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWEB_SERVICE_CRM_soap12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZcrmStatusStock">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_CRM:ZcrmStatusStockRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZcrmCancelSo">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_CRM:ZcrmCancelSoRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZcrmCreateSo">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_CRM:ZcrmCreateSoRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWEB_SERVICE_CRM">
+    <wsdl:port name="ZWEB_SERVICE_CRM" binding="tns:ZWEB_SERVICE_CRM">
+      <soap:address location="http://tnsapdb:8000/sap/bc/srt/rfc/sap/zweb_services_crm/310/zweb_service_crm/zweb_service_crm" />
+    </wsdl:port>
+    <wsdl:port name="ZWEB_SERVICE_CRM_soap12" binding="tns:ZWEB_SERVICE_CRM_soap12">
+      <wsoap12:address location="http://tnsapdb:8000/sap/bc/srt/rfc/sap/zweb_services_crm/310/zweb_service_crm/zweb_service_crm" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,151 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="../WebResources/tss_/fonts/roboto/roboto_latin.css">
+            <link rel="stylesheet" href="../WebResources/tss_/fonts/fontawesome/css/font_awesome.css">
+            <link rel="stylesheet" href="../WebResources/tss_/library/buefy/buefy.min.css">
+            <link rel="stylesheet" href="../WebResources/tss_gridsetting.css">
+            
+            <script type="text/javascript" src="../WebResources/ClientGlobalContext.js.aspx"></script>
+            <script type="text/javascript" src="../WebResources/tss_/polyfill/babel_polyfill/polyfill.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/bluebird/bluebird.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/vue/vue.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/buefy/buefy.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/mscrmsdk/SDK.MetaData.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/xrmservicetoolkit/xrmservicetoolkit.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <template>
+                <section>
+                    <b-tabs>
+                            <b-table
+                                :data="tableData"
+                                :checked-rows.sync="checkedRows"
+                                :loading="isLoading"
+                                checkable
+                                style="height:100%">
+            
+                                <template slot-scope="props">
+                                    <b-table-column field="tss_activity" label="Presales Activity" sortable>
+                                        {{ props.row.tss_activity }}
+                                    </b-table-column>
+                                </template>
+                                <template slot="empty">
+                                    <section class="section">
+                                        <div class="content has-text-grey has-text-centered" v-if="!isLoading">
+                                            <p><b>No data obtained. Click <a @click="Start()">here</a> to retry.</b></p>
+                                        </div>
+                                    </section>
+                                </template>
+                            </b-table>
+            
+                    </b-tabs>
+                </section>
+            </template>
+          </div>
+          <script>
+              Vue.use(Buefy.default, {
+                  defaultIconPack: 'fa',
+                  defaultContainerElement: 'app'
+              });
+            var App = new Vue({
+                el: '#app',
+                data: {
+                    tableData : [
+                    ],
+                    checkedRows: [],
+                    isLoading : false
+                },
+                methods:{
+                    openEntity : function(entity){
+                        Xrm.Utility.openEntityForm("tss_presalesactivity", entity.id, null,
+                            {
+                                openInNewWindow: true
+                            });
+                        //alert(entity.tss_quotationnumber);
+                    }
+                },
+                filters: {
+                    currency : function(value,param,decimalPoint){
+                        if (value == "") return "";
+                        if (Intl){
+                            var newValue = new Intl.NumberFormat('id-ID', { style: 'currency', currency : 'IDR'}).format(value);
+                            return newValue;
+                        }
+                        else{
+                            var numberValue = parseFloat(value);
+                            if (!decimalPoint)
+                                decimalPoint = 2;
+                            if (!param)
+                                param = "Rp. ";
+                            if (isNaN(numberValue))
+                                return "-";
+                            else
+                                return param  + " " + numberValue.toFixed(decimalPoint);
+                        }
+                    }
+                }
+
+            });
+            
+            var retrieveRelatedData = function(accountId){
+                return new Promise(function (resolve, reject) {
+                    App.tableData = [];
+                    App.checkedRows = [];
+                    XrmServiceToolkit.Rest.RetrieveMultiple("tss_presalesactivitySet", "?$select=tss_activity,tss_presalesactivityId&$filter=statuscode/Value eq 1", function(results) {
+                        for (var i = 0; i < results.length; i++) {
+                            var tss_activity = results[i].tss_activity;
+                            var tss_presalesactivityId = results[i].tss_presalesactivityId;
+                            App.tableData.push({
+                                id : tss_presalesactivityId,
+                                tss_activity : tss_activity,
+                            });
+                        }
+                        resolve(results);
+                    }, function(error) {
+                        console.log(error);
+                        reject(error);
+                    }, function() {
+                        //On Complete - Do Something
+                    }, true);
+                });
+            }
+            function InitializeMapping() {
+                App.tableData = [
+                    {
+                        id: "",
+                        tss_activity: ""
+                    }];
+                App.$forceUpdate();
+            }
+            function Start(count) {
+                try {
+                    if (count > 3) return;
+                    if (count === "undefined" || count == null) count = 0;
+                    InitializeMapping();
+                    App.isLoading = true;
+                    retrieveRelatedData()
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .finally(function () {
+                        App.isLoading = false;
+
+                        if (App.tableData.length === 0) {
+                            setTimeout(function () { Start(count + 1); }, 1500);//retry, maybe network issues.
+                        }
+                    });
+                } catch (e) {
+
+                    setTimeout(function () { Start(count + 1); }, 1500);//retry, maybe network issues.
+                    console.log(e.message);
+                }
+            }
+            
+            if (!window.parent || !window.parent.Xrm || !window.parent.Xrm.Page.getAttribute("tss_customer")) {
+                Start();
+            } 
+
+          </script>
+    </body>
+</html> 

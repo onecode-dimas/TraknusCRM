@@ -1,0 +1,10 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\bin\TrakNusSparepartSystem.WcfService.dll.config
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\bin\TrakNusSparepartSystem.WcfService.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\bin\TrakNusSparepartSystem.WcfService.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\bin\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\bin\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\bin\Microsoft.Xrm.Tooling.Connector.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\obj\Debug\TrakNusSparepartSystem.WcfService.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\WcfService\WcfService\obj\Debug\TrakNusSparepartSystem.WcfService.pdb

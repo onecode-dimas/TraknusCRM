@@ -1,0 +1,15 @@
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\Helper\HelperFunction.cs
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.Plugins.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.Workflow.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.WorkflowActivity.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.Plugins.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.Workflow.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\obj\Debug\CrmPackage.csprojResolveAssemblyReference.cache
+D:\Project\Traknus\Sparepart\Solution - Code\TrakNusSparepartSystem\CrmPackage\bin\Debug\TrakNusSparepartSystem.WorkflowActivity.pdb

@@ -1,0 +1,262 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="../WebResources/tss_/fonts/roboto/roboto_latin.css">
+            <link rel="stylesheet" href="../WebResources/tss_/fonts/fontawesome/css/font_awesome.css">
+            <link rel="stylesheet" href="../WebResources/tss_/library/buefy/buefy.min.css">
+            <link rel="stylesheet" href="../WebResources/tss_gridsetting.css">
+            <script type="text/javascript" src="../WebResources/ClientGlobalContext.js.aspx"></script>
+            <script type="text/javascript" src="../WebResources/tss_/polyfill/babel_polyfill/polyfill.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/bluebird/bluebird.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/lodash/lodash.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/vue/vue.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/buefy/buefy.min.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/mscrmsdk/SDK.MetaData.js"></script>
+            <script type="text/javascript" src="../WebResources/tss_/library/xrmservicetoolkit/xrmservicetoolkit.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <template>
+                <section>
+                    <b-tabs>
+                            <b-input v-model="searchFilter" placeholder="Search CRM WO Number..." icon="search"></b-input>
+                            <b-table
+                                :data="filteredTableData"
+                                :checked-rows.sync="checkedRows"
+                                :loading="isLoading"
+                                :paginated="true"
+                                :per-page="5"
+                                @dblclick="openEntity"
+                                default-sort="trs_crmwonumber"
+                                checkable
+                                style="height:100%">
+            
+                                <template slot-scope="props">
+                                    <b-table-column field="trs_crmwonumber" label="CRM WO Number" sortable>
+                                        {{ props.row.trs_crmwonumber }}
+                                    </b-table-column>
+
+                                    <b-table-column field="description" label="Description" sortable>
+                                        {{ props.row.description}}
+                                    </b-table-column>
+
+                                    <b-table-column field="statusCode.Value" label="WO Status" sortable>
+                                        {{ props.row.statusCode.Value | statusReasonFilter}}
+                                    </b-table-column>
+            
+                                </template>
+                                <template slot="empty">
+                                    <section class="section">
+                                        <div class="content has-text-grey has-text-centered" v-if="!isLoading">
+                                            <p><b>No data obtained. Click <a @click="Start()">here</a> to retry.</b></p>
+                                        </div>
+                                    </section>
+                                </template>
+                            </b-table>
+            
+                    </b-tabs>
+                </section>
+            </template>
+          </div>
+    <script>
+        ///<reference path="../Script/lodash.js"/>
+        Vue.use(Buefy.default, {
+            defaultIconPack: 'fa',
+            defaultContainerElement: 'app'
+        });
+        var App = new Vue({
+            el: '#app',
+            data: {
+                tableData: [
+                ],
+                checkedRows: [],
+                optionSetMapping: [],
+                isLoading: false,
+                searchFilter: ""
+            },
+
+            computed: {
+                filteredTableData: function () {
+                    if (this.tableData.length === 0) return [];
+
+                    return _.filter(this.tableData,
+                        function (data) {
+                            if (data.trs_crmwonumber)
+                                return data.trs_crmwonumber.indexOf(App.searchFilter) !== -1;
+                            return false;
+                        });
+                }
+            },
+            methods: {
+                openEntity: function (entity) {
+                    Xrm.Utility.openEntityForm("serviceappointment", entity.id, null,
+                        {
+                            openInNewWindow: true
+                        });
+                }
+            },
+            filters: {
+                currency: function (value, param, decimalPoint) {
+                    if (value === "") return "";
+                    if (Intl) {
+                        var newValue = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(value);
+                        return newValue;
+                    }
+                    else {
+                        var numberValue = parseFloat(value);
+                        if (!decimalPoint)
+                            decimalPoint = 2;
+                        if (!param)
+                            param = "Rp. ";
+                        if (isNaN(numberValue))
+                            return "-";
+                        else
+                            return param + " " + numberValue.toFixed(decimalPoint);
+                    }
+                },
+                statusReasonFilter: function (value) {
+                    for (var i = 0 ; i < App.optionSetMapping.length; i++) {
+                        if (App.optionSetMapping[i].Key === value) {
+                            return App.optionSetMapping[i].Value;
+                        }
+                    }
+                    return "-";
+                }
+            }
+
+        });
+
+        var retrieveMetadataFunction = function () {
+            return new Promise(function (resolve, reject) {
+                SDK.Metadata.RetrieveAttribute("ServiceAppointment", "StatusCode", null, true, function (result) {
+                    var metadata = [];
+                    for (var i = 0; i < result.OptionSet.Options.length; i++) {
+                        metadata.push({ Key: result.OptionSet.Options[i].Value, Value: result.OptionSet.Options[i].Label.LocalizedLabels[0].Label });
+                    }
+                    console.log(metadata);
+                    resolve(metadata);
+                },
+                    function (error) {
+                        console.log(error);
+                        reject(error);
+                    }, null);
+            });
+        }
+        function ResetGrid() {
+            App.tableData = [];
+            App.checkedRows = [];
+        }
+        //Debug version for now.
+        var filterName = "SWADAYA HARAPAN NUSANTARA, PT.";
+        var retrieveAccountIdResult = function () {
+            return new Promise(function (resolve, reject) {
+                if (window.parent && window.parent.Xrm && window.parent.Xrm.Page.getAttribute("tss_customer") != null) {
+                    if (window.parent.Xrm.Page.getAttribute("tss_customer").getValue() == null) {
+                        ResetGrid();
+                    }
+                    resolve(window.parent.Xrm.Page.getAttribute("tss_customer").getValue()[0].id);
+                } else {
+                    XrmServiceToolkit.Rest.RetrieveMultiple("AccountSet", "?$select=AccountId&$filter=Name eq '" + filterName + "'", function (results) {
+                        var lastAccountId = "";
+                        for (var i = 0; i < results.length; i++) {
+                            var accountId = results[i].AccountId;
+                            lastAccountId = accountId;
+                        }
+                        console.log(lastAccountId);
+                        resolve(lastAccountId);
+                    }, function (error) {
+                        console.log(error);
+                        reject(error);
+                    }, function () {
+                        //On Complete - Do Something
+                    }, true);
+                }
+            });
+        }
+
+        var retrieveRelatedData = function (accountId) {
+            return new Promise(function (resolve, reject) {
+                App.tableData = [];
+                App.checkedRows = [];
+                XrmServiceToolkit.Rest.RetrieveMultiple("ServiceAppointmentSet", "?$select=ActivityId,StatusCode,Description,trs_crmwonumber&$filter=StatusCode/Value ne 8 and trs_Customer/Id eq (guid'" + accountId + "')", function (results) {
+                    console.log(results);
+                    for (var i = 0; i < results.length; i++) {
+                        var activityId = results[i].ActivityId;
+                        var statusCode = results[i].StatusCode;
+                        var description = results[i].Description;
+                        var trs_crmwonumber = results[i].trs_crmwonumber;
+                        App.tableData.push({
+                            id: activityId,
+                            description: description,
+                            trs_crmwonumber: trs_crmwonumber,
+                            statusCode: statusCode
+                        });
+
+                    }
+                }, function (error) {
+                    reject(error);
+                }, function () {
+                    //On Complete - Do Something
+                    resolve();
+                }, true);
+
+            });
+        }
+        var isStarted = false;
+        function InitializeMapping() {
+            return new Promise(function (resolve, reject) {
+                App.tableData = [
+                    {
+                        id: "",
+                        description: "",
+                        trs_crmwonumber: "",
+                        statusCode: { Value: null }
+                    }
+                ];
+                App.$forceUpdate();
+                setTimeout(function () { resolve() }, 1000);
+            });
+        }
+
+        function Start(count) {
+            try {
+                if (count > 3) return;
+                if (count === "undefined" || count == null) count = 0;
+                App.isLoading = true;
+                InitializeMapping().then(retrieveMetadataFunction)
+                    .then(function (result) {
+                        App.optionSetMapping = result;
+                    })
+                    .then(retrieveAccountIdResult)
+                    .then(retrieveRelatedData)
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .finally(function () {
+
+                        App.isLoading = false;
+                        if (App.tableData.length === 0) {
+                            setTimeout(function () { Start(count + 1); }, 1500);//retry, maybe network issues.
+                        }
+                    });
+                isStarted = true;
+            } catch (e) {
+                setTimeout(function () { Start(count + 1); }, 1500);//retry, maybe network issues.
+                console.log(e.message);
+            }
+        }
+
+        if (window.parent && window.parent.Xrm && window.parent.Xrm.Page.getAttribute("tss_customer")) {
+            var parentXrm = window.parent.Xrm;
+            if (parentXrm && parentXrm.Page.getAttribute("tss_customer")) {
+                parentXrm.Page.getAttribute("tss_customer").addOnChange(function (reference) {
+                    if (isStarted) {
+                        Start();
+                    }
+                });
+            }
+        } else {
+            Start();
+        }
+    </script>
+    </body>
+</html> 

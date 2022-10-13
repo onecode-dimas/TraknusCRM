@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45BAD138-3731-4A68-A3DB-F8D5A812826F}</ProjectGuid>
+  <!--  <ProjectTypeGuids>{2AA76AF3-4D9E-4AF0-B243-EB9BCDFB143B};{32f31d43-81cc-4c15-9de6-3fc5453562b6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids> -->
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusSparepartSystem.WorkflowActivity</RootNamespace>
+    <AssemblyName>TrakNusSparepartSystem.WorkflowActivity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <!--<TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>-->
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TrakNus Sparepart System.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Microsoft.SqlServer.ManagedDTS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.IntegrationServices">
+      <HintPath>..\..\..\..\..\..\Microsoft.SqlServer.Management.IntegrationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.xrm.client, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\REFERENCES\microsoft.xrm.client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>..\TrakNusSparepartSystemScheduler\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
+      <HintPath>..\TrakNusSparepartSystem\DataLayer\Referenced Dll\microsoft.xrm.sdk.workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\TrakNusSparepartSystem\DataLayer\Referenced Dll\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\TrakNusSparepartSystem\DataLayer\Referenced Dll\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApproveMarketSizeResultBranch.cs" />
+    <Compile Include="ApproveMarketSizeResultPss.cs" />
+    <Compile Include="ApproveMarketSizeResultNational.cs" />
+    <Compile Include="ApproveSalesTargetBranch.cs" />
+    <Compile Include="ApproveSalesTargetNational.cs" />
+    <Compile Include="ApproveSalesTargetPSS.cs" />
+    <Compile Include="Business Layer\BaseCustomeWofkflow.cs" />
+    <Compile Include="Business Layer\BL_documentpayment.cs" />
+    <Compile Include="Business Layer\BL_incentivefinal.cs" />
+    <Compile Include="Business Layer\BL_KeyAccount.cs" />
+    <Compile Include="Business Layer\BL_tss_marketsizeresultbranch.cs" />
+    <Compile Include="Business Layer\BL_tss_marketsizeresultnational.cs" />
+    <Compile Include="Business Layer\BL_tss_marketsizeresultpss.cs" />
+    <Compile Include="Business Layer\BL_tss_marketsizesummarybygroupuiocommodity.cs" />
+    <Compile Include="Business Layer\BL_tss_marketsizesummarybypartnumber.cs" />
+    <Compile Include="Business Layer\BL_tss_marketsizesummarybyparttype.cs" />
+    <Compile Include="Business Layer\BL_tss_marketsizesummarybyunit.cs" />
+    <Compile Include="Business Layer\BL_tss_mastermarketsize.cs" />
+    <Compile Include="Business Layer\BL_tss_mastermarketsize_sp.cs" />
+    <Compile Include="Business Layer\BL_tss_potentialprospectpart.cs" />
+    <Compile Include="Business Layer\BL_tss_potentialprospectpartlines.cs" />
+    <Compile Include="Business Layer\BL_tss_potentialprospectpartsublines.cs" />
+    <Compile Include="Business Layer\BL_tss_prospectpart.cs" />
+    <Compile Include="Business Layer\BL_tss_salesactualbranch.cs" />
+    <Compile Include="Business Layer\BL_tss_salesactualnational.cs" />
+    <Compile Include="Business Layer\BL_tss_salesactualpss.cs" />
+    <Compile Include="Business Layer\BL_tss_salestargetbranch.cs" />
+    <Compile Include="Business Layer\BL_tss_salestargetnation.cs" />
+    <Compile Include="Business Layer\BL_tss_salestargetpss.cs" />
+    <Compile Include="Business Layer\BL_tss_sopartheader.cs" />
+    <Compile Include="Business Layer\BL_tss_totalpartconsumpmarketsize.cs" />
+    <Compile Include="Business Layer\Calculate04.cs" />
+    <Compile Include="Business Layer\Calculate01.cs" />
+    <Compile Include="Business Layer\Calculate02.cs" />
+    <Compile Include="Business Layer\Calculate03.cs" />
+    <Compile Include="Business Layer\Calculate05.cs" />
+    <Compile Include="Business Layer\CalculateCommodity.cs" />
+    <Compile Include="Business Layer\BL_soincentive.cs" />
+    <Compile Include="Business Layer\GetActivePeriodDate.cs" />
+    <Compile Include="Business Layer\GetStoredProcedure.cs" />
+    <Compile Include="ConfirmMarketSizeResultPss.cs" />
+    <Compile Include="ConfirmSalesTargetPSS.cs" />
+    <Compile Include="ConvertToProspectPart.cs" />
+    <Compile Include="ConvertToProspectPartFromPotentialProspectPartLine.cs" />
+    <Compile Include="ConvertToProspectPartFromPotentialProspectPartSubLine.cs" />
+    <Compile Include="EarlyBound\Actions.cs" />
+    <Compile Include="EarlyBound\Entities.cs" />
+    <Compile Include="EarlyBound\OptionSets.cs" />
+    <Compile Include="Generatedocumentpayment.cs" />
+    <Compile Include="GenerateMarketSizeResultPSS.cs" />
+    <Compile Include="GenerateMarketSizeSummaryByPartNumberFromKeyAccount.cs" />
+    <Compile Include="GenerateMasterMarketSize.cs" />
+    <Compile Include="GenerateMasterMarketSizeFromKeyAccount.cs" />
+    <Compile Include="Generatesoincentive.cs" />
+    <Compile Include="GenerateSummaryMarketSizeByPartType.cs" />
+    <Compile Include="GenerateSummaryMarketSizeByUnit.cs" />
+    <Compile Include="Helper\Common.cs" />
+    <Compile Include="Helper\EmailAgent.cs" />
+    <Compile Include="Helper\TssType.cs" />
+    <Compile Include="Interface\ICalculate.cs" />
+    <Compile Include="ReviseKeyAccount.cs" />
+    <Compile Include="ReviseMarketSizeResultBranch.cs" />
+    <Compile Include="ReviseMarketSizeResultNational.cs" />
+    <Compile Include="ReviseMarketSizeResultPss.cs" />
+    <Compile Include="ReviseSalesTargetBranch.cs" />
+    <Compile Include="ReviseSalesTargetNational.cs" />
+    <Compile Include="ReviseSalesTargetPSS.cs" />
+    <Compile Include="SalesOrderPartInvoice.cs" />
+    <Compile Include="WorkFlowActivityBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrakNus Sparepart System.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{a4753a3a-26e0-4500-88ca-c9e68fb17478}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrakNusSparepartSystem\DataLayer\DataLayer.csproj">
+      <Project>{6e174c5b-04f6-4ee8-a5fc-ca62a294ee41}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrakNusSparepartSystem\Plugins\Plugins.csproj">
+      <Project>{459842f3-712c-4ee0-a7b8-21b9b550630a}</Project>
+      <Name>Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Check Approval Package.exe.config
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Check Approval Package.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Check Approval Package.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.DataLayer.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.Helper.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.Helper.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\bin\Debug\TrakNusSparepartSystem.DataLayer.pdb
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\obj\Debug\Check Approval Package.csprojResolveAssemblyReference.cache
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\obj\Debug\Check Approval Package.exe
+D:\Work\Project\Traknus\CR Sparepart & Services\Solution\TrakNusSparepartSystem\TrakNusSparepartSystem\Check Approval Package\obj\Debug\Check Approval Package.pdb
