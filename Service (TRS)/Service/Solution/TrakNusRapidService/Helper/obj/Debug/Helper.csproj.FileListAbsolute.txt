@@ -1,0 +1,13 @@
+D:\Projects\Traknus\Solution\TrakNusRapidService\Helper\bin\Debug\TrakNusRapidService.Helper.dll.config
+D:\Projects\Traknus\Solution\TrakNusRapidService\Helper\bin\Debug\TrakNusRapidService.Helper.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Helper\bin\Debug\TrakNusRapidService.Helper.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+D:\Projects\Traknus\Solution\TrakNusRapidService\Helper\obj\Debug\TrakNusRapidService.Helper.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Helper\obj\Debug\TrakNusRapidService.Helper.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Helper\bin\Debug\TrakNusRapidService.Helper.dll.config
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Helper\bin\Debug\TrakNusRapidService.Helper.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Helper\bin\Debug\TrakNusRapidService.Helper.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Helper\obj\Debug\Helper.csproj.AssemblyReference.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Helper\obj\Debug\TrakNusRapidService.Helper.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Helper\obj\Debug\TrakNusRapidService.Helper.pdb

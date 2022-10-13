@@ -1,0 +1,1729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="DispatchWorkOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workOrderId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DispatchWorkOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DispatchWorkOrderResult" type="tns:SynchronizationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SynchronizationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Data" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="tns:Result" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SynchronizedDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Result">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="Failed" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="DoNotInvoke">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entities" type="tns:CRMDbEntities" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CRMDbEntities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountBases" type="tns:ArrayOfAccountBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityPartyBases" type="tns:ArrayOfActivityPartyBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactBases" type="tns:ArrayOfContactBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerAddressBases" type="tns:ArrayOfCustomerAddressBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="EquipmentBases" type="tns:ArrayOfEquipmentBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_populationBase" type="tns:ArrayOfNew_populationBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestParts" type="tns:ArrayOfRequestPart" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestPartsLists" type="tns:ArrayOfRequestPartsList" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceAppointmentBases" type="tns:ArrayOfServiceAppointmentBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceAppointmentBaseMechanics" type="tns:ArrayOfServiceAppointmentBaseMechanic" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskBases" type="tns:ArrayOfTaskBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_commercialdetailBase" type="tns:ArrayOfTrs_commercialdetailBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_commercialdetailmechanicBase" type="tns:ArrayOfTrs_commercialdetailmechanicBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_commercialtaskBase" type="tns:ArrayOfTrs_commercialtaskBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_functionallocationBase" type="tns:ArrayOfTrs_functionallocationBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_masterpartBase" type="tns:ArrayOfTrs_masterpartBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_mechanicgradeBase" type="tns:ArrayOfTrs_mechanicgradeBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_mechanicgradetimehourBase" type="tns:ArrayOfTrs_mechanicgradetimehourBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_mechanicmonthlypointBase" type="tns:ArrayOfTrs_mechanicmonthlypointBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_mechanictimehourdetailsBase" type="tns:ArrayOfTrs_mechanictimehourdetailsBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_mtarBase" type="tns:ArrayOfTrs_mtarBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partdetailistsBase" type="tns:ArrayOfTrs_partdetailistsBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partrecommendationBase" type="tns:ArrayOfTrs_partrecommendationBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_ppmreportBase" type="tns:ArrayOfTrs_ppmreportBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_productmodelBase" type="tns:ArrayOfTrs_productmodelBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_productsectionBase" type="tns:ArrayOfTrs_productsectionBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_producttypeBase" type="tns:ArrayOfTrs_producttypeBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_sectionrecommendationBase" type="tns:ArrayOfTrs_sectionrecommendationBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_taskassignmenthistoryBase" type="tns:ArrayOfTrs_taskassignmenthistoryBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tasklistBase" type="tns:ArrayOfTrs_tasklistBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tasklistdetailpartBase" type="tns:ArrayOfTrs_tasklistdetailpartBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tasklistgroupBase" type="tns:ArrayOfTrs_tasklistgroupBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tasklistheaderBase" type="tns:ArrayOfTrs_tasklistheaderBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tasklisttypeBase" type="tns:ArrayOfTrs_tasklisttypeBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_technicalservicereportBase" type="tns:ArrayOfTrs_technicalservicereportBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_technicalservicereportdocumentationBase" type="tns:ArrayOfTrs_technicalservicereportdocumentationBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_trs_producttype_trs_unittypeofworkBase" type="tns:ArrayOfTrs_trs_producttype_trs_unittypeofworkBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tsrpartdetailsBase" type="tns:ArrayOfTrs_tsrpartdetailsBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tsrpartsdamageddetailBase" type="tns:ArrayOfTrs_tsrpartsdamageddetailBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_unitofmeasurementBase" type="tns:ArrayOfTrs_unitofmeasurementBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_unittypeofworkBase" type="tns:ArrayOfTrs_unittypeofworkBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_vocBase" type="tns:ArrayOfTrs_vocBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_workorderdocumentationBase" type="tns:ArrayOfTrs_workorderdocumentationBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_workorderpartdetailBase" type="tns:ArrayOfTrs_workorderpartdetailBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_workorderpartrecommendationBase" type="tns:ArrayOfTrs_workorderpartrecommendationBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_workorderpartssummaryBase" type="tns:ArrayOfTrs_workorderpartssummaryBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_workordersecondmanBase" type="tns:ArrayOfTrs_workordersecondmanBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_workordersupportingmaterialBase" type="tns:ArrayOfTrs_workordersupportingmaterialBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:ArrayOfUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityPointerBases" type="tns:ArrayOfActivityPointerBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductBases" type="tns:ArrayOfProductBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="IncidentBases" type="tns:ArrayOfIncidentBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="KbArticleBases" type="tns:ArrayOfKbArticleBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_salesgroupBase" type="tns:ArrayOfNew_salesgroupBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAccountBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AccountBase" nillable="true" type="tns:AccountBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AccountBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccountId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryContactId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentAccountId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MasterId" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfActivityPartyBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActivityPartyBase" nillable="true" type="tns:ActivityPartyBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActivityPartyBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActivityId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActivityPartyId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="PartyId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="PartyObjectTypeCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParticipationTypeMask" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContactBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactBase" nillable="true" type="tns:ContactBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContactId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_FunctionalLocation" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomerAddressBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerAddressBase" nillable="true" type="tns:CustomerAddressBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerAddressBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ParentId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerAddressId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressNumber" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjectTypeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Line1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEquipmentBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EquipmentBase" nillable="true" type="tns:EquipmentBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EquipmentBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EquipmentId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="SiteId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BusinessUnitId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Skills" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeZoneCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisplayInServiceViews" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDisabled" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CalendarId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMailAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrganizationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportSequenceNumber" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverriddenCreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeZoneRuleVersionNumber" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UTCConversionTimeZoneCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExchangeRate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOnBehalfBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOnBehalfBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionCurrencyId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_DeviceID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_FacilityType" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_MainPhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicStatus" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MonthlyPoint" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_NRP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_PermanentMechanicID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_RepairTimeHour" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_RepairTimeHourGrade" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_SIM1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_SIM2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicsId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicGrade" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TooldId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_FamilyStatus" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_HiredDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Level" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNew_populationBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="new_populationBase" nillable="true" type="tns:new_populationBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="new_populationBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="new_populationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_SerialNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_DeliveryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_UnitLocation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_StatusInOperation" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_LatestHourMeter" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_enginenumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_Plant" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_customercode" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_UnitId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_FunctionalLocation" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_UIOStatus" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_ChasisNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductMaster" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_LastASSDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_LastASSCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_NextASSDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_EquipmentNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_OldHM" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRequestPart">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RequestPart" nillable="true" type="tns:RequestPart" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RequestPart">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RequestPartsID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="PartsID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partnumbercatalog" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRequestPartsList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RequestPartsList" nillable="true" type="tns:RequestPartsList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RequestPartsList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkOrderID" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="MechanicID" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceAppointmentBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceAppointmentBase" nillable="true" type="tns:ServiceAppointmentBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceAppointmentBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActivityId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_HourMeter" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_DealerName" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_DeliveryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_ExpiredDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_WorkOrder" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_equipment" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_ChasisNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_CPOnSite" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_CPPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_CRMWONumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_DispatchDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_CustomerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_EngineNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_FuncLocAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_PhoneonSite" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Product" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_ProductModel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_EstimationHour" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ContactPerson" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicLeader" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicSubLeader" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_FunctionalLocation" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_PMActType" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_CustomerComments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_CustomerNote" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_CustomerSatisfaction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_InspectorComments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ScheduledStart" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ScheduledEnd" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_StatusinOperation" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_HourMeter" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_LastHourMeter" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_Plant" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_inspectorsuggestion" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_OldHM" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceAppointmentBaseMechanic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceAppointmentBaseMechanic" nillable="true" type="tns:ServiceAppointmentBaseMechanic" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceAppointmentBaseMechanic">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkOrderId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="EquipmentId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Role" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDispatched" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTaskBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TaskBase" nillable="true" type="tns:TaskBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TaskBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActivityId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_OperationId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TaskListGroup" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Product" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ItemNumber" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductSection" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistheader" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TotalRTG" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_commercialdetailBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_commercialdetailBase" nillable="true" type="tns:trs_commercialdetailBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_commercialdetailBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_commercialdetailId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_taskcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_commercialheaderid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_commercialtask" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_taskname" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mechanicgrade" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_rtg" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_automatictime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_manualtime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_commercialdetailmechanicBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_commercialdetailmechanicBase" nillable="true" type="tns:trs_commercialdetailmechanicBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_commercialdetailmechanicBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_commercialdetailmechanicId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_nrp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mechanicrole" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_equipmentid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_point" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_commercialdetailid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_commercialtaskBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_commercialtaskBase" nillable="true" type="tns:trs_commercialtaskBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_commercialtaskBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_commercialtaskId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_taskcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicGrade" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_RTG" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TaskName" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TasklistHeaderId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synchronizedate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_functionallocationBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_functionallocationBase" nillable="true" type="tns:trs_functionallocationBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_functionallocationBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_functionallocationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_FunctionalAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_FunctionalCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_functionallatitude" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_functionallongitude" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Customer" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_FunctionalLocation" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Site" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_masterpartBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_masterpartBase" nillable="true" type="tns:trs_masterpartBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_masterpartBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_masterpartId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_PartDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Product" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Quantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synchronizedate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TasklistDetails" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_mechanicgradeBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_mechanicgradeBase" nillable="true" type="tns:trs_mechanicgradeBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_mechanicgradeBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mechanicgradeId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_grade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_GradeDesciption" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_HourRate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_hourrate_Base" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TresholdHour" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_mechanicgradetimehourBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_mechanicgradetimehourBase" nillable="true" type="tns:trs_mechanicgradetimehourBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_mechanicgradetimehourBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mechanicgradetimehourId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_RepairTimeHourGrade" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicGrade" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_mechanicmonthlypointBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_mechanicmonthlypointBase" nillable="true" type="tns:trs_mechanicmonthlypointBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_mechanicmonthlypointBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mechanicmonthlypointId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_monthlypoint" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MonthlyRepairTime" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_PointDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Point" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_mechanictimehourdetailsBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_mechanictimehourdetailsBase" nillable="true" type="tns:trs_mechanictimehourdetailsBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_mechanictimehourdetailsBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mechanictimehourdetailsId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ActualTimeHour" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_RepairTimeguide" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MechanicID" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrderNumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_mtarBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_mtarBase" nillable="true" type="tns:trs_mtarBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_mtarBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mtarId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_EndTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_mtarstatus" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_StartTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_StatusRemarks" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Mechanic" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_AutomaticTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ManualTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_longitude" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_latitude" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_frommobile" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workshop" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_updatewostatus" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_partdetailistsBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_partdetailistsBase" nillable="true" type="tns:trs_partdetailistsBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_partdetailistsBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_partdetailistsId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Quantity" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Parts" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_istsid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_partrecommendationBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_partrecommendationBase" nillable="true" type="tns:trs_partrecommendationBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_partrecommendationBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_partrecommendationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_PartQuantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Task" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_PartNumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_ppmreportBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_ppmreportBase" nillable="true" type="tns:trs_ppmreportBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_ppmreportBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ppmreportId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_reportnumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Analysis" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Application" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Comments" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_JobNotFinishedReason" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_JobStatus" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_MachineCondition" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_RepairDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TroubleDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TypeofSoil" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Equipment" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TypeofWork" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductType" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_productmodelBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_productmodelBase" nillable="true" type="tns:trs_productmodelBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_productmodelBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_productmodelId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductTypeofWork" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_productsectionBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_productsectionBase" nillable="true" type="tns:trs_productsectionBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_productsectionBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_productsectionId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_productsectionname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_productsectioncode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_producttypeBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_producttypeBase" nillable="true" type="tns:trs_producttypeBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_producttypeBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_producttypeId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_producttype" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_salesgroupproductid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_productspecialistuserid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_isgenset" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_sectionrecommendationBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_sectionrecommendationBase" nillable="true" type="tns:trs_sectionrecommendationBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_sectionrecommendationBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_sectionrecommendationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ReportNumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workshop" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_frommobile" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Section" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Recommendation" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WONumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_taskassignmenthistoryBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_taskassignmenthistoryBase" nillable="true" type="tns:trs_taskassignmenthistoryBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_taskassignmenthistoryBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_taskassignmenthistoryId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_taskid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Mechanic" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Task" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_tasklistBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_tasklistBase" nillable="true" type="tns:trs_tasklistBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_tasklistBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Product" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_TaskCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TaskRTG" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductSection" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_tasklistdetailpartBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_tasklistdetailpartBase" nillable="true" type="tns:trs_tasklistdetailpartBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_tasklistdetailpartBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistdetailpartId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partdescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistdetailid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_masterpartid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_quantity" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_tasklistgroupBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_tasklistgroupBase" nillable="true" type="tns:trs_tasklistgroupBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_tasklistgroupBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistgroupId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tasklistgroupname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_pmacttype" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklisttypeid" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_tasklistheaderBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_tasklistheaderBase" nillable="true" type="tns:trs_tasklistheaderBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_tasklistheaderBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistheaderId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Header" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TaskListGroup" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductSection" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Product" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_tasklisttypeBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_tasklisttypeBase" nillable="true" type="tns:trs_tasklisttypeBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_tasklisttypeBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklisttypeId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_tasklisttypename" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_acttype" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_technicalservicereportBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_technicalservicereportBase" nillable="true" type="tns:trs_technicalservicereportBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_technicalservicereportBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_technicalservicereportId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_TSRNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_ConditionDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_CorrectionTaken" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_JobStatus" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_NotFinishReason" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_OperatingCondition" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_RepairDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Symptom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_TechnicalAnalyis" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TroubleDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TypeofSoil" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WarrantyStatus" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Equipment" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_PartsCaused" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductType" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_ClaimNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ClaimDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ClaimValue" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionCurrencyId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExchangeRate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_claimvalue_Base" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Claimable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_NotClaimableStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_NotClaimableReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_fromMobile" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workshop" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_gensettype" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Application" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Sector" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_OldHM" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_technicalservicereportdocumentationBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_technicalservicereportdocumentationBase" nillable="true" type="tns:trs_technicalservicereportdocumentationBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_technicalservicereportdocumentationBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_technicalservicereportdocumentationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TechnicalServiceReportId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_frommobile" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workshop" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_trs_producttype_trs_unittypeofworkBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_trs_producttype_trs_unittypeofworkBase" nillable="true" type="tns:trs_trs_producttype_trs_unittypeofworkBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_trs_producttype_trs_unittypeofworkBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_trs_producttype_trs_unittypeofworkId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_producttypeid" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_unittypeofworkid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_tsrpartdetailsBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_tsrpartdetailsBase" nillable="true" type="tns:trs_tsrpartdetailsBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_tsrpartdetailsBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tsrpartdetailsId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Quantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_PartNumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TSRNumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_frommobile" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WONumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partnumbercatalog" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_tsrpartsdamageddetailBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_tsrpartsdamageddetailBase" nillable="true" type="tns:trs_tsrpartsdamageddetailBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_tsrpartsdamageddetailBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tsrpartsdamageddetailId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Quantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_PartNumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_TSRNumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_frommobile" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WONumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partnumbercatalog" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_unitofmeasurementBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_unitofmeasurementBase" nillable="true" type="tns:trs_unitofmeasurementBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_unitofmeasurementBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_unitofmeasurementId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_uofmname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_unittypeofworkBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_unittypeofworkBase" nillable="true" type="tns:trs_unittypeofworkBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_unittypeofworkBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_unittypeofworkId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_typeofwork" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ProductType" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_vocBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_vocBase" nillable="true" type="tns:trs_vocBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_vocBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_vocId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_topic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_contact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_customername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_voctype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_workorderdocumentationBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_workorderdocumentationBase" nillable="true" type="tns:trs_workorderdocumentationBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_workorderdocumentationBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorderdocumentationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_WorkOrderId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_frommobile" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workshop" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_workorderpartdetailBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_workorderpartdetailBase" nillable="true" type="tns:trs_workorderpartdetailBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_workorderpartdetailBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorderpartdetailId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partdescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_task" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_partnumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_quantity" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_workorderpartrecommendationBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_workorderpartrecommendationBase" nillable="true" type="tns:trs_workorderpartrecommendationBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_workorderpartrecommendationBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorderpartrecommendationId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partdescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_section" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistdetailid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_partnumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_quantity" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partnumbercatalog" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Task" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_workorderpartssummaryBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_workorderpartssummaryBase" nillable="true" type="tns:trs_workorderpartssummaryBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_workorderpartssummaryBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorderpartssummaryId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_partname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorder" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_itemnumber" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_partnumber" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_tasklistquantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_manualquantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_acceptedquantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_returnedquantity" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_returnedreason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synctime" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_workordersecondmanBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_workordersecondmanBase" nillable="true" type="tns:trs_workordersecondmanBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_workordersecondmanBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workordersecondmanId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_nrp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_activityid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_equipmentid" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTrs_workordersupportingmaterialBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="trs_workordersupportingmaterialBase" nillable="true" type="tns:trs_workordersupportingmaterialBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="trs_workordersupportingmaterialBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workordersupportingmaterialId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_supportingmaterialname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_workorderid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_itemnumber" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_supportingmaterialtype" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_quantity" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasswordHash" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EquipmentId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityStamp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Discriminator" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfActivityPointerBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActivityPointerBase" nillable="true" type="tns:ActivityPointerBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActivityPointerBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActivityId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActivityTypeCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualStart" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegardingObjectId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="OriginatingActivityId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentActivityId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualEnd" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductBase" nillable="true" type="tns:ProductBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_SalesGroup" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_producttypeid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="trs_ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIncidentBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IncidentBase" nillable="true" type="tns:IncidentBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IncidentBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IncidentId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResponsibleContactId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="KbArticleId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrimaryContactId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Customer" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Unit" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Salesman" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_ServiceFee" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_StatusUnitonComplain" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_AutomaticSR" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_parentsrid" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKbArticleBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KbArticleBase" nillable="true" type="tns:KbArticleBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KbArticleBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="KbArticleId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeyWords" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_synchronizedate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Product" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Model" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Section" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="trs_Task" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNew_salesgroupBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="new_salesgroupBase" nillable="true" type="tns:new_salesgroupBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="new_salesgroupBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="new_salesgroupId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionNumber" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_SalesGroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="new_description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="new_Koefisien" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="statuscode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="statecode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DoNotInvokeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NotifyMemberAdded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workOrderId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="mechanicIdsAddedToWO" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="guid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NotifyMemberAddedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyMemberAddedResult" type="tns:SynchronizationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyNewMechanicLeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mechanicLeaderId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="workOrderId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyNewMechanicLeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyNewMechanicLeaderResult" type="tns:SynchronizationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifySecondman">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="secondmanId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="workOrderId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifySecondmanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifySecondmanResult" type="tns:SynchronizationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoteWipe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mechanicId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoteWipeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoteWipeResult" type="tns:SynchronizationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetAndGenerateNewPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mechanicId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetAndGenerateNewPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetAndGenerateNewPasswordResult" type="tns:SynchronizationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveEntityResult" type="tns:SynchronizationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DispatchWorkOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:DispatchWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="DispatchWorkOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:DispatchWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoNotInvokeSoapIn">
+    <wsdl:part name="parameters" element="tns:DoNotInvoke" />
+  </wsdl:message>
+  <wsdl:message name="DoNotInvokeSoapOut">
+    <wsdl:part name="parameters" element="tns:DoNotInvokeResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyMemberAddedSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyMemberAdded" />
+  </wsdl:message>
+  <wsdl:message name="NotifyMemberAddedSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyMemberAddedResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyNewMechanicLeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyNewMechanicLeader" />
+  </wsdl:message>
+  <wsdl:message name="NotifyNewMechanicLeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyNewMechanicLeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifySecondmanSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifySecondman" />
+  </wsdl:message>
+  <wsdl:message name="NotifySecondmanSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifySecondmanResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoteWipeSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoteWipe" />
+  </wsdl:message>
+  <wsdl:message name="RemoteWipeSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoteWipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetAndGenerateNewPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetAndGenerateNewPassword" />
+  </wsdl:message>
+  <wsdl:message name="ResetAndGenerateNewPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetAndGenerateNewPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:SaveEntity" />
+  </wsdl:message>
+  <wsdl:message name="SaveEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:SaveEntityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MobileServiceSoap">
+    <wsdl:operation name="DispatchWorkOrder">
+      <wsdl:input message="tns:DispatchWorkOrderSoapIn" />
+      <wsdl:output message="tns:DispatchWorkOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoNotInvoke">
+      <wsdl:input message="tns:DoNotInvokeSoapIn" />
+      <wsdl:output message="tns:DoNotInvokeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyMemberAdded">
+      <wsdl:input message="tns:NotifyMemberAddedSoapIn" />
+      <wsdl:output message="tns:NotifyMemberAddedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyNewMechanicLeader">
+      <wsdl:input message="tns:NotifyNewMechanicLeaderSoapIn" />
+      <wsdl:output message="tns:NotifyNewMechanicLeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifySecondman">
+      <wsdl:input message="tns:NotifySecondmanSoapIn" />
+      <wsdl:output message="tns:NotifySecondmanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoteWipe">
+      <wsdl:input message="tns:RemoteWipeSoapIn" />
+      <wsdl:output message="tns:RemoteWipeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAndGenerateNewPassword">
+      <wsdl:input message="tns:ResetAndGenerateNewPasswordSoapIn" />
+      <wsdl:output message="tns:ResetAndGenerateNewPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntity">
+      <wsdl:input message="tns:SaveEntitySoapIn" />
+      <wsdl:output message="tns:SaveEntitySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MobileServiceSoap" type="tns:MobileServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DispatchWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/DispatchWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoNotInvoke">
+      <soap:operation soapAction="http://tempuri.org/DoNotInvoke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyMemberAdded">
+      <soap:operation soapAction="http://tempuri.org/NotifyMemberAdded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyNewMechanicLeader">
+      <soap:operation soapAction="http://tempuri.org/NotifyNewMechanicLeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifySecondman">
+      <soap:operation soapAction="http://tempuri.org/NotifySecondman" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoteWipe">
+      <soap:operation soapAction="http://tempuri.org/RemoteWipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAndGenerateNewPassword">
+      <soap:operation soapAction="http://tempuri.org/ResetAndGenerateNewPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntity">
+      <soap:operation soapAction="http://tempuri.org/SaveEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobileServiceSoap12" type="tns:MobileServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DispatchWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/DispatchWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoNotInvoke">
+      <soap12:operation soapAction="http://tempuri.org/DoNotInvoke" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyMemberAdded">
+      <soap12:operation soapAction="http://tempuri.org/NotifyMemberAdded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyNewMechanicLeader">
+      <soap12:operation soapAction="http://tempuri.org/NotifyNewMechanicLeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifySecondman">
+      <soap12:operation soapAction="http://tempuri.org/NotifySecondman" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoteWipe">
+      <soap12:operation soapAction="http://tempuri.org/RemoteWipe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAndGenerateNewPassword">
+      <soap12:operation soapAction="http://tempuri.org/ResetAndGenerateNewPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntity">
+      <soap12:operation soapAction="http://tempuri.org/SaveEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MobileService">
+    <wsdl:port name="MobileServiceSoap" binding="tns:MobileServiceSoap">
+      <soap:address location="http://tntrsmbl.cloudapp.net/TRSUATServices/MobileService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobileServiceSoap12" binding="tns:MobileServiceSoap12">
+      <soap12:address location="http://tntrsmbl.cloudapp.net/TRSUATServices/MobileService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,18 @@
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Workflow.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Workflow.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csprojResolveAssemblyReference.cache
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\Workflow\bin\Debug\Microsoft.Xrm.Client.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Workflow.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Workflow.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.dll.config
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csproj.AssemblyReference.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csproj.CoreCompileInputs.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csproj.CopyComplete
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.pdb

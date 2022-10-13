@@ -1,0 +1,2559 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/8/2015 11:40:53 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="IDJKT-SXT8565NB"
+  DTS:CreatorName="TECTURACORP\STony8565"
+  DTS:DTSID="{6B15BE1C-8C74-470F-91A5-658D195AD244}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.3436.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CalculateMechanicsPoint"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{24978147-5C81-4D9D-80BC-621A80E9FEFF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ado.crm]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{DBE39B73-BC09-4A6A-8E9D-AC4371B07C8B}"
+      DTS:ObjectName="ado.crm">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=TNTRSPRD;User ID=sa;Initial Catalog=CRMTRAKNUS2;Persist Security Info=True;Connect Timeout=30;Application Name=SSIS-CalculateMechanicsPoint-{DBE39B73-BC09-4A6A-8E9D-AC4371B07C8B}a;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4OdH26zTXUCfx4aHZuv/7gAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABaWHULqXhX3+avlXnCU1WYAAAAAASAAACgAAAAEAAAAEsuabL/ZYq3oIzIDFpyzsUYAAAALpi4e2nLO86rRHKFNYDnvvYrzz6po/fCFAAAAJGvkMHhVhDvWzTw5xQBOn5CePGK</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6842E67D-D628-4314-844C-C54731F2E64D}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\error\test.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PointDate"
+              DTS:DTSID="{34261C7B-0CBB-43B1-A645-014A94BC4909}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="72"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MechanicId"
+              DTS:DTSID="{A87B0A59-BA76-460A-BB2F-8A13910F1E41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="38"
+              DTS:DataScale="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MonthlyPoint"
+              DTS:DTSID="{9DB8A1C5-33C3-4179-9BD9-B7935E1CE048}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{ECF7262D-9E50-4C02-813D-DA6C93DCD7FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{C40CE753-95FA-40FB-ADF6-12E27908854E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4071646D-09BC-4E2D-9CB8-1A744D977C6E}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\error\result.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PointDate"
+              DTS:DTSID="{CE092839-C1A9-4960-AED8-472CAF836AC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="72"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MechanicId"
+              DTS:DTSID="{431FFA36-609F-4F41-8387-265683C0D2F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="38"
+              DTS:DataScale="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MonthlyPoint"
+              DTS:DTSID="{5EC1A18C-5B0E-407A-B269-B2ED790C46F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="72"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CrmRecordId"
+              DTS:DTSID="{3A51D86D-6513-4C08-87BC-6217B252A0BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IsNew"
+              DTS:DTSID="{91D29282-885B-49FE-80BA-2E712FF92A7C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[kws.crm]"
+      DTS:CreationName="DynamicsCRM"
+      DTS:DTSID="{11BDE854-2585-4451-86F3-DCF1317E992F}"
+      DTS:ObjectName="kws.crm">
+      <DTS:ObjectData>
+        <CrmConnectionManager
+          ConnectionString="AuthenticationType=ActiveDirectory;ServiceEndpoint=Soap2011;DiscoveryServerUrl=http://tntrsprd;UserName=admin.crm;Domain=traknus;OrganizationName=Traktor Nusantara Dev;CrmServerUrl=http://tntrsprd/TraktorNusantaraDev;ProxyUsername=;ProxyServer=;ProxyServerPort=0;SdkClientVersion=6.0;HomeRealmUri=;ServiceTimeout=120">
+          <Password
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4OdH26zTXUCfx4aHZuv/7gAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAEvqh4OROI9lH6e3f6V+R5AAAAAASAAACgAAAAEAAAAHMKffRucYEusWrDDEAIposYAAAAZCI+yqSuea9OuXBlB9vt4py7ktkjPRBaFAAAAHO539LgE1i3l1WyOAsfvkS9V1Qp</Password>
+        </CrmConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[oledb.crm]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{89D27086-719E-4994-B5B5-13D226A99355}"
+      DTS:ObjectName="oledb.crm">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectionString="Data Source=192.168.0.168;User ID=sa;Initial Catalog=CRMTRAKNUS2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4OdH26zTXUCfx4aHZuv/7gAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADc9szPGzbwS0ektSUc4CNxAAAAAASAAACgAAAAEAAAAOYh6LzNL8QUP0pAH6kPGswYAAAAokasQ0wAgQyM0x7OP7iABXn8RaNAnkQSFAAAANigNMBgGYkNGLGeScQDXV/2pmPP</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="{5918251B-2970-45A4-AB5F-01C3C588FE5A}"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{27189FB8-C718-453C-9BC3-AA53F2BDC760}"
+      DTS:ExecutableType="{5918251B-2970-45A4-AB5F-01C3C588FE5A}"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="28"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrorMessage]"
+                      name="ErrorMessage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Failed to get Monthly Point."</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Failed to get Monthly Point."</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\E-mail Error Message"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright 2011-2014 KingswaySoft Inc."
+              description="Populate data into Microsoft Dynamics CRM."
+              name="E-mail Error Message"
+              usesDispositions="true"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Destination entity to write data."
+                  expressionType="Notify"
+                  name="DestinationEntity">email</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how data is written to CRM server."
+                  name="ActionType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationActionType, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the values of CRM lookup fields should be removed if the reference records cannot be found. "
+                  expressionType="Notify"
+                  name="RemoveUnresolvableReferences">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether duplicate detection should be enabled when creating or updating CRM records. Duplicate records are determined by the duplicate detection rules and settings defined in Microsoft Dynamics CRM."
+                  expressionType="Notify"
+                  name="EnableDuplicateDetection">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the matching criteria to be used when Upsert action is chosen."
+                  expressionType="Notify"
+                  name="UpsertMatchingCriteria"
+                  typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertMatchingCriteria, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specify the matching fields to be used to determine the matching records that exist in CRM when Manually Specify option is chosen for Upsert action."
+                  expressionType="Notify"
+                  name="UpsertMatchingFields"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to ignore those NULL-valued fields."
+                  expressionType="Notify"
+                  name="IgnoreNullValuedFields">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to ignore those fields that have no value changes in the target system. "
+                  name="IgnoreUnchangedFields">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify what action will be taken when multiple matches are found with Upsert action."
+                  expressionType="Notify"
+                  name="HandlingOfMultipleMatches"
+                  typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertHandlingOfMultipleMatches, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">0</property>
+                <property
+                  dataType="System.String"
+                  description="Workflow to be executed."
+                  expressionType="Notify"
+                  name="Workflow"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of records to be sent to Microsoft Dynamics CRM in each batch (CRM 2011 Update Rollup 12 or later is required if batch size is greater than 1)."
+                  expressionType="Notify"
+                  name="BatchSize">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether datetime values should be sent to CRM server in UTC format."
+                  expressionType="Notify"
+                  name="SendDateTimeInUtcFormat">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationComponent, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\E-mail Error Message.Connections[DynamicsCRM]"
+                  connectionManagerID="Package.ConnectionManagers[kws.crm]"
+                  connectionManagerRefId="Package.ConnectionManagers[kws.crm]"
+                  description="Dynamics CRM Connection Manager"
+                  name="DynamicsCRM" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Dynamics CRM Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].Columns[AutoSendCategory]"
+                      cachedDataType="i4"
+                      cachedName="AutoSendCategory"
+                      externalMetadataColumnId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_autosendcategory]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AutoSendCategory]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].Columns[CrmErrorMessage]"
+                      cachedDataType="wstr"
+                      cachedLength="2048"
+                      cachedName="CrmErrorMessage"
+                      externalMetadataColumnId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[description]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CrmErrorMessage]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[activityid]"
+                      dataType="guid"
+                      name="activityid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Uniqueidentifier</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[actualdurationminutes]"
+                      dataType="i4"
+                      name="actualdurationminutes">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[actualend]"
+                      dataType="dbTimeStamp"
+                      name="actualend">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[actualstart]"
+                      dataType="dbTimeStamp"
+                      name="actualstart">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[bcc]"
+                      dataType="nText"
+                      name="bcc">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">PartyList</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">account;contact;lead;queue;systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="250"
+                      name="category">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[cc]"
+                      dataType="nText"
+                      name="cc">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">PartyList</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">account;contact;lead;queue;systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[createdby]"
+                      dataType="guid"
+                      name="createdby">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[deliveryattempts]"
+                      dataType="i4"
+                      name="deliveryattempts">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[deliveryprioritycode]"
+                      dataType="i4"
+                      name="deliveryprioritycode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Picklist</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[deliveryreceiptrequested]"
+                      dataType="bool"
+                      name="deliveryreceiptrequested">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Boolean</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[description]"
+                      dataType="nText"
+                      name="description">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Memo</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[directioncode]"
+                      dataType="bool"
+                      name="directioncode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Boolean</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[emailsendername]"
+                      dataType="wstr"
+                      length="400"
+                      name="emailsendername">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[from]"
+                      dataType="nText"
+                      name="from">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">PartyList</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">queue;systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[importsequencenumber]"
+                      dataType="i4"
+                      name="importsequencenumber">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[isbilled]"
+                      dataType="bool"
+                      name="isbilled">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Boolean</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[isworkflowcreated]"
+                      dataType="bool"
+                      name="isworkflowcreated">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Boolean</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[messageid]"
+                      dataType="wstr"
+                      length="320"
+                      name="messageid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[messageiddupcheck]"
+                      dataType="guid"
+                      name="messageiddupcheck">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Uniqueidentifier</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[mimetype]"
+                      dataType="wstr"
+                      length="256"
+                      name="mimetype">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[notifications]"
+                      dataType="i4"
+                      name="notifications">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Picklist</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[overriddencreatedon]"
+                      dataType="dbTimeStamp"
+                      name="overriddencreatedon">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[ownerid]"
+                      dataType="guid"
+                      name="ownerid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Owner</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">systemuser;team</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[owneridtype]"
+                      dataType="wstr"
+                      length="64"
+                      name="owneridtype">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">EntityName</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[parentactivityid]"
+                      dataType="guid"
+                      name="parentactivityid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">email</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[prioritycode]"
+                      dataType="i4"
+                      name="prioritycode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Picklist</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[processid]"
+                      dataType="guid"
+                      name="processid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Uniqueidentifier</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[readreceiptrequested]"
+                      dataType="bool"
+                      name="readreceiptrequested">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Boolean</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[regardingobjectid]"
+                      dataType="guid"
+                      name="regardingobjectid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">account;asyncoperation;bulkoperation;campaign;campaignactivity;contact;contract;entitlement;entitlementtemplate;incident;invoice;lead;msdyn_postalbum;new_billingplan;new_contractmaintenance;new_customerbase;new_customergroup;new_deliveryplant;new_distchannel;new_division;new_documentrequired;new_effortcontibutionparameter;new_f2incentiveparameter;new_f3incentiveparameter;new_f4incentiveparameter;new_f5incentiveparameter;new_f6incentiveparameter;new_f7incentiveparameter;new_f8incentiveparameter;new_handlingimport;new_incentive;new_leasing;new_mappingproductmanager;new_materialgroup;new_materialtype;new_ordertype;new_pabean;new_paymentterm;new_population;new_pricegroup;new_pricelist;new_pricelistcpo;new_pricingprocedure;new_reservation;new_salesgroup;new_salesorganization;new_salesperformance;new_tax;new_unitgroup;opportunity;quote;salesorder;trs_assmatrixschedule;trs_commercialtask;trs_functionallocation;trs_masterpart;trs_mechanicgrade;trs_mechanicgradetimehour;trs_mechanicmonthlypoint;trs_mtar;trs_partpricemaster;trs_ppmreport;trs_productsection;trs_producttype;trs_profitcenter;trs_quotation;trs_quotationcommercialdetail;trs_quotationcommercialheader;trs_quotationpartdetail;trs_quotationpartssummary;trs_responsiblecostcenter;trs_runningnumber;trs_runningnumberlastnumber;trs_sectionfactorrate;trs_sectionrecommendation;trs_spb;trs_tasklist;trs_tasklistgroup;trs_tasklistheader;trs_tasklisttype;trs_technicalservicereport;trs_toolsmaster;trs_toolstransfer;trs_toolsusage;trs_tsrpartdetails;trs_tsrpartsdamageddetail;trs_unittypeofwork;trs_workcenter;trs_workflowconfiguration</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[regardingobjecttypecode]"
+                      dataType="wstr"
+                      length="64"
+                      name="regardingobjecttypecode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">EntityName</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[scheduledend]"
+                      dataType="dbTimeStamp"
+                      name="scheduledend">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[scheduledstart]"
+                      dataType="dbTimeStamp"
+                      name="scheduledstart">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[sender]"
+                      dataType="wstr"
+                      length="250"
+                      name="sender">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[sendersaccountname]"
+                      dataType="wstr"
+                      length="400"
+                      name="sendersaccountname">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[serviceid]"
+                      dataType="guid"
+                      name="serviceid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">service</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[stageid]"
+                      dataType="guid"
+                      name="stageid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Uniqueidentifier</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[statecode]"
+                      dataType="i4"
+                      name="statecode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">State</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[statuscode]"
+                      dataType="i4"
+                      name="statuscode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Status</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[subcategory]"
+                      dataType="wstr"
+                      length="250"
+                      name="subcategory">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[subject]"
+                      dataType="wstr"
+                      length="200"
+                      name="subject">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[submittedby]"
+                      dataType="wstr"
+                      length="250"
+                      name="submittedby">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[timezoneruleversionnumber]"
+                      dataType="i4"
+                      name="timezoneruleversionnumber">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[to]"
+                      dataType="nText"
+                      name="to">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">PartyList</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">account;contact;lead;queue;systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[torecipients]"
+                      dataType="wstr"
+                      length="500"
+                      name="torecipients">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[trackingtoken]"
+                      dataType="wstr"
+                      length="50"
+                      name="trackingtoken">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[transactioncurrencyid]"
+                      dataType="guid"
+                      name="transactioncurrencyid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">transactioncurrency</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[utcconversiontimezonecode]"
+                      dataType="i4"
+                      name="utcconversiontimezonecode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_autosendcategory]"
+                      dataType="decimal"
+                      name="trs_autosendcategory">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Decimal</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Dynamics CRM Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]"
+                      name="CrmErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Default Output]"
+                  exclusionGroup="1"
+                  name="Dynamics CRM Destination Default Output"
+                  synchronousInputId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Default Output].Columns[CrmRecordId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Default Output].Columns[CrmRecordId]"
+                      name="CrmRecordId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Default Output].Columns[IsNew]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\E-mail Error Message.Outputs[Dynamics CRM Destination Default Output].Columns[IsNew]"
+                      name="IsNew" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Get Monthly Point"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Get Monthly Point"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC usp_trs_CalculateMechanicMonthlyPoint</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Get Monthly Point.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[oledb.crm]"
+                  connectionManagerRefId="Package.ConnectionManagers[oledb.crm]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[PointDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[PointDate]"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[PointDate]"
+                      name="PointDate"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MechanicId]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[MechanicId]"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MechanicId]"
+                      name="MechanicId"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MonthlyPoint]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[MonthlyPoint]"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MonthlyPoint]"
+                      name="MonthlyPoint"
+                      precision="38"
+                      scale="7"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[AutoSendCategory]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[AutoSendCategory]"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[AutoSendCategory]"
+                      name="AutoSendCategory"
+                      truncationRowDisposition="RedirectRow" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[PointDate]"
+                      dataType="dbDate"
+                      name="PointDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[MechanicId]"
+                      dataType="guid"
+                      name="MechanicId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[MonthlyPoint]"
+                      dataType="numeric"
+                      name="MonthlyPoint"
+                      precision="38"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].ExternalColumns[AutoSendCategory]"
+                      dataType="i4"
+                      name="AutoSendCategory" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  isSorted="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[PointDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[PointDate]"
+                      name="PointDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[MechanicId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[MechanicId]"
+                      name="MechanicId"
+                      sortKeyPosition="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[MonthlyPoint]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[MonthlyPoint]"
+                      name="MonthlyPoint"
+                      precision="38"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[AutoSendCategory]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[AutoSendCategory]"
+                      name="AutoSendCategory" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Record Monthly Point"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright 2011-2014 KingswaySoft Inc."
+              description="Populate data into Microsoft Dynamics CRM."
+              name="Record Monthly Point"
+              usesDispositions="true"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Destination entity to write data."
+                  expressionType="Notify"
+                  name="DestinationEntity">trs_mechanicmonthlypoint</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how data is written to CRM server."
+                  name="ActionType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationActionType, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">5</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the values of CRM lookup fields should be removed if the reference records cannot be found. "
+                  expressionType="Notify"
+                  name="RemoveUnresolvableReferences">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether duplicate detection should be enabled when creating or updating CRM records. Duplicate records are determined by the duplicate detection rules and settings defined in Microsoft Dynamics CRM."
+                  expressionType="Notify"
+                  name="EnableDuplicateDetection">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the matching criteria to be used when Upsert action is chosen."
+                  expressionType="Notify"
+                  name="UpsertMatchingCriteria"
+                  typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertMatchingCriteria, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">3</property>
+                <property
+                  dataType="System.String"
+                  description="Specify the matching fields to be used to determine the matching records that exist in CRM when Manually Specify option is chosen for Upsert action."
+                  expressionType="Notify"
+                  name="UpsertMatchingFields">trs_mechanicid;trs_pointdate</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to ignore those NULL-valued fields."
+                  expressionType="Notify"
+                  name="IgnoreNullValuedFields">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to ignore those fields that have no value changes in the target system. "
+                  name="IgnoreUnchangedFields">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify what action will be taken when multiple matches are found with Upsert action."
+                  expressionType="Notify"
+                  name="HandlingOfMultipleMatches"
+                  typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertHandlingOfMultipleMatches, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">4</property>
+                <property
+                  dataType="System.String"
+                  description="Workflow to be executed."
+                  expressionType="Notify"
+                  name="Workflow"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of records to be sent to Microsoft Dynamics CRM in each batch (CRM 2011 Update Rollup 12 or later is required if batch size is greater than 1)."
+                  expressionType="Notify"
+                  name="BatchSize">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether datetime values should be sent to CRM server in UTC format."
+                  expressionType="Notify"
+                  name="SendDateTimeInUtcFormat">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationComponent, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Record Monthly Point.Connections[DynamicsCRM]"
+                  connectionManagerID="Package.ConnectionManagers[kws.crm]"
+                  connectionManagerRefId="Package.ConnectionManagers[kws.crm]"
+                  description="Dynamics CRM Connection Manager"
+                  name="DynamicsCRM" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="Dynamics CRM Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].Columns[MechanicId]"
+                      cachedDataType="guid"
+                      cachedName="MechanicId"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_mechanicid]"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MechanicId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].Columns[MonthlyPoint]"
+                      cachedDataType="numeric"
+                      cachedName="MonthlyPoint"
+                      cachedPrecision="38"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_monthlypoint]"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MonthlyPoint]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].Columns[PointDate]"
+                      cachedDataType="dbDate"
+                      cachedName="PointDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_pointdate]"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[PointDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[createdby]"
+                      dataType="guid"
+                      name="createdby">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[importsequencenumber]"
+                      dataType="i4"
+                      name="importsequencenumber">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[modifiedby]"
+                      dataType="guid"
+                      name="modifiedby">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[overriddencreatedon]"
+                      dataType="dbTimeStamp"
+                      name="overriddencreatedon">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[ownerid]"
+                      dataType="guid"
+                      name="ownerid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Owner</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">systemuser;team</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[owneridtype]"
+                      dataType="wstr"
+                      length="64"
+                      name="owneridtype">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">EntityName</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[statecode]"
+                      dataType="i4"
+                      name="statecode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">State</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[statuscode]"
+                      dataType="i4"
+                      name="statuscode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Status</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[timezoneruleversionnumber]"
+                      dataType="i4"
+                      name="timezoneruleversionnumber">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_mechanicid]"
+                      dataType="guid"
+                      name="trs_mechanicid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">equipment</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_mechanicmonthlypointid]"
+                      dataType="guid"
+                      name="trs_mechanicmonthlypointid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Uniqueidentifier</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_monthlypoint]"
+                      dataType="wstr"
+                      length="100"
+                      name="trs_monthlypoint">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_monthlyrepairtime]"
+                      dataType="i4"
+                      name="trs_monthlyrepairtime">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_pointdate]"
+                      dataType="dbTimeStamp"
+                      name="trs_pointdate">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input].ExternalColumns[utcconversiontimezonecode]"
+                      dataType="i4"
+                      name="utcconversiontimezonecode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Dynamics CRM Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]"
+                      name="CrmErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Default Output]"
+                  exclusionGroup="1"
+                  name="Dynamics CRM Destination Default Output"
+                  synchronousInputId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Default Output].Columns[CrmRecordId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Default Output].Columns[CrmRecordId]"
+                      name="CrmRecordId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Default Output].Columns[IsNew]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Default Output].Columns[IsNew]"
+                      name="IsNew" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Union All"
+              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[PointDate]"
+                      cachedDataType="dbDate"
+                      cachedName="PointDate"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[PointDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PointDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[MechanicId]"
+                      cachedDataType="guid"
+                      cachedName="MechanicId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MechanicId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MechanicId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[MonthlyPoint]"
+                      cachedDataType="numeric"
+                      cachedName="MonthlyPoint"
+                      cachedPrecision="38"
+                      cachedScale="7"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[MonthlyPoint]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MonthlyPoint]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[CrmErrorMessage]"
+                      cachedDataType="wstr"
+                      cachedLength="2048"
+                      cachedName="CrmErrorMessage"
+                      lineageId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CrmErrorMessage]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[AutoSendCategory]"
+                      cachedDataType="i4"
+                      cachedName="AutoSendCategory"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output].Columns[AutoSendCategory]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AutoSendCategory]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[PointDate]"
+                      cachedDataType="dbDate"
+                      cachedName="PointDate"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[PointDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PointDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[MechanicId]"
+                      cachedDataType="guid"
+                      cachedName="MechanicId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[MechanicId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MechanicId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[MonthlyPoint]"
+                      cachedDataType="numeric"
+                      cachedName="MonthlyPoint"
+                      cachedPrecision="38"
+                      cachedScale="7"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[MonthlyPoint]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MonthlyPoint]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ErrorMessage]"
+                      cachedDataType="wstr"
+                      cachedLength="28"
+                      cachedName="ErrorMessage"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrorMessage]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CrmErrorMessage]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[AutoSendCategory]"
+                      cachedDataType="i4"
+                      cachedName="AutoSendCategory"
+                      lineageId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output].Columns[AutoSendCategory]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AutoSendCategory]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PointDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PointDate]"
+                      name="PointDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MechanicId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MechanicId]"
+                      name="MechanicId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MonthlyPoint]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MonthlyPoint]"
+                      name="MonthlyPoint"
+                      precision="38"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      name="ErrorCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      name="ErrorColumn" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CrmErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CrmErrorMessage]"
+                      name="CrmErrorMessage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AutoSendCategory]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AutoSendCategory]"
+                      name="AutoSendCategory" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Dynamics CRM Destination Error Output]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              name="Dynamics CRM Destination Error Output"
+              startId="Package\Data Flow Task\Record Monthly Point.Outputs[Dynamics CRM Destination Error Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Error Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Error Output"
+              startId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Error Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Record Monthly Point.Inputs[Dynamics CRM Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Get Monthly Point.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\Data Flow Task\E-mail Error Message.Inputs[Dynamics CRM Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pre Process"
+      DTS:CreationName="Microsoft.SqlServer.Management.DatabaseMaintenance.DbMaintenanceTSQLExecuteTask, Microsoft.SqlServer.MaintenancePlanTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{81EA2DD6-C978-4F72-8DCD-6E2D46DBDF10}"
+      DTS:ExecutableType="Microsoft.SqlServer.Management.DatabaseMaintenance.DbMaintenanceTSQLExecuteTask, Microsoft.SqlServer.MaintenancePlanTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pre Process"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DBE39B73-BC09-4A6A-8E9D-AC4371B07C8B}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('TempDB..##TEMP') IS NULL&#xA;&#x9;CREATE TABLE ##TEMP (&#xA;&#x9;&#x9;SRId UNIQUEIDENTIFIER,&#xA;&#x9;&#x9;WOId UNIQUEIDENTIFIER,&#xA;&#x9;&#x9;PMActType VARCHAR(6),&#xA;&#x9;&#x9;CommercialHeaderId UNIQUEIDENTIFIER,&#xA;&#x9;&#x9;CommercialDetailId UNIQUEIDENTIFIER,&#xA;&#x9;&#x9;TotalPoint DECIMAL(23,10),&#xA;&#x9;&#x9;LeaderPoint DECIMAL(23,10),&#xA;&#x9;&#x9;JumlahMechanic INT,&#xA;&#x9;&#x9;HasSubLeader INT&#xA;&#x9;)"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F5F59329-E22B-4B26-A3FD-FDB35CF5E9DE}"
+      DTS:From="Package\Pre Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task"
+          TopLeft="37.5,102.5" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Pre Process"
+          TopLeft="51,17" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="116.25,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.5"
+              Start="0,0"
+              End="0,36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="139,200" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Data Flow Task\E-mail Error Message"
+          TopLeft="114,272" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Task\Get Monthly Point"
+          TopLeft="16,18" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="19,102" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Data Flow Task\Record Monthly Point"
+          TopLeft="225,17" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="202.5,242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="181,38.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44,0"
+              Start="0,0"
+              End="36.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="36.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Error Output]"
+          TopLeft="97.75,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-63.43390625,11.533203125,126.8678125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Dynamics CRM Destination Error Output]"
+          TopLeft="315.5,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-95.8333333333333,141"
+              Start="0,0"
+              End="-95.8333333333333,133.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.5136436597111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,79.5136436597111"
+                    Point2="0,83.5136436597111"
+                    Point3="-4,83.5136436597111" />
+                  <mssgle:LineSegment
+                    End="-91.8333333333333,83.5136436597111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-91.8333333333333,83.5136436597111"
+                    Point2="-95.8333333333333,83.5136436597111"
+                    Point3="-95.8333333333333,87.5136436597111" />
+                  <mssgle:LineSegment
+                    End="-95.8333333333333,133.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-136.888053385417,88.5136436597111,177.9427734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="97,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.3333333333333,56"
+              Start="0,0"
+              End="84.3333333333333,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.1685393258427" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.1685393258427"
+                    Point2="0,33.1685393258427"
+                    Point3="4,33.1685393258427" />
+                  <mssgle:LineSegment
+                    End="80.3333333333333,33.1685393258427" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80.3333333333333,33.1685393258427"
+                    Point2="84.3333333333333,33.1685393258427"
+                    Point3="84.3333333333333,37.1685393258427" />
+                  <mssgle:LineSegment
+                    End="84.3333333333333,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Get Monthly Point">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,29 @@
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\SendEmail.exe.config
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\obj\Debug\SendEmail.csprojResolveAssemblyReference.cache
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\SendEmail.exe
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\SendEmail.pdb
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Crm.Sdk.dll
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Client.dll
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Client.xml
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\obj\Debug\SendEmail.exe
+C:\Client Docs\Trak Nus\Console Source\Email\SendEmail\SendEmail\obj\Debug\SendEmail.pdb
+\\192.168.0.70\d$\SSIS\JULAI\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\SendEmail.exe.config
+\\192.168.0.70\d$\SSIS\JULAI\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\obj\Debug\SendEmail.exe
+\\192.168.0.70\d$\SSIS\JULAI\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\obj\Debug\SendEmail.pdb
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\SendEmail.exe.config
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\obj\Debug\SendEmail.exe
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\obj\Debug\SendEmail.pdb
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\SendEmail.exe
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\SendEmail.pdb
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Client.xml
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Sdk.xml
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+D:\Projects\Traknus\Console\WBS - EmailExpiredWarrantyPopulation\SendEmail\SendEmail\obj\Debug\SendEmail.csprojResolveAssemblyReference.cache

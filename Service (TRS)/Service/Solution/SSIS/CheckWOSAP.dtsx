@@ -1,0 +1,3317 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/23/2014 1:12:33 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="JULIANTO-PC"
+  DTS:CreatorName="Julianto-PC\Julianto"
+  DTS:DTSID="{B4C300FD-A619-42A0-A71C-0FD86BE7974D}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.3436.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CheckWOSAP"
+  DTS:PackageType="5"
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{F42F7A8C-F527-46B6-835A-C01757B427EA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dynamics CRM Connection Manager]"
+      DTS:CreationName="DynamicsCRM"
+      DTS:DTSID="{FC1213F8-7EAD-47FB-98D1-D10F4A1DE480}"
+      DTS:ObjectName="Dynamics CRM Connection Manager">
+      <DTS:ObjectData>
+        <CrmConnectionManager
+          ConnectionString="AuthenticationType=ActiveDirectory;ServiceEndpoint=Soap2011;DiscoveryServerUrl=http://192.168.0.70:5555/;UserName=service.crm;Domain=traknus;OrganizationName=Traktor Nusantara;CrmServerUrl=http://tnappdev:5555/TraktorNusantara;ProxyUsername=;ProxyServer=;ProxyServerPort=0;SdkClientVersion=6.0;HomeRealmUri=;ServiceTimeout=120" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ErrorFromCRM]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{45B47D38-85E7-4134-87AA-D4B51082C436}"
+      DTS:ObjectName="ErrorFromCRM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Client Docs\Trak Nus\SSIS\04_E_SAP\ErrorFromCRM.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{8314A2C9-F477-49F6-AFCE-B72989744A4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{18C09ABE-28E1-4339-9E63-A62018A49C63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Error From SAP"
+              DTS:DTSID="{3043B4F7-21EE-476B-9BC0-6349FDEB5E10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WoNumber"
+              DTS:DTSID="{C033C068-A9B2-4B5B-AFC4-7DD17DEC08E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{5775DE8A-9CA4-4A10-BA83-B0CDC1347BA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{B01EA3EB-AF74-45DC-8BE2-15E30079129E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="2048"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CrmErrorMessage"
+              DTS:DTSID="{AE5A36B3-61E7-4B20-B45E-170735EB0DD8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ss]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{0970DC73-46D6-46DD-8C2D-8DA4683B2D05}"
+      DTS:ObjectName="ss">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::fName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{F06B218F-F5A9-4782-9930-599F348A055B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{11727B7B-E6CE-4015-BFAF-30000ACF5801}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{9E007022-1A15-4DA2-BF64-C97E01D6D4C7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[tnappdev\crmdbinstance.CRMTrakNus_MSCRM.developer]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A0A2F62B-4143-40F6-9CBC-7C6D79040396}"
+      DTS:ObjectName="tnappdev\crmdbinstance.CRMTrakNus_MSCRM.developer">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=tnappdev\crmdbinstance;User ID=developer;Initial Catalog=CRMTrakNus_MSCRM;Provider=SQLNCLI11;Persist Security Info=True;Application Name=SSIS-Package-{A0A2F62B-4143-40F6-9CBC-7C6D79040396}tnappdev\crmdbinstance.CRMTrakNus_MSCRM.developer;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WoValidationDone]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{42AE6829-5A5C-44D4-AA16-7982EB8BE7A5}"
+      DTS:ObjectName="WoValidationDone">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="3"
+          DTS:ConnectionString="C:\Client Docs\Trak Nus\SSIS\04_E_SAP\WoValidationDone" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9D41B3D0-2F1E-4BF5-B571-3EB030DB4C6E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="fDestination">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Client Docs\Trak Nus\SSIS\04_E_SAP\WoValidationDone\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E9C02FE7-5BDC-465F-81AA-0E7DCE89645A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="fName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E765A149-3667-4FC8-BC8B-9EC73A5D5902}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="fToRead">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DB089E53-1621-4F1D-970E-2411F29178D1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="woNumber">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A44EC71A-FAC3-4D7B-A87D-DD3FF27E74D6}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select 'C:\Client Docs\Trak Nus\SSIS\04_E_SAP\' + trs_LastFileName as rName, subject
+from ServiceAppointment
+where Subject = 'WO.1411-A001000014'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[tnappdev\crmdbinstance.CRMTrakNus_MSCRM.developer]"
+                  connectionManagerRefId="Package.ConnectionManagers[tnappdev\crmdbinstance.CRMTrakNus_MSCRM.developer]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[rName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rName]"
+                      length="138"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[rName]"
+                      name="rName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[subject]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[subject]"
+                      length="200"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[subject]"
+                      name="subject"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rName]"
+                      dataType="wstr"
+                      length="138"
+                      name="rName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[subject]"
+                      dataType="wstr"
+                      length="200"
+                      name="subject" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rName]"
+                      dataType="wstr"
+                      length="138"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rName]"
+                      name="rName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[subject]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[subject]"
+                      name="subject" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Recordset Destination"
+              componentClassID="{C457FD7E-CE98-4C4B-AEFE-F3AE0044F181}"
+              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates and populates an in-memory ADO recordset."
+              name="Recordset Destination">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the recordset."
+                  name="VariableName">User::fToRead</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Recordset Destination.Inputs[Recordset Destination Input]"
+                  hasSideEffects="true"
+                  name="Recordset Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Recordset Destination.Inputs[Recordset Destination Input].Columns[rName]"
+                      cachedDataType="wstr"
+                      cachedLength="138"
+                      cachedName="rName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[rName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Recordset Destination.Inputs[Recordset Destination Input].Columns[subject]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="subject"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[subject]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Recordset Destination.Inputs[Recordset Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{D1C9DF26-4E9B-4F73-BBCF-0774E959C3DE}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+        DTS:DTSID="{AC0C667E-F793-4ABB-8BE6-43DBE5F8EA8E}"
+        DTS:ObjectName="{AC0C667E-F793-4ABB-8BE6-43DBE5F8EA8E}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::fToRead" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{D7C1CD09-91D2-4745-B2A2-5FB31FA3D0D6}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              BLOBTempStoragePath=""
+              bufferTempStoragePath=""
+              runInOptimizedMode="false"
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Derived Column"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Updates column values using expressions"
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[WoNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[WoNumber]"
+                          name="WoNumber"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::woNumber]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::woNumber]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination"
+                  componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+                  contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright 2011-2014 KingswaySoft Inc."
+                  description="Populate data into Microsoft Dynamics CRM."
+                  name="Dynamics CRM Destination"
+                  usesDispositions="true"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Destination entity to write data."
+                      expressionType="Notify"
+                      name="DestinationEntity">serviceappointment</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how data is written to CRM server."
+                      name="ActionType"
+                      typeConverter="KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationActionType, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">5</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the values of CRM lookup fields should be removed if the reference records cannot be found. "
+                      expressionType="Notify"
+                      name="RemoveUnresolvableReferences">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether duplicate detection should be enabled when creating or updating CRM records. Duplicate records are determined by the duplicate detection rules and settings defined in Microsoft Dynamics CRM."
+                      expressionType="Notify"
+                      name="EnableDuplicateDetection">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the matching criteria to be used when Upsert action is chosen."
+                      expressionType="Notify"
+                      name="UpsertMatchingCriteria"
+                      typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertMatchingCriteria, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">3</property>
+                    <property
+                      dataType="System.String"
+                      description="Specify the matching fields to be used to determine the matching records that exist in CRM when Manually Specify option is chosen for Upsert action."
+                      expressionType="Notify"
+                      name="UpsertMatchingFields">subject</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to ignore those NULL-valued fields."
+                      expressionType="Notify"
+                      name="IgnoreNullValuedFields">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to ignore those fields that have no value changes in the target system. "
+                      expressionType="Notify"
+                      name="IgnoreUnchangedFields">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify what action will be taken when multiple matches are found with Upsert action."
+                      expressionType="Notify"
+                      name="HandlingOfMultipleMatches"
+                      typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertHandlingOfMultipleMatches, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Workflow to be executed."
+                      expressionType="Notify"
+                      name="Workflow"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the number of records to be sent to Microsoft Dynamics CRM in each batch (CRM 2011 Update Rollup 12 or later is required if batch size is greater than 1)."
+                      expressionType="Notify"
+                      name="BatchSize">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether datetime values should be sent to CRM server in UTC format."
+                      expressionType="Notify"
+                      name="SendDateTimeInUtcFormat">false</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationComponent, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Connections[DynamicsCRM]"
+                      connectionManagerID="Package.ConnectionManagers[Dynamics CRM Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Dynamics CRM Connection Manager]"
+                      description="Dynamics CRM Connection Manager"
+                      name="DynamicsCRM" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="RedirectRow"
+                      hasSideEffects="true"
+                      name="Dynamics CRM Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].Columns[Error From SAP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Error From SAP"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_lasterror]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Error From SAP]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].Columns[WoNumber]"
+                          cachedDataType="wstr"
+                          cachedName="WoNumber"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[subject]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[WoNumber]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[activityid]"
+                          dataType="guid"
+                          name="activityid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Uniqueidentifier</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[actualdurationminutes]"
+                          dataType="i4"
+                          name="actualdurationminutes">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Integer</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[actualend]"
+                          dataType="dbTimeStamp"
+                          name="actualend">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[actualstart]"
+                          dataType="dbTimeStamp"
+                          name="actualstart">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[category]"
+                          dataType="wstr"
+                          length="250"
+                          name="category">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[createdby]"
+                          dataType="guid"
+                          name="createdby">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">systemuser</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">false</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[customers]"
+                          dataType="nText"
+                          name="customers">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">PartyList</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">account;contact</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[description]"
+                          dataType="nText"
+                          name="description">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Memo</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[importsequencenumber]"
+                          dataType="i4"
+                          name="importsequencenumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Integer</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">false</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[isalldayevent]"
+                          dataType="bool"
+                          name="isalldayevent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[isbilled]"
+                          dataType="bool"
+                          name="isbilled">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[ismapiprivate]"
+                          dataType="bool"
+                          name="ismapiprivate">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[isworkflowcreated]"
+                          dataType="bool"
+                          name="isworkflowcreated">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[location]"
+                          dataType="wstr"
+                          length="500"
+                          name="location">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[modifiedby]"
+                          dataType="guid"
+                          name="modifiedby">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">systemuser</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_actualdate]"
+                          dataType="dbTimeStamp"
+                          name="new_actualdate">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_commissioning]"
+                          dataType="bool"
+                          name="new_commissioning">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_cpoitemnumber]"
+                          dataType="decimal"
+                          name="new_cpoitemnumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_cpono]"
+                          dataType="wstr"
+                          length="100"
+                          name="new_cpono">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_dealername]"
+                          dataType="guid"
+                          name="new_dealername">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">account</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_deliverydate]"
+                          dataType="dbTimeStamp"
+                          name="new_deliverydate">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_expireddate]"
+                          dataType="dbTimeStamp"
+                          name="new_expireddate">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_hourmeter]"
+                          dataType="decimal"
+                          name="new_hourmeter">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_joblocation]"
+                          dataType="i4"
+                          name="new_joblocation">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Picklist</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_new_hourmeter1]"
+                          dataType="decimal"
+                          name="new_new_hourmeter1">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_new_hourmeter2]"
+                          dataType="decimal"
+                          name="new_new_hourmeter2">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_new_hourmeter3]"
+                          dataType="decimal"
+                          name="new_new_hourmeter3">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_new_servicestartdays1]"
+                          dataType="decimal"
+                          name="new_new_servicestartdays1">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_new_servicestartdays2]"
+                          dataType="decimal"
+                          name="new_new_servicestartdays2">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_new_servicestartdays3]"
+                          dataType="decimal"
+                          name="new_new_servicestartdays3">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_nowo]"
+                          dataType="wstr"
+                          length="100"
+                          name="new_nowo">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_plandate]"
+                          dataType="dbTimeStamp"
+                          name="new_plandate">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_plant]"
+                          dataType="wstr"
+                          length="100"
+                          name="new_plant">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_saptechnicalcompleted]"
+                          dataType="bool"
+                          name="new_saptechnicalcompleted">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_sapwonumber]"
+                          dataType="wstr"
+                          length="100"
+                          name="new_sapwonumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_serialnumber]"
+                          dataType="wstr"
+                          length="100"
+                          name="new_serialnumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_serviceactivityno]"
+                          dataType="decimal"
+                          name="new_serviceactivityno">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_serviceactivitytype]"
+                          dataType="i4"
+                          name="new_serviceactivitytype">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Picklist</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_submitsap]"
+                          dataType="bool"
+                          name="new_submitsap">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[new_toservicemanager]"
+                          dataType="guid"
+                          name="new_toservicemanager">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">systemuser</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[overriddencreatedon]"
+                          dataType="dbTimeStamp"
+                          name="overriddencreatedon">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">false</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[ownerid]"
+                          dataType="guid"
+                          name="ownerid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Owner</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">systemuser;team</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[owneridtype]"
+                          dataType="wstr"
+                          length="64"
+                          name="owneridtype">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">EntityName</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[prioritycode]"
+                          dataType="i4"
+                          name="prioritycode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Picklist</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[regardingobjectid]"
+                          dataType="guid"
+                          name="regardingobjectid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">account;campaign;contact;contract;entitlement;entitlementtemplate;incident;invoice;lead;msdyn_postalbum;new_billingplan;new_contractmaintenance;new_customerbase;new_customergroup;new_deliveryplant;new_distchannel;new_division;new_documentrequired;new_effortcontibutionparameter;new_f2incentiveparameter;new_f3incentiveparameter;new_f4incentiveparameter;new_f5incentiveparameter;new_f6incentiveparameter;new_f7incentiveparameter;new_f8incentiveparameter;new_handlingimport;new_incentive;new_leasing;new_mappingproductmanager;new_materialgroup;new_materialtype;new_ordertype;new_pabean;new_paymentterm;new_population;new_pricegroup;new_pricelist;new_pricelistcpo;new_pricingprocedure;new_reservation;new_salesgroup;new_salesorganization;new_salesperformance;new_tax;new_unitgroup;opportunity;quote;salesorder;trs_assmatrixschedule;trs_commercialdetail;trs_commercialtask;trs_functionallocation;trs_ists;trs_masterpart;trs_mechanicgrade;trs_mechanicgradetimehour;trs_mechanicmonthlypoint;trs_mechanictimehourdetails;trs_mtar;trs_partpricemaster;trs_partrecommendation;trs_plant;trs_ppmreport;trs_productsection;trs_producttype;trs_profitcenter;trs_quotation;trs_quotationcommercialdetail;trs_quotationcommercialheader;trs_quotationpartdetail;trs_quotationpartssummary;trs_responsiblecostcenter;trs_runningnumber;trs_runningnumberlastnumber;trs_sectionfactorrate;trs_sectionrecommendation;trs_spb;trs_taskassignmenthistory;trs_tasklist;trs_tasklistgroup;trs_tasklistheader;trs_tasklisttype;trs_technicalservicereport;trs_toolsmaster;trs_toolstransfer;trs_toolsusage;trs_tsrpartdetails;trs_tsrpartsdamageddetail;trs_unittypeofwork;trs_workcenter;trs_workflowconfiguration;trs_workorderpartdetail;trs_workorderpartrecommendation;trs_workorderpartssummary;trs_workordersupportingmaterial</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[regardingobjecttypecode]"
+                          dataType="wstr"
+                          length="64"
+                          name="regardingobjecttypecode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">EntityName</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[resources]"
+                          dataType="nText"
+                          name="resources">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">PartyList</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">equipment;systemuser</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[scheduleddurationminutes]"
+                          dataType="i4"
+                          name="scheduleddurationminutes">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Integer</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[scheduledend]"
+                          dataType="dbTimeStamp"
+                          name="scheduledend">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[scheduledstart]"
+                          dataType="dbTimeStamp"
+                          name="scheduledstart">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[serviceid]"
+                          dataType="guid"
+                          name="serviceid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">service</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[siteid]"
+                          dataType="guid"
+                          name="siteid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">site</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[statecode]"
+                          dataType="i4"
+                          name="statecode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">State</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[statuscode]"
+                          dataType="i4"
+                          name="statuscode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Status</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[subcategory]"
+                          dataType="wstr"
+                          length="250"
+                          name="subcategory">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[subject]"
+                          dataType="wstr"
+                          length="18"
+                          name="subject">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[subscriptionid]"
+                          dataType="guid"
+                          name="subscriptionid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Uniqueidentifier</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[timezoneruleversionnumber]"
+                          dataType="i4"
+                          name="timezoneruleversionnumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Integer</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[transactioncurrencyid]"
+                          dataType="guid"
+                          name="transactioncurrencyid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">transactioncurrency</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_accind]"
+                          dataType="i4"
+                          name="trs_accind">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Picklist</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_acttype]"
+                          dataType="wstr"
+                          length="6"
+                          name="trs_acttype">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_address]"
+                          dataType="wstr"
+                          length="100"
+                          name="trs_address">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_branch]"
+                          dataType="wstr"
+                          length="10"
+                          name="trs_branch">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_chasisnumber]"
+                          dataType="wstr"
+                          length="20"
+                          name="trs_chasisnumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_contactperson]"
+                          dataType="guid"
+                          name="trs_contactperson">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">contact</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_cponsite]"
+                          dataType="guid"
+                          name="trs_cponsite">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">contact</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_cpphone]"
+                          dataType="wstr"
+                          length="20"
+                          name="trs_cpphone">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_crmwonumber]"
+                          dataType="wstr"
+                          length="15"
+                          name="trs_crmwonumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_customercode]"
+                          dataType="wstr"
+                          length="10"
+                          name="trs_customercode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_customercomments]"
+                          dataType="nText"
+                          name="trs_customercomments">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Memo</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_customernote]"
+                          dataType="wstr"
+                          length="100"
+                          name="trs_customernote">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_customersatisfaction]"
+                          dataType="wstr"
+                          length="100"
+                          name="trs_customersatisfaction">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_documentdate]"
+                          dataType="dbTimeStamp"
+                          name="trs_documentdate">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_documentlink]"
+                          dataType="wstr"
+                          length="100"
+                          name="trs_documentlink">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_enginenumber]"
+                          dataType="wstr"
+                          length="20"
+                          name="trs_enginenumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_equipment]"
+                          dataType="guid"
+                          name="trs_equipment">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">new_population</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_estimationhour]"
+                          dataType="decimal"
+                          name="trs_estimationhour">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_frommobile]"
+                          dataType="bool"
+                          name="trs_frommobile">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_funclocaddress]"
+                          dataType="wstr"
+                          length="100"
+                          name="trs_funclocaddress">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_functionallocation]"
+                          dataType="guid"
+                          name="trs_functionallocation">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">trs_functionallocation</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_hourmeter]"
+                          dataType="decimal"
+                          name="trs_hourmeter">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_inspectorcomments]"
+                          dataType="nText"
+                          name="trs_inspectorcomments">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Memo</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_invoicedate]"
+                          dataType="dbTimeStamp"
+                          name="trs_invoicedate">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_invoicenumber]"
+                          dataType="wstr"
+                          length="20"
+                          name="trs_invoicenumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_invoicevalue]"
+                          dataType="cy"
+                          name="trs_invoicevalue">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Money</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_isarrived]"
+                          dataType="bool"
+                          name="trs_isarrived">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Boolean</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_lasterror]"
+                          dataType="nText"
+                          name="trs_lasterror">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Memo</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_lastfilename]"
+                          dataType="wstr"
+                          length="100"
+                          name="trs_lastfilename">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_lasthourmeter]"
+                          dataType="decimal"
+                          name="trs_lasthourmeter">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Decimal</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_mechanicleader]"
+                          dataType="guid"
+                          name="trs_mechanicleader">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">equipment</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_mechanicsecondman]"
+                          dataType="guid"
+                          name="trs_mechanicsecondman">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">equipment</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_mechanicsubleader]"
+                          dataType="guid"
+                          name="trs_mechanicsubleader">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">equipment</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_npwp]"
+                          dataType="wstr"
+                          length="20"
+                          name="trs_npwp">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_phone]"
+                          dataType="wstr"
+                          length="12"
+                          name="trs_phone">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_phoneonsite]"
+                          dataType="wstr"
+                          length="15"
+                          name="trs_phoneonsite">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_plant]"
+                          dataType="guid"
+                          name="trs_plant">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">trs_plant</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_pmacttype]"
+                          dataType="guid"
+                          name="trs_pmacttype">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">trs_tasklistgroup</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_ponumber]"
+                          dataType="wstr"
+                          length="25"
+                          name="trs_ponumber">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_product]"
+                          dataType="wstr"
+                          length="25"
+                          name="trs_product">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_productmodel]"
+                          dataType="wstr"
+                          length="15"
+                          name="trs_productmodel">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">String</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_profitcenter]"
+                          dataType="guid"
+                          name="trs_profitcenter">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">trs_profitcenter</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_responsiblecctr]"
+                          dataType="guid"
+                          name="trs_responsiblecctr">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">trs_responsiblecostcenter</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_synctime]"
+                          dataType="dbTimeStamp"
+                          name="trs_synctime">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">DateTime</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_workcenter]"
+                          dataType="guid"
+                          name="trs_workcenter">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">trs_workcenter</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[trs_workorderid]"
+                          dataType="guid"
+                          name="trs_workorderid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Lookup</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes">task</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input].ExternalColumns[utcconversiontimezonecode]"
+                          dataType="i4"
+                          name="utcconversiontimezonecode">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CrmFieldType">Integer</property>
+                            <property
+                              dataType="System.String"
+                              name="LookupTypes"></property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Createable">true</property>
+                            <property
+                              dataType="System.Boolean"
+                              name="Updateable">true</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Dynamics CRM Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]"
+                          dataType="wstr"
+                          length="2048"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]"
+                          name="CrmErrorMessage" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Default Output]"
+                      exclusionGroup="1"
+                      name="Dynamics CRM Destination Default Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Default Output].Columns[CrmRecordId]"
+                          dataType="guid"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Default Output].Columns[CrmRecordId]"
+                          name="CrmRecordId" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Default Output].Columns[IsNew]"
+                          dataType="bool"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Default Output].Columns[IsNew]"
+                          name="IsNew" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination"
+                  componentClassID="{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="Flat File Destination">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ErrorFromCRM]"
+                      connectionManagerRefId="Package.ConnectionManagers[ErrorFromCRM]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Column 0]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Column 0"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[FileNameWo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FileNameWo"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 1]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FileNameWo]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Error From SAP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Error From SAP"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Error From SAP]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Error From SAP]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[WoNumber]"
+                          cachedDataType="wstr"
+                          cachedName="WoNumber"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[WoNumber]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[WoNumber]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[ErrorColumn]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[CrmErrorMessage]"
+                          cachedDataType="wstr"
+                          cachedLength="2048"
+                          cachedName="CrmErrorMessage"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CrmErrorMessage]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output].Columns[CrmErrorMessage]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 0" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 1" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Error From SAP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Error From SAP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[WoNumber]"
+                          dataType="wstr"
+                          length="100"
+                          name="WoNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          dataType="i4"
+                          name="ErrorCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          dataType="i4"
+                          name="ErrorColumn" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CrmErrorMessage]"
+                          dataType="wstr"
+                          length="2048"
+                          name="CrmErrorMessage" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
+                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ss]"
+                      connectionManagerRefId="Package.ConnectionManagers[ss]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FileNameWo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FileNameWo]"
+                          name="FileNameWo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Error From SAP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Error From SAP]"
+                          name="Error From SAP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                          name="Column 0"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 0" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 1" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Inputs[Dynamics CRM Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Dynamics CRM Destination Error Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Dynamics CRM Destination Error Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination.Outputs[Dynamics CRM Destination Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Move Text File"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Move Text File"
+          DTS:DTSID="{22D74516-31B8-44D3-B1D0-B33D81936AA6}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move Text File"
+          DTS:TaskContact="File System Task;Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="{0970DC73-46D6-46DD-8C2D-8DA4683B2D05}"
+              TaskDestinationPath="{42AE6829-5A5C-44D4-AA16-7982EB8BE7A5}" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A2CD4997-E29F-4271-A8A2-58721088C3E3}"
+          DTS:From="Package\Foreach Loop Container\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Move Text File" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{C8717FE1-957F-4C19-A447-AA36776E4281}"
+          DTS:ObjectName="{C8717FE1-957F-4C19-A447-AA36776E4281}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::fName" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{5E31D9AC-1D36-488F-8AE9-17FCB4233112}"
+          DTS:ObjectName="{5E31D9AC-1D36-488F-8AE9-17FCB4233112}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::woNumber" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{49B58804-5292-485E-BD06-3F328695252E}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Data Flow Task"
+          TopLeft="84.7830188679245,5.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Foreach Loop Container\Data Flow Task"
+          TopLeft="65.1698113207547,28.8490566037736" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Foreach Loop Container\Move Text File"
+          TopLeft="65.0943396226415,135.679245283019" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="133.056603773585,72.7735849056604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.0754716981132049,62.9056603773585"
+              Start="0,0"
+              End="-0.0754716981132049,55.4056603773585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4339622641509" />
+                  <mssgle:LineSegment
+                    End="-0.0754716981132049,31.4339622641509" />
+                  <mssgle:LineSegment
+                    End="-0.0754716981132049,55.4056603773585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.924528301886795"
+          IsExpanded="True"
+          PanelSize="294,218"
+          Size="294,262"
+          Id="Package\Foreach Loop Container"
+          TopLeft="5.5,112.330188679245" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="152.669811320755,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.415094339622641,62.9056603773585"
+              Start="0,0"
+              End="-0.415094339622641,55.4056603773585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4339622641509" />
+                  <mssgle:LineSegment
+                    End="-0.415094339622641,31.4339622641509" />
+                  <mssgle:LineSegment
+                    End="-0.415094339622641,55.4056603773585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Data Flow Task\Recordset Destination"
+          TopLeft="5.5,143.27358490566" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="5.53773584905662,5.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="73.4245283018868,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.0377358490566166,93.8490566037736"
+              Start="0,0"
+              End="-0.0377358490566166,86.3490566037736">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.9056603773585" />
+                  <mssgle:LineSegment
+                    End="-0.0377358490566166,46.9056603773585" />
+                  <mssgle:LineSegment
+                    End="-0.0377358490566166,86.3490566037736" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Destination"
+          TopLeft="265.047169811321,270.028301886792" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Foreach Loop Container\Data Flow Task\Dynamics CRM Destination"
+          TopLeft="5.5,271.009433962264" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Foreach Loop Container\Data Flow Task\Derived Column"
+          TopLeft="5.5,134.254716981132" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Foreach Loop Container\Data Flow Task\Flat File Source"
+          TopLeft="5.53773584905659,5.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="73.4245283018868,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.0377358490566166,84.8301886792453"
+              Start="0,0"
+              End="-0.0377358490566166,77.3301886792453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-0.0377358490566166,42.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-0.0377358490566166,77.3301886792453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Dynamics CRM Destination Error Output]"
+          TopLeft="141.27358490566,292.971698113208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.77358490566,-0.981132075471692"
+              Start="0,0"
+              End="116.27358490566,-0.981132075471692">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.8867924528302,0" />
+                  <mssgle:LineSegment
+                    End="61.8867924528302,-0.981132075471692" />
+                  <mssgle:LineSegment
+                    End="116.27358490566,-0.981132075471692" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.0845942659199,5,177.9427734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="73.3867924528302,178.179245283019">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92.8301886792453"
+              Start="0,0"
+              End="0,85.3301886792453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.3301886792453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

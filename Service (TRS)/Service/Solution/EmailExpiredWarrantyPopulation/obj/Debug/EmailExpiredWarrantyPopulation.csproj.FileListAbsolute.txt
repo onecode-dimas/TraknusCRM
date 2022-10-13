@@ -1,0 +1,19 @@
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\SendEmail.exe.config
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\SendEmail.exe
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\SendEmail.pdb
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\obj\Debug\EmailExpiredWarrantyPopulation.csprojResolveAssemblyReference.cache
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\obj\Debug\SendEmail.exe
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\obj\Debug\SendEmail.pdb
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\Microsoft.Xrm.Client.dll
+D:\Projects\Traknus\Solution\EmailExpiredWarrantyPopulation\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\bin\Debug\SendEmail.exe.config
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\bin\Debug\SendEmail.exe
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\bin\Debug\SendEmail.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\obj\Debug\EmailExpiredWarrantyPopulation.csproj.AssemblyReference.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\obj\Debug\EmailExpiredWarrantyPopulation.csproj.CoreCompileInputs.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\obj\Debug\EmailExpiredWarrantyPopulation.csproj.CopyComplete
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\obj\Debug\SendEmail.exe
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\EmailExpiredWarrantyPopulation\obj\Debug\SendEmail.pdb

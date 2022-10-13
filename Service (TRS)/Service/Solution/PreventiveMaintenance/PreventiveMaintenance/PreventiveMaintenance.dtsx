@@ -1,0 +1,1630 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/21/2015 2:36:25 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="IDJKT-SXT8565NB"
+  DTS:CreatorName="TECTURACORP\STony8565"
+  DTS:DTSID="{E3EE6D31-5EC7-486F-9F1A-382C3D293C91}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.3436.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="PreventiveMaintenance"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{A03BB5D8-DF15-40D7-935B-28C37BA99066}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dynamics CRM Connection Manager]"
+      DTS:CreationName="DynamicsCRM"
+      DTS:DTSID="{74448F89-9E36-4265-8B21-FE4E0E033BDA}"
+      DTS:ObjectName="Dynamics CRM Connection Manager">
+      <DTS:ObjectData>
+        <CrmConnectionManager
+          ConnectionString="AuthenticationType=ActiveDirectory;ServiceEndpoint=Soap2011;DiscoveryServerUrl=http://tntrsprd;UserName=admin.crm;Domain=traknus;OrganizationName=Traktor Nusantara UAT;CrmServerUrl=http://tntrsprd/TraktorNusantaraUAT;ProxyUsername=;ProxyServer=;ProxyServerPort=0;SdkClientVersion=6.0;HomeRealmUri=;ServiceTimeout=120;RetryOnIntermittentErrors=True;">
+          <Password
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAr5KqYO5tSEiDP0c2RvnPpwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACsU4uqQ6T208l0izSb0RSfAAAAAASAAACgAAAAEAAAAGt5Z+fLJ4Hus4bQRtYASvcYAAAAVWQmvWB1/g1Aot1yWabXaYxMWa4Ez7SZFAAAACsGM6ugVnDxiDJtqi/ddh+M+e3/</Password>
+        </CrmConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ErrorLog]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="ErrorLog"
+      DTS:DTSID="{0859E916-8A73-4EE4-9ECC-5633E2B8B679}"
+      DTS:ObjectName="ErrorLog">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\192.168.0.168\d$\SSIS LOG\LOG FILE\CONTRACT\PREVENTIVE MAINTENANCE\Log_Contract_Preventive.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorTime"
+              DTS:DTSID="{56BA6B5E-B3C2-4AA7-89FD-4A8047D35BA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorDescription"
+              DTS:DTSID="{94ADFCFB-34AB-4999-B28F-D6E085FAD982}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ODBC Source]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{14D0A53D-AA1A-4411-AF8E-D10F97C6C95B}"
+      DTS:ObjectName="ODBC Source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=TNTRSPRD;User ID=sa;Initial Catalog=CRMTrakNusUAT_MSCRM;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAr5KqYO5tSEiDP0c2RvnPpwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADGH77U2ZaMaoLtuUv0toznAAAAAASAAACgAAAAEAAAACR9hTChqBzQXsCQIWSfPmAYAAAAewZkDEsXKbJt52XIfDJ7yuVHSkZqc+BuFAAAAC03pavjThFJPHRZeQYIWfqE4CFP</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{35F815BC-252A-43CD-87C3-46FDCB43C3D5}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Get Error Time"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Get Error Time"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Get Error Time.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Get Error Time.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Output].Columns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Output].Columns[ErrorTime]"
+                      name="ErrorTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Get Error Time.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Read Stored Procedure"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Read Stored Procedure"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC [dbo].[SP_CasefromContract]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Read Stored Procedure.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ODBC Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[ODBC Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[ContractId]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractId]"
+                      name="ContractId"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractDetailId]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[ContractDetailId]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractDetailId]"
+                      name="ContractDetailId"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[PopulationId]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[PopulationId]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[PopulationId]"
+                      name="PopulationId"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[GeneratedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[GeneratedDate]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[GeneratedDate]"
+                      name="GeneratedDate"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[MaintenanceDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[MaintenanceDate]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[MaintenanceDate]"
+                      name="MaintenanceDate"
+                      truncationRowDisposition="RedirectRow" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractServiceId]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[ContractServiceId]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractServiceId]"
+                      name="ContractServiceId"
+                      truncationRowDisposition="RedirectRow" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[ContractId]"
+                      dataType="guid"
+                      name="ContractId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[ContractDetailId]"
+                      dataType="guid"
+                      name="ContractDetailId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[PopulationId]"
+                      dataType="guid"
+                      name="PopulationId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[GeneratedDate]"
+                      dataType="dbTimeStamp"
+                      name="GeneratedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[MaintenanceDate]"
+                      dataType="dbTimeStamp"
+                      name="MaintenanceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].ExternalColumns[ContractServiceId]"
+                      dataType="guid"
+                      name="ContractServiceId" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractId]"
+                      name="ContractId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractDetailId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractDetailId]"
+                      name="ContractDetailId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[PopulationId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[PopulationId]"
+                      name="PopulationId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[GeneratedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[GeneratedDate]"
+                      name="GeneratedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[MaintenanceDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[MaintenanceDate]"
+                      name="MaintenanceDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractServiceId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractServiceId]"
+                      name="ContractServiceId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Union Error Output"
+              componentClassID="{B594E9A8-4351-4939-891C-CFE1AB93E925}"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union Error Output"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[ContractId]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ContractId"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[ContractDetailId]"
+                      cachedDataType="guid"
+                      cachedName="ContractDetailId"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractDetailId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractDetailId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[PopulationId]"
+                      cachedDataType="guid"
+                      cachedName="PopulationId"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[PopulationId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[PopulationId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Description"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[Description]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[Description]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[GeneratedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="GeneratedDate"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[GeneratedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[GeneratedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[MaintenanceDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="MaintenanceDate"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[MaintenanceDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[MaintenanceDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[ContractServiceId]"
+                      cachedDataType="guid"
+                      cachedName="ContractServiceId"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractServiceId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractServiceId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1].Columns[CrmErrorMessage]"
+                      cachedDataType="wstr"
+                      cachedLength="2048"
+                      cachedName="CrmErrorMessage"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[CrmErrorMessage]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[CrmErrorMessage]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[ContractDetailId]"
+                      cachedDataType="guid"
+                      cachedName="ContractDetailId"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractDetailId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractDetailId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[PopulationId]"
+                      cachedDataType="guid"
+                      cachedName="PopulationId"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[PopulationId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[PopulationId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Description"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[Description]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[Description]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[GeneratedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="GeneratedDate"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[GeneratedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[GeneratedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[MaintenanceDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="MaintenanceDate"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[MaintenanceDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[MaintenanceDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[ContractServiceId]"
+                      cachedDataType="guid"
+                      cachedName="ContractServiceId"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ContractServiceId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractServiceId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractId]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractId]"
+                      name="ContractId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractDetailId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractDetailId]"
+                      name="ContractDetailId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[PopulationId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[PopulationId]"
+                      name="PopulationId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[Description]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[GeneratedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[GeneratedDate]"
+                      name="GeneratedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[MaintenanceDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[MaintenanceDate]"
+                      name="MaintenanceDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractServiceId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ContractServiceId]"
+                      name="ContractServiceId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      name="ErrorCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      name="ErrorColumn" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[CrmErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[CrmErrorMessage]"
+                      name="CrmErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Write Data into Contract Preventive"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright 2011-2014 KingswaySoft Inc."
+              description="Populate data into Microsoft Dynamics CRM."
+              name="Write Data into Contract Preventive"
+              usesDispositions="true"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Destination entity to write data."
+                  expressionType="Notify"
+                  name="DestinationEntity">trs_contractpreventive</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how data is written to CRM server."
+                  name="ActionType"
+                  typeConverter="KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationActionType, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the values of CRM lookup fields should be removed if the reference records cannot be found. "
+                  expressionType="Notify"
+                  name="RemoveUnresolvableReferences">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether duplicate detection should be enabled when creating or updating CRM records. Duplicate records are determined by the duplicate detection rules and settings defined in Microsoft Dynamics CRM."
+                  expressionType="Notify"
+                  name="EnableDuplicateDetection">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the matching criteria to be used when Upsert action is chosen."
+                  expressionType="Notify"
+                  name="UpsertMatchingCriteria"
+                  typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertMatchingCriteria, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specify the matching fields to be used to determine the matching records that exist in CRM when Manually Specify option is chosen for Upsert action."
+                  expressionType="Notify"
+                  name="UpsertMatchingFields"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to ignore those NULL-valued fields."
+                  expressionType="Notify"
+                  name="IgnoreNullValuedFields">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to ignore those fields that have no value changes in the target system. "
+                  name="IgnoreUnchangedFields">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify what action will be taken when multiple matches are found with Upsert action."
+                  expressionType="Notify"
+                  name="HandlingOfMultipleMatches"
+                  typeConverter="`1[[KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmUpsertHandlingOfMultipleMatches, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7]], KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7">0</property>
+                <property
+                  dataType="System.String"
+                  description="Workflow to be executed."
+                  expressionType="Notify"
+                  name="Workflow"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of records to be sent to Microsoft Dynamics CRM in each batch (CRM 2011 Update Rollup 12 or later is required if batch size is greater than 1)."
+                  expressionType="Notify"
+                  name="BatchSize">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether datetime values should be sent to CRM server in UTC format."
+                  expressionType="Notify"
+                  name="SendDateTimeInUtcFormat">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.DynamicsCrm.CrmDestinationComponent, KingswaySoft.IntegrationToolkit.DynamicsCrm, Version=1.0.2012.0, Culture=neutral, PublicKeyToken=705df8e0751bcea7</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Write Data into Contract Preventive.Connections[DynamicsCRM]"
+                  connectionManagerID="Package.ConnectionManagers[Dynamics CRM Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Dynamics CRM Connection Manager]"
+                  description="Dynamics CRM Connection Manager"
+                  name="DynamicsCRM" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].Columns[ContractDetailId]"
+                      cachedDataType="guid"
+                      cachedName="ContractDetailId"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_contractdetailid]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractDetailId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].Columns[ContractId]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ContractId"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_contractid]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].Columns[ContractServiceId]"
+                      cachedDataType="guid"
+                      cachedName="ContractServiceId"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_contractserviceid]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[ContractServiceId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_description]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].Columns[GeneratedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="GeneratedDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_generatedtime]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[GeneratedDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].Columns[MaintenanceDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="MaintenanceDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_maintenancetime]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[MaintenanceDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].Columns[PopulationId]"
+                      cachedDataType="guid"
+                      cachedName="PopulationId"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_populationid]"
+                      lineageId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output].Columns[PopulationId]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[createdby]"
+                      dataType="guid"
+                      name="createdby">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">systemuser</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[importsequencenumber]"
+                      dataType="i4"
+                      name="importsequencenumber">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[overriddencreatedon]"
+                      dataType="dbTimeStamp"
+                      name="overriddencreatedon">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">false</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[ownerid]"
+                      dataType="guid"
+                      name="ownerid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Owner</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">systemuser;team</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[owneridtype]"
+                      dataType="wstr"
+                      length="64"
+                      name="owneridtype">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">EntityName</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[statecode]"
+                      dataType="i4"
+                      name="statecode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">State</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[statuscode]"
+                      dataType="i4"
+                      name="statuscode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Status</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[timezoneruleversionnumber]"
+                      dataType="i4"
+                      name="timezoneruleversionnumber">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_contractdetailid]"
+                      dataType="guid"
+                      name="trs_contractdetailid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">contractdetail</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_contractid]"
+                      dataType="guid"
+                      name="trs_contractid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">contract</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_contractpreventiveid]"
+                      dataType="guid"
+                      name="trs_contractpreventiveid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Uniqueidentifier</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_contractserviceid]"
+                      dataType="guid"
+                      name="trs_contractserviceid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">trs_contractservice</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_description]"
+                      dataType="nText"
+                      name="trs_description">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Memo</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_failedreason]"
+                      dataType="wstr"
+                      length="4000"
+                      name="trs_failedreason">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_generatedtime]"
+                      dataType="dbTimeStamp"
+                      name="trs_generatedtime">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_incidentid]"
+                      dataType="guid"
+                      name="trs_incidentid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">incident</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_maintenancetime]"
+                      dataType="dbTimeStamp"
+                      name="trs_maintenancetime">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">DateTime</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_maintenancetype]"
+                      dataType="bool"
+                      name="trs_maintenancetype">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Boolean</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="trs_name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">String</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_populationid]"
+                      dataType="guid"
+                      name="trs_populationid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">new_population</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_success]"
+                      dataType="bool"
+                      name="trs_success">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Boolean</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[trs_workorderid]"
+                      dataType="guid"
+                      name="trs_workorderid">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Lookup</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes">serviceappointment</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input].ExternalColumns[utcconversiontimezonecode]"
+                      dataType="i4"
+                      name="utcconversiontimezonecode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CrmFieldType">Integer</property>
+                        <property
+                          dataType="System.String"
+                          name="LookupTypes"></property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Createable">true</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="Updateable">true</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error Output"
+                  synchronousInputId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[CrmErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output].Columns[CrmErrorMessage]"
+                      name="CrmErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Default Output]"
+                  exclusionGroup="1"
+                  name="Default Output"
+                  synchronousInputId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Default Output].Columns[CrmRecordId]"
+                      dataType="guid"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Default Output].Columns[CrmRecordId]"
+                      name="CrmRecordId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Default Output].Columns[IsNew]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Default Output].Columns[IsNew]"
+                      name="IsNew" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Write Error Output to Text File"
+              componentClassID="{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Write Error Output to Text File">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Write Error Output to Text File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ErrorLog]"
+                  connectionManagerRefId="Package.ConnectionManagers[ErrorLog]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input].Columns[CrmErrorMessage]"
+                      cachedDataType="wstr"
+                      cachedLength="2048"
+                      cachedName="CrmErrorMessage"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1].Columns[CrmErrorMessage]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input].Columns[ErrorTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ErrorTime"
+                      externalMetadataColumnId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input].ExternalColumns[ErrorTime]"
+                      lineageId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Output].Columns[ErrorTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ErrorDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Write Error Output to Text File.Inputs[Flat File Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Get Error Time.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Error Output]"
+              endId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 1]"
+              name="Error Output"
+              startId="Package\Data Flow Task\Write Data into Contract Preventive.Outputs[Error Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Error Output]"
+              endId="Package\Data Flow Task\Union Error Output.Inputs[Union All Input 2]"
+              name="OLE DB Source Error Output"
+              startId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Error Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Write Data into Contract Preventive.Inputs[Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Read Stored Procedure.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\Data Flow Task\Get Error Time.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union Error Output.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="206,162" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Data Flow Task\Write Data into Contract Preventive"
+          TopLeft="25,143" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Data Flow Task\Read Stored Procedure"
+          TopLeft="84,11" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Data Flow Task\Union Error Output"
+          TopLeft="389,140" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Data Flow Task\Write Error Output to Text File"
+          TopLeft="366,322" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Data Flow Task\Get Error Time"
+          TopLeft="404,229" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Error Output]"
+          TopLeft="207.333333333333,53">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="266.166666666667,87"
+              Start="0,0"
+              End="266.166666666667,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2428419936373" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2428419936373"
+                    Point2="0,35.2428419936373"
+                    Point3="4,35.2428419936373" />
+                  <mssgle:LineSegment
+                    End="262.166666666667,35.2428419936373" />
+                  <mssgle:CubicBezierSegment
+                    Point1="262.166666666667,35.2428419936373"
+                    Point2="266.166666666667,35.2428419936373"
+                    Point3="266.166666666667,39.2428419936373" />
+                  <mssgle:LineSegment
+                    End="266.166666666667,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="69.6494270833334,40.2428419936373,126.8678125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Error Output]"
+          TopLeft="271,162.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118,0"
+              Start="0,0"
+              End="110.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="110.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.91361328125,5,56.6727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="478,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="476,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="147.833333333333,53">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90"
+              Start="0,0"
+              End="0,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Read Stored Procedure">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

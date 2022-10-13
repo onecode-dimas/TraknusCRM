@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="TrakNusRapidService.Plugins.dll" Id="cfa02c48-284a-e411-9a19-c4346bac57e3" IsolationMode="None" SourceType="Database">
+      <PluginTypes>
+        <Plugin Description="Plug-in to PostQuotationCreate" FriendlyName="PostQuotationCreate" Name="TrakNusRapidService.Plugins.PostQuotationCreate" Id="622baa00-3c4d-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostQuotationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationCreate" Description="Post-Operation of Quotation Create" Id="632baa00-3c4d-e411-a206-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_quotation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostServiceRequisitionCreate" FriendlyName="PostServiceRequisitionCreate" Name="TrakNusRapidService.Plugins.PostServiceRequisitionCreate" Id="cb32998a-8053-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostServiceRequisitionCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostServiceRequisitionCreate" Description="Post-Operation of Service Requisition Create" Id="cc32998a-8053-e411-a206-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="incident" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPPMReportCreate" FriendlyName="PostPPMReportCreate" Name="TrakNusRapidService.Plugins.PostPPMReportCreate" Id="cf32998a-8053-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostPPMReportCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPPMReportCreate" Description="Post-Operation of PPM Report Create" Id="d032998a-8053-e411-a206-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_ppmreport" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostWorkOrderCreate" FriendlyName="PostWorkOrderCreate" Name="TrakNusRapidService.Plugins.PostWorkOrderCreate" Id="d332998a-8053-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostWorkOrderCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostWorkOrderCreate" Description="Post-Operation of Work Order Create" Id="d432998a-8053-e411-a206-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="serviceappointment" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTechnicalServiceReportCreate" FriendlyName="PostTechnicalServiceReportCreate" Name="TrakNusRapidService.Plugins.PostTechnicalServiceReportCreate" Id="64bd582d-4754-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTechnicalServiceReportCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTechnicalServiceReportCreate" Description="Post-Operation of Technical Service Report Create" Id="502a63a7-4754-e411-a206-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_technicalservicereport" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMTARCreate" FriendlyName="PostMTARCreate" Name="TrakNusRapidService.Plugins.PostMTARCreate" Id="f8c4dcec-6862-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMTARCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMTARCreate" Description="Post-Operation of MTAR Create" Id="f9c4dcec-6862-e411-a206-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_mtar" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PostImage" Id="85d411bc-c173-e411-a966-c4346bac57e3" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCommercialHeaderCreate" FriendlyName="PostCommercialHeaderCreate" Name="TrakNusRapidService.Plugins.PostCommercialHeaderCreate" Id="65fc4613-c864-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostCommercialHeaderCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostCommercialHeaderCreate" Description="Post-Operation of Commercial Header Create" Id="66fc4613-c864-e411-a206-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="task" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidatePopulationCreate" FriendlyName="PreValidatePopulationCreate" Name="TrakNusRapidService.Plugins.PreValidatePopulationCreate" Id="f91c72fb-4f66-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidatePopulationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidatePopulationCreate" Description="Pre-Validation of Population Create" Id="fa1c72fb-4f66-e411-a5b1-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="new_population" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidatePopulationUpdate_trs_bastsigndate" FriendlyName="PreValidatePopulationUpdate_trs_bastsigndate" Name="TrakNusRapidService.Plugins.PreValidatePopulationUpdate_trs_bastsigndate" Id="fd1c72fb-4f66-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidatePopulationUpdate_trs_bastsigndate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidatePopulationUpdate" Description="Pre-Validation of Population Update" Id="fe1c72fb-4f66-e411-a5b1-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="new_population" Rank="10" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="847f4dfc-92cc-e411-b17b-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMTARUpdate" FriendlyName="PostMTARUpdate" Name="TrakNusRapidService.Plugins.PostMTARUpdate" Id="5f744932-5f66-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMTARUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMTARUpdate" Description="Post-Operation of MTAR Update" FilteringAttributes="trs_automatictime,trs_manualtime,trs_mtarstatus" Id="60744932-5f66-e411-a5b1-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_mtar" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PreImage" Id="63744932-5f66-e411-a5b1-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPopulationUpdate_UpdateSAP" FriendlyName="PostPopulationUpdate_UpdateSAP" Name="TrakNusRapidService.Plugins.PostPopulationUpdate_UpdateSAP" Id="6baa5420-c068-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostPopulationUpdate_UpdateSAP">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPopulationUpdate_UpdateSAP" Description="Post-Operation of Population Update" FilteringAttributes="trs_functionallocation,trs_warrantyenddate,trs_warrantystartdate,statecode,statuscode,trs_lock,trs_hourmeteronvisit,trs_datevisit,new_latesthourmeter,trs_datelatesthourmeter" Id="6caa5420-c068-e411-a5b1-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="new_population" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PreImage" Id="6faa5420-c068-e411-a5b1-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMechanicCreate" FriendlyName="PostMechanicCreate" Name="TrakNusRapidService.Plugins.PostMechanicCreate" Id="c2e9fa81-5469-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMechanicCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMechanicCreate" Description="Post-Operation of Mechanic Create" Id="c3e9fa81-5469-e411-a5b1-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="equipment" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMechanicUpdate" FriendlyName="PostMechanicUpdate" Name="TrakNusRapidService.Plugins.PostMechanicUpdate" Id="49380ebd-396a-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMechanicUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMechanicUpdate" Description="Post-Operation of Mechanic Update" Id="4a380ebd-396a-e411-a5b1-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="equipment" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostWorkOrderUpdate" FriendlyName="PostWorkOrderUpdate" Name="TrakNusRapidService.Plugins.PostWorkOrderUpdate" Id="269bdef1-3c6a-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostWorkOrderUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostWorkOrderUpdate" Description="Post-Operation of Work Order Update" FilteringAttributes="trs_lasterror,statuscode" Id="279bdef1-3c6a-e411-a5b1-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="serviceappointment" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="7d0efe44-fc73-e411-a966-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostToolsTransferCreate" FriendlyName="PostToolsTransferCreate" Name="TrakNusRapidService.Plugins.PostToolsTransferCreate" Id="740c1693-b46b-e411-b168-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostToolsTransferCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostToolsTransferCreate" Description="Post-Operation of Tools Transfer Create" Id="5f9caa6b-b56b-e411-b168-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_toolstransfer" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="trs_tools,trs_branch" EntityAlias="Target" Id="629caa6b-b56b-e411-b168-c4346bac57e3" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostToolsUsageCreate" FriendlyName="PostToolsUsageCreate" Name="TrakNusRapidService.Plugins.PostToolsUsageCreate" Id="780c1693-b46b-e411-b168-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostToolsUsageCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostToolsUsageCreate" Description="Post-Operation of Tools Usage Create" Id="639caa6b-b56b-e411-b168-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_toolsusage" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="trs_toolsmaster" EntityAlias="Target" Id="669caa6b-b56b-e411-b168-c4346bac57e3" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostToolsUsageUpdate" FriendlyName="PostToolsUsageUpdate" Name="TrakNusRapidService.Plugins.PostToolsUsageUpdate" Id="7d0c1693-b46b-e411-b168-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostToolsUsageUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostToolsUsageUpdate" Description="Post-Operation of Tools Usage Update" Id="679caa6b-b56b-e411-b168-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_toolsusage" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="trs_toolsmaster,trs_toolsname,trs_dateborrowed,trs_datereturned" EntityAlias="Target" Id="6a9caa6b-b56b-e411-b168-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+                <Image Attributes="trs_toolsmaster,trs_toolsname,trs_dateborrowed,trs_datereturned" EntityAlias="Target" Id="6b9caa6b-b56b-e411-b168-c4346bac57e3" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateQuotationPartDetailCreate" FriendlyName="PreValidateQuotationPartDetailCreate" Name="TrakNusRapidService.Plugins.PreValidateQuotationPartDetailCreate" Id="6f1cb8dc-096e-e411-a57f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidateQuotationPartDetailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateQuotationPartDetailCreate" Description="Pre-Validation of Quotation Part Detail Create" Id="701cb8dc-096e-e411-a57f-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_quotationpartdetail" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateQuotationPartDetailUpdate_CalculateTotalPrice" FriendlyName="PreValidateQuotationPartDetailUpdate_CalculateTotalPrice" Name="TrakNusRapidService.Plugins.PreValidateQuotationPartDetailUpdate_CalculateTotalPrice" Id="731cb8dc-096e-e411-a57f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidateQuotationPartDetailUpdate_CalculateTotalPrice">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateQuotationPartDetailUpdate_CalculateTotalPrice" Description="Pre-Validation of Quotation Part Detail Update" FilteringAttributes="trs_discountamount,trs_discountby,trs_discountpercent,trs_partnumber,trs_price,trs_quantity" Id="741cb8dc-096e-e411-a57f-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_quotationpartdetail" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PreImage" Id="771cb8dc-096e-e411-a57f-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationCommercialHeaderCreate" FriendlyName="PostQuotationCommercialHeaderCreate" Name="TrakNusRapidService.Plugins.PostQuotationCommercialHeaderCreate" Id="e22abe0e-ec6e-e411-a57f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostQuotationCommercialHeaderCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationCommercialHeaderCreate" Description="Post-Operation of Quotation Commercial Header Create" Id="e13cc214-ec6e-e411-a57f-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_quotationcommercialheader" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostFunctionalLocationCreate" FriendlyName="PostFunctionalLocationCreate" Name="TrakNusRapidService.Plugins.PostFunctionalLocationCreate" Id="aabba554-3671-e411-acde-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostFunctionalLocationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostFunctionalLocationCreate" Description="Post-Operation of Functional Location Create" Id="823b1b5f-4971-e411-acde-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_functionallocation" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductTypeCreate" FriendlyName="PostProductTypeCreate" Name="TrakNusRapidService.Plugins.PostProductTypeCreate" Id="70a7d5d1-3775-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductTypeCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductTypeCreate" Description="Post-Operation of Product Type Create" Id="71a7d5d1-3775-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_producttype" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductTypeUpdate" FriendlyName="PostProductTypeUpdate" Name="TrakNusRapidService.Plugins.PostProductTypeUpdate" Id="73a7d5d1-3775-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductTypeUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductTypeUpdate" Description="Post-Operation of Product Type Update" FilteringAttributes="trs_producttype" Id="74a7d5d1-3775-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_producttype" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPopulationCreate" FriendlyName="PostPopulationCreate" Name="TrakNusRapidService.Plugins.PostPopulationCreate" Id="52faf383-4575-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostPopulationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPopulationCreate" Description="Post-Operation of Population Create" Id="53faf383-4575-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="new_population" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPopulationUpdate" FriendlyName="PostPopulationUpdate" Name="TrakNusRapidService.Plugins.PostPopulationUpdate" Id="55faf383-4575-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostPopulationUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPopulationUpdate" Description="Post-Operation of Population Update" Id="d7d40f8a-4575-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="new_population" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="84171a3e-92cc-e411-b17b-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTSRPartsDamagedDetailCreate" FriendlyName="PostTSRPartsDamagedDetailCreate" Name="TrakNusRapidService.Plugins.PostTSRPartsDamagedDetailCreate" Id="d9d40f8a-4575-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTSRPartsDamagedDetailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTSRPartsDamagedDetailCreate" Description="Post-Operation of TSR Parts Damaged Detail Create" Id="dad40f8a-4575-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_tsrpartsdamageddetail" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTSRPartsDamagedDetailUpdate" FriendlyName="PostTSRPartsDamagedDetailUpdate" Name="TrakNusRapidService.Plugins.PostTSRPartsDamagedDetailUpdate" Id="dcd40f8a-4575-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTSRPartsDamagedDetailUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTSRPartsDamagedDetailUpdate" Description="Post-Operation of TSR Parts Damaged Detail Update" Id="ddd40f8a-4575-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_tsrpartsdamageddetail" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="ea471be4-9dc9-e411-a8ee-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTSRPartsInstalledDetailCreate" FriendlyName="PostTSRPartsInstalledDetailCreate" Name="TrakNusRapidService.Plugins.PostTSRPartsInstalledDetailCreate" Id="dfd40f8a-4575-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTSRPartsInstalledDetailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTSRPartsInstalledDetailCreate" Description="Post-Operation of TSR Parts Installed Detail Create" Id="e0d40f8a-4575-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_tsrpartdetails" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTSRPartsInstalledDetailUpdate" FriendlyName="PostTSRPartsInstalledDetailUpdate" Name="TrakNusRapidService.Plugins.PostTSRPartsInstalledDetailUpdate" Id="e2d40f8a-4575-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTSRPartsInstalledDetailUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTSRPartsInstalledDetailUpdate" Description="Post-Operation of TSR Parts Installed Detail Update" Id="e3d40f8a-4575-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_tsrpartdetails" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="37880b4f-9ec9-e411-a8ee-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductCreate" FriendlyName="PostProductCreate" Name="TrakNusRapidService.Plugins.PostProductCreate" Id="0080f05a-6275-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductCreate" Description="Post-Operation of Product Create" Id="0180f05a-6275-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="product" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductUpdate" FriendlyName="PostProductUpdate" Name="TrakNusRapidService.Plugins.PostProductUpdate" Id="0380f05a-6275-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductUpdate" Description="Post-Operation of Product Update" Id="0480f05a-6275-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="product" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostAccountCreate" FriendlyName="PostAccountCreate" Name="TrakNusRapidService.Plugins.PostAccountCreate" Id="1c5e4285-2876-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostAccountCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostAccountCreate" Description="Post-Operation of Account Create" Id="09cebbc1-2876-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="account" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostAccountUpdate" FriendlyName="PostAccountUpdate" Name="TrakNusRapidService.Plugins.PostAccountUpdate" Id="205e4285-2876-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostAccountUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostAccountUpdate" Description="Post-Operation of Account Update" Id="0bcebbc1-2876-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="account" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostContactCreate" FriendlyName="PostContactCreate" Name="TrakNusRapidService.Plugins.PostContactCreate" Id="245e4285-2876-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostContactCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostContactCreate" Description="Post-Operation of Contact Create" Id="0dcebbc1-2876-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="contact" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostContactUpdate" FriendlyName="PostContactUpdate" Name="TrakNusRapidService.Plugins.PostContactUpdate" Id="55a8418b-2876-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostContactUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostContactUpdate" Description="Post-Operation of Contact Update" Id="4e18bbc7-2876-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="contact" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMechanicGradeCreate" FriendlyName="PostMechanicGradeCreate" Name="TrakNusRapidService.Plugins.PostMechanicGradeCreate" Id="00a64aec-ef79-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMechanicGradeCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMechanicGradeCreate" Description="Post-Operation of Mechanic Grade Create" Id="01a64aec-ef79-e411-a966-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_mechanicgrade" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMechanicGradeUpdate" FriendlyName="PostMechanicGradeUpdate" Name="TrakNusRapidService.Plugins.PostMechanicGradeUpdate" Id="04a64aec-ef79-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMechanicGradeUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMechanicGradeUpdate" Description="Post-Operation of Mechanic Grade Update" Id="05a64aec-ef79-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_mechanicgrade" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostServiceRequisitionUpdate" FriendlyName="PostServiceRequisitionUpdate" Name="TrakNusRapidService.Plugins.PostServiceRequisitionUpdate" Id="729ec898-1284-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostServiceRequisitionUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostServiceRequisitionUpdate" Description="Post-Operation of Service Requisition Update" Id="739ec898-1284-e411-a7ab-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="incident" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTechnicalServiceReportUpdate" FriendlyName="PostTechnicalServiceReportUpdate" Name="TrakNusRapidService.Plugins.PostTechnicalServiceReportUpdate" Id="17139c54-5d7c-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTechnicalServiceReportUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTechnicalServiceReportUpdate" Description="Post-Operation of Technical Service Report Update" Id="18139c54-5d7c-e411-a966-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_technicalservicereport" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="383dc1d5-2b87-e411-a7ab-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostFunctionalLocationUpdate" FriendlyName="PostFunctionalLocationUpdate" Name="TrakNusRapidService.Plugins.PostFunctionalLocationUpdate" Id="edafdd00-6153-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostFunctionalLocationUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostFunctionalLocationUpdate" Description="Post-Operation of Functional Location Update" FilteringAttributes="trs_area,trs_customer,trs_frommobile,trs_functionaladdress,trs_functionalcode,trs_functionallatitude,trs_functionallocation,trs_functionallongitude,trs_name" Id="4debfb34-927e-e411-b4e3-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_functionallocation" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PreImage" Id="50ebfb34-927e-e411-b4e3-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPopulationUpdate_WO_ASS" FriendlyName="PostPopulationUpdate_WO_ASS" Name="TrakNusRapidService.Plugins.PostPopulationUpdate_WO_ASS" Id="9f8a7d47-b481-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostPopulationUpdate_WO_ASS">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPopulationUpdate_WO_ASS" Description="Post-Operation of Population Update" FilteringAttributes="trs_ass1,trs_ass2,trs_ass3" Id="8490e54d-b481-e411-a7ab-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="new_population" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PreImage" Id="8790e54d-b481-e411-a7ab-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductSectionUpdate" FriendlyName="PostProductSectionUpdate" Name="TrakNusRapidService.Plugins.PostProductSectionUpdate" Id="c9b03049-4883-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductSectionUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductSectionUpdate" Description="Post-Operation of Product Section Update" Id="45a9e84f-4883-e411-a7ab-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_productsection" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductSectionCreate" FriendlyName="PostProductSectionCreate" Name="TrakNusRapidService.Plugins.PostProductSectionCreate" Id="48a9e84f-4883-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductSectionCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductSectionCreate" Description="Post-Operation of Product Section Create" Id="49a9e84f-4883-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_productsection" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTaskListGroupCreate" FriendlyName="PostTaskListGroupCreate" Name="TrakNusRapidService.Plugins.PostTaskListGroupCreate" Id="e584325e-5083-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTaskListGroupCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTaskListGroupCreate" Description="Post-Operation of Task List Group Create" Id="e684325e-5083-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_tasklistgroup" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTaskListGroupUpdate" FriendlyName="PostTaskListGroupUpdate" Name="TrakNusRapidService.Plugins.PostTaskListGroupUpdate" Id="e984325e-5083-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTaskListGroupUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTaskListGroupUpdate" Description="Post-Operation of Task List Group Update" Id="ea84325e-5083-e411-a7ab-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_tasklistgroup" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostWorkOrderRecommendationCreate" FriendlyName="PostWorkOrderRecommendationCreate" Name="TrakNusRapidService.Plugins.PostWorkOrderRecommendationCreate" Id="1c700a60-2984-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostWorkOrderRecommendationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostWorkOrderRecommendationCreate" Description="Post-Operation of Work Order Recommendation Create" Id="1d700a60-2984-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_workorderpartrecommendation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostWorkOrderRecommendationUpdate" FriendlyName="PostWorkOrderRecommendationUpdate" Name="TrakNusRapidService.Plugins.PostWorkOrderRecommendationUpdate" Id="20700a60-2984-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostWorkOrderRecommendationUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostWorkOrderRecommendationUpdate" Description="Post-Operation of Work Order Recommendation Update" Id="21700a60-2984-e411-a7ab-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_workorderpartrecommendation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="b74cb3e4-9ec9-e411-a8ee-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCommercialDetailCreate" FriendlyName="PostCommercialDetailCreate" Name="TrakNusRapidService.Plugins.PostCommercialDetailCreate" Id="c2ba0cb1-398b-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostCommercialDetailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostCommercialDetailCreate" Description="Post-Operation of Commercial Detail Create" Id="bc0a1fb7-398b-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_commercialdetail" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCommercialDetailUpdate" FriendlyName="PostCommercialDetailUpdate" Name="TrakNusRapidService.Plugins.PostCommercialDetailUpdate" Id="bf0a1fb7-398b-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostCommercialDetailUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostCommercialDetailUpdate" Description="Post-Operation of Commercial Detail Update" Id="c00a1fb7-398b-e411-a7ab-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_commercialdetail" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateWorkOrderUpdate" FriendlyName="PreValidateWorkOrderUpdate" Name="TrakNusRapidService.Plugins.PreValidateWorkOrderUpdate" Id="41c7ab72-728e-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidateWorkOrderUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateWorkOrderUpdate" Description="Pre-Validation of Work Order Update" Id="42c7ab72-728e-e411-a7ab-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="serviceappointment" Rank="10" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="45c7ab72-728e-e411-a7ab-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateServiceRequisitionCreate" FriendlyName="PreValidateServiceRequisitionCreate" Name="TrakNusRapidService.Plugins.PreValidateServiceRequisitionCreate" Id="f0bfb08b-2392-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidateServiceRequisitionCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateServiceRequisitionCreate" Description="Pre-Validation of Service Requisition Create" Id="f1bfb08b-2392-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="incident" Rank="10" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreServiceRequisitionCreate" FriendlyName="PreServiceRequisitionCreate" Name="TrakNusRapidService.Plugins.PreServiceRequisitionCreate" Id="8dd3f9ac-2592-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreServiceRequisitionCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreServiceRequisitionCreate" Description="Pre-Operation of Service Requisition Create" Id="8ed3f9ac-2592-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="incident" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostContractRealizationCreate" FriendlyName="PostContractRealizationCreate" Name="TrakNusRapidService.Plugins.PostContractRealizationCreate" Id="abd02d4d-7592-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostContractRealizationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostContractRealizationCreate" Description="Post-Operation of Contract Realization Create" Id="acd02d4d-7592-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_contractrealization" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMTARCreate" FriendlyName="PreMTARCreate" Name="TrakNusRapidService.Plugins.PreMTARCreate" Id="78c5de87-3896-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreMTARCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreMTARCreate" Description="Pre-Operation of MTAR Create" Id="79c5de87-3896-e411-a7ab-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_mtar" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationUpdate" FriendlyName="PostQuotationUpdate" Name="TrakNusRapidService.Plugins.PostQuotationUpdate" Id="ec1a0f00-e396-e411-ae1f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostQuotationUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationUpdate" Description="Post-Operation of Quotation Update" Id="ed1a0f00-e396-e411-ae1f-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_quotation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="e264c985-adcb-e411-a8ee-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTechnicalServiceReportDocumentationCreate" FriendlyName="PostTechnicalServiceReportDocumentationCreate" Name="TrakNusRapidService.Plugins.PostTechnicalServiceReportDocumentationCreate" Id="38b4e231-1397-e411-ae1f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTechnicalServiceReportDocumentationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTechnicalServiceReportDocumentationCreate" Description="Post-Operation of Technical Service Report Documentation Create" Id="39b4e231-1397-e411-ae1f-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_technicalservicereportdocumentation" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTechnicalServiceReportDocumentationUpdate" FriendlyName="PostTechnicalServiceReportDocumentationUpdate" Name="TrakNusRapidService.Plugins.PostTechnicalServiceReportDocumentationUpdate" Id="3bb4e231-1397-e411-ae1f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostTechnicalServiceReportDocumentationUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTechnicalServiceReportDocumentationUpdate" Description="Post-Operation of Technical Service Report Documentation Update" Id="3cb4e231-1397-e411-ae1f-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_technicalservicereportdocumentation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="1729b4a4-9cc9-e411-a8ee-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSectionRecommendationCreate" FriendlyName="PostSectionRecommendationCreate" Name="TrakNusRapidService.Plugins.PostSectionRecommendationCreate" Id="3eb4e231-1397-e411-ae1f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostSectionRecommendationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSectionRecommendationCreate" Description="Post-Operation of Section Recommendation Create" Id="3fb4e231-1397-e411-ae1f-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_sectionrecommendation" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostSectionRecommendationUpdate" FriendlyName="PostSectionRecommendationUpdate" Name="TrakNusRapidService.Plugins.PostSectionRecommendationUpdate" Id="41b4e231-1397-e411-ae1f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostSectionRecommendationUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostSectionRecommendationUpdate" Description="Post-Operation of Section Recommendation Update" Id="42b4e231-1397-e411-ae1f-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_sectionrecommendation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="b7c0b3bf-9fc9-e411-a8ee-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreWorkOrderRecommendationCreate" FriendlyName="PreWorkOrderRecommendationCreate" Name="TrakNusRapidService.Plugins.PreWorkOrderRecommendationCreate" Id="fbee9786-069b-e411-ac9f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreWorkOrderRecommendationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreWorkOrderRecommendationCreate" Description="Pre-Operation of Work Order Recommendation Create" Id="fcee9786-069b-e411-ac9f-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_workorderpartrecommendation" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreTSRPartsDamagedDetailCreate" FriendlyName="PreTSRPartsDamagedDetailCreate" Name="TrakNusRapidService.Plugins.PreTSRPartsDamagedDetailCreate" Id="ffee9786-069b-e411-ac9f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreTSRPartsDamagedDetailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreTSRPartsDamagedDetailCreate" Description="Pre-Operation of TSR Parts Damaged Detail Create" Id="00ef9786-069b-e411-ac9f-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_tsrpartsdamageddetail" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreTSRPartsInstalledDetailCreate" FriendlyName="PreTSRPartsInstalledDetailCreate" Name="TrakNusRapidService.Plugins.PreTSRPartsInstalledDetailCreate" Id="03ef9786-069b-e411-ac9f-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreTSRPartsInstalledDetailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreTSRPartsInstalledDetailCreate" Description="Pre-Operation of TSR Parts Installed Detail Create" Id="04ef9786-069b-e411-ac9f-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_tsrpartdetails" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductTypeofWorkCreate" FriendlyName="PostProductTypeofWorkCreate" Name="TrakNusRapidService.Plugins.PostProductTypeofWorkCreate" Id="90ccabac-5ca1-e411-afb9-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductTypeofWorkCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductTypeofWorkCreate" Description="Post-Operation of Product Type of Work Create" Id="91ccabac-5ca1-e411-afb9-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_unittypeofwork" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostProductTypeofWorkUpdate" FriendlyName="PostProductTypeofWorkUpdate" Name="TrakNusRapidService.Plugins.PostProductTypeofWorkUpdate" Id="94ccabac-5ca1-e411-afb9-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostProductTypeofWorkUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostProductTypeofWorkUpdate" Description="Post-Operation of Product Type of Work Update" Id="95ccabac-5ca1-e411-afb9-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_unittypeofwork" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreWorkOrderDocumentationCreate" FriendlyName="PreWorkOrderDocumentationCreate" Name="TrakNusRapidService.Plugins.PreWorkOrderDocumentationCreate" Id="b8ba8f31-c8b5-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreWorkOrderDocumentationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreWorkOrderDocumentationCreate" Description="Pre-Operation of Work Order Documentation Create" Id="b9ba8f31-c8b5-e411-ac82-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_workorderdocumentation" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreTechnicalServiceReportDocumentationCreate" FriendlyName="PreTechnicalServiceReportDocumentationCreate" Name="TrakNusRapidService.Plugins.PreTechnicalServiceReportDocumentationCreate" Id="bcba8f31-c8b5-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreTechnicalServiceReportDocumentationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreTechnicalServiceReportDocumentationCreate" Description="Pre-Operation of Technical Service Report Documentation Create" Id="fe90ba37-c8b5-e411-ac82-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_technicalservicereportdocumentation" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostWorkOrderDocumentationCreate" FriendlyName="PostWorkOrderDocumentationCreate" Name="TrakNusRapidService.Plugins.PostWorkOrderDocumentationCreate" Id="9a4ec97a-73b6-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostWorkOrderDocumentationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostWorkOrderDocumentationCreate" Description="Post-Operation of Work Order Documentation Create" Id="8b8ce6d0-81b6-e411-ac82-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_workorderdocumentation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostWorkOrderDocumentationUpdate" FriendlyName="PostWorkOrderDocumentationUpdate" Name="TrakNusRapidService.Plugins.PostWorkOrderDocumentationUpdate" Id="9e4ec97a-73b6-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostWorkOrderDocumentationUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostWorkOrderDocumentationUpdate" Description="Post-Operation of Work Order Documentation Update" Id="9f4ec97a-73b6-e411-ac82-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_workorderdocumentation" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="8795be4c-9fc9-e411-a8ee-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreSectionRecommendationCreate" FriendlyName="PreSectionRecommendationCreate" Name="TrakNusRapidService.Plugins.PreSectionRecommendationCreate" Id="b9449634-f7b7-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreSectionRecommendationCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreSectionRecommendationCreate" Description="Pre-Operation of Section Recommendation Create" Id="ba449634-f7b7-e411-ac82-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_sectionrecommendation" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PrePPMInspectionReportCreate" FriendlyName="PrePPMInspectionReportCreate" Name="TrakNusRapidService.Plugins.PrePPMInspectionReportCreate" Id="bd449634-f7b7-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PrePPMInspectionReportCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PrePPMInspectionReportCreate" Description="Pre-Operation of PPM Inspection Report Create" Id="be449634-f7b7-e411-ac82-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_ppmreport" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreTechnicalServiceReportCreate" FriendlyName="PreTechnicalServiceReportCreate" Name="TrakNusRapidService.Plugins.PreTechnicalServiceReportCreate" Id="c1449634-f7b7-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreTechnicalServiceReportCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreTechnicalServiceReportCreate" Description="Pre-Operation of Technical Service Report Create" Id="c2449634-f7b7-e411-ac82-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_technicalservicereport" Rank="10" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateQuotationCommercialHeaderCreate" FriendlyName="PreValidateQuotationCommercialHeaderCreate" Name="TrakNusRapidService.Plugins.PreValidateQuotationCommercialHeaderCreate" Id="2b09487a-82c1-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidateQuotationCommercialHeaderCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateQuotationCommercialHeaderCreate" Description="Pre-Validation of Quotation Commercial Header Create" Id="2c09487a-82c1-e411-ac82-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_quotationcommercialheader" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateQuotationCommercialHeaderUpdate" FriendlyName="PreValidateQuotationCommercialHeaderUpdate" Name="TrakNusRapidService.Plugins.PreValidateQuotationCommercialHeaderUpdate" Id="738cd538-89c1-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidateQuotationCommercialHeaderUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateQuotationCommercialHeaderUpdate" Description="Pre-Validation of Quotation Commercial Header Update" Id="748cd538-89c1-e411-ac82-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_quotationcommercialheader" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PreImage" Id="778cd538-89c1-e411-ac82-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPPMInspectionReportUpdate" FriendlyName="PostPPMInspectionReportUpdate" Name="TrakNusRapidService.Plugins.PostPPMInspectionReportUpdate" Id="69736bbb-a6cc-e411-b17b-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostPPMInspectionReportUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPPMInspectionReportUpdate" Description="Post-Operation of PPM Inspection Report Update" Id="6a736bbb-a6cc-e411-b17b-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_ppmreport" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="PreImage" Id="6d736bbb-a6cc-e411-b17b-c4346bac57e3" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostQuotationCommercialDetailCreate" FriendlyName="PostQuotationCommercialDetailCreate" Name="TrakNusRapidService.Plugins.PostQuotationCommercialDetailCreate" Id="a77840ad-dcda-e411-b17b-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostQuotationCommercialDetailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostQuotationCommercialDetailCreate" Description="Post-Operation of Quotation Commercial Detail Create" Id="a87840ad-dcda-e411-b17b-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_quotationcommercialdetail" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMechanicMonthlyPointCreate" FriendlyName="PostMechanicMonthlyPointCreate" Name="TrakNusRapidService.Plugins.PostMechanicMonthlyPointCreate" Id="100fdcbf-f7dd-e411-b17b-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMechanicMonthlyPointCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMechanicMonthlyPointCreate" Description="Post-Operation of Mechanic Monthly Point Create" Id="110fdcbf-f7dd-e411-b17b-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_mechanicmonthlypoint" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="140fdcbf-f7dd-e411-b17b-c4346bac57e3" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMechanicMonthlyPointUpdate" FriendlyName="PostMechanicMonthlyPointUpdate" Name="TrakNusRapidService.Plugins.PostMechanicMonthlyPointUpdate" Id="150fdcbf-f7dd-e411-b17b-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PostMechanicMonthlyPointUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMechanicMonthlyPointUpdate" Description="Post-Operation of Mechanic Monthly Point Update" Id="160fdcbf-f7dd-e411-b17b-c4346bac57e3" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_mechanicmonthlypoint" Rank="10" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image EntityAlias="Target" Id="190fdcbf-f7dd-e411-b17b-c4346bac57e3" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateEmailCreate" FriendlyName="PreValidateEmailCreate" Name="TrakNusRapidService.Plugins.PreValidateEmailCreate" Id="cc316a69-a6de-e411-b17b-c4346bac57e3" TypeName="TrakNusRapidService.Plugins.PreValidateEmailCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateEmailCreate" Description="Pre-Validation of Email Create" Id="cd316a69-a6de-e411-b17b-c4346bac57e3" MessageName="Create" Mode="Synchronous" PrimaryEntityName="email" Rank="10" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+      </PluginTypes>
+    </Solution>
+    <Solution Assembly="TrakNusRapidService.Workflow.dll" Id="d2a02c48-284a-e411-9a19-c4346bac57e3" IsolationMode="None" SourceType="Database">
+      <WorkflowTypes>
+        <WorkflowType FriendlyName="Commercial Header Task List" Name="Commercial Header Task List" Description="Commercial Header Task List" WorkflowActivityGroupName="Commercial Header Task List" Id="c3421c43-905a-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.CommercialHeaderTaskList" />
+        <WorkflowType FriendlyName="Work Order Dispatch Mechanic" Name="Work Order Dispatch Mechanic" Description="Work Order Dispatch Mechanic" WorkflowActivityGroupName="Work Order" Id="7c2f8722-a85d-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_DispatchMechanic" />
+        <WorkflowType FriendlyName="Technical Service Report Send Email" Name="Technical Service Report Send Email" Description="Technical Service Report Send Email" WorkflowActivityGroupName="Technical Service Report Send Email" Id="288d2778-e25f-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.SendEmailTechnicalServiceReport" />
+        <WorkflowType FriendlyName="QuotationPartsSummary" Name="QuotationPartsSummary" Description="Quotation Parts Summary" WorkflowActivityGroupName="Quotation" Id="3773ce37-e55f-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.QuotationPartsSummary" />
+        <WorkflowType FriendlyName="WorkOrderPartsSummary" Name="WorkOrderPartsSummary" Description="Work Order Parts Summary" WorkflowActivityGroupName="Work Order" Id="3873ce37-e55f-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WorkOrderPartsSummary" />
+        <WorkflowType FriendlyName="Tools Transfer" Name="Tools Transfer" Description="Tools Transfer" WorkflowActivityGroupName="Tools" Id="586ef451-da64-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.ToolsTransfer" />
+        <WorkflowType FriendlyName="Tools Borrow" Name="Tools Borrow" Description="Tools Borrow" WorkflowActivityGroupName="Tools" Id="ae714c2b-7a69-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.ToolsBorrow" />
+        <WorkflowType FriendlyName="Release" Name="Release" Description="Release WO" WorkflowActivityGroupName="Work Order" Id="c4d269bb-e66a-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_Release" />
+        <WorkflowType FriendlyName="Dispatch" Name="Dispatch" Description="Dispatch WO" WorkflowActivityGroupName="Work Order" Id="64744932-5f66-e411-a5b1-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_Dispatch" />
+        <WorkflowType FriendlyName="Hold" Name="Hold" Description="Hold WO" WorkflowActivityGroupName="Work Order" Id="4dea07eb-6d62-e411-a206-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_Hold" />
+        <WorkflowType FriendlyName="Unhold" Name="Unhold" Description="Unhold WO" WorkflowActivityGroupName="Work Order" Id="8dd251c0-3a6f-e411-a57f-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_Unhold" />
+        <WorkflowType FriendlyName="Get Parts Tools" Name="Get Parts Tools" Description="Get Parts Tools" WorkflowActivityGroupName="Work Order" Id="b6ee8e49-c26f-e411-acde-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_GetPartsTools" />
+        <WorkflowType FriendlyName="Calculate Total" Name="Calculate Total" Description="Calculate Total" WorkflowActivityGroupName="Quotation" Id="606fa2bd-7374-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.Quotation_CalculateTotal" />
+        <WorkflowType FriendlyName="Part Return" Name="Part Return" Description="Part Return" WorkflowActivityGroupName="Work Order" Id="defc1994-8274-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_PartReturn" />
+        <WorkflowType FriendlyName="Request Tools" Name="Request Tools" Description="Request Tools" WorkflowActivityGroupName="Work Order" Id="908c2ae5-1975-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_RequestTools" />
+        <WorkflowType FriendlyName="Calculate RTG" Name="Calculate RTG" Description="Calculate RTG" WorkflowActivityGroupName="Work Order" Id="735950cb-0676-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_CalculateRTG" />
+        <WorkflowType FriendlyName="TECO" Name="TECO" Description="TECO" WorkflowActivityGroupName="Work Order" Id="745950cb-0676-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_TECO" />
+        <WorkflowType FriendlyName="Workflow Quotation Workorder" Name="Workflow Quotation Workorder" Description="Workflow Quotation Workorder" WorkflowActivityGroupName="Workflow Quotation Workorder" Id="a87506c7-b77a-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_QuotationWorkorder" />
+        <WorkflowType FriendlyName="WO Revise Quotatiton" Name="WO Revise Quotatiton" Description="WO Revise Quotatiton" WorkflowActivityGroupName="WO Revise Quotatiton" Id="0b233e72-b481-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_ReviseQuotation" />
+        <WorkflowType FriendlyName="Approve Quotation" Name="Approve Quotation" Description="Approve Quotation" WorkflowActivityGroupName="Approve Quotation" Id="473b24f3-ca81-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_ApproveQuotation" />
+        <WorkflowType FriendlyName="Final Approve Quotation" Name="Final Approve Quotation" Description="Final Approve Quotation" WorkflowActivityGroupName="Final Approve Quotation" Id="483b24f3-ca81-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_FinalApproveQuotation" />
+        <WorkflowType FriendlyName="Reset Password (Mechanic)" Name="Reset Password (Mechanic)" Description="Reset Password (Mechanic)" WorkflowActivityGroupName="Mechanic" Id="790c458d-db84-e411-a7ab-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.Mechanic_ResetPassword" />
+        <WorkflowType FriendlyName="Remote Wipe (Mechanic)" Name="Remote Wipe (Mechanic)" Description="Remote Wipe (Mechanic)" WorkflowActivityGroupName="Mechanic" Id="3cf9c6e8-a9b1-e411-ac82-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.Mechanic_RemoteWipe" />
+        <WorkflowType FriendlyName="Calculate RTG" Name="Calculate RTG" Description="Calculate RTG" WorkflowActivityGroupName="Calculate RTG" Id="735950cb-0676-e411-a966-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_CalculateRTG" />
+        <WorkflowType FriendlyName="On Create" Name="On Create" Description="Contract Realization (On Create)" WorkflowActivityGroupName="Contract Realization" Id="b03da61e-55a1-e411-afb9-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.ContractRealization_OnCreate" />
+        <WorkflowType FriendlyName="ContractPreventive_OnCreate" Name="ContractPreventive_OnCreate" Description="ContractPreventive_OnCreate" WorkflowActivityGroupName="ContractPreventive_OnCreate" Id="d70de2f0-5da7-e411-b4cc-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.ContractPreventive_OnCreate" />
+        <WorkflowType FriendlyName="AutomaticSendEmail" Name="AutomaticSendEmail" Description="Automatic Send Email" WorkflowActivityGroupName="Email" Id="f4ec36c9-f7dd-e411-b17b-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.AutomaticSendEmail" />
+        <WorkflowType FriendlyName="WO_UpdateToSAP" Name="WO_UpdateToSAP" Description="WO_UpdateToSAP" WorkflowActivityGroupName="Work Order" Id="8ad7d0e9-90de-e411-b17b-c4346bac57e3" TypeName="TrakNusRapidService.Workflow.WO_UpdateToSAP" />
+      </WorkflowTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows />
+</Register>

@@ -1,0 +1,9 @@
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\TrakNusRapidService.Plugins.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\TrakNusRapidService.Workflow.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\TrakNusRapidService.Helper.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\TrakNusRapidService.Plugins.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\TrakNusRapidService.Workflow.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\bin\Debug\TrakNusRapidService.Helper.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\CrmPackage\obj\Debug\CrmPackage.csprojResolveAssemblyReference.cache

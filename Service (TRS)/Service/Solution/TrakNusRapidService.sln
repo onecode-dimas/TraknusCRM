@@ -1,0 +1,140 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{88A30576-7583-4F75-8136-5EFD2C14ADFF}") = "CrmPackage", "TrakNusRapidService\CrmPackage\CrmPackage.csproj", "{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE} = {DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1} = {223C5F2C-30CA-4DE2-83BA-29567923F8D1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "TrakNusRapidService\Plugins\Plugins.csproj", "{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8} = {C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow", "TrakNusRapidService\Workflow\Workflow.csproj", "{223C5F2C-30CA-4DE2-83BA-29567923F8D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "TrakNusRapidService\DataLayer\DataLayer.csproj", "{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "TrakNusRapidService\Helper\Helper.csproj", "{5A5CDCAB-B59E-4A13-A957-E5319C55F527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "TrakNusRapidService\WcfService\WcfService.csproj", "{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateRTG", "CalculateRTG\CalculateRTG\CalculateRTG.csproj", "{5608DE38-F656-494D-A70C-521C62D94718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailExpiredWarrantyPopulation", "EmailExpiredWarrantyPopulation\EmailExpiredWarrantyPopulation.csproj", "{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://localhost:8080/tfs/trs
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TrakNusRapidService\\CrmPackage\\CrmPackage.csproj
+		SccProjectName1 = TrakNusRapidService/CrmPackage
+		SccLocalPath1 = TrakNusRapidService\\CrmPackage
+		SccProjectUniqueName2 = TrakNusRapidService\\Plugins\\Plugins.csproj
+		SccProjectName2 = TrakNusRapidService/Plugins
+		SccLocalPath2 = TrakNusRapidService\\Plugins
+		SccProjectUniqueName3 = TrakNusRapidService\\Workflow\\Workflow.csproj
+		SccProjectName3 = TrakNusRapidService/Workflow
+		SccLocalPath3 = TrakNusRapidService\\Workflow
+		SccProjectUniqueName4 = TrakNusRapidService\\DataLayer\\DataLayer.csproj
+		SccProjectName4 = TrakNusRapidService/DataLayer
+		SccLocalPath4 = TrakNusRapidService\\DataLayer
+		SccProjectUniqueName5 = TrakNusRapidService\\Helper\\Helper.csproj
+		SccProjectName5 = TrakNusRapidService/Helper
+		SccLocalPath5 = TrakNusRapidService\\Helper
+		SccProjectUniqueName6 = TrakNusRapidService\\WcfService\\WcfService.csproj
+		SccProjectName6 = TrakNusRapidService/WcfService
+		SccLocalPath6 = TrakNusRapidService\\WcfService
+		SccProjectUniqueName7 = CalculateRTG\\CalculateRTG\\CalculateRTG.csproj
+		SccProjectName7 = CalculateRTG/CalculateRTG
+		SccLocalPath7 = CalculateRTG\\CalculateRTG
+		SccProjectUniqueName8 = EmailExpiredWarrantyPopulation\\EmailExpiredWarrantyPopulation.csproj
+		SccProjectName8 = EmailExpiredWarrantyPopulation
+		SccLocalPath8 = EmailExpiredWarrantyPopulation
+	EndGlobalSection
+	GlobalSection(CRMSolutionProperties) = preSolution
+		SolutionIsBoundToCRM = True
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugLocal|Any CPU = DebugLocal|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.DebugLocal|Any CPU.Deploy.0 = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2AAD4AC-504D-456F-87F7-8F08E5A39A90}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223C5F2C-30CA-4DE2-83BA-29567923F8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5CDCAB-B59E-4A13-A957-E5319C55F527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13A1E30-9B8A-47AF-A6D6-7508C81A04C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5608DE38-F656-494D-A70C-521C62D94718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6AE2B8-F5CF-43A0-BBFD-8E791660B763}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

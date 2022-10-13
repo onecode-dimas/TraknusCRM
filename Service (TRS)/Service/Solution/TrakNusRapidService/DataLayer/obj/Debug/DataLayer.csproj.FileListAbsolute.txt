@@ -1,0 +1,13 @@
+D:\Projects\Traknus\Solution\TrakNusRapidService\DataLayer\bin\Debug\TrakNusRapidService.DataLayer.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\DataLayer\bin\Debug\TrakNusRapidService.DataLayer.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\DataLayer\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+D:\Projects\Traknus\Solution\TrakNusRapidService\DataLayer\obj\Debug\TrakNusRapidService.DataLayer.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\DataLayer\obj\Debug\TrakNusRapidService.DataLayer.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\DataLayer\bin\Debug\TrakNusRapidService.DataLayer.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\DataLayer\bin\Debug\TrakNusRapidService.DataLayer.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\DataLayer\obj\Debug\TrakNusRapidService.DataLayer.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\DataLayer\obj\Debug\TrakNusRapidService.DataLayer.pdb

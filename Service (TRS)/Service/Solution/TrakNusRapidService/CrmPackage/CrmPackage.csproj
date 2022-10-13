@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f2aad4ac-504d-456f-87f7-8f08e5a39a90</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusRapidService.CrmPackage</RootNamespace>
+    <AssemblyName>TrakNusRapidService.CrmPackage</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OutputFile>CrmPackage.zip</OutputFile>
+    <Name>CrmPackage</Name>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <MainFile>WebResources\Script (JScript)\new_Quote_CopyCustomer.js</MainFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="WebResources\PNG format\" />
+    <Folder Include="WebResources\Script %28JScript%29\" />
+    <Folder Include="WebResources\Web Page %28HTML%29\" />
+    <RegisterPlugin Include="RegisterFile.crmregister">
+      <DisplayName>RegisterFile</DisplayName>
+      <UniqueName>trs_RegisterFile</UniqueName>
+      <WebResourceType>NotSupported</WebResourceType>
+    </RegisterPlugin>
+    <Folder Include="WebResources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugins\Plugins.csproj">
+      <Name>Plugins</Name>
+      <Project>{ddf1a410-7abb-49e7-ad81-ed0c1708acce}</Project>
+      <Private>True</Private>
+      <SilverlightApplication>False</SilverlightApplication>
+    </ProjectReference>
+    <ProjectReference Include="..\Workflow\Workflow.csproj">
+      <Name>Workflow</Name>
+      <Project>{223c5f2c-30ca-4de2-83ba-29567923f8d1}</Project>
+      <Private>True</Private>
+      <SilverlightApplication>False</SilverlightApplication>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CRMWebResource Include="WebResources\PNG format\Incident_origincode_custom.png">
+      <DisplayName>Unspecified_icon</DisplayName>
+      <UniqueName>Incident_origincode_custom.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <Description>Default Form System Library</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\Incident_origincode_icon.png">
+      <DisplayName>Custom_icon</DisplayName>
+      <UniqueName>Incident_origincode_icon.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <Description>Default Form System Library</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\Incident_origincode_icon1.png">
+      <DisplayName>Phone_icon</DisplayName>
+      <UniqueName>Incident_origincode_icon1.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <Description>Default Form System Library</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\Incident_origincode_icon2.png">
+      <DisplayName>Email_icon</DisplayName>
+      <UniqueName>Incident_origincode_icon2.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <Description>Default Form System Library</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\Incident_origincode_icon3.png">
+      <DisplayName>Web_icon</DisplayName>
+      <UniqueName>Incident_origincode_icon3.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <Description>Default Form System Library</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\Incident_origincode_icon4.png">
+      <DisplayName>Facebook_icon</DisplayName>
+      <UniqueName>Incident_origincode_icon4.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <Description>Default Form System Library</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\Incident_origincode_icon5.png">
+      <DisplayName>Twitter_icon</DisplayName>
+      <UniqueName>Incident_origincode_icon5.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <Description>Default Form System Library</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_approve_quote16.png">
+      <DisplayName>Icon Approve Quote 16x16</DisplayName>
+      <UniqueName>new_approve_quote16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_approve_quote32.png">
+      <DisplayName>Icon Approve Quote 32x32</DisplayName>
+      <UniqueName>new_approve_quote32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_bar_chart16x16.png">
+      <DisplayName>bar_chart16x16.png</DisplayName>
+      <UniqueName>new_bar_chart16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_bar_chart32x32.png">
+      <DisplayName>bar_chart32x32.png</DisplayName>
+      <UniqueName>new_bar_chart32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_blue_twitter16x16.png">
+      <DisplayName>blue_twitter16x16.png</DisplayName>
+      <UniqueName>new_blue_twitter16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_blue_twitter32x32.png">
+      <DisplayName>blue_twitter32x32.png</DisplayName>
+      <UniqueName>new_blue_twitter32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_cash_register16x16.png">
+      <DisplayName>cash_register16x16.png</DisplayName>
+      <UniqueName>new_cash_register16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_cash_register32x32.png">
+      <DisplayName>cash_register32x32.png</DisplayName>
+      <UniqueName>new_cash_register32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_chart16x16.png">
+      <DisplayName>chart16x16.png</DisplayName>
+      <UniqueName>new_chart16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_chart32x32.png">
+      <DisplayName>chart32x32.png</DisplayName>
+      <UniqueName>new_chart32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_CompetitorPopulation.png">
+      <DisplayName>Competitor Population</DisplayName>
+      <UniqueName>new_CompetitorPopulation</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_CompetitorPopulation_32x32.png">
+      <DisplayName>Competitor Population 32 x 32</DisplayName>
+      <UniqueName>new_CompetitorPopulation_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_credit_card16x16.png">
+      <DisplayName>credit_card16x16.png</DisplayName>
+      <UniqueName>new_credit_card16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_credit_card32x32.png">
+      <DisplayName>credit_card32x32.png</DisplayName>
+      <UniqueName>new_credit_card32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_facebook16x16.png">
+      <DisplayName>facebook16x16.png</DisplayName>
+      <UniqueName>new_facebook16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_facebook32x32.png">
+      <DisplayName>facebook32x32.png</DisplayName>
+      <UniqueName>new_facebook32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_flickr16x16.png">
+      <DisplayName>flickr16x16.png</DisplayName>
+      <UniqueName>new_flickr16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_flickr32x32.png">
+      <DisplayName>flickr32x32.png</DisplayName>
+      <UniqueName>new_flickr32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_google16x16.png">
+      <DisplayName>google16x16.png</DisplayName>
+      <UniqueName>new_google16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_google32x32.png">
+      <DisplayName>google32x32.png</DisplayName>
+      <UniqueName>new_google32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_green_v_16x16.png">
+      <DisplayName>green_v_16x16</DisplayName>
+      <UniqueName>new_green_v_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_green_v_32x32.png">
+      <DisplayName>green_v_32x32</DisplayName>
+      <UniqueName>new_green_v_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_actionitem_16x16.png">
+      <DisplayName>icon_actionitem_16x16</DisplayName>
+      <UniqueName>new_icon_actionitem_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_actionitem_32x32.png">
+      <DisplayName>icon_actionitem_32x32</DisplayName>
+      <UniqueName>new_icon_actionitem_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_actionitem_66x48.png">
+      <DisplayName>icon_actionitem_66x48</DisplayName>
+      <UniqueName>new_icon_actionitem_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bargraph_16x16.png">
+      <DisplayName>icon_bargraph_16x16</DisplayName>
+      <UniqueName>new_icon_bargraph_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bargraph_32x32.png">
+      <DisplayName>icon_bargraph_32x32</DisplayName>
+      <UniqueName>new_icon_bargraph_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bargraph_66x48.png">
+      <DisplayName>icon_bargraph_66x48</DisplayName>
+      <UniqueName>new_icon_bargraph_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bluecontact_16x16.png">
+      <DisplayName>icon_bluecontact_16x16</DisplayName>
+      <UniqueName>new_icon_bluecontact_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bluecontact_32x32.png">
+      <DisplayName>icon_bluecontact_32x32</DisplayName>
+      <UniqueName>new_icon_bluecontact_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bluecontact_66x48.png">
+      <DisplayName>icon_bluecontact_66x48</DisplayName>
+      <UniqueName>new_icon_bluecontact_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bluenotebook_16x16.png">
+      <DisplayName>icon_bluenotebook_16x16</DisplayName>
+      <UniqueName>new_icon_bluenotebook_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bluenotebook_32x32.png">
+      <DisplayName>icon_bluenotebook_32x32</DisplayName>
+      <UniqueName>new_icon_bluenotebook_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bluenotebook_66x48.png">
+      <DisplayName>icon_bluenotebook_66x48</DisplayName>
+      <UniqueName>new_icon_bluenotebook_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_briefcase_16x16.png">
+      <DisplayName>icon_briefcase_16x16</DisplayName>
+      <UniqueName>new_icon_briefcase_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_briefcase_32x32.png">
+      <DisplayName>icon_briefcase_32x32</DisplayName>
+      <UniqueName>new_icon_briefcase_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_briefcase_66x48.png">
+      <DisplayName>icon_briefcase_66x48</DisplayName>
+      <UniqueName>new_icon_briefcase_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bullhorn_16x16.png">
+      <DisplayName>icon_bullhorn_16x16</DisplayName>
+      <UniqueName>new_icon_bullhorn_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bullhorn_32x32.png">
+      <DisplayName>icon_bullhorn_32x32</DisplayName>
+      <UniqueName>new_icon_bullhorn_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_bullhorn_66x48.png">
+      <DisplayName>icon_bullhorn_66x48</DisplayName>
+      <UniqueName>new_icon_bullhorn_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_business_16x16.png">
+      <DisplayName>icon_business_16x16</DisplayName>
+      <UniqueName>new_icon_business_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_business_32x32.png">
+      <DisplayName>icon_business_32x32</DisplayName>
+      <UniqueName>new_icon_business_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_business_66x48.png">
+      <DisplayName>icon_business_66x48</DisplayName>
+      <UniqueName>new_icon_business_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_calculator_16x16.png">
+      <DisplayName>icon_calculator_16x16</DisplayName>
+      <UniqueName>new_icon_calculator_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_calculator_32x32.png">
+      <DisplayName>icon_calculator_32x32</DisplayName>
+      <UniqueName>new_icon_calculator_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_calculator_66x48.png">
+      <DisplayName>icon_calculator_66x48</DisplayName>
+      <UniqueName>new_icon_calculator_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_check_16x16.png">
+      <DisplayName>icon_check_16x16</DisplayName>
+      <UniqueName>new_icon_check_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_check_32x32.png">
+      <DisplayName>icon_check_32x32</DisplayName>
+      <UniqueName>new_icon_check_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_check_66x48.png">
+      <DisplayName>icon_check_66x48</DisplayName>
+      <UniqueName>new_icon_check_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_contacts_16x16.png">
+      <DisplayName>icon_contacts_16x16</DisplayName>
+      <UniqueName>new_icon_contacts_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_contacts_32x32.png">
+      <DisplayName>icon_contacts_32x32</DisplayName>
+      <UniqueName>new_icon_contacts_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_contacts_66x48.png">
+      <DisplayName>icon_contacts_66x48</DisplayName>
+      <UniqueName>new_icon_contacts_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_favorite_16x16.png">
+      <DisplayName>icon_favorite_16x16</DisplayName>
+      <UniqueName>new_icon_favorite_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_favorite_32x32.png">
+      <DisplayName>icon_favorite_32x32</DisplayName>
+      <UniqueName>new_icon_favorite_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_favorite_66x48.png">
+      <DisplayName>icon_favorite_66x48</DisplayName>
+      <UniqueName>new_icon_favorite_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_forwardarrow_16x16.png">
+      <DisplayName>icon_forwardarrow_16x16</DisplayName>
+      <UniqueName>new_icon_forwardarrow_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_forwardarrow_32x32.png">
+      <DisplayName>icon_forwardarrow_32x32</DisplayName>
+      <UniqueName>new_icon_forwardarrow_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_forwardarrow_66x48.png">
+      <DisplayName>icon_forwardarrow_66x48</DisplayName>
+      <UniqueName>new_icon_forwardarrow_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_greencheck_16x16.png">
+      <DisplayName>icon_greencheck_16x16</DisplayName>
+      <UniqueName>new_icon_greencheck_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_greencheck_32x32.png">
+      <DisplayName>icon_greencheck_32x32</DisplayName>
+      <UniqueName>new_icon_greencheck_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_greencheck_66x48.png">
+      <DisplayName>icon_greencheck_66x48</DisplayName>
+      <UniqueName>new_icon_greencheck_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_healthcare_16x16.png">
+      <DisplayName>icon_healthcare_16x16</DisplayName>
+      <UniqueName>new_icon_healthcare_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_healthcare_32x32.png">
+      <DisplayName>icon_healthcare_32x32</DisplayName>
+      <UniqueName>new_icon_healthcare_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_healthcare_66x48.png">
+      <DisplayName>icon_healthcare_66x48</DisplayName>
+      <UniqueName>new_icon_healthcare_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_home_16x16.png">
+      <DisplayName>icon_home_16x16</DisplayName>
+      <UniqueName>new_icon_home_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_home_32x32.png">
+      <DisplayName>icon_home_32x32</DisplayName>
+      <UniqueName>new_icon_home_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_home_66x48.png">
+      <DisplayName>icon_home_66x48</DisplayName>
+      <UniqueName>new_icon_home_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_info1_16x16.png">
+      <DisplayName>icon_info1_16x16</DisplayName>
+      <UniqueName>new_icon_info1_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_info1_32x32.png">
+      <DisplayName>icon_info1_32x32</DisplayName>
+      <UniqueName>new_icon_info1_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_info1_66x48.png">
+      <DisplayName>icon_info1_66x48</DisplayName>
+      <UniqueName>new_icon_info1_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_infoshield_16x16.png">
+      <DisplayName>icon_infoshield_16x16</DisplayName>
+      <UniqueName>new_icon_infoshield_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_infoshield_32x32.png">
+      <DisplayName>icon_infoshield_32x32</DisplayName>
+      <UniqueName>new_icon_infoshield_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_infoshield_66x48.png">
+      <DisplayName>icon_infoshield_66x48</DisplayName>
+      <UniqueName>new_icon_infoshield_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_key_16x16.png">
+      <DisplayName>icon_key_16x16</DisplayName>
+      <UniqueName>new_icon_key_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_key_32x32.png">
+      <DisplayName>icon_key_32x32</DisplayName>
+      <UniqueName>new_icon_key_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_key_66x48.png">
+      <DisplayName>icon_key_66x48</DisplayName>
+      <UniqueName>new_icon_key_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_lightbulb_16x16.png">
+      <DisplayName>icon_lightbulb_16x16</DisplayName>
+      <UniqueName>new_icon_lightbulb_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_lightbulb_32x32.png">
+      <DisplayName>icon_lightbulb_32x32</DisplayName>
+      <UniqueName>new_icon_lightbulb_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_lightbulb_66x48.png">
+      <DisplayName>icon_lightbulb_66x48</DisplayName>
+      <UniqueName>new_icon_lightbulb_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_organize_16x16.png">
+      <DisplayName>icon_organize_16x16</DisplayName>
+      <UniqueName>new_icon_organize_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_organize_32x32.png">
+      <DisplayName>icon_organize_32x32</DisplayName>
+      <UniqueName>new_icon_organize_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_organize_66x48.png">
+      <DisplayName>icon_organize_66x48</DisplayName>
+      <UniqueName>new_icon_organize_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_productattachment16.png">
+      <DisplayName>Icon ProductAttachment 16x16</DisplayName>
+      <UniqueName>new_icon_productattachment16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_productattachment32.png">
+      <DisplayName>Icon ProductAttachment 32x32</DisplayName>
+      <UniqueName>new_icon_productattachment32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_productattachment64.png">
+      <DisplayName>Icon ProductAttachment 64x64</DisplayName>
+      <UniqueName>new_icon_productattachment64</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_questionshield_16x16.png">
+      <DisplayName>icon_questionshield_16x16</DisplayName>
+      <UniqueName>new_icon_questionshield_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_questionshield_32x32.png">
+      <DisplayName>icon_questionshield_32x32</DisplayName>
+      <UniqueName>new_icon_questionshield_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_questionshield_66x48.png">
+      <DisplayName>icon_questionshield_66x48</DisplayName>
+      <UniqueName>new_icon_questionshield_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_quote_email16.png">
+      <DisplayName>Icon Quote Email 16x16</DisplayName>
+      <UniqueName>new_icon_quote_email16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_quote_email32.png">
+      <DisplayName>Icon Quote Email 32x32</DisplayName>
+      <UniqueName>new_icon_quote_email32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_sap16.png">
+      <DisplayName>Icon SAP 16x16</DisplayName>
+      <UniqueName>new_icon_sap16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_sap32.png">
+      <DisplayName>Icon SAP 32x32</DisplayName>
+      <UniqueName>new_icon_sap32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_usstate_16x16.png">
+      <DisplayName>icon_usstate_16x16</DisplayName>
+      <UniqueName>new_icon_usstate_16x16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_usstate_32x32.png">
+      <DisplayName>icon_usstate_32x32</DisplayName>
+      <UniqueName>new_icon_usstate_32x32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_icon_usstate_66x48.png">
+      <DisplayName>icon_usstate_66x48</DisplayName>
+      <UniqueName>new_icon_usstate_66x48</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_line_chart16x16.png">
+      <DisplayName>line_chart16x16.png</DisplayName>
+      <UniqueName>new_line_chart16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_line_chart32x32.png">
+      <DisplayName>line_chart32x32.png</DisplayName>
+      <UniqueName>new_line_chart32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_linkedin16x16.png">
+      <DisplayName>linkedin16x16.png</DisplayName>
+      <UniqueName>new_linkedin16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_linkedin32x32.png">
+      <DisplayName>linkedin32x32.png</DisplayName>
+      <UniqueName>new_linkedin32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_money16x16.png">
+      <DisplayName>money16x16.png</DisplayName>
+      <UniqueName>new_money16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_money32x32.png">
+      <DisplayName>money32x32.png</DisplayName>
+      <UniqueName>new_money32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_pie_chart16x16.png">
+      <DisplayName>pie_chart16x16.png</DisplayName>
+      <UniqueName>new_pie_chart16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_pie_chart32x32.png">
+      <DisplayName>pie_chart32x32.png</DisplayName>
+      <UniqueName>new_pie_chart32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_reject_quote16.png">
+      <DisplayName>Icon Reject Quote 16x16</DisplayName>
+      <UniqueName>new_reject_quote16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_reject_quote32.png">
+      <DisplayName>Icon Reject Quote 32x32</DisplayName>
+      <UniqueName>new_reject_quote32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_rss16x16.png">
+      <DisplayName>rss16x16.png</DisplayName>
+      <UniqueName>new_rss16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_rss32x32.png">
+      <DisplayName>rss32x32.png</DisplayName>
+      <UniqueName>new_rss32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_stats16x16.png">
+      <DisplayName>stats16x16.png</DisplayName>
+      <UniqueName>new_stats16x16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\new_stats32x32.png">
+      <DisplayName>stats32x32.png</DisplayName>
+      <UniqueName>new_stats32x32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\RibbonWorkbench16.png">
+      <DisplayName>dev1_/RWB2013/RibbonWorkbench16.png</DisplayName>
+      <UniqueName>dev1_/RWB2013/RibbonWorkbench16.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\RibbonWorkbench32.png">
+      <DisplayName>dev1_/RWB2013/RibbonWorkbench32.png</DisplayName>
+      <UniqueName>dev1_/RWB2013/RibbonWorkbench32.png</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_calculator_16.png">
+      <DisplayName>trs_img_calculator_16</DisplayName>
+      <UniqueName>trs_trs_img_calculator_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_calculator_32.png">
+      <DisplayName>trs_img_calculator_32</DisplayName>
+      <UniqueName>trs_trs_img_calculator_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_copy_16.png">
+      <DisplayName>trs_img_copy_16</DisplayName>
+      <UniqueName>trs_trs_img_copy_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_copy_32.png">
+      <DisplayName>trs_img_copy_32</DisplayName>
+      <UniqueName>trs_trs_img_copy_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_pause_16.png">
+      <DisplayName>trs_img_pause_16</DisplayName>
+      <UniqueName>trs_trs_img_pause_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_pause_32.png">
+      <DisplayName>trs_img_pause_32</DisplayName>
+      <UniqueName>trs_trs_img_pause_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_play_16.png">
+      <DisplayName>trs_img_play_16</DisplayName>
+      <UniqueName>trs_trs_img_play_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_play_32.png">
+      <DisplayName>trs_img_play_32</DisplayName>
+      <UniqueName>trs_trs_img_play_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_request_16.png">
+      <DisplayName>trs_img_request_16</DisplayName>
+      <UniqueName>trs_trs_img_request_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_request_32.png">
+      <DisplayName>trs_img_request_32</DisplayName>
+      <UniqueName>trs_trs_img_request_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_return_parts_16.png">
+      <DisplayName>trs_img_return_parts_16</DisplayName>
+      <UniqueName>trs_trs_img_return_parts_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_return_parts_32.png">
+      <DisplayName>trs_img_return_parts_32</DisplayName>
+      <UniqueName>trs_trs_img_return_parts_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_summarize_16.png">
+      <DisplayName>trs_img_summarize_16</DisplayName>
+      <UniqueName>trs_trs_img_summarize_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_summarize_32.png">
+      <DisplayName>trs_img_summarize_32</DisplayName>
+      <UniqueName>trs_trs_img_summarize_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_tools_16.png">
+      <DisplayName>trs_img_tools_16</DisplayName>
+      <UniqueName>trs_trs_img_tools_16</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\PNG format\trs_img_tools_32.png">
+      <DisplayName>trs_img_tools_32</DisplayName>
+      <UniqueName>trs_trs_img_tools_32</UniqueName>
+      <WebResourceType>PNG</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_AccountSection.js">
+      <DisplayName>Account Section</DisplayName>
+      <UniqueName>new_AccountSection</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_addquote_onlyone.js">
+      <DisplayName>Script Add Quote Only One</DisplayName>
+      <UniqueName>new_addquote_onlyone</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_approval_quote_js.js">
+      <DisplayName>Script Approval Quote</DisplayName>
+      <UniqueName>new_approval_quote_js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_approval_status_check.js">
+      <DisplayName>Script Check Approval Status</DisplayName>
+      <UniqueName>new_approval_status_check</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_automate_unit_cpo_product.js">
+      <DisplayName>Script Automate Unit CPO Product</DisplayName>
+      <UniqueName>new_automate_unit_cpo_product</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_auto_choose_unit_prospect_product.js">
+      <DisplayName>Script Choose Unit Prospect Product Automatic</DisplayName>
+      <UniqueName>new_auto_choose_unit_prospect_product</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_CangeTypeDiscount.js">
+      <DisplayName>Script Cange Type Discount</DisplayName>
+      <UniqueName>new_CangeTypeDiscount</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Cange type discount , kalkulasi persentase dan diskon</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_cek_minprice.js">
+      <DisplayName>Script Check Minimum Price</DisplayName>
+      <UniqueName>new_cek_minprice</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Cek min price and give alert only to tell user that the price is below min price</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_checkaccountnonpwp.js">
+      <DisplayName>Script Check Account No and NPWP</DisplayName>
+      <UniqueName>new_checkaccountnonpwp</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_checkisstandard.js">
+      <DisplayName>Script Check Is Standard</DisplayName>
+      <UniqueName>new_checkisstandard</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ClaimIncentive.js">
+      <DisplayName>Claim Incentive</DisplayName>
+      <UniqueName>new_ClaimIncentive</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Status Claim Incentive</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ConfirmApproval.js">
+      <DisplayName>Script Confirm Approval</DisplayName>
+      <UniqueName>new_ConfirmApproval</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ContractDateTodayQuote.js">
+      <DisplayName>ContractDateTodayQuote</DisplayName>
+      <UniqueName>new_ContractDateTodayQuote</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_contract_required.js">
+      <DisplayName>Contract Requirement</DisplayName>
+      <UniqueName>new_contract_required</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Set Required Level for Contract After and Before Quote Approval</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ConvertUpperCase.js">
+      <DisplayName>Script Convert Upper Case</DisplayName>
+      <UniqueName>new_ConvertUpperCase</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Convert Upper Case Account Name</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_copypricelist.js">
+      <DisplayName>Copy Price List</DisplayName>
+      <UniqueName>new_copypricelist</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_CPOFieldRequiredbySAP.js">
+      <DisplayName>CPO Field Required by SAP</DisplayName>
+      <UniqueName>new_CPOFieldRequiredbySAP</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_CPOHidePaymentDate.js">
+      <DisplayName>CPOHidePaymentDate</DisplayName>
+      <UniqueName>new_CPOHidePaymentDate</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>CPO Hide Payment Date</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_CPOtoSAP.js">
+      <DisplayName>CPO to SAP</DisplayName>
+      <UniqueName>new_CPOtoSAP</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>proses update field status menjadi New</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_CreateHistoryMinimumPrice.js">
+      <UniqueName>new_CreateHistoryMinimumPrice</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <DisplayName>new_CreateHistoryMinimumPrice</DisplayName>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_detil_cpo_status.js">
+      <DisplayName>Script Detail Status CPO</DisplayName>
+      <UniqueName>new_detil_cpo_status</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script that shows the details of every CPO status</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_DisableIndicatorWhenSaveProspect.js">
+      <UniqueName>new_DisableIndicatorWhenSaveProspect</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <DisplayName>new_DisableIndicatorWhenSaveProspect</DisplayName>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_DisableSubGridUser.js">
+      <DisplayName>DisableSubGridUser</DisplayName>
+      <UniqueName>new_DisableSubGridUser</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_disable_fieldSN.js">
+      <DisplayName>Script Disable SN</DisplayName>
+      <UniqueName>new_disable_fieldSN</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_disable_quote_product.js">
+      <DisplayName>Script Disable Quote Product</DisplayName>
+      <UniqueName>new_disable_quote_product</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_est_closedate.js">
+      <DisplayName>Script Estimated Close Date</DisplayName>
+      <UniqueName>new_est_closedate</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script that makes Est Close Date available and mandatory while in Quotation Phase</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_finalquotationenabled.js">
+      <DisplayName>Final Quotation Enabled</DisplayName>
+      <UniqueName>new_finalquotationenabled</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_finalquotation_save.js">
+      <DisplayName>Script Final Quotation Save</DisplayName>
+      <UniqueName>new_finalquotation_save</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script to Enable Final Quotation Field in Save state</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_getValueAccountRating.js">
+      <DisplayName>Script Get Value Account Rating</DisplayName>
+      <UniqueName>new_getValueAccountRating</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_HideSection.js">
+      <DisplayName>Hide Section</DisplayName>
+      <UniqueName>new_HideSection</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_IndicatorProspects.js">
+      <DisplayName>Script Indicator Prospect</DisplayName>
+      <UniqueName>new_IndicatorProspects</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_jquery_1_4_1.js">
+      <DisplayName>jquery-1.4.1</DisplayName>
+      <UniqueName>new_jquery_1_4_1</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>jquery</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_jquery_1_4_1_min.js">
+      <DisplayName>jquery-1.4.1.min</DisplayName>
+      <UniqueName>new_jquery_1_4_1_min</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>jquery</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_jquery_1_4_1_vsdoc.js">
+      <DisplayName>jquery-1.4.1-vsdoc</DisplayName>
+      <UniqueName>new_jquery_1_4_1_vsdoc</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>j query 1</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_Library.js">
+      <DisplayName>Library</DisplayName>
+      <UniqueName>new_Library</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_LocationASS.js">
+      <DisplayName>Script Location ASS</DisplayName>
+      <UniqueName>new_LocationASS</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_manager_approval_quote.js">
+      <DisplayName>Script Manager Approval Quote</DisplayName>
+      <UniqueName>new_manager_approval_quote</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script to show tab for manager approval in Quote</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_npwp_validation.js">
+      <DisplayName>Script Validate NPWP</DisplayName>
+      <UniqueName>new_npwp_validation</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_PaymentValidation.js">
+      <DisplayName>Payment Validation</DisplayName>
+      <UniqueName>new_PaymentValidation</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>validasi untuk perhitungan payment term</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_PotentialProspectExistingCustomerChoice.js">
+      <UniqueName>new_PotentialProspectExistingCustomerChoice</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <DisplayName>new_PotentialProspectExistingCustomerChoice</DisplayName>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_Print_CPO.js">
+      <DisplayName>Print CPO</DisplayName>
+      <UniqueName>new_Print_CPO</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Hide Tab Print CPO </Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_print_quote.js">
+      <DisplayName>Script Print Quotation</DisplayName>
+      <UniqueName>new_print_quote</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Print Quotation with Logo or without Logo</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ProductAttachment.js">
+      <UniqueName>new_ProductAttachment</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <DisplayName>new_ProductAttachment</DisplayName>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ProductJS.js">
+      <DisplayName>Product JS</DisplayName>
+      <UniqueName>new_ProductJS</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_product_status.js">
+      <DisplayName>Script Product Status</DisplayName>
+      <UniqueName>new_product_status</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_prospectrating.js">
+      <DisplayName>Script Prospect Rating</DisplayName>
+      <UniqueName>new_prospectrating</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ref_potentialprospect.js">
+      <DisplayName>Script Ref Potential Prospect</DisplayName>
+      <UniqueName>new_ref_potentialprospect</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script if Ref is null then copy Owner to Ref</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_regarding_visit.js">
+      <DisplayName>Script Regarding Visit</DisplayName>
+      <UniqueName>new_regarding_visit</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_reject_quote_js.js">
+      <DisplayName>Script Reject Quote</DisplayName>
+      <UniqueName>new_reject_quote_js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_requestaccountno.js">
+      <DisplayName>Script Request Account Number</DisplayName>
+      <UniqueName>new_requestaccountno</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_RibbonRequestAccountNo.js">
+      <DisplayName>Script Ribbon Request Account No</DisplayName>
+      <UniqueName>new_RibbonRequestAccountNo</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_ribbon_activate_hide.js">
+      <DisplayName>Script for Ribbon Activate Button</DisplayName>
+      <UniqueName>new_ribbon_activate_hide</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_sap_technical_completed.js">
+      <DisplayName>Script SAP Technical Completed</DisplayName>
+      <UniqueName>new_sap_technical_completed</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script that checks if SAP Technical status is completed then enable the Mark as Complete button</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_sck_minprice_approval.js">
+      <DisplayName>Script Check Min Price Approval</DisplayName>
+      <UniqueName>new_sck_minprice_approval</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script that will check if price below than min price than tell to need approval</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_select_payment.js">
+      <DisplayName>Script Selecting Payment</DisplayName>
+      <UniqueName>new_select_payment</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_setDefaultPaymentTerm.js">
+      <DisplayName>Set Default Payment Term</DisplayName>
+      <UniqueName>new_setDefaultPaymentTerm</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Set Default Payment Term jadi D1</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_setDisableAllRibbonCPO.js">
+      <DisplayName>Set Disable All Ribbon CPO</DisplayName>
+      <UniqueName>new_setDisableAllRibbonCPO</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Set Disable all ribbon CPO apabila sudah mempunyai ID dari SAP</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_setDisableAprove.js">
+      <DisplayName>Set Disable Aprove</DisplayName>
+      <UniqueName>new_setDisableAprove</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Set Disable Aprove apabila kurang dari nilai minimum</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_setIsConnector.js">
+      <DisplayName>setIsConnector</DisplayName>
+      <UniqueName>new_setIsConnector</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Set Is Connector jadi nol setiap load</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_showpopulationcompetitorunit.js">
+      <UniqueName>new_showpopulationcompetitorunit</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <DisplayName>new_showpopulationcompetitorunit</DisplayName>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_test.js">
+      <DisplayName>AlertScript</DisplayName>
+      <UniqueName>new_test</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_trs_tasklistheader.js">
+      <DisplayName>trs_tasklistheaderSet</DisplayName>
+      <UniqueName>new_trs_tasklistheader</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_unit_noisstandard.js">
+      <DisplayName>Script Unit No IsStandard</DisplayName>
+      <UniqueName>new_unit_noisstandard</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_UpperCaseName.js">
+      <DisplayName>Script Upper Case Name</DisplayName>
+      <UniqueName>new_UpperCaseName</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Convert Upper Case Nama</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\new_visit_close_date.js">
+      <DisplayName>Script Estimated Close Date Visit</DisplayName>
+      <UniqueName>new_visit_close_date</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <Description>Script to show estimated close date for Visit purpose = Quotation</Description>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\Silverlight.js">
+      <DisplayName>dev1_/RWB2013/Silverlight.js</DisplayName>
+      <UniqueName>dev1_/RWB2013/Silverlight.js</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_Case_SetContract.js">
+      <DisplayName>Case SetContract</DisplayName>
+      <UniqueName>trs_Case_SetContract</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_commercialdetail.js">
+      <DisplayName>trs_commercialdetail</DisplayName>
+      <UniqueName>trs_trs_commercialdetail</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_contract.js">
+      <DisplayName>trs_contract</DisplayName>
+      <UniqueName>trs_trs_contract</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_contractline.js">
+      <DisplayName>trs_contractline</DisplayName>
+      <UniqueName>new_trs_contractline</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_contractparts.js">
+      <DisplayName>Contract Parts</DisplayName>
+      <UniqueName>trs_contractparts</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_contractservice.js">
+      <DisplayName>trs_contractservice</DisplayName>
+      <UniqueName>trs_trs_contractservice</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_mtar.js">
+      <DisplayName>trs_mtar</DisplayName>
+      <UniqueName>trs_trs_mtar</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_new_pricelistcpo.js">
+      <DisplayName>TRS - Price List CPO</DisplayName>
+      <UniqueName>trs_new_pricelistcpo</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_partpricemaster.js">
+      <DisplayName>trs_partpricemaster</DisplayName>
+      <UniqueName>trs_trs_partpricemaster</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_ppmreport.js">
+      <DisplayName>trs_ppmreport</DisplayName>
+      <UniqueName>trs_trs_ppmreport</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_quotation.js">
+      <DisplayName>trs_quotation</DisplayName>
+      <UniqueName>trs_quotation</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_quotationcommercialheader.js">
+      <DisplayName>TRS - Quotation Commercial Header</DisplayName>
+      <UniqueName>trs_quotationcommercialheader</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_quotationpartssummary.js">
+      <DisplayName>TRS - Quotation Parts Summary</DisplayName>
+      <UniqueName>trs_quotationpartssummary</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_quotationsupportingmaterial.js">
+      <DisplayName>trs_quotationsupportingmaterial</DisplayName>
+      <UniqueName>trs_trs_quotationsupportingmaterial</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_quotationtool.js">
+      <DisplayName>trs_quotationtool</DisplayName>
+      <UniqueName>trs_trs_quotationtool</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_quotation_event.js">
+      <DisplayName>TRS - Quotation (Event)</DisplayName>
+      <UniqueName>trs_quotation_event</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_serviceappointment.js">
+      <DisplayName>TRS - Service Appointment</DisplayName>
+      <UniqueName>trs_serviceappointment</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_tasklistdetailpart.js">
+      <DisplayName>trs_tasklistdetailpart</DisplayName>
+      <UniqueName>trs_trs_tasklistdetailpart</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_tasklistheader.js">
+      <DisplayName>TRS - Task List Header</DisplayName>
+      <UniqueName>trs_tasklistheader</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_technicalservicereport.js">
+      <DisplayName>trs_technicalservicereport</DisplayName>
+      <UniqueName>trs_trs_technicalservicereport</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_toolsmaster.js">
+      <DisplayName>trs_toolsmaster</DisplayName>
+      <UniqueName>trs_trs_toolsmaster</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_trs_serviceappointment.js">
+      <DisplayName>trs_serviceappointment</DisplayName>
+      <UniqueName>trs_trs_serviceappointment</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_workorderpartdetail.js">
+      <DisplayName>trs_workorderpartdetail</DisplayName>
+      <UniqueName>trs_trs_workorderpartdetail</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\trs_WorkOrder_SupportingMaterial.js">
+      <DisplayName>trs_WorkOrder_SupportingMaterial</DisplayName>
+      <UniqueName>trs_trs_WorkOrder_SupportingMaterial</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Script %28JScript%29\WorkorderSubmitSAP.js">
+      <DisplayName>WorkorderSubmitSAP</DisplayName>
+      <UniqueName>trs_WorkorderSubmitSAP</UniqueName>
+      <WebResourceType>Script</WebResourceType>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\trs_html_gmaps_mechanic.htm">
+      <DisplayName>GMaps (mechanic)</DisplayName>
+      <UniqueName>trs_html_gmaps_mechanic</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\trs_html_gmaps_population.htm">
+      <DisplayName>GMaps (population)</DisplayName>
+      <UniqueName>trs_html_gmaps_population</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+    <CRMWebResource Include="WebResources\Web Page %28HTML%29\trs_html_gmaps_wo.htm">
+      <DisplayName>GMaps (WO)</DisplayName>
+      <UniqueName>trs_html_gmaps_wo</UniqueName>
+      <WebResourceType>WebPage</WebResourceType>
+      <WebResourceLanguage>English (United States)</WebResourceLanguage>
+    </CRMWebResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\CRM\Microsoft.CrmDeveloperTools.12.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

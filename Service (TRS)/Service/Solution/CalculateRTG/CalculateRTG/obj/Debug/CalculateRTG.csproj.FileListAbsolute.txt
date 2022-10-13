@@ -1,0 +1,17 @@
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\bin\Debug\CalculateRTG.exe.config
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\bin\Debug\CalculateRTG.exe
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\bin\Debug\CalculateRTG.pdb
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\bin\Debug\Microsoft.Xrm.Client.dll
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.csprojResolveAssemblyReference.cache
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.exe
+D:\Projects\Traknus\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\bin\Debug\CalculateRTG.exe.config
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\bin\Debug\CalculateRTG.exe
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\bin\Debug\CalculateRTG.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.csproj.AssemblyReference.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.csproj.CoreCompileInputs.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.csproj.CopyComplete
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.exe
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\CalculateRTG\CalculateRTG\obj\Debug\CalculateRTG.pdb

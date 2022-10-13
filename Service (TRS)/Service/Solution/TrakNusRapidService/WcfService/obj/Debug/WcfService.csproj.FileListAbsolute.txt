@@ -1,0 +1,12 @@
+D:\Projects\Traknus\Solution\TrakNusRapidService\WcfService\bin\TrakNusRapidService.WcfService.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\WcfService\bin\TrakNusRapidService.WcfService.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+D:\Projects\Traknus\Solution\TrakNusRapidService\WcfService\obj\Debug\TrakNusRapidService.WcfService.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\WcfService\obj\Debug\TrakNusRapidService.WcfService.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\WcfService\bin\TrakNusRapidService.WcfService.dll.config
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\WcfService\bin\TrakNusRapidService.WcfService.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\WcfService\bin\TrakNusRapidService.WcfService.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\WcfService\obj\Debug\WcfService.csproj.AssemblyReference.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\WcfService\obj\Debug\WcfService.csproj.CoreCompileInputs.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\WcfService\obj\Debug\TrakNusRapidService.WcfService.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\WcfService\obj\Debug\TrakNusRapidService.WcfService.pdb

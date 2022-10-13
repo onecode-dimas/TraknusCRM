@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DDF1A410-7ABB-49E7-AD81-ED0C1708ACCE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusRapidService.Plugins</RootNamespace>
+    <AssemblyName>TrakNusRapidService.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TRS.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>C:\crm2013\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\crm2013\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\BL_account.cs" />
+    <Compile Include="BusinessLayer\BL_contact.cs" />
+    <Compile Include="BusinessLayer\BL_email.cs" />
+    <Compile Include="BusinessLayer\BL_equipment.cs" />
+    <Compile Include="BusinessLayer\BL_incident.cs" />
+    <Compile Include="BusinessLayer\BL_new_population.cs" />
+    <Compile Include="BusinessLayer\BL_product.cs" />
+    <Compile Include="BusinessLayer\BL_task.cs" />
+    <Compile Include="BusinessLayer\BL_trs_commercialdetail.cs" />
+    <Compile Include="BusinessLayer\BL_trs_contractrealization.cs" />
+    <Compile Include="BusinessLayer\BL_trs_mechanicgrade.cs" />
+    <Compile Include="BusinessLayer\BL_trs_mechanicmonthlypoint.cs" />
+    <Compile Include="BusinessLayer\BL_trs_mtar.cs" />
+    <Compile Include="BusinessLayer\BL_serviceappointment.cs" />
+    <Compile Include="BusinessLayer\BL_trs_funtionallocation.cs" />
+    <Compile Include="BusinessLayer\BL_trs_ppmreport.cs" />
+    <Compile Include="BusinessLayer\BL_trs_productsection.cs" />
+    <Compile Include="BusinessLayer\BL_trs_producttype.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotation.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotationcommercialdetail.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotationcommercialheader.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotationpartdetail.cs" />
+    <Compile Include="BusinessLayer\BL_trs_runningnumber.cs" />
+    <Compile Include="BusinessLayer\BL_trs_tasklistgroup.cs" />
+    <Compile Include="BusinessLayer\BL_trs_technicalservicereport.cs" />
+    <Compile Include="BusinessLayer\BL_trs_toolstransfer.cs" />
+    <Compile Include="BusinessLayer\BL_trs_toolsusage.cs" />
+    <Compile Include="BusinessLayer\BL_trs_tsrpartdetails.cs" />
+    <Compile Include="BusinessLayer\BL_trs_tsrpartsdamageddetail.cs" />
+    <Compile Include="BusinessLayer\BL_trs_workorderdocumentation.cs" />
+    <Compile Include="BusinessLayer\BL_trs_workorderpartrecommendation.cs" />
+    <Compile Include="BusinessLayer\BL_trs_workorderpartssummary.cs" />
+    <Compile Include="BusinessLayer\BL_trs_workordersecondman.cs" />
+    <Compile Include="BusinessLayer\BL_trs_technicalservicereportdocumentation.cs" />
+    <Compile Include="BusinessLayer\BL_trs_sectionrecommendation.cs" />
+    <Compile Include="BusinessLayer\BL_trs_unittypeofwork.cs" />
+    <Compile Include="PostAccountCreate.cs" />
+    <Compile Include="PostAccountUpdate.cs" />
+    <Compile Include="PostCommercialDetailCreate.cs" />
+    <Compile Include="PostCommercialDetailUpdate.cs" />
+    <Compile Include="PostCommercialHeaderCreate.cs" />
+    <Compile Include="PostContactCreate.cs" />
+    <Compile Include="PostContactUpdate.cs" />
+    <Compile Include="PostContractRealizationCreate.cs" />
+    <Compile Include="PostFunctionalLocationCreate.cs" />
+    <Compile Include="PostFunctionalLocationUpdate.cs" />
+    <Compile Include="PostMechanicCreate.cs" />
+    <Compile Include="PostMechanicGradeCreate.cs" />
+    <Compile Include="PostMechanicGradeUpdate.cs" />
+    <Compile Include="PostMechanicMonthlyPointCreate.cs" />
+    <Compile Include="PostMechanicMonthlyPointUpdate.cs" />
+    <Compile Include="PostMechanicUpdate.cs" />
+    <Compile Include="PostMTARCreate.cs" />
+    <Compile Include="PostMTARUpdate.cs" />
+    <Compile Include="PostPopulationCreate.cs" />
+    <Compile Include="PostPopulationUpdate.cs" />
+    <Compile Include="PostPopulationUpdate_UpdateSAP.cs" />
+    <Compile Include="PostPopulationUpdate_WO_ASS.cs" />
+    <Compile Include="PostPPMInspectionReportUpdate.cs" />
+    <Compile Include="PostPPMReportCreate.cs" />
+    <Compile Include="PostProductCreate.cs" />
+    <Compile Include="PostProductSectionCreate.cs" />
+    <Compile Include="PostProductSectionUpdate.cs" />
+    <Compile Include="PostProductTypeCreate.cs" />
+    <Compile Include="PostProductTypeofWorkCreate.cs" />
+    <Compile Include="PostProductTypeofWorkUpdate.cs" />
+    <Compile Include="PostProductTypeUpdate.cs" />
+    <Compile Include="PostProductUpdate.cs" />
+    <Compile Include="PostQuotationCommercialDetailCreate.cs" />
+    <Compile Include="PostQuotationCommercialHeaderCreate.cs" />
+    <Compile Include="PostQuotationCreate.cs" />
+    <Compile Include="PostQuotationUpdate.cs" />
+    <Compile Include="PostSectionRecommendationCreate.cs" />
+    <Compile Include="PostSectionRecommendationUpdate.cs" />
+    <Compile Include="PostServiceRequisitionCreate.cs" />
+    <Compile Include="PostServiceRequisitionUpdate.cs" />
+    <Compile Include="PostTaskListGroupCreate.cs" />
+    <Compile Include="PostTaskListGroupUpdate.cs" />
+    <Compile Include="PostTechnicalServiceReportCreate.cs" />
+    <Compile Include="PostTechnicalServiceReportDocumentationCreate.cs" />
+    <Compile Include="PostTechnicalServiceReportDocumentationUpdate.cs" />
+    <Compile Include="PostTechnicalServiceReportUpdate.cs" />
+    <Compile Include="PostToolsTransferCreate.cs" />
+    <Compile Include="PostToolsUsageCreate.cs" />
+    <Compile Include="PostToolsUsageUpdate.cs" />
+    <Compile Include="PostTSRPartsDamagedDetailCreate.cs" />
+    <Compile Include="PostTSRPartsDamagedDetailUpdate.cs" />
+    <Compile Include="PostTSRPartsInstalledDetailCreate.cs" />
+    <Compile Include="PostTSRPartsInstalledDetailUpdate.cs" />
+    <Compile Include="PostWorkOrderCreate.cs" />
+    <Compile Include="PostWorkOrderDocumentationCreate.cs" />
+    <Compile Include="PostWorkOrderDocumentationUpdate.cs" />
+    <Compile Include="PostWorkOrderRecommendationCreate.cs" />
+    <Compile Include="PostWorkOrderRecommendationUpdate.cs" />
+    <Compile Include="PostWorkOrderUpdate.cs" />
+    <Compile Include="PreMTARCreate.cs" />
+    <Compile Include="PrePPMInspectionReportCreate.cs" />
+    <Compile Include="PreSectionRecommendationCreate.cs" />
+    <Compile Include="PreServiceRequisitionCreate.cs" />
+    <Compile Include="PreTechnicalServiceReportCreate.cs" />
+    <Compile Include="PreTechnicalServiceReportDocumentationCreate.cs" />
+    <Compile Include="PreTSRPartsDamagedDetailCreate.cs" />
+    <Compile Include="PreTSRPartsInstalledDetailCreate.cs" />
+    <Compile Include="PreValidateEmailCreate.cs" />
+    <Compile Include="PreValidatePopulationCreate.cs" />
+    <Compile Include="PreValidatePopulationUpdate_trs_bastsigndate.cs" />
+    <Compile Include="PreValidateQuotationCommercialHeaderCreate.cs" />
+    <Compile Include="PreValidateQuotationCommercialHeaderUpdate.cs" />
+    <Compile Include="PreValidateQuotationPartDetailCreate.cs" />
+    <Compile Include="PreValidateQuotationPartDetailUpdate_CalculateTotalPrice.cs" />
+    <Compile Include="PreValidateServiceRequisitionCreate.cs" />
+    <Compile Include="PreValidateWorkOrderUpdate.cs" />
+    <Compile Include="PreWorkOrderDocumentationCreate.cs" />
+    <Compile Include="PreWorkOrderRecommendationCreate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TRS.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{fa9af952-5202-4e20-b315-8ee02c6ef1da}</Project>
+      <Name>DataLayer</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{5a5cdcab-b59e-4a13-a957-e5319c55f527}</Project>
+      <Name>Helper</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

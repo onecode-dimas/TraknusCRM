@@ -1,0 +1,14 @@
+D:\Projects\Traknus\Solution\TrakNusRapidService\Plugins\bin\Debug\TrakNusRapidService.Plugins.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Plugins\bin\Debug\TrakNusRapidService.Plugins.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\Plugins\obj\Debug\Plugins.csprojResolveAssemblyReference.cache
+D:\Projects\Traknus\Solution\TrakNusRapidService\Plugins\obj\Debug\TrakNusRapidService.Plugins.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Plugins\obj\Debug\TrakNusRapidService.Plugins.pdb
+D:\Projects\Traknus\Solution\TrakNusRapidService\Plugins\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Projects\Traknus\Solution\TrakNusRapidService\Plugins\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Plugins\bin\Debug\TrakNusRapidService.Plugins.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Plugins\bin\Debug\TrakNusRapidService.Plugins.pdb
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Plugins\obj\Debug\Plugins.csproj.AssemblyReference.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Plugins\obj\Debug\Plugins.csproj.CoreCompileInputs.cache
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Plugins\obj\Debug\Plugins.csproj.CopyComplete
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Plugins\obj\Debug\TrakNusRapidService.Plugins.dll
+D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Plugins\obj\Debug\TrakNusRapidService.Plugins.pdb

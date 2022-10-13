@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TRS">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=tnappdev\crmdbinstance;Initial Catalog=CRMTrakNus_MSCRM</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>dd4d6f66-4443-4512-a4c1-8b70c908deae</DataSourceID>
+</RptDataSource>

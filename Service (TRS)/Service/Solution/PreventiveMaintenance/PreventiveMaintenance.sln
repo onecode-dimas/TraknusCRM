@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PreventiveMaintenance", "PreventiveMaintenance\PreventiveMaintenance.dtproj", "{64C58849-CA05-4412-ADDD-B8C8F90852B7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.0.70:8080/tfs/trs
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PreventiveMaintenance\\PreventiveMaintenance.dtproj
+		SccProjectName1 = PreventiveMaintenance
+		SccLocalPath1 = PreventiveMaintenance
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64C58849-CA05-4412-ADDD-B8C8F90852B7}.Development|Default.ActiveCfg = Development
+		{64C58849-CA05-4412-ADDD-B8C8F90852B7}.Development|Default.Build.0 = Development
+		{64C58849-CA05-4412-ADDD-B8C8F90852B7}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

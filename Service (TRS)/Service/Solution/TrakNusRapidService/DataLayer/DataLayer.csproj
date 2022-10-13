@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA9AF952-5202-4E20-B315-8EE02C6EF1DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusRapidService.DataLayer</RootNamespace>
+    <AssemblyName>TrakNusRapidService.DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TRS.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>C:\crm2013\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>C:\crm2013\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DL_trs_mechanicmonthlypoint.cs" />
+    <Compile Include="DL_trs_quotationtool.cs" />
+    <Compile Include="DL_account.cs" />
+    <Compile Include="DL_activityparty.cs" />
+    <Compile Include="DL_activitypointer.cs" />
+    <Compile Include="DL_businessunit.cs" />
+    <Compile Include="DL_contact.cs" />
+    <Compile Include="DL_contract.cs" />
+    <Compile Include="DL_contractdetail.cs" />
+    <Compile Include="DL_customeraddress.cs" />
+    <Compile Include="DL_email.cs" />
+    <Compile Include="DL_equipment.cs" />
+    <Compile Include="DL_incident.cs" />
+    <Compile Include="DL_new_population.cs" />
+    <Compile Include="DL_new_pricelistcpo.cs" />
+    <Compile Include="DL_product.cs" />
+    <Compile Include="DL_service.cs" />
+    <Compile Include="DL_serviceappointment.cs" />
+    <Compile Include="DL_site.cs" />
+    <Compile Include="DL_systemuser.cs" />
+    <Compile Include="DL_systemuserroles.cs" />
+    <Compile Include="DL_task.cs" />
+    <Compile Include="DL_team.cs" />
+    <Compile Include="DL_transactioncurrency.cs" />
+    <Compile Include="DL_trs_acttype.cs" />
+    <Compile Include="DL_trs_commercialdetail.cs" />
+    <Compile Include="DL_trs_commercialdetailmechanic.cs" />
+    <Compile Include="DL_trs_commercialtask.cs" />
+    <Compile Include="DL_trs_contractmechanic.cs" />
+    <Compile Include="DL_trs_contractpart.cs" />
+    <Compile Include="DL_trs_contractpreventive.cs" />
+    <Compile Include="DL_trs_contractrealization.cs" />
+    <Compile Include="DL_trs_contractservice.cs" />
+    <Compile Include="DL_trs_discountapproval.cs" />
+    <Compile Include="DL_trs_functionallocation.cs" />
+    <Compile Include="DL_trs_masterpart.cs" />
+    <Compile Include="DL_trs_mechanicgrade.cs" />
+    <Compile Include="DL_trs_mtar.cs" />
+    <Compile Include="DL_trs_partpricemaster.cs" />
+    <Compile Include="DL_trs_paymentterm.cs" />
+    <Compile Include="DL_trs_plant.cs" />
+    <Compile Include="DL_trs_populationincontract.cs" />
+    <Compile Include="DL_trs_ppmreport.cs" />
+    <Compile Include="DL_trs_productsection.cs" />
+    <Compile Include="DL_trs_producttype.cs" />
+    <Compile Include="DL_trs_profitcenter.cs" />
+    <Compile Include="DL_trs_quotation.cs" />
+    <Compile Include="DL_trs_quotationcommercialheader.cs" />
+    <Compile Include="DL_trs_quotationpartdetail.cs" />
+    <Compile Include="DL_trs_quotationpartssummary.cs" />
+    <Compile Include="DL_trs_quotationsupportingmaterial.cs" />
+    <Compile Include="DL_trs_responsiblecostcenter.cs" />
+    <Compile Include="DL_trs_runningnumber.cs" />
+    <Compile Include="DL_trs_runningnumberlastnumber.cs" />
+    <Compile Include="DL_trs_sectionfactorrate.cs" />
+    <Compile Include="DL_trs_sectionrecommendation.cs" />
+    <Compile Include="DL_trs_taskassignmenthistory.cs" />
+    <Compile Include="DL_trs_tasklist.cs" />
+    <Compile Include="DL_trs_tasklistdetailpart.cs" />
+    <Compile Include="DL_trs_tasklistgroup.cs" />
+    <Compile Include="DL_trs_tasklistheader.cs" />
+    <Compile Include="DL_trs_tasklisttype.cs" />
+    <Compile Include="DL_trs_technicalservicereport.cs" />
+    <Compile Include="DL_trs_technicalservicereportdocumentation.cs" />
+    <Compile Include="DL_trs_toolsgroup.cs" />
+    <Compile Include="DL_trs_toolsmaster.cs" />
+    <Compile Include="DL_trs_toolstransfer.cs" />
+    <Compile Include="DL_trs_toolsusage.cs" />
+    <Compile Include="DL_trs_trs_commercialdetail_trs_toolsgroup.cs" />
+    <Compile Include="DL_trs_trs_quotationcommercialdetail_trs_tools.cs" />
+    <Compile Include="DL_trs_tsrpartdetails.cs" />
+    <Compile Include="DL_trs_tsrpartsdamageddetail.cs" />
+    <Compile Include="DL_trs_unittypeofwork.cs" />
+    <Compile Include="DL_trs_voc.cs" />
+    <Compile Include="DL_trs_workcenter.cs" />
+    <Compile Include="DL_trs_workflowconfiguration.cs" />
+    <Compile Include="DL_trs_workorderdocumentation.cs" />
+    <Compile Include="DL_trs_workorderpartdetail.cs" />
+    <Compile Include="DL_trs_workorderpartrecommendation.cs" />
+    <Compile Include="DL_trs_workorderpartssummary.cs" />
+    <Compile Include="DL_trs_workordersecondman.cs" />
+    <Compile Include="DL_trs_workordersupportingmaterial.cs" />
+    <Compile Include="DL_trs_workordertoolsrecommendation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DL_trs_quotationcommercialdetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TRS.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

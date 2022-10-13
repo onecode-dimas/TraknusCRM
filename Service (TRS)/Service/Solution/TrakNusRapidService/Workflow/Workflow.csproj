@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{223C5F2C-30CA-4DE2-83BA-29567923F8D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrakNusRapidService.Workflow</RootNamespace>
+    <AssemblyName>TrakNusRapidService.Workflow</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TRS.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xrm.Client">
+      <HintPath>C:\crm2013\Microsoft.Xrm.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>C:\CRM 2013\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
+      <HintPath>..\..\..\..\..\..\..\Solution\Solution\packages\Microsoft.Xrm.Sdk.Workflow.2011.5.0.18\lib\net40\microsoft.xrm.sdk.workflow.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>C:\Users\Dimas\Downloads\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutomaticSendEmail.cs" />
+    <Compile Include="BusinessLayer\BL_activityparty.cs" />
+    <Compile Include="BusinessLayer\BL_email.cs" />
+    <Compile Include="BusinessLayer\BL_equipment.cs" />
+    <Compile Include="BusinessLayer\BL_new_population.cs" />
+    <Compile Include="BusinessLayer\BL_task.cs" />
+    <Compile Include="BusinessLayer\BL_tasklist.cs" />
+    <Compile Include="BusinessLayer\BL_trs_commercialdetailmechanic.cs" />
+    <Compile Include="BusinessLayer\BL_trs_contractpreventive.cs" />
+    <Compile Include="BusinessLayer\BL_trs_contractrealization.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotation.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotationpartdetail.cs" />
+    <Compile Include="BusinessLayer\BL_trs_toolsmaster.cs" />
+    <Compile Include="BusinessLayer\BL_trs_toolstransfer.cs" />
+    <Compile Include="BusinessLayer\BL_trs_commercialdetail.cs" />
+    <Compile Include="BusinessLayer\BL_trs_masterpart.cs" />
+    <Compile Include="BusinessLayer\BL_trs_producttype.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotationcommercialdetail.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotationcommercialheader.cs" />
+    <Compile Include="BusinessLayer\BL_trs_quotationpartssummary.cs" />
+    <Compile Include="BusinessLayer\BL_trs_taskassignmenthistory.cs" />
+    <Compile Include="BusinessLayer\BL_trs_technicalservicereport.cs" />
+    <Compile Include="BusinessLayer\BL_trs_toolsusage.cs" />
+    <Compile Include="BusinessLayer\BL_serviceappointment.cs" />
+    <Compile Include="BusinessLayer\BL_trs_workordersupportingmaterial.cs" />
+    <Compile Include="CommercialHeaderTaskList.cs" />
+    <Compile Include="ContractPreventive_OnCreate.cs" />
+    <Compile Include="ContractRealization_OnCreate.cs" />
+    <Compile Include="Mechanic_RemoteWipe.cs" />
+    <Compile Include="Mechanic_ResetPassword.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuotationPartsSummary.cs" />
+    <Compile Include="Quotation_CalculateTotal.cs" />
+    <Compile Include="SendEmailTechnicalServiceReport.cs" />
+    <Compile Include="ToolsBorrow.cs" />
+    <Compile Include="ToolsTransfer.cs" />
+    <Compile Include="WorkOrderPartsSummary.cs" />
+    <Compile Include="WO_ApproveQuotation.cs" />
+    <Compile Include="WO_CalculateRTG.cs" />
+    <Compile Include="WO_Dispatch.cs" />
+    <Compile Include="WO_DispatchMechanic.cs" />
+    <Compile Include="WO_FinalApproveQuotation.cs" />
+    <Compile Include="WO_GetPartsTools.cs" />
+    <Compile Include="WO_Hold.cs" />
+    <Compile Include="WO_PartReturn.cs" />
+    <Compile Include="WO_QuotationWorkorder.cs" />
+    <Compile Include="WO_Release.cs" />
+    <Compile Include="WO_RequestTools.cs" />
+    <Compile Include="WO_ReviseQuotation.cs" />
+    <Compile Include="WO_TECO.cs" />
+    <Compile Include="WO_Unhold.cs" />
+    <Compile Include="WO_UpdateToSAP.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TRS.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{fa9af952-5202-4e20-b315-8ee02c6ef1da}</Project>
+      <Name>DataLayer</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{5a5cdcab-b59e-4a13-a957-e5319c55f527}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
