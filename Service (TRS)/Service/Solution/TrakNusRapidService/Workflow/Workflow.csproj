@@ -48,6 +48,10 @@
     <Reference Include="Microsoft.Xrm.Sdk">
       <HintPath>C:\CRM 2013\Microsoft.Xrm.Sdk.dll</HintPath>
     </Reference>
+    <Reference Include="microsoft.xrm.sdk.workflow, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Unit\Unit\EnhancementCRM\CrmPackage\Microsoft.Xrm.Sdk.Workflow.2011.5.0.18\lib\net40\microsoft.xrm.sdk.workflow.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
@@ -60,14 +64,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
-      <HintPath>..\..\..\..\..\..\..\Solution\Solution\packages\Microsoft.Xrm.Sdk.Workflow.2011.5.0.18\lib\net40\microsoft.xrm.sdk.workflow.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>C:\Users\Dimas\Downloads\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutomaticSendEmail.cs" />

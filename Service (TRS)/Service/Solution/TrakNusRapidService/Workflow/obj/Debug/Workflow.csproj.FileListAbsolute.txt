@@ -16,3 +16,14 @@ D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapi
 D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csproj.CopyComplete
 D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.dll
 D:\Source Control CRM\Source Code CRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.pdb
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Workflow.dll
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Workflow.pdb
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\microsoft.xrm.sdk.workflow.dll
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.dll
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.pdb
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\bin\Debug\TrakNusRapidService.Helper.dll.config
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csproj.AssemblyReference.cache
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csproj.CoreCompileInputs.cache
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\Workflow.csproj.CopyComplete
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.dll
+C:\Users\Dimas\Desktop\TraknusCRM\Service (TRS)\Service\Solution\TrakNusRapidService\Workflow\obj\Debug\TrakNusRapidService.Workflow.pdb

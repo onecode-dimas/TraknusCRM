@@ -11,7 +11,6 @@ using TrakNusRapidService.DataLayer;
 using TrakNusRapidService.Helper;
 using TrakNusRapidService.Helper.MobileWebService;
 
-using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Client;
 
 namespace TrakNusRapidService.Workflow.BusinessLayer
