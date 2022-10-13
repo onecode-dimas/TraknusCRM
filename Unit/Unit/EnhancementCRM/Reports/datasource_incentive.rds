@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="datasource_incentive">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=10.0.10.43;Initial Catalog=CRMTrakNusSandbox_MSCRM</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>675878e0-3431-453a-a0e3-c2c60165d221</DataSourceID>
+</RptDataSource>

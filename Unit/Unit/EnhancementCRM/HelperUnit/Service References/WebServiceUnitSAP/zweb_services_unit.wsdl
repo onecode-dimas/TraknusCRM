@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__ZWEB_SERVICES_UNIT">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__ZWEB_SERVICES_UNIT_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZWEB_SERVICES_UNIT">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+          <sapcentraladmin:BusinessApplicationID>0017A47700401ED7BAF4FC551E06830A</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZcrmCreateSoUnit">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char100">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char150">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="150" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char256">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="256" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char35">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="35" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:time">
+          <xsd:pattern value="[0-9]{2}:[0-9]{2}:[0-9]{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:complexType name="ZtsoUnitTxt">
+        <xsd:sequence>
+          <xsd:element name="Bstkd" type="n0:char50" />
+          <xsd:element name="Auart" type="n0:char50" />
+          <xsd:element name="Audat" type="n0:char50" />
+          <xsd:element name="Vtweg" type="n0:char50" />
+          <xsd:element name="Vkorg" type="n0:char50" />
+          <xsd:element name="Spart" type="n0:char50" />
+          <xsd:element name="Vkbur" type="n0:char50" />
+          <xsd:element name="Kunnr" type="n0:char50" />
+          <xsd:element name="Fkdat09" type="n0:char50" />
+          <xsd:element name="Fakwr09" type="n0:char50" />
+          <xsd:element name="Fkdat10" type="n0:char50" />
+          <xsd:element name="Fakwr10" type="n0:char50" />
+          <xsd:element name="Fkdat20" type="n0:char50" />
+          <xsd:element name="Fakwr20" type="n0:char50" />
+          <xsd:element name="BstkdCust" type="n0:char50" />
+          <xsd:element name="Bstdk" type="n0:char50" />
+          <xsd:element name="Waerk" type="n0:char50" />
+          <xsd:element name="Zterm" type="n0:char50" />
+          <xsd:element name="Werks" type="n0:char50" />
+          <xsd:element name="Pernr" type="n0:char50" />
+          <xsd:element name="Ktgrd" type="n0:char50" />
+          <xsd:element name="Kdgrp" type="n0:char50" />
+          <xsd:element name="Pltyp" type="n0:char50" />
+          <xsd:element name="Konda" type="n0:char50" />
+          <xsd:element name="Vkgrp" type="n0:char50" />
+          <xsd:element name="Kvgr1" type="n0:char50" />
+          <xsd:element name="Kvgr2" type="n0:char50" />
+          <xsd:element name="Kvgr3" type="n0:char50" />
+          <xsd:element name="Kvgr4" type="n0:char50" />
+          <xsd:element name="Kvgr5" type="n0:char50" />
+          <xsd:element name="Txhzfu01" type="n0:char150" />
+          <xsd:element name="Txhzfu02" type="n0:char150" />
+          <xsd:element name="Txhzfu03" type="n0:char150" />
+          <xsd:element name="Txhzfu04" type="n0:char150" />
+          <xsd:element name="Txhzfu05" type="n0:char150" />
+          <xsd:element name="Txhzfu06" type="n0:char150" />
+          <xsd:element name="Txhzfu07" type="n0:char150" />
+          <xsd:element name="Txhzfu08" type="n0:char150" />
+          <xsd:element name="Txhzfu09" type="n0:char150" />
+          <xsd:element name="Txhzfu10" type="n0:char150" />
+          <xsd:element name="Posnr" type="n0:char50" />
+          <xsd:element name="Matnr" type="n0:char50" />
+          <xsd:element name="Kwmeng" type="n0:char50" />
+          <xsd:element name="Kbetr" type="n0:char50" />
+          <xsd:element name="Txizfu01" type="n0:char50" />
+          <xsd:element name="Leasing" type="n0:char50" />
+          <xsd:element name="Flag" type="n0:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZtsoUnitOut">
+        <xsd:sequence>
+          <xsd:element name="Bstkd" type="n0:char35" />
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="ItemCpo" type="n0:char18" />
+          <xsd:element name="Erdat" type="n0:date10" />
+          <xsd:element name="Result" type="n0:char20" />
+          <xsd:element name="Description" type="n0:char100" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZvsoUnit">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZtsoUnitTxt" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZvsoUnitOut">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZtsoUnitOut" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZcrmCreateSoUnit">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CsrfToken" type="n0:char256" />
+            <xsd:element name="TDetail" type="tns:ZvsoUnit" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZcrmCreateSoUnitResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="SyncDate" type="n0:date10" />
+            <xsd:element name="SyncTime" type="n0:time" />
+            <xsd:element name="TDtlOut" type="tns:ZvsoUnitOut" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZcrmCreateSoUnit">
+    <wsdl:part name="parameters" element="tns:ZcrmCreateSoUnit" />
+  </wsdl:message>
+  <wsdl:message name="ZcrmCreateSoUnitResponse">
+    <wsdl:part name="parameter" element="tns:ZcrmCreateSoUnitResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWEB_SERVICES_UNIT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZWEB_SERVICES_UNIT" />
+    </wsp:Policy>
+    <wsdl:operation name="ZcrmCreateSoUnit">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZcrmCreateSoUnit" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZcrmCreateSoUnit" />
+      <wsdl:output message="tns:ZcrmCreateSoUnitResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWEB_SERVICES_UNIT" type="tns:ZWEB_SERVICES_UNIT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWEB_SERVICES_UNIT" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZcrmCreateSoUnit">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_UNIT:ZcrmCreateSoUnitRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZWEB_SERVICES_UNIT_soap12" type="tns:ZWEB_SERVICES_UNIT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWEB_SERVICES_UNIT_soap12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZcrmCreateSoUnit">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWEB_SERVICES_UNIT:ZcrmCreateSoUnitRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWEB_SERVICES_UNIT">
+    <wsdl:port name="ZWEB_SERVICES_UNIT" binding="tns:ZWEB_SERVICES_UNIT">
+      <soap:address location="http://tnsapdtn:8000/sap/bc/srt/rfc/sap/zweb_services_unit/110/zweb_services_unit/zweb_services_unit" />
+    </wsdl:port>
+    <wsdl:port name="ZWEB_SERVICES_UNIT_soap12" binding="tns:ZWEB_SERVICES_UNIT_soap12">
+      <wsoap12:address location="http://tnsapdtn:8000/sap/bc/srt/rfc/sap/zweb_services_unit/110/zweb_services_unit/zweb_services_unit" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

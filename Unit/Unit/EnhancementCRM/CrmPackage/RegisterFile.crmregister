@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="EnhancementCRM.Plugins.dll" Id="f5b71aba-0f2f-49bf-97f5-d8748d7d4f39" IsolationMode="None" SourceType="Database">
+      <PluginTypes>
+        <clear />
+        <Plugin Description="Plug-in to PostCreate_ittn_exchangerateidr" FriendlyName="PostCreate_ittn_exchangerateidr" Name="EnhancementCRM.Plugins.PostCreate_ittn_exchangerateidr" Id="40e156b1-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostCreate_ittn_exchangerateidr">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_ittn_exchangerateidr" Description="PostCreate_ittn_exchangerateidr" Id="9174d327-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="ittn_exchangerateidr" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_quotedetail" FriendlyName="PostCreate_quotedetail" Name="EnhancementCRM.Plugins.PostCreate_quotedetail" Id="024769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostCreate_quotedetail">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_quotedetail" Description="PostCreate_quotedetail" Id="3b156070-c8c2-ea11-943d-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="quotedetail" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreCreate_ittn_exchangerateidr" FriendlyName="PreCreate_ittn_exchangerateidr" Name="EnhancementCRM.Plugins.PreCreate_ittn_exchangerateidr" Id="1c4769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreCreate_ittn_exchangerateidr">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreCreate_ittn_exchangerateidr" Description="PreCreate_ittn_exchangerateidr" Id="0dbb869b-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="ittn_exchangerateidr" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_ittn_exchangerateidr" FriendlyName="PostUpdate_ittn_exchangerateidr" Name="EnhancementCRM.Plugins.PostUpdate_ittn_exchangerateidr" Id="104769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostUpdate_ittn_exchangerateidr">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_ittn_exchangerateidr" Description="PostUpdate_ittn_exchangerateidr" FilteringAttributes="ittn_currencyname,ittn_exchangerateidrid,ittn_forreigncurrency,ittn_month,ittn_ratevalue,ittn_value,ittn_year" Id="a06ac26d-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="ittn_exchangerateidr" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreUpdate_ittn_exchangerateidr" FriendlyName="PreUpdate_ittn_exchangerateidr" Name="EnhancementCRM.Plugins.PreUpdate_ittn_exchangerateidr" Id="334769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreUpdate_ittn_exchangerateidr">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreUpdate_ittn_exchangerateidr" Description="PreUpdate_ittn_exchangerateidr" FilteringAttributes="ittn_currencyname,ittn_exchangerateidrid,ittn_forreigncurrency,ittn_month,ittn_ratevalue,ittn_value,ittn_year" Id="12ab01ba-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="ittn_exchangerateidr" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_quote" FriendlyName="PostCreate_quote" Name="EnhancementCRM.Plugins.PostCreate_quote" Id="ff4669b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostCreate_quote">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_quote" Description="PostCreate_quote" Id="de913047-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="quote" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Add Part of trs_workorderpartssummary" FriendlyName="Add Part of trs_workorderpartssummary" Name="EnhancementCRM.Plugins.PostOperation_trs_workorderpartssummaryAddPart" Id="074769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostOperation_trs_workorderpartssummaryAddPart">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Add Part of trs_workorderpartssummary" Description="Add Part of trs_workorderpartssummary" Id="04639d4d-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="trs_workorderpartssummary" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Part Delete of trs_workorderpartssummary" FriendlyName="Part Delete of trs_workorderpartssummary" Name="EnhancementCRM.Plugins.PostOperation_trs_workorderpartssummaryPartDelete" Id="084769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostOperation_trs_workorderpartssummaryPartDelete">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Part Delete of trs_workorderpartssummary" Description="Part Delete of trs_workorderpartssummary" Id="c5cd0155-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="trs_workorderpartssummary" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Update Part of trs_workorderpartssummary" FriendlyName="Update Part of trs_workorderpartssummary" Name="EnhancementCRM.Plugins.PostOperation_trs_workorderpartssummaryUpdatePart" Id="0a4769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostOperation_trs_workorderpartssummaryUpdatePart">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Update Part of trs_workorderpartssummary" Description="Update Part of trs_workorderpartssummary" FilteringAttributes="trs_manualquantity" Id="c8c0625b-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_workorderpartssummary" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreUpdate_ittn_quoteconditiontype" FriendlyName="PreUpdate_ittn_quoteconditiontype" Name="EnhancementCRM.Plugins.PreUpdate_ittn_quoteconditiontype" Id="384769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreUpdate_ittn_quoteconditiontype">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreUpdate_ittn_quoteconditiontype" Description="PreUpdate_ittn_quoteconditiontype" FilteringAttributes="ittn_amount" Id="af737081-2ef6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="ittn_quoteconditiontype" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_salesorder" FriendlyName="PostCreate_salesorder" Name="EnhancementCRM.Plugins.PostCreate_salesorder" Id="044769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostCreate_salesorder">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_salesorder" Description="PostCreate_salesorder" Id="b144a86d-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="salesorder" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreCreate_ittn_matrixcpoconditiontypebyproduct" FriendlyName="PreCreate_ittn_matrixcpoconditiontypebyproduct" Name="EnhancementCRM.Plugins.PreCreate_ittn_matrixcpoconditiontypebyproduct" Id="294769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreCreate_ittn_matrixcpoconditiontypebyproduct">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreCreate_ittn_matrixcpoconditiontypebyproduct" Description="PreCreate_ittn_matrixcpoconditiontypebyproduct" Id="58d88aa1-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="ittn_matrixcpoconditiontypebyproduct" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreUpdate_ittn_matrixcpoconditiontypebyproduct" FriendlyName="PreUpdate_ittn_matrixcpoconditiontypebyproduct" Name="EnhancementCRM.Plugins.PreUpdate_ittn_matrixcpoconditiontypebyproduct" Id="344769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreUpdate_ittn_matrixcpoconditiontypebyproduct">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreUpdate_ittn_matrixcpoconditiontypebyproduct" Description="PreUpdate_ittn_matrixcpoconditiontypebyproduct" FilteringAttributes="ittn_conditiontype,ittn_unitgroup,ittn_model" Id="c032f174-2ef6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="ittn_matrixcpoconditiontypebyproduct" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_opportunityproduct_salesbom" FriendlyName="PostCreate_opportunityproduct_salesbom" Name="EnhancementCRM.Plugins.PostCreate_opportunityproduct_salesbom" Id="42e156b1-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostCreate_opportunityproduct_salesbom">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_opportunityproduct_salesbom" Description="PostCreate_opportunityproduct_salesbom" Id="b4ccf8d7-c8c5-ea11-943d-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_opportunityproduct_alternativebom" FriendlyName="PostUpdate_opportunityproduct_alternativebom" Name="EnhancementCRM.Plugins.PostUpdate_opportunityproduct_alternativebom" Id="134769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostUpdate_opportunityproduct_alternativebom">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_opportunityproduct_alternativebom" Description="PostUpdate_opportunityproduct_alternativebom" FilteringAttributes="ittn_alternativebom" Id="b7ccf8d7-c8c5-ea11-943d-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreDelete_opportunityproduct_salesbom" FriendlyName="PreDelete_opportunityproduct_salesbom" Name="EnhancementCRM.Plugins.PreDelete_opportunityproduct_salesbom" Id="314769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreDelete_opportunityproduct_salesbom">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreDelete_opportunityproduct_salesbom" Description="PreDelete_opportunityproduct_salesbom" Id="2d34e468-2ef6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_quote_approveminprice" FriendlyName="PostCreate_quote_approveminprice" Name="EnhancementCRM.Plugins.PostCreate_quote_approveminprice" Id="fd39e117-b706-4fb5-b768-e7bea4a36339" TypeName="EnhancementCRM.Plugins.PostCreate_quote_approveminprice">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_quote_approveminprice" Description="PostCreate_quote_approveminprice" Id="12ad7b64-b8c5-ea11-943d-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="quote" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Update of new_population warranty date" FriendlyName="Update of new_population warranty date" Name="EnhancementCRM.Plugins.PostUpdate_population_warrantydate" Id="144769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostUpdate_population_warrantydate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Update of new_population warranty date" Description="Update of new_population warranty date" FilteringAttributes="trs_bastsigndate" Id="707215f6-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="new_population" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_ittn_quoteconditiontype_approve" FriendlyName="PostUpdate_ittn_quoteconditiontype_approve" Name="EnhancementCRM.Plugins.PostUpdate_ittn_quoteconditiontype_approve" Id="114769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostUpdate_ittn_quoteconditiontype_approve">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_ittn_quoteconditiontype_approve" Description="PostUpdate_ittn_quoteconditiontype_approve" FilteringAttributes="ittn_approveconditiontype" Id="8f2f15c1-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="ittn_quoteconditiontype" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Update of salesorder by CPO ID SAP" FriendlyName="Update of salesorder by CPO ID SAP" Name="EnhancementCRM.Plugins.PostUpdate_CPO_by_CPOIDSAP" Id="d7a4ba22-2398-4b9e-b37a-1c7b4214b702" TypeName="EnhancementCRM.Plugins.PostUpdate_CPO_by_CPOIDSAP">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Update of salesorder by CPO ID SAP" Description="Update of salesorder by CPO ID SAP" FilteringAttributes="new_cpoidsap" Id="1fb0099c-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="salesorder" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_ittn_cposaleseffort_approve" FriendlyName="PostUpdate_ittn_cposaleseffort_approve" Name="EnhancementCRM.Plugins.PostUpdate_ittn_cposaleseffort_approve" Id="38a51c18-5841-4482-a8f8-d4754fc9c8cc" TypeName="EnhancementCRM.Plugins.PostUpdate_ittn_cposaleseffort_approve">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_ittn_cposaleseffort_approve" Description="PostUpdate_ittn_cposaleseffort_approve" FilteringAttributes="ittn_approvesaleseffort" Id="e303fea4-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="ittn_cposaleseffort" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreCreate_serviceappointment_checkconditiontype" FriendlyName="PreCreate_serviceappointment_checkconditiontype" Name="EnhancementCRM.Plugins.PreCreate_serviceappointment_checkconditiontype" Id="2f4769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreCreate_serviceappointment_checkconditiontype">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreCreate_serviceappointment_checkconditiontype" Description="PreCreate_serviceappointment_checkconditiontype" Id="0a37ccad-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="serviceappointment" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to Update of trs_workorderpartssummary" FriendlyName="Update of trs_workorderpartssummary" Name="EnhancementCRM.Plugins.PreValidate_trs_workorderpartssummary_Update" Id="3b4769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreValidate_trs_workorderpartssummary_Update">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Update of trs_workorderpartssummary" Description="Update of trs_workorderpartssummary" FilteringAttributes="trs_manualquantity" Id="be1b34cc-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="trs_workorderpartssummary" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_ittn_cposaleseffort_effortcontribution" FriendlyName="PostUpdate_ittn_cposaleseffort_effortcontribution" Name="EnhancementCRM.Plugins.PostUpdate_ittn_cposaleseffort_effortcontribution" Id="ec41a87a-a518-4e22-9115-624dc110d287" TypeName="EnhancementCRM.Plugins.PostUpdate_ittn_cposaleseffort_effortcontribution">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_ittn_cposaleseffort_effortcontribution" Description="PostUpdate_ittn_cposaleseffort_effortcontribution" FilteringAttributes="ittn_effortcontribution" Id="dafe1fb5-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="ittn_cposaleseffort" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_quote_isshippingcentralized" FriendlyName="PostUpdate_quote_isshippingcentralized" Name="EnhancementCRM.Plugins.PostUpdate_quote_isshippingcentralized" Id="0c9cc682-809e-42c7-ba38-ee81f22ba4b1" TypeName="EnhancementCRM.Plugins.PostUpdate_quote_isshippingcentralized">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_quote_isshippingcentralized" Description="PostUpdate_quote_isshippingcentralized" FilteringAttributes="ittn_isshippingcentralized,ittn_deliverybranch,ittn_shippingpoint" Id="2d4d82fc-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="quote" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreCreate_salesorder_shippingpoint" FriendlyName="PreCreate_salesorder_shippingpoint" Name="EnhancementCRM.Plugins.PreCreate_salesorder_shippingpoint" Id="2d4769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreCreate_salesorder_shippingpoint">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreCreate_salesorder_shippingpoint" Description="PreCreate_salesorder_shippingpoint" Id="94247250-2ef6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="salesorder" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_salesorder_shippingpoint" FriendlyName="PostUpdate_salesorder_shippingpoint" Name="EnhancementCRM.Plugins.PostUpdate_salesorder_shippingpoint" Id="1a4769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostUpdate_salesorder_shippingpoint">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_salesorder_shippingpoint" Description="PostUpdate_salesorder_shippingpoint" FilteringAttributes="new_ponumber" Id="599d4a36-54f6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="salesorder" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_salesorderdetail" FriendlyName="PostCreate_salesorderdetail" Name="EnhancementCRM.Plugins.PostCreate_salesorderdetail" Id="054769b7-abc9-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PostCreate_salesorderdetail">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_salesorderdetail" Description="PostCreate_salesorderdetail" Id="1608c27c-2df6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="salesorderdetail" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_quotedetail_shippingpoint" FriendlyName="PostUpdate_quotedetail_shippingpoint" Name="EnhancementCRM.Plugins.PostUpdate_quotedetail_shippingpoint" Id="648aba74-6a21-4681-ab15-bd83eee65aa7" TypeName="EnhancementCRM.Plugins.PostUpdate_quotedetail_shippingpoint">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_quotedetail_shippingpoint" Description="PostUpdate_quotedetail_shippingpoint" FilteringAttributes="ittn_deliveryplanbranch,ittn_shippingpoint" Id="5cb3137d-c8c2-ea11-943d-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="quotedetail" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_quotedetail_needinternaltest" FriendlyName="PostUpdate_quotedetail_needinternaltest" Name="EnhancementCRM.Plugins.PostUpdate_quotedetail_needinternaltest" Id="6d6561f6-5633-47a6-af36-d7026c0ab959" TypeName="EnhancementCRM.Plugins.PostUpdate_quotedetail_needinternaltest">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_quotedetail_needinternaltest" Description="PostUpdate_quotedetail_needinternaltest" FilteringAttributes="ittn_needinternaltest" Id="97162018-2ef6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="quotedetail" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreCreate_ITTN_TroubleReport" FriendlyName="PreCreate_ITTN_TroubleReport" Name="EnhancementCRM.Plugins.PreCreate_ITTN_TroubleReport" Id="33eebdf9-46ca-e911-942d-0050569336b0" TypeName="EnhancementCRM.Plugins.PreCreate_ITTN_TroubleReport">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PreCreate_ITTN_TroubleReport" Description="PreCreate_ITTN_TroubleReport" Id="1d5891a7-41cd-e911-942e-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="ittn_troublereport" Rank="1" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_quote_paymentterm" FriendlyName="PostUpdate_quote_paymentterm" Name="EnhancementCRM.Plugins.PostUpdate_quote_paymentterm" Id="53f828f6-e4e1-41ca-89be-052114a1ef15" TypeName="EnhancementCRM.Plugins.PostUpdate_quote_paymentterm">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_quote_paymentterm" Description="PostUpdate_quote_paymentterm" FilteringAttributes="new_paymentterm" Id="bd0bc608-2ef6-e911-9435-0050569336b0" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="quote" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to asd" FriendlyName="asd" Name="EnhancementCRM.Plugins.asd" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.Plugins.asd">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="asd" Description="asd" FilteringAttributes="ittn_costunitsap" Id="00000000-0000-0000-0000-000000000000" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="quotedetail" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_opportunityproduct_discount" FriendlyName="PostCreate_opportunityproduct_discount" Name="EnhancementCRM.Plugins.PostCreate_opportunityproduct_discount" Id="5482bf6f-c201-4c07-8be0-a7a60b467408" TypeName="EnhancementCRM.Plugins.PostCreate_opportunityproduct_discount">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_opportunityproduct_discount" Description="PostCreate_opportunityproduct_discount" Id="8a6ac1bc-07fa-e911-9470-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_opportunityproduct_discount" FriendlyName="PostUpdate_opportunityproduct_discount" Name="EnhancementCRM.Plugins.PostUpdate_opportunityproduct_discount" Id="3a521b0c-c0a9-4dfd-b068-e04d6809c339" TypeName="EnhancementCRM.Plugins.PostUpdate_opportunityproduct_discount">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_opportunityproduct_discount" Description="PostUpdate_opportunityproduct_discount" FilteringAttributes="new_typediscount,new_percentagediscount,ispriceoverridden,manualdiscountamount" Id="fe04f9f5-02fb-e911-9471-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_opportunityproduct_product" FriendlyName="PostUpdate_opportunityproduct_product" Name="EnhancementCRM.Plugins.PostUpdate_opportunityproduct_product" Id="adc8becc-745a-4743-b878-d5c6177d38db" TypeName="EnhancementCRM.Plugins.PostUpdate_opportunityproduct_product">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_opportunityproduct_product" Description="PostUpdate_opportunityproduct_product" FilteringAttributes="new_product" Id="19e5312c-fdfa-e911-9471-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostCreate_OpportunityProductChild_RollupToMainProduct" FriendlyName="PostCreate_OpportunityProductChild_RollupToMainProduct" Name="EnhancementCRM.Plugins.PostCreate_OpportunityProductChild_RollupToMainProduct" Id="8732d9ef-8e6f-4dad-97c2-c43a0f07bb55" TypeName="EnhancementCRM.Plugins.PostCreate_OpportunityProductChild_RollupToMainProduct">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostCreate_OpportunityProductChild_RollupToMainProduct" Description="PostCreate_OpportunityProductChild_RollupToMainProduct" Id="fca19997-cbfa-e911-9470-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostUpdate_OpportunityProductChild_RollupToMainProduct" FriendlyName="PostUpdate_OpportunityProductChild_RollupToMainProduct" Name="EnhancementCRM.Plugins.PostUpdate_OpportunityProductChild_RollupToMainProduct" Id="5ee49a03-dbd0-498c-bd6b-01d6eb353647" TypeName="EnhancementCRM.Plugins.PostUpdate_OpportunityProductChild_RollupToMainProduct">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="PostUpdate_OpportunityProductChild_RollupToMainProduct" Description="PostUpdate_OpportunityProductChild_RollupToMainProduct" FilteringAttributes="extendedamount" Id="aa0ee01b-2c0c-ea11-9472-005056937630" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Update" Mode="Synchronous" PrimaryEntityName="opportunityproduct" Rank="1" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+      </PluginTypes>
+    </Solution>
+    <Solution Assembly="EnhancementCRM.Customization.dll" Id="00000000-0000-0000-0000-000000000000" IsolationMode="Sandbox" SourceType="Database" />
+    <Solution Assembly="EnhancementCRM.WorkflowActivity.dll" Id="1ab61778-ffe0-400b-90e3-0db75d3d6e8a" IsolationMode="None" SourceType="Database">
+      <WorkflowTypes>
+        <clear />
+        <WorkflowType FriendlyName="Submit Sales Order to SAP via Web Service" Name="SubmitSalesOrdertoSAP" Description="Submit Sales Order to SAP via Web Service" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.SubmitSalesOrdertoSAP" />
+        <WorkflowType FriendlyName="Minimum Price" Name="MinimumPrice" Description="Minimum Price" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.MinimumPrice" />
+        <WorkflowType FriendlyName="Price List Unit Original" Name="PriceListUnitOriginal" Description="PriceListUnitOriginal" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.PriceListUnitOriginal" />
+        <WorkflowType FriendlyName="Exchange Rate IDR" Name="ExchangeRateIDR" Description="Exchange Rate IDR" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.ExchangeRateIDR" />
+        <WorkflowType FriendlyName="WO_Release_Limitation" Name="WO_Release_Limitation" Description="WO_Release_Limitation" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.WO_Release_Limitation" />
+        <WorkflowType FriendlyName="Quote - Check Stock" Name="Quote_CheckStock" Description="Quote - Check Stock" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_CheckStock" />
+        <WorkflowType FriendlyName="Quote - Add Personal Discount" Name="Quote_AddPersonalDiscount" Description="Quote - Add Personal Discount" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_AddPersonalDiscount" />
+        <WorkflowType FriendlyName="Quote - Add Voucher" Name="Quote_AddVoucher" Description="Quote - Add Voucher" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_AddVoucher" />
+        <WorkflowType FriendlyName="Quote - Add FAT" Name="Quote_AddFAT" Description="Quote - Add FAT" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_AddFAT" />
+        <WorkflowType FriendlyName="Incentive - Approve Incentive" Name="Incentive_ApproveIncentive" Description="Incentive - Approve Incentive" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Incentive_ApproveIncentive" />
+        <WorkflowType FriendlyName="CPO - Request Approve Sales Effort" Name="CPO_RequestApproveSalesEffort" Description="CPO - Request Approve Sales Effort" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.CPO_RequestApproveSalesEffort" />
+        <WorkflowType FriendlyName="Quote - Add Others" Name="Quote_AddOthers" Description="Quote - Add Others" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_AddOthers" />
+        <WorkflowType FriendlyName="Quote - Request Approval For Personal Discount" Name="Quote_RequestApprovalForPersonalDiscount" Description="Quote - Request Approval For Personal Discount" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RequestApprovalForPersonalDiscount" />
+        <WorkflowType FriendlyName="Quote - Request Approval For FAT" Name="Quote_RequestApprovalForFAT" Description="Quote - Request Approval For FAT" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RequestApprovalForFAT" />
+        <WorkflowType FriendlyName="Quote - Request Approval For Voucher" Name="Quote_RequestApprovalForVoucher" Description="Quote - Request Approval For Voucher" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RequestApprovalForVoucher" />
+        <WorkflowType FriendlyName="Quote - Request Approval For Others" Name="Quote_RequestApprovalForOthers" Description="Quote - Request Approval For Others" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RequestApprovalForOthers" />
+        <WorkflowType FriendlyName="Quote - Approve Personal Discount" Name="Quote_ApprovePersonalDiscount" Description="Quote - Approve Personal Discount" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_ApprovePersonalDiscount" />
+        <WorkflowType FriendlyName="Quote - Approve FAT" Name="Quote_ApproveFAT" Description="Quote - Approve FAT" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_ApproveFAT" />
+        <WorkflowType FriendlyName="Quote - Approve Voucher" Name="Quote_ApproveVoucher" Description="Quote - Approve Voucher" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_ApproveVoucher" />
+        <WorkflowType FriendlyName="Quote - Approve Others" Name="Quote_ApproveOthers" Description="Quote - Approve Others" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_ApproveOthers" />
+        <WorkflowType FriendlyName="Quote - Reject Personal Discount" Name="Quote_RejectPersonalDiscount" Description="Quote - Reject Personal Discount" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RejectPersonalDiscount" />
+        <WorkflowType FriendlyName="Quote - Reject FAT" Name="Quote_RejectFAT" Description="Quote - Reject FAT" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RejectFAT" />
+        <WorkflowType FriendlyName="Quote - Reject Voucher" Name="Quote_RejectVoucher" Description="Quote - Reject Voucher" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RejectVoucher" />
+        <WorkflowType FriendlyName="Quote - Reject Others" Name="Quote_RejectOthers" Description="Quote - Reject Others" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_RejectOthers" />
+        <WorkflowType FriendlyName="Quote - Change Color" Name="Quote_ChangeColor" Description="Quote - Change Color" WorkflowActivityGroupName="Enhancement CRM Unit" WorkflowActivityProjectName="WorkflowActivity" Id="00000000-0000-0000-0000-000000000000" TypeName="EnhancementCRM.WorkflowActivity.Quote_ChangeColor" />
+      </WorkflowTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows>
+    <XamlWorkflowSolution Assembly="EnhancementCRM.WorkflowActivity.dll" />
+  </XamlWorkflows>
+</Register>

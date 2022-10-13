@@ -1,0 +1,79 @@
+﻿// <copyright file="Quote_CheckStock.cs" company="">
+// Copyright (c) 2019 All Rights Reserved
+// </copyright>
+// <author></author>
+// <date>17-Jul-19 1:44:33 PM</date>
+// <summary>Implements the Quote_CheckStock Workflow Activity.</summary>
+namespace EnhancementCRM.WorkflowActivity
+{
+    using System;
+    using System.Activities;
+    using System.ServiceModel;
+    using Microsoft.Xrm.Sdk;
+    using Microsoft.Xrm.Sdk.Workflow;
+    using Business_Layer;
+
+    public sealed class Quote_CheckStock : CodeActivity
+    {
+        [Input("RecordID")]
+        public InArgument<string> RecordID { get; set; }
+
+        /// <summary>
+        /// Executes the workflow activity.
+        /// </summary>
+        /// <param name="executionContext">The execution context.</param>
+        protected override void Execute(CodeActivityContext executionContext)
+        {
+            // Create the tracing service
+            ITracingService tracingService = executionContext.GetExtension<ITracingService>();
+
+            if (tracingService == null)
+            {
+                throw new InvalidPluginExecutionException("Failed to retrieve tracing service.");
+            }
+
+            tracingService.Trace("Entered Quote_CheckStock.Execute(), Activity Instance Id: {0}, Workflow Instance Id: {1}",
+                executionContext.ActivityInstanceId,
+                executionContext.WorkflowInstanceId);
+
+            // Create the context
+            IWorkflowContext context = executionContext.GetExtension<IWorkflowContext>();
+
+            if (context == null)
+            {
+                throw new InvalidPluginExecutionException("Failed to retrieve workflow context.");
+            }
+
+            tracingService.Trace("Quote_CheckStock.Execute(), Correlation Id: {0}, Initiating User: {1}",
+                context.CorrelationId,
+                context.InitiatingUserId);
+
+            IOrganizationServiceFactory serviceFactory = executionContext.GetExtension<IOrganizationServiceFactory>();
+            IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
+
+            try
+            {
+                string _recordid = RecordID.Get<string>(executionContext);
+                string[] _recordids;
+
+                if (!string.IsNullOrEmpty(_recordid))
+                    _recordid = _recordid.Replace('{', ' ').Replace('}', ' ');
+
+                _recordids = _recordid.Split(',');
+
+                // TODO: Implement your custom Workflow business logic.
+                BL_ittn_quote _quote = new BL_ittn_quote();
+                _quote.CheckStock(service, context, _recordids, tracingService);
+            }
+            catch (FaultException<OrganizationServiceFault> e)
+            {
+                tracingService.Trace("Exception: {0}", e.ToString());
+
+                // Handle the exception.
+                throw;
+            }
+
+            tracingService.Trace("Exiting Quote_CheckStock.Execute(), Correlation Id: {0}", context.CorrelationId);
+        }
+    }
+}

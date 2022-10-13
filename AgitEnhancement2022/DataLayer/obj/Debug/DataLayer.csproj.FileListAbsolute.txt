@@ -1,0 +1,5 @@
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\DataLayer\bin\Debug\DataLayer.dll
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\DataLayer\bin\Debug\DataLayer.pdb
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\DataLayer\obj\Debug\DataLayer.dll
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\DataLayer\obj\Debug\DataLayer.pdb

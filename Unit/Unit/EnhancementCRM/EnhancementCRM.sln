@@ -1,0 +1,143 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{88A30576-7583-4F75-8136-5EFD2C14ADFF}") = "CrmPackage", "CrmPackage\CrmPackage.csproj", "{61B8D684-773F-4E33-B40B-AE7C727CD673}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A061D04D-8F80-4B8A-A3DF-13E372FA2715} = {A061D04D-8F80-4B8A-A3DF-13E372FA2715}
+		{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E} = {28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}
+		{E6511BC0-DA54-42E3-A70A-EDD87A701473} = {E6511BC0-DA54-42E3-A70A-EDD87A701473}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "Plugins\Plugins.csproj", "{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customization", "Customization\Customization.csproj", "{A061D04D-8F80-4B8A-A3DF-13E372FA2715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowActivity", "WorkflowActivity\WorkflowActivity.csproj", "{E6511BC0-DA54-42E3-A70A-EDD87A701473}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperUnit", "HelperUnit\HelperUnit.csproj", "{B20508A0-85CF-4446-83EA-B3A8C7F9D559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{492C2858-57CC-4AF3-8365-8CAD9B68878C}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Reports", "Reports\Reports.rptproj", "{982B3715-EF80-42C2-8185-BB8B227A294D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{08D7BB4B-BC8D-4882-A024-C4E854BB2732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckEscalationApproval_QuoteConditionType", "CheckEscalationApproval_QuoteConditionType\CheckEscalationApproval_QuoteConditionType.csproj", "{132CE917-256F-4821-8A9C-1F7EC41A8BC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckEscalationApproval", "CheckEscalationApproval\CheckEscalationApproval.csproj", "{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugLocal|Any CPU = DebugLocal|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.DebugLocal|Any CPU.Deploy.0 = Debug|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B8D684-773F-4E33-B40B-AE7C727CD673}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D1BDA1-0534-4A5A-A2E8-CBF1AC86C24E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A061D04D-8F80-4B8A-A3DF-13E372FA2715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A061D04D-8F80-4B8A-A3DF-13E372FA2715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A061D04D-8F80-4B8A-A3DF-13E372FA2715}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{A061D04D-8F80-4B8A-A3DF-13E372FA2715}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{A061D04D-8F80-4B8A-A3DF-13E372FA2715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A061D04D-8F80-4B8A-A3DF-13E372FA2715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6511BC0-DA54-42E3-A70A-EDD87A701473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6511BC0-DA54-42E3-A70A-EDD87A701473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6511BC0-DA54-42E3-A70A-EDD87A701473}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6511BC0-DA54-42E3-A70A-EDD87A701473}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{E6511BC0-DA54-42E3-A70A-EDD87A701473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6511BC0-DA54-42E3-A70A-EDD87A701473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20508A0-85CF-4446-83EA-B3A8C7F9D559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20508A0-85CF-4446-83EA-B3A8C7F9D559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20508A0-85CF-4446-83EA-B3A8C7F9D559}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20508A0-85CF-4446-83EA-B3A8C7F9D559}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{B20508A0-85CF-4446-83EA-B3A8C7F9D559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20508A0-85CF-4446-83EA-B3A8C7F9D559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492C2858-57CC-4AF3-8365-8CAD9B68878C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492C2858-57CC-4AF3-8365-8CAD9B68878C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492C2858-57CC-4AF3-8365-8CAD9B68878C}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{492C2858-57CC-4AF3-8365-8CAD9B68878C}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{492C2858-57CC-4AF3-8365-8CAD9B68878C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492C2858-57CC-4AF3-8365-8CAD9B68878C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.Debug|Any CPU.ActiveCfg = Debug
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.Debug|Any CPU.Build.0 = Debug
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.Debug|Any CPU.Deploy.0 = Debug
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.DebugLocal|Any CPU.Build.0 = DebugLocal
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.Release|Any CPU.ActiveCfg = Release
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.Release|Any CPU.Build.0 = Release
+		{982B3715-EF80-42C2-8185-BB8B227A294D}.Release|Any CPU.Deploy.0 = Release
+		{132CE917-256F-4821-8A9C-1F7EC41A8BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132CE917-256F-4821-8A9C-1F7EC41A8BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132CE917-256F-4821-8A9C-1F7EC41A8BC0}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{132CE917-256F-4821-8A9C-1F7EC41A8BC0}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{132CE917-256F-4821-8A9C-1F7EC41A8BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132CE917-256F-4821-8A9C-1F7EC41A8BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{132CE917-256F-4821-8A9C-1F7EC41A8BC0} = {08D7BB4B-BC8D-4882-A024-C4E854BB2732}
+		{1AE429E4-45F2-43F7-B1E6-7272E6BB0AF3} = {08D7BB4B-BC8D-4882-A024-C4E854BB2732}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dynamicscrmprojects.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CrmPackage\\CrmPackage.csproj
+		SccProjectName1 = CrmPackage
+		SccLocalPath1 = CrmPackage
+		SccProjectUniqueName2 = Plugins\\Plugins.csproj
+		SccProjectName2 = Plugins
+		SccLocalPath2 = Plugins
+		SccProjectUniqueName3 = Customization\\Customization.csproj
+		SccProjectName3 = Customization
+		SccLocalPath3 = Customization
+		SccProjectUniqueName4 = WorkflowActivity\\WorkflowActivity.csproj
+		SccProjectName4 = WorkflowActivity
+		SccLocalPath4 = WorkflowActivity
+		SccProjectUniqueName5 = HelperUnit\\HelperUnit.csproj
+		SccProjectName5 = HelperUnit
+		SccLocalPath5 = HelperUnit
+		SccProjectUniqueName6 = WcfService\\WcfService.csproj
+		SccProjectName6 = WcfService
+		SccLocalPath6 = WcfService
+		SccProjectUniqueName7 = Reports\\Reports.rptproj
+		SccProjectName7 = Reports
+		SccLocalPath7 = Reports
+		SccProjectUniqueName8 = CheckEscalationApproval_QuoteConditionType\\CheckEscalationApproval_QuoteConditionType.csproj
+		SccProjectTopLevelParentUniqueName8 = EnhancementCRM.sln
+		SccProjectName8 = CheckEscalationApproval_QuoteConditionType
+		SccLocalPath8 = CheckEscalationApproval_QuoteConditionType
+		SccProjectUniqueName9 = CheckEscalationApproval\\CheckEscalationApproval.csproj
+		SccProjectTopLevelParentUniqueName9 = EnhancementCRM.sln
+		SccProjectName9 = CheckEscalationApproval
+		SccLocalPath9 = CheckEscalationApproval
+	EndGlobalSection
+	GlobalSection(CRMSolutionProperties) = preSolution
+		SolutionIsBoundToCRM = True
+	EndGlobalSection
+EndGlobal

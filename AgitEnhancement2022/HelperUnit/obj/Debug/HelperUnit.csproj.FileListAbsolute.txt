@@ -1,0 +1,5 @@
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\HelperUnit\bin\Debug\HelperUnit.dll
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\HelperUnit\bin\Debug\HelperUnit.pdb
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\HelperUnit\obj\Debug\HelperUnit.csprojResolveAssemblyReference.cache
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\HelperUnit\obj\Debug\HelperUnit.dll
+D:\My Documents\Project\TrakNus\Source Code CRM\Account\AgitEnhancement2022\HelperUnit\obj\Debug\HelperUnit.pdb

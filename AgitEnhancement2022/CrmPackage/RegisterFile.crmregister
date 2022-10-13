@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="AgitEnhancement2022.Workflow.dll" Id="00000000-0000-0000-0000-000000000000" IsolationMode="Sandbox" SourceType="Database">
+      <WorkflowTypes>
+        <clear />
+        <WorkflowType FriendlyName="[AGIT][Account][Workflow] Send Email Notification Approve to Finance Department Head" Name="Account_ApproveToFinanceDeptHead" Description="Send Email Notification Approve to Finance Department Head" WorkflowActivityGroupName="Account_Workflow" WorkflowActivityProjectName="Workflow" Id="00000000-0000-0000-0000-000000000000" TypeName="AgitEnhancement2022.Workflow.Account_ApproveToFinanceDeptHead" />
+      </WorkflowTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows>
+    <XamlWorkflowSolution Assembly="AgitEnhancement2022.Workflow.dll" />
+  </XamlWorkflows>
+</Register>
